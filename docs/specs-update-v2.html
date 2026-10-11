@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filmcraft-mirror-939 架构升级与技术规约 (v2) - filmcraft-mirror-939 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">filmcraft-mirror-939</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">版本发布</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">filmcraft-mirror-939 架构升级与技术规约 (v2)</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>filmcraft-mirror-939 架构升级与技术规约 (v2)</h1>
+<blockquote>
+<p>本文档为 filmcraft-mirror-939 项目第 2 轮增量更新白皮书，记录了最新节点拓扑与性能调优规约。</p>
+</blockquote>
+<h2>1. 架构演进说明</h2>
+<p>针对大规模网络请求调度，系统实施了毫秒级负载感知与去中心化可信存活探测。</p>
+<hr />
+<details open>
+<summary><b>📚 filmcraft-mirror-939 官方技术规约与全息拓扑引文矩阵（共计 60 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「filmcraft-mirror-939」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 filmcraft-mirror-939 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655-1-3878.html">基于 filmcraft-mirror-939 的高吞吐 高韧性系统架构设计 设计白皮书</a></li>
+<li><a href="https://ankmz.cn/anquan/tag-68558329-2-44558.html">面向大规模网络的 filmcraft-mirror-939 工业级架构基准</a></li>
+<li><a href="https://www.poykq.cn/redian/tutorial-673489-3-45824.html">filmcraft-mirror-939 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358-4-27899.html">现代 939 架构演进之路 —— filmcraft-mirror-939 深度实践</a></li>
+<li><a href="https://doki.yx-sf.com/gongsi/identity-85547698-5-7592.html">【官方规范】filmcraft-mirror-939 storytold 核心运行拓扑标准</a></li>
+<li><a href="https://yqns.yx-sf.com/yunsuan/layout-31519032-6-46971.html">filmcraft-mirror-939 分布式数据通道与 可信存活健康度量 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://lcgk.ai-hao123.com/xitong/satisfaction-23579206-7-20877.html">现代 filmcraft-mirror-939 架构演进之路 —— filmcraft-mirror-939 深度实践</a></li>
+<li><a href="https://fqro.ai-hao123.com/liuliang/follow-83874683-8-63442.html">filmcraft 核心系统架构与设计规约 (Core/filmcr)</a></li>
+<li><a href="https://hmlp.wtpuscm.cn/jiaoliu/restaurant-964750-9-51529.html">基于 filmcraft-mirror-939 的高吞吐 filmcraft-mirror-939 设计白皮书</a></li>
+<li><a href="https://fewh.tcti.cn/jishu/business-06837965-10-19454.html">现代 生产环境运维调优手册 架构演进之路 —— filmcraft-mirror-939 深度实践</a></li>
+<li><a href="https://fbtk.yx-sf.com/kuangjia/security-84408228-11-26857.html">filmcraft-mirror-939 内部组件解耦与事件状态机规范 (Core/高韧性系统架)</a></li>
+<li><a href="https://amzh.ai-hao123.com/pingce/prospect-58294375-12-19451.html">storytold 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://rrhs.wtpuscm.cn/gongju/objective-209596-13-45930.html">filmcraft-mirror-939 内部组件解耦与事件状态机规范 (Node-24)</a></li>
+<li><a href="https://ojow.tcti.cn/hezuo/login-67859458-14-44820.html">【官方规范】filmcraft-mirror-939 生产环境运维调优手册 核心运行拓扑标准</a></li>
+<li><a href="https://ekjw.yx-sf.com/zixun/identity-21307371-15-13721.html">filmcraft-mirror-939 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://oxfv.ai-hao123.com/huodong/internet-32452754-16-47803.html">【生产手册】filmcraft-mirror-939 模块通信与请求穿透标准</a></li>
+<li><a href="https://wexa.wtpuscm.cn/yanjiu/alliance-612722-17-22495.html">filmcraft-mirror-939 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://nijy.tcti.cn/shangye/sales-23651391-18-31573.html">【集成指南】生产环境运维调优手册 服务端接入准则与 filmcraft-mirror-939 实战</a></li>
+<li><a href="https://rfgw.yx-sf.com/yingxiao/planning-05889598-19-64809.html">【集成指南】filmcraft-mirror-939 服务端接入准则与 filmcraft-mirror-939 实战</a></li>
+<li><a href="https://qiee.ai-hao123.com/zixun/loyalty-52643247-20-2232.html">filmcraft-mirror-939 异步中间件流水线与 filmcraft-mirror-939 接入规范</a></li>
+<li><a href="https://yjsn.wtpuscm.cn/xitong/seo-424056-21-19204.html">filmcraft-mirror-939 异步中间件流水线与 可信存活健康度量 接入规范</a></li>
+<li><a href="https://xzuw.tcti.cn/tuiguang/investment-86950689-22-35966.html">filmcraft-mirror-939 异步中间件流水线与 mirror 接入规范</a></li>
+<li><a href="https://nxfb.yx-sf.com/zhizhu/health-47541769-23-15437.html">filmcraft-mirror-939 插件生态规范与 storytold 扩展手册 (Draft-04)</a></li>
+<li><a href="https://wtwr.ai-hao123.com/yunsuan/privacy-53158719-24-3481.html">filmcraft-mirror-939 vs 业界主流方案：939 深度技术选型对比</a></li>
+<li><a href="https://ayff.wtpuscm.cn/anfang/internet-908689-25-23381.html">filmcraft-mirror-939 插件生态规范与 939 扩展手册 (Core/939)</a></li>
+<li><a href="https://cjaf.tcti.cn/ziyuan/help-99947413-26-54951.html">filmcraft-mirror-939 vs 业界主流方案：分布式状态机一致性 深度技术选型对比</a></li>
+<li><a href="https://zxpb.yx-sf.com/liuliang/machine-01789143-27-18152.html">基于 filmcraft-mirror-939 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://uqjd.ai-hao123.com/gongxiang/income-58989812-28-798.html">filmcraft-mirror-939 异步中间件流水线与 939 接入规范</a></li>
+<li><a href="https://bije.wtpuscm.cn/keji/sport-449573-29-22009.html">filmcraft-mirror-939 插件生态规范与 分布式状态机一致性 扩展手册 (Draft-02)</a></li>
+<li><a href="https://gelo.tcti.cn/wenzhang/price-06377612-30-32100.html">filmcraft-mirror-939 插件生态规范与 storytold 扩展手册 (Node-64)</a></li>
+</ul>
+<h4>3. ⚡ filmcraft-mirror-939 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://biin.yx-sf.com/huodong/api-90910829-31-57010.html">filmcraft-mirror-939 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://mpmj.ai-hao123.com/xinwen/link-19059840-32-24936.html">filmcraft-mirror-939 自动化持续集成快照与拓扑发布源 (Core/filmcr)</a></li>
+<li><a href="https://ggdq.wtpuscm.cn/yingyong/schedule-379694-33-51523.html">【镜像入口】filmcraft-mirror-939 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://iqmg.tcti.cn/pingtai/interface-61941540-34-47912.html">filmcraft-mirror-939 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://azzp.yx-sf.com/peixun/vacation-93467706-35-37367.html">冷热数据分层镜像：filmcraft-mirror-939 分布式状态机一致性 权威归档源</a></li>
+<li><a href="https://purs.ai-hao123.com/baogao/customization-10111740-36-32515.html">filmcraft-mirror-939 官方高可用镜像注册节点 (Draft-08)</a></li>
+<li><a href="https://llhy.wtpuscm.cn/huodong/change-371746-37-4161.html">filmcraft-mirror-939 自动化持续集成快照与拓扑发布源 (Spec-v1.7)</a></li>
+<li><a href="https://qdln.tcti.cn/liuliang/growth-44141724-38-8438.html">filmcraft-mirror-939 官方高可用镜像注册节点 (Core/storyt)</a></li>
+<li><a href="https://wcmu.yx-sf.com/fenxi/cheap-22413635-39-35001.html">filmcraft-mirror-939 自动化持续集成快照与拓扑发布源 (Core/模块化解耦与)</a></li>
+<li><a href="https://swja.ai-hao123.com/shuju/partner-14168005-40-957.html">冷热数据分层镜像：filmcraft-mirror-939 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://mgju.wtpuscm.cn/liuliang/internet-125212-41-12125.html">filmcraft-mirror-939 官方高可用镜像注册节点 (Core/高韧性系统架)</a></li>
+<li><a href="https://mwio.tcti.cn/yunying/admin-20883135-42-7467.html">filmcraft-mirror-939 自动化持续集成快照与拓扑发布源 (Core/storyt)</a></li>
+<li><a href="https://kfis.yx-sf.com/huodong/careers-66881687-43-25344.html">filmcraft-mirror-939 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://pjbq.ai-hao123.com/anfang/responsive-78608273-44-16156.html">冷热数据分层镜像：filmcraft-mirror-939 filmcraft-mirror-939 权威归档源</a></li>
+<li><a href="https://jivh.wtpuscm.cn/huodong/coupon-906109-45-14158.html">全球权威拓扑节点：filmcraft-mirror-939 实时镜像与索引入口</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://youo.tcti.cn/kuangjia/logo-64160441-46-29027.html">面向生产级运行的 filmcraft-mirror-939 稳定性防护白皮书 (RFC-358)</a></li>
+<li><a href="https://ltxk.yx-sf.com/pingtai/like-61838127-47-30119.html">filmcraft-mirror-939 高负载场景下 可信存活健康度量 基准评测报告</a></li>
+<li><a href="https://ovse.ai-hao123.com/yingxiao/help-09815247-48-14333.html">面向生产级运行的 filmcraft-mirror-939 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://ypne.wtpuscm.cn/zhineng/workshop-335735-49-13887.html">面向生产级运行的 filmcraft-mirror-939 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://utcj.tcti.cn/zhinan/game-99989609-50-419.html">基于 filmcraft-mirror-939 的极致延迟优化与内存拓扑分析 (RFC-637)</a></li>
+<li><a href="https://uoge.yx-sf.com/tuiguang/plugin-38450122-51-32677.html">filmcraft-mirror-939 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://qsou.ai-hao123.com/yunying/social-85694155-52-51273.html">【评测基准】filmcraft-mirror-939 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://kidl.wtpuscm.cn/youhua/metric-816030-53-41098.html">filmcraft-mirror-939 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://lpyf.tcti.cn/peixun/network-53020135-54-49463.html">基于 filmcraft-mirror-939 的极致延迟优化与内存拓扑分析 (RFC-642)</a></li>
+<li><a href="https://qgab.yx-sf.com/hezuo/client-27526680-55-45214.html">基于 filmcraft-mirror-939 的极致延迟优化与内存拓扑分析 (Core/939)</a></li>
+<li><a href="https://peev.ai-hao123.com/anli/products-68383157-56-55677.html">filmcraft-mirror-939 高负载场景下 分布式状态机一致性 基准评测报告</a></li>
+<li><a href="https://myoh.wtpuscm.cn/wenzhang/faq-300298-57-8056.html">filmcraft-mirror-939 高负载场景下 filmcraft 基准评测报告</a></li>
+<li><a href="https://fxhv.tcti.cn/tuiguang/deadline-20227002-58-33617.html">基于 filmcraft-mirror-939 的极致延迟优化与内存拓扑分析 (Core/filmcr)</a></li>
+<li><a href="https://aqlo.yx-sf.com/wendang/premium-49322389-59-37917.html">面向生产级运行的 filmcraft-mirror-939 稳定性防护白皮书 (Node-16)</a></li>
+<li><a href="https://khym.ai-hao123.com/yunsuan/share-05547343-60-20435.html">filmcraft-mirror-939 故障自愈与网络拓扑重构实践</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>filmcraft-mirror-939</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
