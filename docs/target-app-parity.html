@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parity with Adobe Premiere Pro - filmcraft-mirror-939 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">filmcraft-mirror-939</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Parity with Adobe Premiere Pro</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Parity with Adobe Premiere Pro</h1>
+<blockquote>
+<p><strong>Last reviewed:</strong> 2026-10-10 · <strong>Last updated:</strong> 2026-10-10 · <strong>Change:</strong> major (full re-measure against Premiere Pro 2026 26.5.2; replaces the scorecard and estimate that lived in ROADMAP.md) · <strong>Target:</strong> Adobe Premiere Pro 2026 (26.5.2, macOS)</p>
+</blockquote>
+<p>The authoritative assessment of how close FilmCraft is to Premiere Pro, and how much work is left.
+<a href="../ROADMAP.md">ROADMAP.md</a> summarizes it; <a href="gaps.md">gaps.md</a> lists every shortfall one at a time.
+The deep checklists are <a href="file-format-parity.md">file-format-parity.md</a>,
+<a href="codec-parity.md">codec-parity.md</a>, <a href="hardware-parity.md">hardware-parity.md</a>,
+<a href="ui-parity.md">ui-parity.md</a> and <a href="localization-parity.md">localization-parity.md</a>.</p>
+<h2>Headline</h2>
+<table><thead><tr><th></th><th>Value</th><th>Kind</th></tr></thead><tbody>
+<tr><td><strong>Feature breadth</strong></td><td><strong>~86%</strong></td><td>Partly measured: menus 92% (label diff, below), effects / transitions / audio effects 100% (unit tests); the other areas are estimated</td></tr>
+<tr><td><strong>Ready for real work</strong></td><td><strong>~56%</strong> (range 51–61%)</td><td>Estimated depth per area, combined with written weights (<a href="#three-readiness-numbers">formula</a>)</td></tr>
+<tr><td><strong>Mainstream practitioner</strong></td><td><strong>~55%</strong></td><td>Weekly editing areas only, with written discounts (<a href="#mainstream-practitioner">method</a>)</td></tr>
+<tr><td><strong>Essentials user</strong></td><td><strong>~60%</strong></td><td>Core features at default settings, with written discounts (<a href="#essentials-user">method</a>)</td></tr>
+<tr><td><strong>Stage</strong></td><td><strong>alpha</strong></td><td>~19 points and ~400–700 h from beta, and beta also needs <code>.prproj</code> import (<a href="#stage">why</a>)</td></tr>
+<tr><td><strong>Remaining to beta</strong></td><td><strong>~400–700 Opus 5.5 agent-hours</strong></td><td>Estimated, calibrated below</td></tr>
+<tr><td><strong>Remaining to full parity</strong></td><td><strong>~1,550–2,750 Opus 5.5 agent-hours</strong> (to ~95%: ~1,450–2,600)</td><td>Estimated; ~70% parallelizes</td></tr>
+<tr><td>Codebase (measured 2026-10-10)</td><td>45 crates + 3 apps, ~343,000 lines of Rust, 2,520 <code>#[test]</code> functions, 1,098 commits, 268 merged PRs, 69 authors</td><td><code>git</code>, <code>gh</code>, <code>grep</code></td></tr>
+</tbody></table>
+<p>The previous estimate (2026-10-05) was breadth ~87%, ready ~50–60%, and "~210–325 agent-hours to
+100%". The breadth figure is one point lower now because this pass counts the file formats Premiere
+lists and we lack (AVI, WMV, camera RAW, EXR / DPX / PSD stills, <code>.prproj</code>, DVD / Blu-ray / DCP
+export) rather than only the formats we have. The hours went up because the old figure covered the
+checklist only and left out plugins, AI, localization, <code>.prproj</code> and the depth work that 188 open
+issues now document. That is new evidence, not drift: see <a href="#calibration">Calibration</a>.</p>
+<h2>What we measured against, and how</h2>
+<ul>
+<li><strong>Target:</strong> Adobe Premiere Pro 2026, version <strong>26.5.2</strong> (Spotlight <code>kMDItemVersion</code> of the
+installed <code>/Applications/Adobe Premiere Pro 2026</code>), plus Adobe Media Encoder 2026 for export.</li>
+<li><strong>Menus (measured).</strong> The maintainers' native menu-bar dump of Premiere 26.5.2
+(<code>plan/premiere/menus.json</code>, taken 2026-09-30 through System Events; local only, never
+committed) has 433 leaf items. Removing Adobe-cloud, account, help, macOS system and
+recent-file entries leaves 375. A label match against the string literals of <code>crates/engine</code>,
+<code>crates/ui-egui</code>, <code>crates/edit</code> and <code>crates/project</code> finds <strong>338 of 375 (90.1%)</strong>; of the 37
+misses, 9 are dynamic or system items (About, AutoFill, Dictation, Emoji, window names), so
+in-scope coverage is <strong>338 / 366 ≈ 92%</strong>. Real misses: Spelling (2), Render and Replace /
+Restore Unrendered, Enhance Speech toggle, Auto-Tag Audio Types, Auto Reframe Sequence, Generate
+/ Reassociate Source Clips, Project Shortcut, Refresh All Projects, Export Selection as Premiere
+Project, 5 workspaces (Essentials, Metalogging, Prelude, Starter, Text-Based Editing),
+Audio Clip / Track Effect Editor, Sequence Index, AI Models and Collaboration settings, UXP /
+Exchange plug-in entries. A label match is presence only, and can over-count (a label that
+exists in a different place); it is a lower bound on misses, not proof of behaviour. The script
+was ad hoc; <code>cargo xtask parity</code> now measures the shipped menu bar against the snapshot,
+reporting presence and placement separately (not yet re-run for this figure); the other areas
+are gap <a href="gaps.md#g7-no-measured-parity-tool-in-ci">G7</a>.</li>
+<li><strong>Effects (measured by tests).</strong> <code>premiere_26_video_effects_catalogue</code>,
+<code>premiere_audio_set_is_complete_and_foldered</code> and <code>premiere_26_transition_tree</code> check the
+catalogue against Premiere's Effects panel: video effects 93/93 (+Legacy, Obsolete), audio
+effects 53/53, video transitions 84/84 (+21 Legacy), audio transitions 3/3.</li>
+<li><strong>The installed app (file names and listings only, per <a href="../AGENTS.md">AGENTS.md</a> §2; nothing
+inside the bundle was opened or read).</strong> <code>Contents/Resources/*.lproj</code>: de, en, es, fr, it, ja,
+ko, pt, ru, zh_CN (10 UI languages). <code>Contents/MediaIO/systempresets/</code> folder names are
+four-character exporter / codec codes: JPEG, QuickTime, MP3, PNG, Windows Media, AIFF, AVI,
+BMP, DPX, TIFF, Targa, WAV, HEVC, MPEG-2 / DVD / Blu-ray, MXF (JPEG 2000, DNx, P2, XDCAM HD,
+AS-10, AS-11), MP4 / AAC / H.264 / H.264 Blu-ray, FLV, uncompressed AVI, DCP, GIF, raw PCM,
+OpenEXR. <code>Contents/Frameworks</code> names show what it decodes natively: ARRIRAW (ARRI Image SDK),
+RED R3D, Sony RAW, Canon RAW (<code>CrmSdk</code>), Codex HDE, DNx SDK, JPEG XS, JPEG 2000 (Kakadu),
+DV100, MPEG-4 Part 2, OMF (<code>Pro4OMF</code>), AAF, LTC timecode, C2PA content credentials, and an ONNX
+runtime for its AI features. <code>PlugIns</code> lists OpenEXR, Radiance and RED / MXF XMP handlers.</li>
+<li><strong>Our side:</strong> this repository on <code>origin/main</code> at <code>98ba9ac</code> (2026-10-10): code, crate READMEs,
+tests, <code>docs/performance.md</code> benchmarks, and the 188 open / 118 closed GitHub issues (user
+reports from releases 0.2–0.5).</li>
+<li><strong>Public documentation:</strong> Adobe's "What's new" and release notes for 26.0–26.3 (Object Mask,
+redesigned mask tools, R3D NE, OpenTimelineIO, GPU thumbnails, 4:2:2 10-bit hardware decode on
+NVIDIA Blackwell), and Adobe's published lists of supported file formats and GPU / hardware
+acceleration.</li>
+<li><strong>Not done in this pass:</strong> running Premiere side by side on shared projects. No rendering or
+behaviour of ours is compared with Premiere's output automatically yet (<a href="gaps.md#g1-nothing-compares-our-output-with-premieres">G1</a>).</li>
+</ul>
+<h2>Weights</h2>
+<p>Feature areas carry 70% of "ready for real work", cross-cutting qualities 30%. Weights reflect
+what a working editor uses daily: the timeline first, then media, effects and panels.</p>
+<table><thead><tr><th>Group</th><th>Weight</th></tr></thead><tbody>
+<tr><td>Editing, timeline, trimming, multicam</td><td>20% of features</td></tr>
+<tr><td>Effects and transitions</td><td>12%</td></tr>
+<tr><td>Media import and codecs</td><td>12%</td></tr>
+<tr><td>Audio</td><td>10%</td></tr>
+<tr><td>Panels and UI fidelity</td><td>10%</td></tr>
+<tr><td>Colour</td><td>8%</td></tr>
+<tr><td>Graphics, titles, captions</td><td>8%</td></tr>
+<tr><td>Export and delivery</td><td>8%</td></tr>
+<tr><td>Project files and interchange</td><td>8%</td></tr>
+<tr><td>Preferences and project management</td><td>4%</td></tr>
+<tr><td><em>Cross-cutting:</em> hardware and performance</td><td>10% of overall</td></tr>
+<tr><td>Stability</td><td>8%</td></tr>
+<tr><td>Platforms</td><td>5%</td></tr>
+<tr><td>Plugins and ecosystem</td><td>5%</td></tr>
+<tr><td>AI features</td><td>2%</td></tr>
+</tbody></table>
+<p>Feature breadth weights the same ten feature areas only (cross-cutting qualities have no
+"exists / doesn't" count).</p>
+<h2>By feature area</h2>
+<p>Breadth = does it exist. Ready = depth, correctness, fidelity, robustness. Hours = Opus 5.5
+agent-hours to close the area to Premiere, sequential.</p>
+<table><thead><tr><th>Area</th><th>Weight</th><th>Breadth</th><th>Ready</th><th>Hours</th><th>Evidence</th><th>Detail</th></tr></thead><tbody>
+<tr><td>Editing, timeline, trimming, multicam</td><td>20%</td><td>~90%</td><td>~70%</td><td>80–140</td><td>Edit algebra, trim modes, Trim Monitor, multicam with audio sync, Premiere default keyboard (143 commands), Source playback and range dragging (10-08). Open: ripple-delete of a gap by column (#668), Backspace on gaps (#648), clip stretching (#653), deselect on empty space (#683), new tracks by dragging media (#483), Escape cancelling drags (#580), time remapping (#510), effects on a whole track (#623)</td><td><a href="ui-parity.md">ui-parity.md</a></td></tr>
+<tr><td>Effects and transitions</td><td>12%</td><td>100% (measured)</td><td>~60%</td><td>80–140</td><td>Every effect exists; Warp Stabilizer is 2-D, Auto Reframe approximate, Morph Cut morphs with optical flow but without face tracking (#805); Optical Flow time interpolation is motion compensated on the CPU (#780). 34 effect ids run on the GPU against ~82 of Premiere's ~92 marked Accelerated. No Object Mask (26.0, AI).</td><td><a href="hardware-parity.md">hardware-parity.md</a></td></tr>
+<tr><td>Media import and codecs</td><td>12%</td><td>~75%</td><td>~60%</td><td>150–250</td><td>Own bit-exact decoders for H.264, HEVC, VP9, AV1, ProRes, DNx, APV, MPEG-2, AAC, AC-3, Opus. But H.264 only 8-bit 4:2:0 and HEVC no 4:2:2 in software (most 10-bit cameras, #626); no camera RAW (R3D, ARRIRAW, BRAW, Sony RAW, Canon RAW, ProRes RAW, #345, #383); no E-AC-3 (#647), AVI (#598), WMV, DV, XAVC / P2 metadata; Sony start timecode (#460); WebM black (#432)</td><td><a href="codec-parity.md">codec-parity.md</a>, <a href="file-format-parity.md">file-format-parity.md</a></td></tr>
+<tr><td>Audio</td><td>10%</td><td>~88%</td><td>~65%</td><td>50–90</td><td>Mixer graph, automation, all 53 effects, Essential Sound, 5.1, voice-over, Remix, multi-stream container audio (#361). Device and playback reports: crackle / cut-outs (#336, #410, #602, #605, #617); Enhance Speech is DSP, not a model; ALSA fallback fixed (#254)</td><td></td></tr>
+<tr><td>Panels and UI fidelity</td><td>10%</td><td>~88%</td><td>~60%</td><td>120–200</td><td>All main panels. Missing: on-screen transform handles in the Program monitor (#639), Effect Controls keyframe zoom / divider / row lines (#640–#645), docking rearrangement (#493), multi-monitor windows (#466), filmstrip thumbnails (#614), marquee in Project panel (#578)</td><td><a href="ui-parity.md">ui-parity.md</a></td></tr>
+<tr><td>Colour</td><td>8%</td><td>~90%</td><td>~70%</td><td>40–70</td><td>Lumetri complete incl. scopes, LUTs, colour management, HDR export. Lumetri on the GPU covers basic, creative and vignette only; HDR-aware Lumetri maths, macOS EDR display, D-Log M; a Lumetri report (#628)</td><td></td></tr>
+<tr><td>Graphics, titles, captions</td><td>8%</td><td>~85%</td><td>~65%</td><td>50–90</td><td>Text engine with shaping and bidi, shapes, gradients (#514), our <code>.fcgt</code> templates (<code>.mogrt</code> refused by design), rolls / crawls, all caption formats. Arabic titles reported broken (#395); no 608/708 embedding in the video stream; speech-to-text off in release builds</td><td></td></tr>
+<tr><td>Export and delivery</td><td>8%</td><td>~80%</td><td>~65%</td><td>60–110</td><td>H.264 (own encoder), HEVC through hardware only, ProRes, DNxHR, APV, MXF OP1a / OP-Atom, image sequences, GIF, WAV / AIFF, presets, queue, GPU export rendering (#421). Missing: AV1, MPEG-2 / DVD / Blu-ray, DCP, JPEG 2000 / XS MXF, AS-10 / AS-11, XDCAM HD, EXR / DPX / Targa sequences, MP3, AAC-only audio, ProRes 4444 in the UI (#342), interlaced, smart render; bitrate target missed (#371)</td><td><a href="file-format-parity.md">file-format-parity.md</a></td></tr>
+<tr><td>Project files and interchange</td><td>8%</td><td>~70%</td><td>~45%</td><td>90–160</td><td><code>.fcproj</code> with migrations, auto-save, recovery; FCP7 XML, FCPXML, AAF, OMF, EDL, OTIO, ALE. <strong>Premiere's own <code>.prproj</code> cannot be opened</strong> (the main beta blocker); AAF / OMF never validated in Media Composer / Pro Tools; XML import of a Premiere sequence took 97 s (#461)</td><td><a href="file-format-parity.md">file-format-parity.md</a></td></tr>
+<tr><td>Preferences and project management</td><td>4%</td><td>~80%</td><td>~65%</td><td>20–40</td><td>16 Settings categories, most wired; Project Manager, proxies, Link Media; Media Manager limits (#411); images as proxies (#451)</td><td></td></tr>
+<tr><td><strong>Features, weighted</strong></td><td>100%</td><td><strong>~86%</strong></td><td><strong>~64%</strong></td><td><strong>740–1,290</strong></td><td></td><td></td></tr>
+</tbody></table>
+<h2>By dimension</h2>
+<table><thead><tr><th>Dimension</th><th>Ready</th><th>Hours</th><th>Doc</th></tr></thead><tbody>
+<tr><td>Features (editing, effects, colour, audio, graphics, export settings, preferences)</td><td>~66%</td><td>350–620</td><td>this file</td></tr>
+<tr><td>UI / UX fidelity</td><td>~60%</td><td>120–200</td><td><a href="ui-parity.md">ui-parity.md</a></td></tr>
+<tr><td>File formats (containers, project, interchange, captions, stills)</td><td>~60%</td><td>140–240</td><td><a href="file-format-parity.md">file-format-parity.md</a></td></tr>
+<tr><td>Codecs (decode and encode, fidelity, camera media)</td><td>~60%</td><td>150–250</td><td><a href="codec-parity.md">codec-parity.md</a></td></tr>
+<tr><td>Hardware acceleration (decode, encode, GPU effects, I/O devices)</td><td>~45%</td><td>120–200</td><td><a href="hardware-parity.md">hardware-parity.md</a></td></tr>
+<tr><td>Localization (12 key languages)</td><td>~35% of Premiere's set; 4 of 12 key languages near-complete</td><td>150–230</td><td><a href="localization-parity.md">localization-parity.md</a></td></tr>
+<tr><td>Performance (beyond hardware)</td><td>~55%</td><td>60–120</td><td><a href="performance.md">performance.md</a></td></tr>
+<tr><td>Stability</td><td>~45%</td><td>60–120</td><td><a href="gaps.md#g4-crashes-at-start-up-and-no-test-ci-on-pull-requests">gaps.md</a></td></tr>
+<tr><td>Platforms</td><td>~60%</td><td>50–90</td><td><a href="gaps.md#g9-windows-and-linux-at-run-time">gaps.md</a></td></tr>
+<tr><td>Plugins and ecosystem</td><td>~5%</td><td>200–400</td><td><a href="gaps.md#g11-no-plugin-hosting">gaps.md</a></td></tr>
+<tr><td>AI features</td><td>~25%</td><td>150–300</td><td><a href="gaps.md#g12-ai-features">gaps.md</a></td></tr>
+<tr><td><strong>Total</strong></td><td><strong>~56%</strong></td><td><strong>~1,550–2,750</strong></td><td></td></tr>
+</tbody></table>
+<p>Dimension hours are disjoint (the feature row excludes UI, formats and codecs), so they add up.
+Evidence for the cross-cutting rows:</p>
+<ul>
+<li><strong>Hardware ~45%.</strong> Hardware decode exists on all three desktop OSs (VideoToolbox; Media
+Foundation / D3D11 incl. VP9 and AV1; VA-API and NVDEC for H.264 / HEVC on Linux). Hardware
+encode: VideoToolbox H.264 / HEVC 8-bit; NVENC H.264 (Windows, Linux) and HEVC incl. Main 10 HDR
+(Windows). Missing against Premiere: Intel Quick Sync and AMD encoders, 10-bit HEVC on macOS,
+ProRes hardware, zero-copy upload, ~48 of Premiere's accelerated effects, external video I/O,
+control surfaces. Detail: <a href="hardware-parity.md">hardware-parity.md</a>.</li>
+<li><strong>Performance ~55%.</strong> 4K H.264 / HEVC play with no dropped frames with hardware decoding (M4
+Pro); GPU export is 2.4–3.2× faster on effects-heavy timelines; AV1 software decode is still
+slow and 8K is not real time. Users on 0.5.0 report constant lag and ~100% CPU (#523, #525) and
+a CPU fallback adapter rendering everything in software (#632).</li>
+<li><strong>Stability ~45%.</strong> Never-crash rules enforced by lints; hostile-input fuzzing. But open
+launch crashes on macOS 12 (missing VideoToolbox symbol, #468 / #661, #655), Intel UHD graphics
+(#512), Windows 11 (#380, #582), a generic "keeps crashing" (#687), and <strong>no workflow runs the
+test suite on pull requests</strong> (<code>.github/workflows</code> has release, packaging lint, FreeBSD and
+Windows ARM64 builds only); <code>cargo xtask ci</code> runs locally only.</li>
+<li><strong>Platforms ~60%.</strong> Releases for macOS, Windows (x64, ARM64), Linux (AppImage, Flatpak, deb,
+tar) and FreeBSD; Linux is something Premiere doesn't run on at all. Runtime testing is still
+mostly macOS; Windows and Linux reports dominate the issue list. The web build runs but its shell
+is incomplete. No mobile.</li>
+<li><strong>Plugins ~5%.</strong> No VST3 / Audio Units, no OpenFX, no Premiere / After Effects plug-in API, no
+UXP panels (#325). Needs an owner decision (FFI). MCP, CLI and the control channel are ahead of
+Premiere's scripting.</li>
+<li><strong>AI ~25%.</strong> Speech to text exists (local Whisper) but is off in release builds; text-to-speech
+narration with Kokoro-82M landed 10-10 (#278, beyond Premiere); scene edit detection; Enhance
+Speech and Auto Reframe are DSP / heuristics. Missing: Object Mask (#406, #694), Generative
+Extend, media-intelligence search, caption translation, auto colour.</li>
+</ul>
+<h2>Three readiness numbers</h2>
+<table><thead><tr><th>Audience</th><th>Ready %</th><th>Opus 5.5 agent wall-clock hours to ~95%</th><th>Work that dominates</th></tr></thead><tbody>
+<tr><td>Full target (ready for real work)</td><td>~56%</td><td>~1,450–2,600 (~70% parallelizes)</td><td>Plugin hosting, AI models, localization incl. RTL / Devanagari, camera RAW and delivery codecs, <code>.prproj</code>, hardware acceleration, UI fidelity</td></tr>
+<tr><td>Mainstream practitioner</td><td>~55%</td><td>~500–850 (~65% parallelizes)</td><td><code>.prproj</code> import (60–120), UI fidelity (120–200), stability and PR CI (40–80), 10-bit / 4:2:2 camera decode (30–50), playback / hardware (60–100), import and export gaps (60–100)</td></tr>
+<tr><td>Essentials user</td><td>~60%</td><td>~180–350 (~60% parallelizes)</td><td>Launch crashes on Windows / Intel / older macOS (40–80), discoverability and timeline friction (60–110), playback lag (30–60), common import gaps (20–40), audio devices (15–30)</td></tr>
+</tbody></table>
+<p>Hours per audience are calibrated like the rest (one hardware backend ~3–5 h, one encoder ~4–8 h, a
+whole-interface language ~4–8 h, ~4–5 h per breadth point, depth work ~1.5–2× that). The
+audiences nest, so essentials ≤ mainstream ≤ full: the essentials work is a subset of the
+mainstream list, which is a subset of the full list. Needs a human: the plugin decision and AI
+models (full only), native-speaker review (full only), Avid / Pro Tools validation (mainstream
+and full), Windows / Intel test machines (all three).</p>
+<p>All three use the depth ("Ready") estimates of the <a href="#by-feature-area">feature areas</a>; they differ in
+which areas count and how they are discounted. The stage follows the first one and the
+<a href="roadmap.md#alpha-gate">core-workflow gate</a>.</p>
+<h3>Ready for real work (full target)</h3>
+<p>Written formula: 0.70 × (feature areas, weighted as in <a href="#weights">Weights</a>) + the cross-cutting
+rows, each weight × its percent.</p>
+<ul>
+<li>Feature areas: 0.20×70 + 0.12×60 + 0.12×60 + 0.10×65 + 0.10×60 + 0.08×70 + 0.08×65 + 0.08×65
+<ul>
+<li>0.08×45 + 0.04×65 = <strong>63.1%</strong>, × 0.70 = 44.2 points.</li>
+</ul>
+</li>
+<li>Cross-cutting: hardware and performance 10% × 45, stability 8% × 45, platforms 5% × 60,
+plugins 5% × 5, AI 2% × 25 = 4.5 + 3.6 + 3.0 + 0.25 + 0.5 = <strong>11.9 points</strong>.</li>
+<li>Total <strong>56.0% ≈ ~56%</strong> (range 51–61%). Earlier in this pass the
+headline said ~55% (range 50–60%): the same inputs, rounded down by judgement instead of
+computed. Nothing in the evidence changed; the number moved only because the arithmetic is now
+written out. The stage is unaffected (still alpha; beta needs ~75% and <code>.prproj</code>).</li>
+</ul>
+<h3>Mainstream practitioner</h3>
+<p>A typical professional editor's week: cut, trim, colour, mix, title, caption and deliver, on
+their own machine, exchanging projects with Premiere users. Excluded: plugins, generative and cloud
+AI, Team Projects / Productions, control surfaces and external I/O, other interface languages.
+Depth here is judged on what that editor actually uses inside each area, so it is higher than the
+full-area depth (e.g. the ~20 common effects rather than all 93 and their approximations).</p>
+<table><thead><tr><th>Area</th><th>Weight</th><th>Depth</th><th>Why</th></tr></thead><tbody>
+<tr><td>Editing and trimming</td><td>28%</td><td>80%</td><td>Insert / overwrite, ripple / roll / slip / slide, razor, J/K/L, markers, multicam all work; gap deletion (#648, #668) and deselect (#683) are friction</td></tr>
+<tr><td>Importing everyday footage</td><td>14%</td><td>65%</td><td>Phone and 8-bit camera H.264 / HEVC, ProRes, DNx, MXF open; 10-bit / 4:2:2 H.264 (Sony XAVC S-I, Canon) does not (#626); E-AC-3, AVI missing</td></tr>
+<tr><td>Common effects and transitions</td><td>9%</td><td>75%</td><td>Lumetri, Transform, Crop, blurs, Cross Dissolve, keys exist; Warp Stabilizer is 2-D, Object Mask missing</td></tr>
+<tr><td>Colour (Lumetri, scopes, LUTs)</td><td>9%</td><td>80%</td><td>Complete, parity-tested CPU / GPU; curves / wheels on CPU</td></tr>
+<tr><td>Audio (levels, Essential Sound, loudness, ducking)</td><td>11%</td><td>75%</td><td>Complete; audio-device reports off macOS</td></tr>
+<tr><td>Titles and captions</td><td>7%</td><td>75%</td><td>Text, shapes, templates, SRT / SCC / VTT; <code>.mogrt</code> not read by design</td></tr>
+<tr><td>Export with presets</td><td>9%</td><td>75%</td><td>H.264, HEVC (hardware), ProRes, DNxHR, presets, queue; bitrate miss (#371)</td></tr>
+<tr><td>Save, reopen, auto-save, relink, proxies</td><td>4%</td><td>80%</td><td>Atomic saves, migrations, recovery, Link Media</td></tr>
+<tr><td>Playback speed on their machine</td><td>9%</td><td>65%</td><td>4K H.264 / HEVC real time with hardware decode on macOS; lag / CPU reports (#523, #525)</td></tr>
+<tr><td><strong>Weighted depth</strong></td><td>100%</td><td><strong>74.8%</strong></td><td></td></tr>
+</tbody></table>
+<p>Discounts for what still stops real work:</p>
+<ul>
+<li><strong>Interaction fidelity ×0.90:</strong> about 40 open UI issues; no transform handles in the Program
+monitor (#639); Effect Controls keyframe zoom / divider (#640–#645); docking (#493).</li>
+<li><strong>Stability on real machines ×0.92:</strong> current macOS on Apple silicon is solid, but launch
+crashes on macOS 12, Intel UHD and Windows 11 (#468, #512, #380, #582, #687), and no CI runs the
+tests on pull requests.</li>
+<li><strong>File exchange with Premiere users ×0.88:</strong> <code>.prproj</code> does not open (colleagues send
+projects, not XML); AAF / OMF never validated in Avid / Pro Tools; FCP7 XML / OTIO do work.</li>
+</ul>
+<p>74.8 × 0.90 × 0.92 × 0.88 = <strong>54.5% ≈ ~55%.</strong> It is not higher than the full number, unlike most
+Craft apps: the parts the mainstream number leaves out (plugins, AI, localization) weigh only
+~12% in the full number, while the three discounts hit exactly what a working editor meets every
+week. Raising it means fixing <a href="gaps.md#g2-premieres-prproj-cannot-be-opened">G2</a>,
+<a href="gaps.md#g3-10-bit-and-422-camera-media-needs-hardware">G3</a>,
+<a href="gaps.md#g4-crashes-at-start-up-and-no-test-ci-on-pull-requests">G4</a> and
+<a href="gaps.md#g8-ui-fidelity-monitor-handles-effect-controls-docking">G8</a>.</p>
+<h3>Essentials user</h3>
+<p>Someone who imports phone or camera clips, puts them on a timeline, trims, adds a title, music and
+a dissolve, and exports an MP4 with the default preset. Excluded: everything above that the
+mainstream number excludes, plus advanced options, multicam, colour grading beyond presets,
+interchange and pro formats.</p>
+<table><thead><tr><th>Feature</th><th>Weight</th><th>Depth</th><th>Why</th></tr></thead><tbody>
+<tr><td>New project, import clips</td><td>15%</td><td>80%</td><td>Drag-and-drop and Import work for phone MP4 / MOV (H.264, HEVC); MKV multi-audio (#601), AVI (#598) fail</td></tr>
+<tr><td>Put clips on the timeline, arrange</td><td>15%</td><td>85%</td><td>Drop to timeline (#517), snapping, tracks; new tracks by dropping missing (#483)</td></tr>
+<tr><td>Trim, split, delete</td><td>15%</td><td>80%</td><td>Razor, trim, ripple delete; Backspace on gaps (#648) and deselect (#683) confuse</td></tr>
+<tr><td>Undo / redo</td><td>5%</td><td>95%</td><td>Snapshot undo for every command</td></tr>
+<tr><td>Titles</td><td>10%</td><td>75%</td><td>Type tool, templates; Arabic text broken (#395)</td></tr>
+<tr><td>Transitions (cross dissolve)</td><td>5%</td><td>85%</td><td>Drag on, resize (#503)</td></tr>
+<tr><td>Music and volume</td><td>10%</td><td>75%</td><td>Clip volume, fades, meters; device issues off macOS</td></tr>
+<tr><td>Playback</td><td>10%</td><td>70%</td><td>Smooth on current Macs; lag / CPU reports on 0.5.0 (#523, #525)</td></tr>
+<tr><td>Export MP4 with the default preset</td><td>10%</td><td>80%</td><td>Own H.264 + AAC, Quick Export</td></tr>
+<tr><td>Save and reopen</td><td>5%</td><td>85%</td><td><code>.fcproj</code>, auto-save, recovery prompt</td></tr>
+<tr><td><strong>Weighted depth</strong></td><td>100%</td><td><strong>80.0%</strong></td><td></td></tr>
+</tbody></table>
+<p>Discounts a beginner actually hits:</p>
+<ul>
+<li><strong>Launch and stability ×0.88:</strong> the beginner's machine is often a Windows laptop with Intel
+graphics or an older Mac; open launch crashes there (#380, #413, #477, #512, #582, #655, #661,
+#687).</li>
+<li><strong>Discoverability and UI clarity ×0.90:</strong> a dense Premiere-style interface with no guided start;
+reports about deselecting, deleting gaps and transitions controls (#683, #648, #577).</li>
+<li><strong>Opening files people send them ×0.95:</strong> phone and web video mostly opens; AVI, E-AC-3 audio
+(#647), FLAC-in-MP4 (#603) and some WebM (#432) do not.</li>
+</ul>
+<p>80.0 × 0.88 × 0.90 × 0.95 = <strong>60.2% ≈ ~60%.</strong></p>
+<h3>User evidence</h3>
+<p>Counted 2026-10-10 from all 323 GitHub issues and their 270 comments, excluding the four
+repository collaborators (script in a private scratch folder; regex for praise and for "switched
+from" phrases, then read by hand):</p>
+<ul>
+<li><strong>Praise:</strong> 31 distinct non-maintainer people across 37 issues used praise words. About a dozen
+are explicit praise, e.g. "Great job making this go!" (#313), "I personally love everything done
+on it" (#227), "impressive otherwise" (#208), "Great project guys" (#451). Several of them pair
+the praise with a bug ("great project although it obviously has a lot of bugs", #455).</li>
+<li><strong>Switched from Premiere:</strong> <strong>0</strong> reports of having switched. Two people describe testing it as
+an alternative or hoping to leave Adobe (#411 "testing FilmCraft as an alternative workflow to
+Adobe Premiere", #325 "finally moving away from adobe would be a god send").</li>
+<li><strong>Open issues:</strong> 202 open from non-maintainers; by title, ~93 are bug reports, of which <strong>~64
+are core-path</strong> (launch, import, playback, timeline, audio, export) and ~29 niche; ~109 are
+feature requests or questions (Object Mask, plugin compatibility, languages, Android,
+collaboration, node-based colour).</li>
+</ul>
+<p>This supports the discounts: people like the direction and use it, but core-path bugs outnumber
+niche requests among the bug reports about two to one, and nobody reports having switched yet.</p>
+<h2>Stage</h2>
+<p><strong>Alpha.</strong> It passes the core-workflow gate (<a href="roadmap.md#alpha-gate">roadmap.md</a>: all six of Premiere's core daily workflows work end to end on macOS and the project saves and reopens). Core workflows run end to end (import, edit, trim, colour, mix, caption, deliver,
+round-trip through XML / AAF), but ready-for-real-work is ~56%, below the ~75% beta bar, and the
+standard's beta condition "opens and saves the target's main format reliably" fails outright:
+FilmCraft cannot open a <code>.prproj</code> (it reads Premiere's FCP7 XML / AAF / OTIO exports instead).
+Distance to beta: ~19 points of ready-for-real-work plus <code>.prproj</code> import, ~400–700 agent-hours:</p>
+<table><thead><tr><th>To reach beta</th><th>Hours</th></tr></thead><tbody>
+<tr><td><code>.prproj</code> import of mainstream projects (sequences, clips, effects' common parameters, markers)</td><td>60–120</td></tr>
+<tr><td>Stability: launch crashes, PR CI running <code>cargo xtask ci</code> on all three OSs, crash triage</td><td>40–80</td></tr>
+<tr><td>H.264 High 10 / 4:2:2 and HEVC 4:2:2 software decoding (camera media)</td><td>30–50</td></tr>
+<tr><td>Real-world media corpus and scripted workflow acceptance tests</td><td>40–70</td></tr>
+<tr><td>UI fidelity top issues (Program monitor handles, Effect Controls, docking, deselect)</td><td>60–100</td></tr>
+<tr><td>Hardware: zero-copy, VideoToolbox Main 10, Quick Sync / AMF encode, more GPU effects</td><td>60–100</td></tr>
+<tr><td>Windows / Linux runtime fixes, audio device issues</td><td>30–60</td></tr>
+<tr><td>Container gaps users hit: E-AC-3, AVI, multi-track audio, still formats</td><td>30–50</td></tr>
+<tr><td>Interchange validation (AAF / OMF in Avid and Pro Tools, XML speed)</td><td>20–40</td></tr>
+<tr><td>Performance: lag / CPU reports, AV1 speed</td><td>30–60</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>~400–730</strong></td></tr>
+</tbody></table>
+<h2>Calibration</h2>
+<p>Hours are Opus 5.5 agent wall-clock hours, calibrated against this repo's history (<code>git log</code>,
+<code>gh pr view</code> timestamps):</p>
+<ul>
+<li>
+<p><strong>Whole history.</strong> First commit 2026-09-30; by 2026-10-10, 1,098 commits and 268 merged PRs
+(243 since 10-05, most from community contributors' agents) took breadth from 0 to ~86%. The
+2026-10-01/02 blocks measured <strong>~4–5 agent-hours per checklist point</strong> with five parallel
+agents (old ROADMAP).</p>
+</li>
+<li>
+<p><strong>A hardware decode backend</strong> (one OS API, H.264 + HEVC, with parity tests): VideoToolbox #33
+(first commit 07:25, merged 11:26 the same day), VA-API #358 (+3,942 lines), NVDEC #549 (06:17 →
+11:04): <strong>~3–5 h each</strong>.</p>
+</li>
+<li>
+<p><strong>A hardware encoder per codec and OS:</strong> NVENC HEVC #328 (+1,635 lines, 19:28 → 13:46 next day
+including review), Main 10 HDR #360 (02:38 → 14:05): <strong>~4–8 h each</strong>.</p>
+</li>
+<li>
+<p><strong>GPU export rendering plus four GPU effects</strong> (#421, 15 commits over ~23 h): <strong>~8–12 h</strong>.</p>
+</li>
+<li>
+<p><strong>A whole-interface language</strong> (~3,500 strings, tests): Japanese #449 in one commit:
+<strong>~4–8 h</strong>, plus native review (human). A menus-only language (Ukrainian #407, ~350 strings):
+~1 h.</p>
+</li>
+<li>
+<p><strong>A clean-room decoder from spec, bit-exact</strong>: AV1 (09-30 → 10-01 night, several agents): ~15–30 h.</p>
+</li>
+<li>
+<p><strong>Depth work costs more per point than breadth.</strong> Each remaining point of ready-for-real-work
+is a bug class, a format edge or a fidelity comparison rather than a missing menu item; the
+estimates apply ~1.5–2× the breadth rate.</p>
+</li>
+<li>
+<p><strong>Wall-clock limits</strong> (from the 2026-10-02 blocks): more than ~5 local agents slows everyone
+(each worktree build is 6–7 GB; a full <code>cargo xtask ci</code> takes 20–60 min under load; the disk
+filled twice), and one integrator merging and re-running CI is a bottleneck. With 4–5 parallel
+agents plus an integrator, wall-clock is ~¼–⅓ of the agent-hours; community PRs now add
+capacity beyond that.</p>
+</li>
+</ul>
+<p>What parallelizes: almost everything by area (~70%). Serial: <code>.prproj</code> import before beta,
+fidelity harness before fidelity numbers. <strong>Needs a human:</strong> the plugin-hosting decision (FFI,
+licences), native-speaker review of every language, licensed or trained models for AI features,
+hardware we don't own (Intel Quick Sync, AMD encoders, Blackwell 4:2:2, DeckLink / AJA I/O,
+control surfaces), and validation in Avid Media Composer / Pro Tools.</p>
+<h2>Revision history</h2>
+<table><thead><tr><th>Date</th><th>Change</th><th>Summary</th></tr></thead><tbody>
+<tr><td>2026-10-10</td><td>minor</td><td>Readiness table: hours to ~95% for each audience (full ~1,450–2,600, mainstream ~500–850, essentials ~180–350); full number confirmed as an additive weighted sum (no change)</td></tr>
+<tr><td>2026-10-10</td><td>minor</td><td>Added the three readiness numbers: full ready-for-real-work formula written out (~55% -&gt; ~56%, same inputs, now computed rather than rounded down), mainstream practitioner ~55% and essentials user ~60% with written weights and discounts, and counted user evidence (31 people praising, 0 switch reports, ~64 core-path vs ~29 niche open bugs)</td></tr>
+<tr><td>2026-10-10</td><td>minor</td><td>Stage checked against the new core-workflow gate (docs/roadmap.md#alpha-gate): passes, stays alpha</td></tr>
+<tr><td>2026-10-10</td><td>major</td><td>Created from ROADMAP.md's scorecard and estimate; full re-measure against Premiere Pro 26.5.2 (menu label diff, installed-bundle listings, 188 open issues); breadth ~87 → ~86% (file formats counted), ready ~50–60% → ~55%, hours re-estimated to include plugins, AI, localization and <code>.prproj</code>; stage alpha</td></tr>
+<tr><td>2026-10-05</td><td>major</td><td>Honest assessment added in ROADMAP.md (checklist ~87% vs ready ~50–60%)</td></tr>
+<tr><td>2026-10-02</td><td>minor</td><td>Scorecard ~62% → ~72% → ~87% as the menu long tail, effects and codecs landed</td></tr>
+</tbody></table>
+<hr />
+<details open>
+<summary><b>📚 filmcraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「filmcraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 filmcraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://hjhm.wtpuscm.cn/yingyong/partner-509022.html">基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://pqik.wtpuscm.cn/anli/client-849408.html">现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://dvzk.wtpuscm.cn/wendang/services-435069.html">面向大规模网络的 filmcraft 工业级架构基准</a></li>
+<li><a href="https://nyfp.wtpuscm.cn/jishu/subscribe-136400.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://gchp.wtpuscm.cn/anli/creative-685462.html">【filmcraft】pure 核心系统架构与设计规约 (Draft-05)</a></li>
+<li><a href="https://iuec.wtpuscm.cn/jishu/alert-839892.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)</a></li>
+<li><a href="https://pszd.wtpuscm.cn/yunying/browser-952542.html">基于 filmcraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://dovq.wtpuscm.cn/peixun/share-965.html">filmcraft 内部组件解耦与事件状态机规范 (Node-81)</a></li>
+<li><a href="https://qpze.wtpuscm.cn/gongsi/rating-900412.html">【官方规范】filmcraft open-source 核心运行拓扑标准</a></li>
+<li><a href="https://shhq.wtpuscm.cn/kaifa/unsubscribe-226961.html">Trim Monitor 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://sehn.wtpuscm.cn/shangye/brand-053877.html">基于 filmcraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://gxna.wtpuscm.cn/pingtai/music-496499.html">现代 分布式架构 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://bkbd.wtpuscm.cn/guanjianci/update-443168.html">【官方规范】filmcraft filmcraft 核心运行拓扑标准</a></li>
+<li><a href="https://trks.wtpuscm.cn/chuangxin/business-612060.html">Effects and motion 核心系统架构与设计规约 (RFC-633)</a></li>
+<li><a href="https://khxc.wtpuscm.cn/pingtai/report-475672.html">Formats and codecs 核心系统架构与设计规约 (Node-44)</a></li>
+<li><a href="https://esog.wtpuscm.cn/shuju/api-901401.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)</a></li>
+<li><a href="https://teuy.wtpuscm.cn/ziyuan/responsive-896952.html">Interchange 核心系统架构与设计规约 (RFC-715)</a></li>
+<li><a href="https://xrpx.wtpuscm.cn/xuexi/workshop-510299.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)</a></li>
+<li><a href="https://zwhq.wtpuscm.cn/hezuo/expensive-881226.html">Built for agents 核心系统架构与设计规约 (Node-34)</a></li>
+<li><a href="https://xdgh.wtpuscm.cn/yingyong/excellence-799728.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)</a></li>
+<li><a href="https://dzwe.wtpuscm.cn/paiming/premium-750425.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)</a></li>
+<li><a href="https://yxbf.wtpuscm.cn/sheji/course-283464.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)</a></li>
+<li><a href="https://flhl.wtpuscm.cn/yingyong/media-536296.html">Exact time. 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://kzfd.tcti.cn/gongju/finance-55603328.html">filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://nmbh.tcti.cn/fenxi/recipe-20415082.html">filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://ijzf.tcti.cn/youhua/update-68347298.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)</a></li>
+<li><a href="https://epie.tcti.cn/hezuo/luxury-62343769.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)</a></li>
+<li><a href="https://yris.tcti.cn/xitong/discovery-45788983.html">filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)</a></li>
+<li><a href="https://lewh.tcti.cn/zhizhu/social-06159336.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)</a></li>
+<li><a href="https://xmzl.tcti.cn/fuwu/profile-24636984.html">基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://ymmp.tcti.cn/qiye/trading-63048299.html">【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://qjsp.tcti.cn/xinwen/quality-12571221.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)</a></li>
+<li><a href="https://flgm.tcti.cn/yingyong/roi-26807281.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)</a></li>
+<li><a href="https://xftp.tcti.cn/xuexi/customization-64408724.html">【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://kfpc.tcti.cn/ziyuan/theme-50153578.html">生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)</a></li>
+<li><a href="https://pwkt.tcti.cn/baogao/register-89232495.html">Effects and motion 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://onis.tcti.cn/keji/music-88459858.html">filmcraft 内部组件解耦与事件状态机规范 (Node-29)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://nvnt.tcti.cn/sheji/logo-32369251.html">filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)</a></li>
+<li><a href="https://pubk.tcti.cn/yunsuan/security-09808368.html">基于 filmcraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://adch.tcti.cn/yanjiu/learning-41262210.html">【生产手册】filmcraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://xfet.wtpuscm.cn/jianzhan/fashion-659531.html">filmcraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://www.mw-wm.com/jishu/audience-24899872.html">filmcraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.yx-sf.com/tech/82810">【集成指南】分布式架构 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://www.ai-hao123.com/kuangjia/social-99992815.html">filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)</a></li>
+<li><a href="https://gowd.tcti.cn/yingyong/landing-28866854.html">filmcraft 异步中间件流水线与 Premiere 接入规范</a></li>
+<li><a href="https://ztik.tcti.cn/shuju/identity-06513089.html">filmcraft: Premiere 分布式架构 (Node-37)</a></li>
+<li><a href="https://nwec.wtpuscm.cn/anfang/upload-669231.html">filmcraft 异步中间件流水线与 Every trim. 接入规范</a></li>
+<li><a href="https://oois.wtpuscm.cn/tuiguang/resource-989513.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)</a></li>
+<li><a href="https://wnsj.wtpuscm.cn/zhinan/identity-609817.html">filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)</a></li>
+<li><a href="https://azmt.wtpuscm.cn/keji/fitness-912558.html">filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)</a></li>
+<li><a href="https://iyie.wtpuscm.cn/suanfa/education-802921.html">filmcraft 插件生态规范与 Edit 扩展手册 (Verified)</a></li>
+<li><a href="https://noey.wtpuscm.cn/baogao/rating-873391.html">filmcraft 异步中间件流水线与 Get started 接入规范</a></li>
+<li><a href="https://crpy.wtpuscm.cn/anfang/status-816375.html">filmcraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://uaeu.wtpuscm.cn/ziyuan/milestone-201.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )</a></li>
+<li><a href="https://xjcp.wtpuscm.cn/sheji/global-285487.html">filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://pqum.wtpuscm.cn/kaifa/planning-418970.html">filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://qqoi.wtpuscm.cn/zixun/forecast-430122.html">filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)</a></li>
+<li><a href="https://tfoe.wtpuscm.cn/suanfa/vacation-083049.html">filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范</a></li>
+<li><a href="https://esha.wtpuscm.cn/chanpin/kpi-544200.html">【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://uzkz.wtpuscm.cn/pingce/responsive-904347.html">filmcraft 异步中间件流水线与 Effects and motion 接入规范</a></li>
+<li><a href="https://llcm.wtpuscm.cn/qiye/behavior-287896.html">filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)</a></li>
+<li><a href="https://fclq.wtpuscm.cn/jiaocheng/partner-208367.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://podl.wtpuscm.cn/liuliang/budget-472282.html">filmcraft 异步中间件流水线与 Pro 接入规范</a></li>
+<li><a href="https://vgsw.wtpuscm.cn/shuju/section-315414.html">filmcraft 异步中间件流水线与 可信存活健康度量 接入规范</a></li>
+<li><a href="https://ybhs.wtpuscm.cn/paiming/dashboard-952482.html">filmcraft 异步中间件流水线与 Audio 接入规范</a></li>
+<li><a href="https://lbrp.wtpuscm.cn/hezuo/local-908115.html">filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://borb.wtpuscm.cn/paiming/affordable-168106.html">filmcraft 异步中间件流水线与 Rust 接入规范</a></li>
+<li><a href="https://ltzy.wtpuscm.cn/paiming/target-135859.html">【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://ttjq.wtpuscm.cn/gongsi/prospect-978526.html">filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://xfto.tcti.cn/zixun/forecast-29632307.html">filmcraft: Audio 分布式架构 (Draft-02)</a></li>
+<li><a href="https://qaip.tcti.cn/ziyuan/webinar-70368785.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://ylfh.tcti.cn/wenzhang/link-39867514.html">filmcraft 异步中间件流水线与 Interchange 接入规范</a></li>
+<li><a href="https://yspy.tcti.cn/jiaocheng/business-20291270.html">filmcraft 插件生态规范与 built 扩展手册 (Core/built)</a></li>
+<li><a href="https://hwek.tcti.cn/chanpin/economy-08659028.html">filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)</a></li>
+</ul>
+<h4>3. ⚡ filmcraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://ysmq.tcti.cn/zhinan/link-56120909.html">全球权威拓扑节点：filmcraft 实时镜像与索引入口</a></li>
+<li><a href="https://jnvz.tcti.cn/kuangjia/prospect-27865674.html">冷热数据分层镜像：filmcraft Pro 权威归档源</a></li>
+<li><a href="https://woau.tcti.cn/pingce/software-64998494.html">filmcraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://grag.tcti.cn/hezuo/local-61391549.html">【镜像入口】filmcraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://uyeq.tcti.cn/jiaocheng/wellness-68543188.html">冷热数据分层镜像：filmcraft Audio 权威归档源</a></li>
+<li><a href="https://qoap.tcti.cn/shichang/system-17700542.html">filmcraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://qqyx.tcti.cn/shuju/case-09699085.html">filmcraft 官方高可用镜像注册节点 (RFC-877)</a></li>
+<li><a href="https://aked.tcti.cn/chanpin/device-29856408.html">filmcraft 官方高可用镜像注册节点 (Node-76)</a></li>
+<li><a href="https://dfae.tcti.cn/xinwen/plugin-47585331.html">filmcraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://btab.tcti.cn/sheji/extension-69424859.html">filmcraft 官方高可用镜像注册节点 (Core/Every )</a></li>
+<li><a href="https://cjrj.tcti.cn/qiye/training-97563722.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://gpjp.tcti.cn/guanjianci/form-94139482.html">冷热数据分层镜像：filmcraft reimplementation 权威归档源</a></li>
+<li><a href="https://rkcy.wtpuscm.cn/keji/upload-701622.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)</a></li>
+<li><a href="https://www.mw-wm.com/zhinan/recipe-51660727.html">filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)</a></li>
+<li><a href="https://www.yx-sf.com/news/32021">冷热数据分层镜像：filmcraft Color 权威归档源</a></li>
+<li><a href="https://www.ai-hao123.com/youhua/document-01793061.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://zqcp.tcti.cn/hezuo/collaborate-16585239.html">冷热数据分层镜像：filmcraft Exact time. 权威归档源</a></li>
+<li><a href="https://eugj.tcti.cn/shangye/meeting-71913936.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)</a></li>
+<li><a href="https://pqdg.wtpuscm.cn/yinqing/collaborate-729458.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)</a></li>
+<li><a href="https://aadk.wtpuscm.cn/hezuo/recipe-137872.html">冷热数据分层镜像：filmcraft Titles and captions 权威归档源</a></li>
+<li><a href="https://tlqf.wtpuscm.cn/qiye/solution-561280.html">冷热数据分层镜像：filmcraft Formats and codecs 权威归档源</a></li>
+<li><a href="https://tutg.wtpuscm.cn/wangluo/entertainment-024258.html">filmcraft 官方高可用镜像注册节点 (Draft-07)</a></li>
+<li><a href="https://yjns.wtpuscm.cn/liuliang/section-426721.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.2)</a></li>
+<li><a href="https://olev.wtpuscm.cn/suanfa/user-048774.html">filmcraft 官方高可用镜像注册节点 (Node-67)</a></li>
+<li><a href="https://ukhu.wtpuscm.cn/yunying/visitor-340377.html">filmcraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://qaur.wtpuscm.cn/gongju/article-582.html">冷热数据分层镜像：filmcraft Edit 权威归档源</a></li>
+<li><a href="https://ohig.wtpuscm.cn/yunying/app-362967.html">冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://jjcp.wtpuscm.cn/anfang/message-741950.html">冷热数据分层镜像：filmcraft Export 权威归档源</a></li>
+<li><a href="https://jduz.wtpuscm.cn/wenzhang/team-562143.html">冷热数据分层镜像：filmcraft clean-room 权威归档源</a></li>
+<li><a href="https://wyvs.wtpuscm.cn/youhua/software-819330.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)</a></li>
+<li><a href="https://wibs.wtpuscm.cn/wangluo/data-647584.html">冷热数据分层镜像：filmcraft built 权威归档源</a></li>
+<li><a href="https://gclo.wtpuscm.cn/sheji/services-629601.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
+<li><a href="https://ybwu.wtpuscm.cn/jishu/customer-834715.html">filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://qbfp.wtpuscm.cn/zixun/event-723381.html">冷热数据分层镜像：filmcraft dynamic trimming 权威归档源</a></li>
+<li><a href="https://wlas.wtpuscm.cn/zixun/visitor-822617.html">filmcraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://ukuc.wtpuscm.cn/yunying/calculator-844729.html">冷热数据分层镜像：filmcraft Interchange 权威归档源</a></li>
+<li><a href="https://pnpx.wtpuscm.cn/yunying/fashion-832197.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.8)</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://sggc.wtpuscm.cn/zhineng/metric-595004.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://iejx.wtpuscm.cn/wangluo/strategy-953779.html">【评测基准】filmcraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://fceh.wtpuscm.cn/suanfa/device-138889.html">filmcraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://mydj.wtpuscm.cn/huodong/workshop-146934.html">filmcraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://lfgq.tcti.cn/gongxiang/satisfaction-96266864.html">filmcraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://iyzc.tcti.cn/yanjiu/traffic-33073045.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://fpwo.tcti.cn/gongju/link-08605185.html">filmcraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://eqov.tcti.cn/xitong/personalization-57242100.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)</a></li>
+<li><a href="https://itez.tcti.cn/gongsi/login-07457373.html">filmcraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://orra.tcti.cn/hezuo/networking-42676884.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://pngw.tcti.cn/yunsuan/education-99186701.html">filmcraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://yhxg.tcti.cn/gongxiang/status-30790173.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://qzpy.tcti.cn/huodong/privacy-89011534.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)</a></li>
+<li><a href="https://rbkb.tcti.cn/keji/restore-70389754.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)</a></li>
+<li><a href="https://rmqx.tcti.cn/ziyuan/project-82432438.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)</a></li>
+<li><a href="https://cjiq.tcti.cn/xuexi/review-27719128.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)</a></li>
+<li><a href="https://uyvj.tcti.cn/chuangxin/admin-76290801.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://hnzi.tcti.cn/fenxi/recommendation-41616126.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)</a></li>
+<li><a href="https://ttjg.tcti.cn/yunsuan/products-52389653.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)</a></li>
+<li><a href="https://fnxd.tcti.cn/pingtai/folder-06061903.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)</a></li>
+<li><a href="https://wxnx.tcti.cn/peixun/team-61084048.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://hycp.wtpuscm.cn/gongsi/conversion-303782.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)</a></li>
+<li><a href="https://www.mw-wm.com/jishu/digital-29563858.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)</a></li>
+<li><a href="https://www.yx-sf.com/tech/37994">filmcraft: Premiere Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://www.ai-hao123.com/guanjianci/fitness-67709354.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)</a></li>
+<li><a href="https://ntel.tcti.cn/fuwu/achievement-86900234.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)</a></li>
+<li><a href="https://juxf.tcti.cn/ziyuan/music-70115681.html">filmcraft: clean-room 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://lrqz.wtpuscm.cn/jiaocheng/calculator-749731.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)</a></li>
+<li><a href="https://adnn.wtpuscm.cn/pingtai/course-843195.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)</a></li>
+<li><a href="https://quva.wtpuscm.cn/suanfa/interface-092522.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://lkhk.wtpuscm.cn/yunsuan/collaboration-618602.html">filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://ekds.wtpuscm.cn/jiaoliu/promotion-541512.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)</a></li>
+<li><a href="https://wmuf.wtpuscm.cn/suanfa/app-678201.html">filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://tsmo.wtpuscm.cn/peixun/media-482488.html">filmcraft: 高韧性系统架构设计 分布式架构 (Verified)</a></li>
+<li><a href="https://zkpd.wtpuscm.cn/gongju/customer-346.html">filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://pcwy.wtpuscm.cn/hezuo/login-595001.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)</a></li>
+<li><a href="https://gyql.wtpuscm.cn/kuangjia/luxury-036351.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)</a></li>
+<li><a href="https://okea.wtpuscm.cn/baogao/seminar-589112.html">filmcraft: Effects and motion Rust高性能网络 (Verified)</a></li>
+<li><a href="https://adpk.wtpuscm.cn/fenxi/campaign-940331.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>filmcraft-mirror-939</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

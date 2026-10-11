@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Releasing FilmCraft - filmcraft-mirror-939 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">filmcraft-mirror-939</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Releasing FilmCraft</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Releasing FilmCraft</h1>
+<p>Every push to the <code>release</code> branch runs <code>.github/workflows/release.yml</code>. The workflow builds
+installers for macOS, Windows, Linux (AppImage, deb, rpm, tarball, Flatpak) and FreeBSD, plus
+the web build, and creates or updates a <strong>draft</strong>
+GitHub Release named <code>FilmCraft v&lt;version&gt;</code>. Nobody sees a draft until a maintainer publishes it.</p>
+<p>User-facing names say <strong>FilmCraft</strong>. Files, binaries and ids stay lowercase
+(<code>filmcraft-&lt;version&gt;-&lt;platform&gt;-&lt;arch&gt;.&lt;ext&gt;</code>, <code>ai.storyteller.filmcraft</code>).</p>
+<h2>Cutting a release</h2>
+<ol>
+<li>
+<p><strong>Bump the version</strong> on <code>main</code>. It lives in exactly one place, <code>[workspace.package] version</code>
+in the root <code>Cargo.toml</code>; every crate inherits it and the packaging scripts read it from there:</p>
+<pre><code class="language-sh">cargo xtask version                 # prints the current version, e.g. 0.2.1
+cargo xtask version set 0.3.0       # or 0.3.0-rc.1; updates Cargo.toml and Cargo.lock
+</code></pre>
+<p>Commit the change (<code>Cargo.toml</code> + <code>Cargo.lock</code>) through the normal review flow, as a
+<code>Release: FilmCraft v0.3.0</code> commit whose message says what changed for users.</p>
+</li>
+<li>
+<p><strong>Merge <code>main</code> into <code>release</code></strong> (or fast-forward it) and push. The workflow starts by itself.</p>
+</li>
+<li>
+<p><strong>Wait for the draft.</strong> When every job is done (macOS notarization is the slow part), the
+Releases page has a draft <code>FilmCraft v0.3.0</code>, targeting the pushed commit, with every artifact
+and <code>SHA256SUMS.txt</code>. The notes are generated from the merged pull requests.</p>
+</li>
+<li>
+<p><strong>Check it.</strong> Download an installer or two and read the job summaries. A <code>::warning::</code> there
+means a signing secret was missing and that artifact is unsigned.</p>
+</li>
+<li>
+<p><strong>Publish</strong> the draft in the GitHub UI. Publishing creates the <code>v0.3.0</code> tag. A version with a
+pre-release suffix (<code>-rc.1</code>) is marked as a pre-release.</p>
+</li>
+</ol>
+<p>Pushing to <code>release</code> again before you publish rebuilds the same draft and replaces its assets.
+Once the draft is published, the workflow refuses to touch that version again: bump it first.</p>
+<p><strong>Test runs:</strong> <em>Actions › Release › Run workflow</em> runs the whole pipeline by hand. The optional
+<code>version</code> input (such as <code>0.3.0-rc.1</code>) overrides <code>Cargo.toml</code> for that run only; each build job
+applies it with <code>cargo xtask version set</code> before building. The signing jobs (macOS, Windows)
+and the draft-release job run in the <code>release</code> environment, which only the <code>release</code> branch can
+use, so pick that branch for a full run. Run from any other branch, it is a dry run: the jobs that
+sign nothing (Linux, Flatpak, FreeBSD, web) build and upload their artifacts to the run, the
+signing jobs are refused, and the draft-release job, which needs them, is skipped.</p>
+<h2>What gets built</h2>
+<table><thead><tr><th>Platform</th><th>Artifacts</th><th>Built on</th></tr></thead><tbody>
+<tr><td>macOS 11+ (universal: Apple silicon and Intel)</td><td><code>filmcraft-&lt;v&gt;-macos-universal.dmg</code>, <code>filmcraft-cli-&lt;v&gt;-macos-universal.zip</code></td><td><code>macos-15</code></td></tr>
+<tr><td>Windows x64</td><td><code>filmcraft-&lt;v&gt;-windows-x64.msi</code>, <code>filmcraft-&lt;v&gt;-windows-x64-portable.zip</code></td><td><code>windows-latest</code></td></tr>
+<tr><td>Windows x86 (32-bit)</td><td><code>filmcraft-&lt;v&gt;-windows-x86.msi</code>, <code>filmcraft-&lt;v&gt;-windows-x86-portable.zip</code></td><td><code>windows-latest</code></td></tr>
+<tr><td>Windows on ARM64</td><td><code>filmcraft-&lt;v&gt;-windows-arm64.msi</code>, <code>filmcraft-&lt;v&gt;-windows-arm64-portable.zip</code></td><td><code>windows-latest</code> (cross-compiled)</td></tr>
+<tr><td>Linux x86_64</td><td><code>filmcraft-&lt;v&gt;-linux-x86_64.{AppImage,deb,rpm,tar.gz}</code></td><td><code>ubuntu-22.04</code></td></tr>
+<tr><td>Linux aarch64</td><td><code>filmcraft-&lt;v&gt;-linux-aarch64.{AppImage,deb,rpm,tar.gz}</code></td><td><code>ubuntu-22.04-arm</code></td></tr>
+<tr><td>Linux riscv64</td><td><code>filmcraft-&lt;v&gt;-linux-riscv64.tar.gz</code></td><td><code>ubuntu-24.04</code>, cross-compiled (glibc 2.39+; CLI smoke-tested under QEMU)</td></tr>
+<tr><td>AppImage updates</td><td><code>filmcraft-&lt;v&gt;-linux-{x86_64,aarch64}.AppImage.zsync</code></td><td>with the AppImage</td></tr>
+<tr><td>Flatpak</td><td><code>filmcraft-&lt;v&gt;-linux-x86_64.flatpak</code>, <code>filmcraft-&lt;v&gt;-linux-aarch64.flatpak</code></td><td><code>ubuntu-24.04</code>, <code>ubuntu-24.04-arm</code> (repackaged Linux tarball)</td></tr>
+<tr><td>FreeBSD 14 x86_64</td><td><code>filmcraft-&lt;v&gt;-freebsd-x86_64.tar.gz</code></td><td>FreeBSD 14.3 VM on <code>ubuntu-latest</code></td></tr>
+<tr><td>Web</td><td><code>filmcraft-web-&lt;v&gt;.zip</code>, a static site (see <a href="../packaging/web/README.md"><code>packaging/web/README.md</code></a>)</td><td><code>ubuntu-latest</code></td></tr>
+</tbody></table>
+<p><code>filmcraft --version</code> and <code>filmcraft-cli --version</code> print the version from <code>Cargo.toml</code>.</p>
+<p><strong>Fonts.</strong> Every build job checks out <a href="https://jzti.tcti.cn/yanjiu/navigation-19432239.html">craft-fonts</a> at a
+pinned commit (the <code>ref:</code> of its craft-fonts checkout step, marked <code># bump deliberately</code>) and builds
+with <code>CRAFT_FONTS_DIR</code> and <code>CRAFT_FONTS_REQUIRED=1</code>, so releases embed its Japanese fonts and fail
+rather than ship without them (the web build embeds only the UI font, to stay small). The packages
+carry each embedded font's licence (<code>copy_font_licences</code> in <code>packaging/env.sh</code>). Bump the pins
+deliberately, in every job at once.</p>
+<h3>macOS</h3>
+<p><code>packaging/macos/package.sh</code> builds <code>aarch64-apple-darwin</code> and <code>x86_64-apple-darwin</code> with
+<code>MACOSX_DEPLOYMENT_TARGET=11.0</code>, joins them with <code>lipo</code> and assembles <code>FilmCraft.app</code>:</p>
+<ul>
+<li><code>Info.plist</code> is generated from <code>Info.plist.in</code> (bundle id <code>ai.storyteller.filmcraft</code>, the
+version and the build commit).</li>
+<li><strong>Signing</strong> uses the hardened runtime and a secure timestamp, with the entitlements in
+<code>entitlements.plist</code>. The Developer ID certificate is imported into a temporary keychain by
+<code>packaging/macos/import-cert.sh</code>.</li>
+<li><strong>Notarization:</strong> the app is sent with <code>xcrun notarytool submit</code>, then the ticket is stapled
+and checked with <code>stapler validate</code>. The app goes on a DMG (<code>hdiutil makehybrid</code>), which is
+signed and notarized too. The universal <code>filmcraft-cli</code> is signed the same way, zipped, and the zip is notarized.
+Its Finder window (background, icon size and positions) comes from
+<a href="../packaging/macos/dmg/README.md"><code>packaging/macos/dmg/</code></a>, and its volume is named <code>FilmCraft</code>
+without the version, which the window's background needs; the DMG file name keeps the version.</li>
+</ul>
+<p>Locally, without certificates, the script signs ad hoc and skips notarization, which is enough to
+check the bundle and the DMG on your own Mac (<code>packaging/macos/package.sh</code>).</p>
+<h3>Windows</h3>
+<p><code>packaging/windows/package.ps1 -Arch x64|x86|arm64</code> builds with <code>+crt-static</code>, so neither the MSI
+nor the portable zip needs the Visual C++ redistributable.</p>
+<ul>
+<li><code>filmcraft.wxs</code> (WiX) is a per-machine install into Program Files with a Start Menu shortcut and
+an App Paths entry (Win+R <code>filmcraft</code>). Same-version upgrades are allowed, so release candidates
+replace each other.</li>
+<li>The ARM64 build is cross-compiled on the x64 runner. <code>.github/workflows/windows-arm64.yml</code>
+installs that MSI on a Windows 11 ARM64 runner, runs <code>filmcraft-cli --version</code> natively and
+uninstalls.</li>
+<li><strong>Signing:</strong> <code>packaging/windows/sign.ps1</code> signs the executables and then the <code>.msi</code> with
+<code>signtool</code>, using whichever material is present: a <code>.pfx</code> certificate (<code>WINDOWS_CERTIFICATE</code>,
+base64, and <code>WINDOWS_CERTIFICATE_PASSWORD</code>) or Azure Trusted Signing (the <code>AZURE_*</code> secrets). With
+neither, it warns and leaves the files unsigned, so test builds still produce installers.</li>
+</ul>
+<h3>Linux</h3>
+<p><code>packaging/linux/package.sh</code> builds the release binaries and packages them as an AppImage, a
+<code>.deb</code> and an <code>.rpm</code> (with <a href="https://gusu.wtpuscm.cn/jiaocheng/section-238344.html">nfpm</a>, from <code>nfpm.yaml</code>) and a plain
+<code>.tar.gz</code> tree. The packages install both programs, the desktop entry, the AppStream metainfo, the
+icons and the licence files.</p>
+<p>The Linux tarball includes <code>install.sh</code>. Extract it, open a terminal in the extracted
+directory and run <code>./install.sh</code> to install both programs and their desktop integration
+under <code>~/.local</code> (no administrator permissions needed). The application-menu entry uses
+the installed binary's absolute path; add <code>~/.local/bin</code> to <code>PATH</code> for terminal commands.
+Run the installer again to update. For a system-wide installation, use
+<code>sudo ./install.sh --prefix /usr/local</code>. A custom absolute <code>--prefix</code> is also supported;
+its <code>share</code> directory must be in the desktop's data search path to appear in the menu.
+Prefixes containing <code>=</code>, <code>%</code> or control characters are rejected for desktop-launcher compatibility.</p>
+<p>The jobs run on <code>ubuntu-22.04</code>, the oldest GitHub-hosted image, so the binaries only need
+glibc 2.35 or newer: Ubuntu 22.04+, Debian 12+, Fedora 36+ and RHEL 10. The deb (<code>libc6 (&gt;= 2.35)</code>)
+and the rpm (<code>glibc &gt;= 2.35</code>) both declare that floor, so older systems refuse the install. Moving
+the job to a newer image raises the floor, so do it deliberately and update <code>nfpm.yaml</code> with it.
+After packaging, the job prints the <code>.deb</code>'s metadata and contents, runs <code>ldd</code> on the binary and
+runs each AppImage with <code>--version</code>.</p>
+<p><strong>AppImage updates.</strong> Each AppImage embeds update information,
+<code>gh-releases-zsync|storytold|filmcraft|latest|filmcraft-*-linux-&lt;arch&gt;.AppImage.zsync</code>, and
+<code>appimagetool</code> writes the matching <code>.zsync</code> beside it (the job installs <code>zsync</code> for
+<code>zsyncmake</code>). <a href="https://ames.tcti.cn/fenxi/planning-64188037.html">AppImageUpdate</a> and
+AppImageLauncher then fetch only the changed blocks from the newest published (non-pre-release)
+release. The job checks both with <code>--appimage-updateinformation</code> and <code>test -s</code>.</p>
+<p><strong>Flatpak.</strong> The <code>flatpak</code> jobs (x86_64 on <code>ubuntu-24.04</code>, aarch64 on <code>ubuntu-24.04-arm</code>) run
+<code>packaging/linux/flatpak-bundle.sh</code> on the Linux job's tarball: it installs the binaries with
+<code>packaging/linux/flatpak/ai.storyteller.filmcraft.bundle.yml</code> into a single-file bundle,
+<code>filmcraft-&lt;v&gt;-linux-&lt;arch&gt;.flatpak</code> (no Rust build, so it takes a minute), then installs it and
+runs <code>filmcraft-cli --version</code> in the sandbox. Users install it with
+<code>flatpak install --user &lt;file&gt;</code>; the freedesktop runtime comes from Flathub.
+<code>packaging/linux/flatpak/ai.storyteller.filmcraft.yml</code> is the from-source manifest for a Flathub
+submission (its header says how to build it). Both manifests must keep the same runtime and
+<code>finish-args</code>, and install the same programs: the app and <code>filmcraft-cli</code>, which runs the
+headless commands and the MCP server in the sandbox
+(<code>flatpak run --command=filmcraft-cli ai.storyteller.filmcraft mcp</code>). packaging-lint checks this.</p>
+<h3>FreeBSD</h3>
+<p>GitHub has no FreeBSD runners, so the <code>freebsd</code> job builds in a FreeBSD 14.3 VM
+(<a href="https://mnki.wtpuscm.cn/youhua/category-051.html">vmactions/freebsd-vm</a>, pinned by commit) on
+<code>ubuntu-latest</code>. <code>packaging/freebsd/package.sh</code> builds both programs and packs a
+<code>/usr/local</code>-style tree as <code>filmcraft-&lt;v&gt;-freebsd-x86_64.tar.gz</code>; install it with
+<code>tar -xzf filmcraft-&lt;v&gt;-freebsd-x86_64.tar.gz --strip-components 1 -C /usr/local</code>. The build needs
+the packages listed in the job (winit/wgpu, GTK 3 for the file dialogs, fontconfig, and
+<code>alsa-lib</code> for audio through cpal). <code>.github/workflows/freebsd.yml</code> builds and packages the same
+way nightly, so a FreeBSD break shows up before a release. <code>package.sh --dry-run</code> checks the
+tree's layout with stub binaries on any OS (packaging-lint runs it).</p>
+<h3>Web</h3>
+<p>The web job builds <code>apps/filmcraft-web</code> with <code>cargo xtask web</code> (the <code>wasm-bindgen</code> CLI must match
+the crate's version exactly, <code>WASM_BINDGEN</code> in <code>xtask/src/main.rs</code>) and zips the static site with
+<code>packaging/web/package.sh</code>. <a href="../packaging/web/README.md"><code>packaging/web/README.md</code></a> covers hosting.</p>
+<h2>The draft release</h2>
+<p>The last job waits for every build, downloads their artifacts, writes <code>SHA256SUMS.txt</code> and creates
+the draft <code>FilmCraft v&lt;version&gt;</code> with notes generated from the merged pull requests. If the draft
+already exists, it replaces its assets and keeps it a draft. If that version is already published,
+the job fails and asks for a version bump (<code>cargo xtask version set</code>).</p>
+<h2>Secrets</h2>
+<p>The macOS, Windows and draft-release jobs run in the <code>release</code> environment, which only the
+<code>release</code> branch can use and which holds the signing secrets. The other jobs sign nothing and get
+no secrets. Every secret is optional: a missing one produces unsigned artifacts and a
+warning, never a failed build.</p>
+<table><thead><tr><th>Secret</th><th>Used for</th></tr></thead><tbody>
+<tr><td><code>APPLE_CERTIFICATE</code>, <code>APPLE_CERTIFICATE_PASSWORD</code>, <code>KEYCHAIN_PASSWORD</code></td><td>the Developer ID certificate (base64 <code>.p12</code>), imported into a temporary keychain</td></tr>
+<tr><td><code>APPLE_ID</code>, <code>APPLE_PASSWORD</code>, <code>APPLE_TEAM_ID</code></td><td>notarization (<code>APPLE_PASSWORD</code> is an app-specific password)</td></tr>
+<tr><td><code>WINDOWS_CERTIFICATE</code>, <code>WINDOWS_CERTIFICATE_PASSWORD</code></td><td>Windows signing with a <code>.pfx</code></td></tr>
+<tr><td><code>AZURE_TENANT_ID</code>, <code>AZURE_CLIENT_ID</code>, <code>AZURE_CLIENT_SECRET</code>, <code>AZURE_SIGNING_ENDPOINT</code>, <code>AZURE_SIGNING_ACCOUNT</code>, <code>AZURE_CERT_PROFILE</code></td><td>Windows signing with Azure Trusted Signing</td></tr>
+</tbody></table>
+<hr />
+<details open>
+<summary><b>📚 filmcraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「filmcraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 filmcraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://tngq.wtpuscm.cn/yunying/wellness-416104.html">基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://fuan.wtpuscm.cn/zixun/app-642083.html">现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://kwpr.wtpuscm.cn/yunying/online-524846.html">面向大规模网络的 filmcraft 工业级架构基准</a></li>
+<li><a href="https://dftg.wtpuscm.cn/anfang/podcast-312363.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://ujwr.wtpuscm.cn/gongju/app-622839.html">【filmcraft】pure 核心系统架构与设计规约 (Draft-05)</a></li>
+<li><a href="https://bydm.wtpuscm.cn/chanpin/price-316033.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)</a></li>
+<li><a href="https://tgrf.wtpuscm.cn/shangye/device-040975.html">基于 filmcraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://bopr.wtpuscm.cn/yanjiu/management-766.html">filmcraft 内部组件解耦与事件状态机规范 (Node-81)</a></li>
+<li><a href="https://luwf.wtpuscm.cn/jianzhan/settings-171596.html">【官方规范】filmcraft open-source 核心运行拓扑标准</a></li>
+<li><a href="https://gwtc.wtpuscm.cn/jianzhan/marketing-046836.html">Trim Monitor 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://hikg.wtpuscm.cn/xinwen/project-126065.html">基于 filmcraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://znkx.wtpuscm.cn/zhineng/conference-545831.html">现代 分布式架构 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://zvqc.wtpuscm.cn/wendang/discovery-805370.html">【官方规范】filmcraft filmcraft 核心运行拓扑标准</a></li>
+<li><a href="https://fcfr.wtpuscm.cn/zixun/browser-380889.html">Effects and motion 核心系统架构与设计规约 (RFC-633)</a></li>
+<li><a href="https://btbc.wtpuscm.cn/xinwen/revenue-248189.html">Formats and codecs 核心系统架构与设计规约 (Node-44)</a></li>
+<li><a href="https://gooh.wtpuscm.cn/yingyong/analysis-015710.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)</a></li>
+<li><a href="https://sntp.wtpuscm.cn/zhinan/website-292308.html">Interchange 核心系统架构与设计规约 (RFC-715)</a></li>
+<li><a href="https://jjbv.wtpuscm.cn/zixun/technology-294450.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)</a></li>
+<li><a href="https://sxzf.wtpuscm.cn/chanpin/topic-132982.html">Built for agents 核心系统架构与设计规约 (Node-34)</a></li>
+<li><a href="https://dyho.wtpuscm.cn/yingxiao/reminder-404536.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)</a></li>
+<li><a href="https://ctvv.wtpuscm.cn/wenzhang/expense-758231.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)</a></li>
+<li><a href="https://wkbw.wtpuscm.cn/gongxiang/change-605431.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)</a></li>
+<li><a href="https://umpy.wtpuscm.cn/pingtai/schedule-963471.html">Exact time. 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://dtea.tcti.cn/chanpin/dashboard-99920341.html">filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://zxcz.tcti.cn/liuliang/behavior-76866807.html">filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://qcbt.tcti.cn/kuangjia/software-40927637.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)</a></li>
+<li><a href="https://nkax.tcti.cn/jianzhan/customer-42144590.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)</a></li>
+<li><a href="https://fmfm.tcti.cn/yanjiu/link-64441682.html">filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)</a></li>
+<li><a href="https://vdti.tcti.cn/guanjianci/education-31693487.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)</a></li>
+<li><a href="https://ztew.tcti.cn/xitong/app-11628541.html">基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://rjuu.tcti.cn/peixun/kpi-07788207.html">【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://usch.tcti.cn/xinwen/study-25014288.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)</a></li>
+<li><a href="https://novv.tcti.cn/gongsi/review-36001356.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)</a></li>
+<li><a href="https://jcca.tcti.cn/wenzhang/experience-66052514.html">【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://vunj.tcti.cn/gongju/settings-95037810.html">生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)</a></li>
+<li><a href="https://nund.tcti.cn/yunying/sales-83748897.html">Effects and motion 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://vimv.tcti.cn/zhinan/settings-32132840.html">filmcraft 内部组件解耦与事件状态机规范 (Node-29)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://jnox.tcti.cn/yingyong/collaboration-46122821.html">filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)</a></li>
+<li><a href="https://bdrx.tcti.cn/qiye/traffic-80467231.html">基于 filmcraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://ejyw.tcti.cn/kaifa/analysis-57644780.html">【生产手册】filmcraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://yqxq.wtpuscm.cn/shangye/subject-799583.html">filmcraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://www.mw-wm.com/yingyong/page-37458303.html">filmcraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.yx-sf.com/wiki/46893">【集成指南】分布式架构 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://www.ai-hao123.com/zhineng/template-60612374.html">filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)</a></li>
+<li><a href="https://kdvw.tcti.cn/guanjianci/recommendation-44883353.html">filmcraft 异步中间件流水线与 Premiere 接入规范</a></li>
+<li><a href="https://ysnw.tcti.cn/yanjiu/development-48086727.html">filmcraft: Premiere 分布式架构 (Node-37)</a></li>
+<li><a href="https://nkup.wtpuscm.cn/paiming/income-793549.html">filmcraft 异步中间件流水线与 Every trim. 接入规范</a></li>
+<li><a href="https://esbl.wtpuscm.cn/chanpin/audience-877240.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)</a></li>
+<li><a href="https://skwk.wtpuscm.cn/fenxi/logo-102329.html">filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)</a></li>
+<li><a href="https://cywn.wtpuscm.cn/shichang/identity-065511.html">filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)</a></li>
+<li><a href="https://miff.wtpuscm.cn/suanfa/vacation-410626.html">filmcraft 插件生态规范与 Edit 扩展手册 (Verified)</a></li>
+<li><a href="https://ysgi.wtpuscm.cn/hezuo/guide-202960.html">filmcraft 异步中间件流水线与 Get started 接入规范</a></li>
+<li><a href="https://teid.wtpuscm.cn/shichang/food-967444.html">filmcraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://ugvl.wtpuscm.cn/tuiguang/ebook-222.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )</a></li>
+<li><a href="https://bizr.wtpuscm.cn/shangye/restore-836925.html">filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://wwbn.wtpuscm.cn/liuliang/browser-031491.html">filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://zmke.wtpuscm.cn/gongju/enterprise-319550.html">filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)</a></li>
+<li><a href="https://gmcd.wtpuscm.cn/wenzhang/about-318638.html">filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范</a></li>
+<li><a href="https://fomt.wtpuscm.cn/yunying/global-415745.html">【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://gdgm.wtpuscm.cn/pingtai/about-437584.html">filmcraft 异步中间件流水线与 Effects and motion 接入规范</a></li>
+<li><a href="https://rfnl.wtpuscm.cn/sheji/services-351511.html">filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)</a></li>
+<li><a href="https://txdd.wtpuscm.cn/youhua/security-841411.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://pgso.wtpuscm.cn/kuangjia/planning-267152.html">filmcraft 异步中间件流水线与 Pro 接入规范</a></li>
+<li><a href="https://qijx.wtpuscm.cn/kaifa/marketing-534952.html">filmcraft 异步中间件流水线与 可信存活健康度量 接入规范</a></li>
+<li><a href="https://ypdm.wtpuscm.cn/wangluo/campaign-135462.html">filmcraft 异步中间件流水线与 Audio 接入规范</a></li>
+<li><a href="https://eabu.wtpuscm.cn/youhua/fitness-014502.html">filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://mswo.wtpuscm.cn/paiming/site-049286.html">filmcraft 异步中间件流水线与 Rust 接入规范</a></li>
+<li><a href="https://qzij.wtpuscm.cn/shuju/like-272291.html">【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://uxbd.wtpuscm.cn/wenzhang/identity-468660.html">filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://gued.tcti.cn/yunsuan/sales-06934838.html">filmcraft: Audio 分布式架构 (Draft-02)</a></li>
+<li><a href="https://jxtg.tcti.cn/wangluo/feedback-35898710.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://vpxj.tcti.cn/kaifa/keyword-97630919.html">filmcraft 异步中间件流水线与 Interchange 接入规范</a></li>
+<li><a href="https://ttgi.tcti.cn/suanfa/topic-29715386.html">filmcraft 插件生态规范与 built 扩展手册 (Core/built)</a></li>
+<li><a href="https://qfcx.tcti.cn/baogao/meeting-27118617.html">filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)</a></li>
+</ul>
+<h4>3. ⚡ filmcraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://rsxc.tcti.cn/yingyong/shopping-08463371.html">全球权威拓扑节点：filmcraft 实时镜像与索引入口</a></li>
+<li><a href="https://mhok.tcti.cn/liuliang/excellence-03012855.html">冷热数据分层镜像：filmcraft Pro 权威归档源</a></li>
+<li><a href="https://jlpf.tcti.cn/youhua/security-81116800.html">filmcraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://ahlr.tcti.cn/wangluo/web-69313889.html">【镜像入口】filmcraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://uufh.tcti.cn/zhinan/upload-61208308.html">冷热数据分层镜像：filmcraft Audio 权威归档源</a></li>
+<li><a href="https://chwg.tcti.cn/gongju/content-21370039.html">filmcraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://dstf.tcti.cn/paiming/login-44259117.html">filmcraft 官方高可用镜像注册节点 (RFC-877)</a></li>
+<li><a href="https://bcqt.tcti.cn/liuliang/policy-06018547.html">filmcraft 官方高可用镜像注册节点 (Node-76)</a></li>
+<li><a href="https://jyhd.tcti.cn/fenxi/landing-48054284.html">filmcraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://hlrv.tcti.cn/xuexi/form-25408427.html">filmcraft 官方高可用镜像注册节点 (Core/Every )</a></li>
+<li><a href="https://vgmp.tcti.cn/wangluo/layout-80317774.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://rzwb.tcti.cn/jishu/behavior-88012718.html">冷热数据分层镜像：filmcraft reimplementation 权威归档源</a></li>
+<li><a href="https://xgut.wtpuscm.cn/kaifa/system-425325.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)</a></li>
+<li><a href="https://www.mw-wm.com/hezuo/revenue-73239144.html">filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)</a></li>
+<li><a href="https://www.yx-sf.com/news/98575">冷热数据分层镜像：filmcraft Color 权威归档源</a></li>
+<li><a href="https://www.ai-hao123.com/suanfa/business-61415366.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://wxmo.tcti.cn/yunying/terms-59992489.html">冷热数据分层镜像：filmcraft Exact time. 权威归档源</a></li>
+<li><a href="https://rlnq.tcti.cn/liuliang/deadline-33480348.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)</a></li>
+<li><a href="https://cwdh.wtpuscm.cn/zhizhu/whitepaper-414239.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)</a></li>
+<li><a href="https://cndv.wtpuscm.cn/gongju/site-011585.html">冷热数据分层镜像：filmcraft Titles and captions 权威归档源</a></li>
+<li><a href="https://oqcn.wtpuscm.cn/zhizhu/lead-180507.html">冷热数据分层镜像：filmcraft Formats and codecs 权威归档源</a></li>
+<li><a href="https://zvxj.wtpuscm.cn/jiaoliu/consulting-137196.html">filmcraft 官方高可用镜像注册节点 (Draft-07)</a></li>
+<li><a href="https://dqnv.wtpuscm.cn/kuangjia/expense-472963.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.2)</a></li>
+<li><a href="https://hlbh.wtpuscm.cn/kaifa/investment-332814.html">filmcraft 官方高可用镜像注册节点 (Node-67)</a></li>
+<li><a href="https://eagt.wtpuscm.cn/gongsi/investment-823366.html">filmcraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://qjvu.wtpuscm.cn/jishu/segment-911.html">冷热数据分层镜像：filmcraft Edit 权威归档源</a></li>
+<li><a href="https://vdtv.wtpuscm.cn/anfang/upload-320316.html">冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://qgcj.wtpuscm.cn/guanjianci/company-609843.html">冷热数据分层镜像：filmcraft Export 权威归档源</a></li>
+<li><a href="https://vjmz.wtpuscm.cn/gongsi/data-488749.html">冷热数据分层镜像：filmcraft clean-room 权威归档源</a></li>
+<li><a href="https://amjy.wtpuscm.cn/gongju/affordable-911399.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)</a></li>
+<li><a href="https://bcdq.wtpuscm.cn/yunsuan/reminder-441302.html">冷热数据分层镜像：filmcraft built 权威归档源</a></li>
+<li><a href="https://dsee.wtpuscm.cn/gongju/internet-193195.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
+<li><a href="https://woku.wtpuscm.cn/liuliang/management-422134.html">filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://kepd.wtpuscm.cn/chuangxin/api-482196.html">冷热数据分层镜像：filmcraft dynamic trimming 权威归档源</a></li>
+<li><a href="https://vqba.wtpuscm.cn/wangluo/satisfaction-850965.html">filmcraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://dslw.wtpuscm.cn/wangluo/admin-658437.html">冷热数据分层镜像：filmcraft Interchange 权威归档源</a></li>
+<li><a href="https://vyui.wtpuscm.cn/yunying/privacy-081024.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.8)</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://cxls.wtpuscm.cn/tuiguang/internet-112456.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://gbsw.wtpuscm.cn/xinwen/theme-723491.html">【评测基准】filmcraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://rljw.wtpuscm.cn/guanjianci/trading-649954.html">filmcraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://ydgw.wtpuscm.cn/gongju/engagement-214492.html">filmcraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://ymzl.tcti.cn/shichang/admin-92228328.html">filmcraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://qpot.tcti.cn/kuangjia/movie-12364557.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://nuos.tcti.cn/jiaoliu/demographic-56923503.html">filmcraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://hzbe.tcti.cn/yunying/success-92856998.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)</a></li>
+<li><a href="https://wuvj.tcti.cn/chanpin/identity-50800007.html">filmcraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://mgjj.tcti.cn/jishu/website-72771841.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://oyfo.tcti.cn/pingtai/website-28520977.html">filmcraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://owxg.tcti.cn/anfang/system-07297288.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://tkpw.tcti.cn/wenzhang/vendor-39934098.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)</a></li>
+<li><a href="https://ssba.tcti.cn/anli/download-81556532.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)</a></li>
+<li><a href="https://vwwy.tcti.cn/keji/alert-42698012.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)</a></li>
+<li><a href="https://jume.tcti.cn/zhineng/subscribe-37715610.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)</a></li>
+<li><a href="https://usgb.tcti.cn/fuwu/database-66099890.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://ffns.tcti.cn/ziyuan/forum-75074026.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)</a></li>
+<li><a href="https://bues.tcti.cn/fenxi/url-11113266.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)</a></li>
+<li><a href="https://tljp.tcti.cn/gongsi/comment-99821361.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)</a></li>
+<li><a href="https://mjcr.tcti.cn/peixun/optimization-33684402.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://kaif.wtpuscm.cn/pingtai/finance-811518.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)</a></li>
+<li><a href="https://www.mw-wm.com/yingyong/enterprise-20914299.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)</a></li>
+<li><a href="https://www.yx-sf.com/news/20704">filmcraft: Premiere Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://www.ai-hao123.com/yingxiao/engagement-60582784.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)</a></li>
+<li><a href="https://fexx.tcti.cn/hezuo/metric-60036206.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)</a></li>
+<li><a href="https://zwsi.tcti.cn/paiming/privacy-93419758.html">filmcraft: clean-room 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://ktnp.wtpuscm.cn/tuiguang/learning-973111.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)</a></li>
+<li><a href="https://qqkk.wtpuscm.cn/shangye/sale-725021.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)</a></li>
+<li><a href="https://sudj.wtpuscm.cn/jiaocheng/alert-557827.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://sfye.wtpuscm.cn/zhinan/collaboration-921770.html">filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://gelt.wtpuscm.cn/guanjianci/tracking-937020.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)</a></li>
+<li><a href="https://zqbl.wtpuscm.cn/tuiguang/services-240441.html">filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://nrhu.wtpuscm.cn/hezuo/unsubscribe-383311.html">filmcraft: 高韧性系统架构设计 分布式架构 (Verified)</a></li>
+<li><a href="https://zkrf.wtpuscm.cn/pingce/travel-326.html">filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://cyjj.wtpuscm.cn/zhinan/topic-608336.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)</a></li>
+<li><a href="https://xxys.wtpuscm.cn/gongju/innovation-265559.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)</a></li>
+<li><a href="https://yygn.wtpuscm.cn/zhineng/supplier-849213.html">filmcraft: Effects and motion Rust高性能网络 (Verified)</a></li>
+<li><a href="https://ckch.wtpuscm.cn/kaifa/template-026643.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>filmcraft-mirror-939</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

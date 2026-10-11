@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project files - filmcraft-mirror-939 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">filmcraft-mirror-939</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Project files</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Project files</h1>
+<p>FilmCraft projects are <code>.fcproj</code> files: UTF-8 JSON with an explicit schema version. Reading and
+writing them is <code>crates/format</code> (<code>filmcraft-format</code>); the engine's <code>file.*</code> commands use it.</p>
+<h2>Format</h2>
+<pre><code class="language-json">{
+  "format": "filmcraft.project",
+  "schema_version": 13,
+  "generator": "FilmCraft 0.1.0",
+  "project": { "name": "…", "settings": { … }, "root": { … }, "items": { … }, "next_id": 48 },
+  "view": { "open_sequences": [21, 50], "active_sequence": 50, "sequences": { "21": { "pps": 40.0, "scroll": 0.0, … } } }
+}
+</code></pre>
+<ul>
+<li><code>schema_version</code> is the version of the whole document. This build writes
+<code>filmcraft_format::SCHEMA_VERSION</code> and reads every version from 1 up to it.</li>
+<li><code>project</code> is the serialized <code>filmcraft_project::Project</code> (bins, media clips, sequences, tracks,
+clips, effects, keyframes, markers). Media is referenced by path, never embedded.</li>
+<li>Files are written compact (no indentation). A 2,000-clip project is about 1.4 MB.</li>
+<li><code>view</code> (optional) is what was open when the project was saved: the Timeline's sequence tabs in
+order, the active one, each sequence's zoom, scroll and track heights, and each sequence's
+playhead (<code>filmcraft_project::ProjectView</code>). It is beside the project, not in it: it is not part of the
+edit, never an undo step, and changing it does not mark the project as changed. Opening a
+project restores it when the Timeline preference "Restore open sequences when opening projects"
+is on. It is outside the schema version: older builds ignore it, ids that are not sequences and
+numbers out of range are dropped or clamped (a playhead also snaps to a frame of its sequence), and a <code>view</code> that cannot be read is ignored (the
+project opens on its first sequence, as it does without one or with no open sequence in it).</li>
+<li>A coordinate of an effect's point parameter may be <code>null</code>. Point parameters use NaN for "auto"
+(the frame centre, or the source centre for <code>anchor</code>), and JSON writes NaN as <code>null</code>; it reads back
+as "auto". Placing a clip resolves these points at once. An interchange import resolves them
+too, except the <code>anchor</code> of a clip whose media file was not found. That one stays "auto", and
+the renderer centres it, until Link Media (<code>media.relink</code>, <code>media.autoRelink</code>) reads the file
+and with it the real picture size; a file that merely comes back at its old path does not
+change it. <code>null</code> anywhere else is a damaged file.</li>
+</ul>
+<h3>Schema history</h3>
+<table><thead><tr><th>Version</th><th>Since</th><th>Shape</th></tr></thead><tbody>
+<tr><td>1</td><td>M0</td><td>the bare <code>Project</code> object with a <code>"version": 1</code> field</td></tr>
+<tr><td>2</td><td>M11.1</td><td>the envelope above; the project's own <code>version</code> field is gone</td></tr>
+<tr><td>3</td><td>M10.2</td><td>graphic clips (<code>ItemKind::Graphic</code> with text/shape layers); a no-op step for older data</td></tr>
+<tr><td>4</td><td>M7.4</td><td>Essential Sound: clip audio types and settings; no-op step</td></tr>
+<tr><td>5</td><td>M8.8</td><td>colour management: working space, Interpret Footage colour space, LUT library; no-op step</td></tr>
+<tr><td>6</td><td>M11.7/M11.9</td><td>media identity fingerprints, ingest settings; no-op step</td></tr>
+<tr><td>7</td><td>M5.5</td><td>effect masks: <code>masks</code> on effect instances with keyframable Bézier <code>Path</code> values; no-op step</td></tr>
+<tr><td>8</td><td>M12</td><td>multi-camera source sequences and clips, merged clips; no-op step</td></tr>
+<tr><td>9</td><td>M10.5</td><td>transcripts of media items (<code>project.transcripts</code>); no-op step</td></tr>
+<tr><td>10</td><td>M3.10</td><td>clip time interpolation, Hold Filters, Field Options, audio source channels, Modify ▸ Audio Channels map, subclip Restrict Trims; no-op step</td></tr>
+<tr><td>11</td><td>M3.11</td><td>search bins (<code>project.search_bins</code>), Flash Cue markers, Project Settings safe areas, capture format and scratch disks; no-op step</td></tr>
+<tr><td>12</td><td>M10.7</td><td>graphics design data: <code>TrackItem::graphic</code> (roll / crawl, responsive time, template link), <code>EffectInstance::layer</code> (layer uid, per-character styles, responsive pins), <code>project.source_graphics</code>; no-op step</td></tr>
+<tr><td>13</td><td>Multi-stream audio</td><td><code>MediaInfo::audio_streams</code> and <code>TrackItem::audio_stream</code>; older <code>audio</code> objects load as stream zero, missing clip indices default to zero; no-op step</td></tr>
+</tbody></table>
+<h3>Migrations</h3>
+<p>Older files are upgraded on load, in memory, by a chain of single-step functions
+(<code>filmcraft_format::MIGRATIONS</code>, where entry <em>i</em> upgrades v<em>i+1</em> to v<em>i+2</em>). Each step rewrites the JSON
+document; after the last one the result is deserialized into the current model. To change the schema:</p>
+<ol>
+<li>add a function <code>vN_to_vN1(doc: Value) -&gt; Result&lt;Value, String&gt;</code> and append it to <code>MIGRATIONS</code>
+(<code>SCHEMA_VERSION</code> follows automatically);</li>
+<li>add a small hand-made fixture of the old shape to <code>crates/format/tests/fixtures/</code> and a test that it
+loads;</li>
+<li>never edit a migration that has shipped.</li>
+</ol>
+<p>Fields added with <code>#[serde(default)]</code> don't need a migration: missing values take their defaults.
+But when new data would make the file unreadable to an older build (a new enum variant such as
+<code>ItemKind::Graphic</code>, a new required shape), bump the schema with a no-op step so older builds refuse
+the file with the message below instead of failing with a parse error. Do the same when an older
+build would load the file but silently drop new fields on its next save.</p>
+<p>When you open an older file FilmCraft says so ("Upgraded project from schema v1 to v2"). The file
+on disk is unchanged until you save. The <strong>first save over it</strong> keeps the original next to it as
+<code>&lt;name&gt; (schema v1 backup).fcproj</code>, so an older FilmCraft can still open your work.</p>
+<h3>Newer files</h3>
+<p>A file with a <code>schema_version</code> newer than the build supports is <strong>refused</strong>, not half-read:</p>
+<blockquote>
+<p>this project was saved by a newer version of FilmCraft (project schema v12); this build reads up to
+v11. Update FilmCraft to open it.</p>
+</blockquote>
+<p>Reading it partially and saving it back would silently drop whatever the newer version added.</p>
+<h2>Saving is atomic</h2>
+<p>Every write of a project file, auto-save, recovery snapshot or preferences file goes through
+<code>filmcraft_format::atomic_write</code>:</p>
+<ol>
+<li>write the bytes to a hidden temp file in the <strong>same directory</strong> (<code>.&lt;name&gt;.&lt;pid&gt;-&lt;n&gt;.tmp</code>);</li>
+<li><code>fsync</code> the temp file;</li>
+<li>rename it over the target (an atomic replace on every supported OS);</li>
+<li><code>fsync</code> the directory so the rename itself is durable.</li>
+</ol>
+<p>A crash, <code>kill -9</code> or power cut at any point leaves either the complete old file or the complete new
+one. If a step fails, the temp file is removed and the old file is untouched.</p>
+<h2>Commands</h2>
+<table><thead><tr><th>Id</th><th>Menu</th><th></th></tr></thead><tbody>
+<tr><td><code>file.save {path?}</code></td><td>File ▸ Save (⌘S)</td><td>write to the project's path (or <code>path</code>)</td></tr>
+<tr><td><code>file.saveAs {path}</code></td><td>File ▸ Save As… (⇧⌘S)</td><td>write and adopt the new path</td></tr>
+<tr><td><code>file.saveCopy {path}</code></td><td>File ▸ Save a Copy… (⌥⌘S)</td><td>write a copy; the project keeps its path and unsaved state</td></tr>
+<tr><td><code>file.revert</code></td><td>File ▸ Revert</td><td>reload the last saved version, discarding changes</td></tr>
+<tr><td><code>file.open {path}</code></td><td>File ▸ Open Project… (⌘O)</td><td>returns <code>{schemaVersion, migrated}</code></td></tr>
+</tbody></table>
+<p>In the UI, Save / Save As / Save a Copy without a <code>path</code> show a file dialog.</p>
+<h2>Auto Save</h2>
+<p>Preferences ▸ Auto Save (Edit ▸ Preferences ▸ Auto Save…, ⌘,; FilmCraft ▸ Settings… on macOS) works
+like Premiere's:</p>
+<table><thead><tr><th>Setting</th><th>Key</th><th>Default</th></tr></thead><tbody>
+<tr><td>Automatically save projects</td><td><code>autoSave.enabled</code></td><td>on</td></tr>
+<tr><td>Automatically Save Every N minute(s)</td><td><code>autoSave.intervalMinutes</code></td><td>5 (1–1440)</td></tr>
+<tr><td>Maximum Project Versions</td><td><code>autoSave.maxVersions</code></td><td>20 (1–1000)</td></tr>
+<tr><td>Auto Save also saves the current project(s)</td><td><code>autoSave.saveCurrentProject</code></td><td>off</td></tr>
+<tr><td>Keep a recovery copy of unsaved changes</td><td><code>autoSave.recoveryJournal</code></td><td>on</td></tr>
+<tr><td>Update it at least every N second(s)</td><td><code>autoSave.recoveryIntervalSeconds</code></td><td>5 (1–600)</td></tr>
+</tbody></table>
+<p>At each interval, if the project changed since the last auto-save, a copy is written to the
+<code>Auto-Save</code> folder next to the project as <code>&lt;name&gt;-YYYY-MM-DD_HH-MM-SS.fcproj</code> (local time). An
+unsaved project uses <code>&lt;data dir&gt;/Auto-Save/</code>. After each write the oldest copies beyond the limit are
+deleted. Only files named exactly <code>&lt;name&gt;-&lt;timestamp&gt;.fcproj</code> are ever deleted. An auto-save is an
+ordinary project file: open it with File ▸ Open Project. <code>file.listAutoSaves</code> lists them, newest
+first.</p>
+<p>Preferences are stored in <code>&lt;data dir&gt;/preferences.json</code>. The <code>prefs.*</code> commands read and change them.</p>
+<h2>Crash recovery</h2>
+<p>Premiere's auto-save can lose up to one interval of work. FilmCraft also keeps a <strong>recovery journal</strong>:</p>
+<ul>
+<li>Whenever the project has unsaved changes, a snapshot is written to
+<code>&lt;data dir&gt;/Recovery/&lt;started&gt;-&lt;pid&gt;[-&lt;n&gt;]/snapshot.fcproj</code>, plus <code>session.json</code> (time, revision, project
+name and path). It is written about 1 s after the last edit, or after at most
+<code>recoveryIntervalSeconds</code> while edits keep coming. Saving the project deletes the snapshot.</li>
+<li>Each running FilmCraft holds an OS file lock on <code>&lt;session&gt;/lock</code>. When the process dies (crash,
+<code>kill -9</code>, power loss) the OS releases the lock.</li>
+<li>At startup, every other session directory whose lock can be taken and that has a snapshot is a
+recovery candidate. FilmCraft asks: <em>"FilmCraft quit unexpectedly while 'X' had unsaved changes.
+Recover unsaved changes from 2026-10-01 00:02:09?"</em>, with the buttons <strong>Recover</strong>, <strong>Not Now</strong> and
+<strong>Discard</strong>. Stale directories without a snapshot are removed. Journals of running sessions are
+never touched.</li>
+<li>Recovering loads the snapshot as an <strong>unsaved</strong> project with its original path, so Save writes
+over the original file. The recovered state goes into the new session's own journal before the old
+journal is deleted.</li>
+<li>A normal quit with nothing unsaved removes the session directory. Quitting with unsaved changes
+(Quit, Cmd+Q or the window's close button) first asks <em>"Save changes to 'X' before closing?"</em>
+with <strong>Cancel</strong>, <strong>Don't Save</strong> and <strong>Save</strong> (Save on a never-saved project opens the Save dialog);
+Don't Save discards the changes and their snapshot. A quit that does not ask (the control
+channel's <code>app.quit</code>, the OS ending the session) keeps the snapshot, marked <code>cleanExit</code>, and FilmCraft offers it on the next launch ("FilmCraft was
+closed while … had unsaved changes").</li>
+</ul>
+<p>Desktop flags: <code>--recover</code> recovers the newest candidate without asking. <code>--no-recover</code> starts
+without asking; the changes stay available through File ▸ Recover Unsaved Changes…. `--data-dir</p>
+<dir>` (or `FILMCRAFT_DATA_DIR`) moves the data directory. The default is `~/Library/Application
+Support/FilmCraft` on macOS, `%APPDATA%\FilmCraft` on Windows, and `$XDG_DATA_HOME/filmcraft` or
+`~/.local/share/filmcraft` elsewhere. A `portable.txt` file next to the executable (the Windows
+portable zip ships one) makes it `data` next to the executable instead.
+<h3>Cost</h3>
+<p>The UI thread only gives the worker thread an <code>Arc&lt;Project&gt;</code>: the immutable snapshot the engine
+already keeps for undo, passed through a channel. JSON encoding and all file I/O run on the
+<code>filmcraft-autosave</code> thread. Measured on the development Mac (release build) with a 2,000-clip project
+(<code>cargo test --release -p filmcraft-format --test fixtures -- --nocapture</code>):</p>
+<table><thead><tr><th>Step</th><th>Time</th><th>Size</th></tr></thead><tbody>
+<tr><td>encode, compact (what is written)</td><td>2.5 ms</td><td>1.4 MB</td></tr>
+<tr><td>encode, pretty (not used)</td><td>7.1 ms</td><td>5.6 MB</td></tr>
+<tr><td>decode</td><td>4.6 ms</td><td></td></tr>
+<tr><td>atomic write + fsync (APFS SSD)</td><td>30 ms</td><td></td></tr>
+</tbody></table>
+<p>In the running app with the demo project, a recovery write measured 0.1 ms to encode and 27 ms to
+write (two fsynced files).</p>
+<h2>Commands</h2>
+<table><thead><tr><th>Id</th><th></th></tr></thead><tbody>
+<tr><td><code>file.recoveryList</code></td><td>candidates: <code>id</code>, <code>projectName</code>, <code>projectPath</code>, <code>savedAt</code>, <code>revision</code>, <code>cleanExit</code>…</td></tr>
+<tr><td><code>file.recover {id?}</code></td><td>recover (newest when no <code>id</code>). From the UI, <code>{}</code> opens the recovery dialog</td></tr>
+<tr><td><code>file.discardRecovery {id?, all?}</code></td><td>delete a candidate's journal</td></tr>
+<tr><td><code>file.autoSaveNow</code></td><td>write an auto-save now (if anything is unsaved)</td></tr>
+<tr><td><code>file.autoSaveStatus</code></td><td>prefs, folders, last auto-save / journal times, last encode/write ms and bytes</td></tr>
+<tr><td><code>file.listAutoSaves</code></td><td>auto-save files of the current project, newest first</td></tr>
+<tr><td><code>prefs.get {key?}</code> / <code>prefs.set {key, value}</code> or <code>{values:{…}}</code> / <code>prefs.reset {category?}</code></td><td>settings (below)</td></tr>
+</tbody></table>
+<p>UI automation ids: <code>recovery.recover</code>, <code>recovery.later</code>, <code>recovery.discard</code>, <code>recovery.item.&lt;n&gt;</code>;
+<code>revert.yes</code>, <code>revert.no</code> (File ▸ Revert asks first when invoked without params).</p>
+<h2>Settings</h2>
+<p>Premiere's Settings dialog (app menu ▸ Settings ▸ <category> on macOS, Edit ▸ Preferences
+elsewhere; General is Cmd+,; the window is titled "Preferences"). The values are user preferences,
+not project data: they live in <code>preferences.json</code> in the per-user data directory (written
+atomically on every change) and never touch the <code>.fcproj</code> schema. The file carries a <code>version</code>
+(currently 2); older files are migrated on load, unknown dropdown values, bad colours and
+out-of-range numbers are repaired to defaults/limits, and an unreadable file falls back to the
+defaults.</p>
+<p>Every value is a dotted key whose first segment is its category: <code>timeline.stillImageDuration</code>,
+<code>labels.colors.rose.name</code>. <code>prefs.get</code> / <code>prefs.set</code> / <code>prefs.reset {category?}</code> reach them from the
+CLI, the control channel and MCP; <code>prefs.set</code> rejects values that are not one of a dropdown's
+choices. <code>prefs.schema {category?}</code> lists every category with its fields (label, kind, choices,
+range, unit, current value, and <code>wired</code>: whether FilmCraft acts on it yet). <code>app.settings.&lt;category&gt;</code>
+opens the dialog on a page.</p>
+<table><thead><tr><th>Category</th><th>Takes effect</th></tr></thead><tbody>
+<tr><td>General</td><td>At Startup (Show Home = demo project, Open Most Recent, empty project; recent projects are remembered on open/save), Show Tool Tips</td></tr>
+<tr><td>Appearance</td><td>Appearance Mode <code>appearanceMode</code> (<code>auto</code> = Sync with system / <code>dark</code> (default) / <code>light</code>; the header button and View ▸ Appearance ▸ Next Appearance Mode cycle it), Dark Theme <code>darkTheme</code> (<code>darkest</code> (default) / <code>dark</code>), Light Theme <code>lightTheme</code> (<code>light</code>), highlight colour, accessible contrast. <code>colorTheme</code> (Darkest / Dark / Light) is legacy input: setting it (older files and clients, View ▸ Appearance ▸ a theme) selects that theme and fixes the mode to its family; a file without <code>appearanceMode</code> migrates to its theme's fixed mode. It is kept in line with the choices: the theme a fixed mode shows, the dark theme in Auto</td></tr>
+<tr><td>Audio</td><td>Automatch Time, Large Volume Adjustment, automation keyframe thinning (linear, minimum time)</td></tr>
+<tr><td>Audio Hardware</td><td>device class (cpal host), output device, I/O buffer size, sample rate, force document rate, Output Mapping (programme L/R → device channels)</td></tr>
+<tr><td>Auto Save</td><td>the auto-save ring and the crash-recovery journal</td></tr>
+<tr><td>Color</td><td>stored only (display colour management, EDR monitoring, HDR graphics white)</td></tr>
+<tr><td>Graphics</td><td>new text layers: smart quotes, ligatures, default font</td></tr>
+<tr><td>Labels</td><td>the 16 label names and colours (timeline, Project panel, Edit ▸ Label), label defaults for imported movies / video / audio / stills and new sequences</td></tr>
+<tr><td>Media</td><td>Indeterminate Media Timebase (frame rate of stills), Default Media Scaling (Scale to / Set to frame size when a clip of another size is edited in), Enable proxies</td></tr>
+<tr><td>Media Analysis &amp; Transcription</td><td>auto-transcribe imported clips (scope "all imported"), speech model, default language / auto-detect, speaker labelling (defaults of <code>transcript.generate</code>)</td></tr>
+<tr><td>Media Cache</td><td>location (<code>&lt;data dir&gt;/Media Cache</code> by default; unsaved projects' render previews live there), automatic deletion (older than N days / beyond N GB), Delete… (<code>mediaCache.clean {all?}</code>, <code>mediaCache.info</code>)</td></tr>
+<tr><td>Memory</td><td>frame cache budget of the monitors and thumbnails</td></tr>
+<tr><td>Playback</td><td>preroll / postroll (Play Around, trim loop), Step forward/back many</td></tr>
+<tr><td>Plugins</td><td>stub (no plugins)</td></tr>
+<tr><td>Timeline</td><td>video / audio transition and still image default durations (frames or seconds), playback auto-scrolling (none / page / smooth), snap playhead, return to beginning at playback end, play after rendering previews</td></tr>
+<tr><td>Trim</td><td>Large Trim Offset, Selection tool picks roll (on the cut) / ripple (on the edge) without a modifier, playhead determines trim loop</td></tr>
+</tbody></table>
+<p>The remaining fields are kept for parity and shown, but have no effect yet (<code>wired: false</code>).</p>
+<p>UI automation ids: <code>settings.category.&lt;id&gt;</code>; <code>settings.&lt;key&gt;</code> for every control (for example
+<code>settings.timeline.autoScroll</code>, <code>settings.labels.colors.rose.color</code>); <code>settings.&lt;key&gt;.&lt;value&gt;</code> for
+the items of an open dropdown; <code>settings.&lt;key&gt;.browse</code>, <code>settings.&lt;key&gt;.hex</code>;
+<code>settings.mediaCache.clean</code>; <code>settings.help</code>, <code>settings.reset</code> (this page back to its defaults),
+<code>settings.cancel</code>, <code>settings.ok</code>. The open dialog's page and draft are <code>ui.settings</code> in <code>ui.inspect</code>;
+<code>ui.set {"settings": {"page": id, "values": {key: value}}}</code> edits the draft (OK applies it).</p>
+<h2>Media: offline, relinking, proxies, ingest</h2>
+<p>Media is referenced by path. Each imported file also records its <strong>identity</strong>
+(<code>MediaClip::identity</code>): the size and a 64-bit fingerprint of the size, the first MiB and the last
+MiB. Reading 2 MiB is cheap on any file, and it tells a moved original from a different take with
+the same name. The field is optional (<code>skip_serializing_if</code>); it and <code>ProjectSettings::ingest</code> came with schema
+v6, so builds that would drop them on save refuse the file instead. Projects from older builds
+have no identity, so relinking them skips the fingerprint check.</p>
+<h3>Offline media</h3>
+<ul>
+<li><strong>Opening a project</strong> checks every file (<code>media.findMissing</code>). Missing items don't stop the open.
+They render the <strong>offline slate</strong> (<code>crates/render/src/offline.rs</code>, our own design: a red striped
+field, a warning triangle, "MEDIA NOT FOUND", the file name and a hint), their audio is silent,
+and the app opens the <strong>Link Media</strong> dialog. <code>file.open</code> returns <code>missingMedia</code>.</li>
+<li><strong>Make Offline</strong> (<code>media.makeOffline {items?, deleteFiles?}</code>) sets <code>MediaClip::offline</code>. The clip
+then shows "MEDIA SET OFFLINE" even though the file exists, until it is linked again. Files are
+deleted only with <code>deleteFiles: true</code>.</li>
+<li>The media pool caches sources per item <strong>and</strong> per reference (path, offline flag). So relinking,
+Make Offline and undoing either take effect on the next frame.</li>
+</ul>
+<h3>Link Media</h3>
+<table><thead><tr><th>Command</th><th></th></tr></thead><tbody>
+<tr><td><code>media.findMissing</code></td><td><code>{missing: [{item, name, fileName, path, status: missing|offline|proxyMissing, duration, startTimecode}]}</code></td></tr>
+<tr><td><code>media.status {item?}</code></td><td>per item: <code>online</code>, <code>missing</code>, <code>offline</code>, <code>unreadable</code> or <code>generated</code>, plus identity and proxy</td></tr>
+<tr><td><code>media.linkMedia</code></td><td>File ▸ Link Media… (rescans; the UI opens the dialog)</td></tr>
+<tr><td><code>media.relink {item, path, force?, relinkOthers?=true, alignTimecode?, match?}</code></td><td>check, link, then the others</td></tr>
+<tr><td><code>media.autoRelink {from, to}</code> / <code>{folder}</code></td><td>batch relink: a folder-prefix remap, or a search of a folder tree</td></tr>
+<tr><td><code>media.search {folder, item?, exactName?=true}</code></td><td>ranked candidates with <code>ok</code>, <code>identityMatch</code>, <code>problems</code></td></tr>
+<tr><td><code>media.replaceFootage {item, path}</code></td><td>relink without checks (Replace Footage)</td></tr>
+<tr><td><code>media.offlineAll</code></td><td>close the dialog and leave the rest offline</td></tr>
+</tbody></table>
+<p><code>match</code> selects which properties must agree. Each defaults as shown:</p>
+<ul>
+<li><code>fileName</code> (true): the file name stem;</li>
+<li><code>extension</code> (true);</li>
+<li><code>clipId</code> (true): the fingerprint; a mismatch is refused with "not the same file…";</li>
+<li><code>duration</code> (true): within one frame;</li>
+<li><code>mediaStart</code> (false): the start timecode;</li>
+<li><code>metadata</code> (true): frame size, frame rate and audio channels.</li>
+</ul>
+<p><code>force: true</code> links regardless. <strong>Relink others automatically</strong> works out the folder remap from the
+file just linked, by dropping the common trailing path components (<code>/Volumes/A/shoot/a.mov</code> →
+<code>/Users/me/shoot/a.mov</code> gives <code>/Volumes/A</code> → <code>/Users/me</code>). It applies the remap to the other missing
+files and checks each one. It also looks in the new file's folder. Windows and macOS separators both
+work. <strong>Align Timecode</strong> keeps clips on the same timecode when the new file starts at a different
+timecode: the clips' source in-points, keyframes, marks and markers move with it
+(<code>Project::shift_media_time</code>). One relink, together with the files it pulls along, is one undo step.</p>
+<p>Link Media dialog automation ids: <code>linkMedia.row.&lt;n&gt;</code>,
+<code>linkMedia.match.&lt;fileName|extension|clipId|duration|mediaStart|metadata&gt;</code>, <code>linkMedia.alignTimecode</code>,
+<code>linkMedia.relinkOthers</code>, <code>linkMedia.folder</code>, <code>linkMedia.browse</code>, <code>linkMedia.exactName</code>,
+<code>linkMedia.search</code>, <code>linkMedia.candidate.&lt;n&gt;</code>, <code>linkMedia.preview</code>, <code>linkMedia.link</code>,
+<code>linkMedia.locate</code>, <code>linkMedia.offline</code>, <code>linkMedia.offlineAll</code>, <code>linkMedia.cancel</code>.
+Make Offline: <code>makeOffline.keep|delete|ok|cancel</code>. In the Project panel, offline items get a
+broken-link badge (<code>project.item.&lt;id&gt;.offline</code> in Icon view), and items with a proxy get a <strong>P</strong>
+badge (<code>project.item.&lt;id&gt;.proxy</code>).</p>
+<h3>Proxies</h3>
+<table><thead><tr><th>Command</th><th>Menu</th><th></th></tr></thead><tbody>
+<tr><td><code>media.createProxies {items?, preset?, destination?, attach?=true, wait?}</code></td><td>Clip ▸ Proxy ▸ Create Proxies…</td><td>background job; attaches when done</td></tr>
+<tr><td><code>media.attachProxies {item, path}</code> / <code>{items, paths}</code></td><td>Attach Proxies…</td><td>duration within one frame and the same frame rate are required; size and aspect may differ</td></tr>
+<tr><td><code>media.detachProxies {items?}</code></td><td>Detach Proxies</td><td></td></tr>
+<tr><td><code>media.reconnectFullRes {item, path}</code></td><td>Reconnect Full Resolution Media…</td><td>link the full-resolution file of a clip that has a proxy</td></tr>
+<tr><td><code>media.toggleProxies {enabled?}</code></td><td>View ▸ Toggle Proxies, monitor button</td><td>Preferences ▸ Media ▸ <code>media.enableProxies</code></td></tr>
+<tr><td><code>media.proxyPresets</code></td><td></td><td></td></tr>
+</tbody></table>
+<p>The presets use our own encoders:</p>
+<ul>
+<li><code>prores_proxy_quarter</code> (default), <code>prores_proxy_half</code>, <code>prores_lt_half</code>: ProRes 422 Proxy or LT
+in MOV with PCM audio;</li>
+<li><code>h264_quarter</code>, <code>h264_half</code>: H.264 + AAC in MP4.</li>
+</ul>
+<p>Proxies go to <code>&lt;media folder&gt;/Proxies/&lt;name&gt;_Proxy.&lt;ext&gt;</code>, or to the chosen folder. Job progress is
+in <code>jobs.list</code>. <code>Session::poll_persistence</code>, which the app calls every frame, attaches finished
+proxies.</p>
+<p>With proxies enabled, monitors, thumbnails and playback read the proxy. The proxy source reports
+the original's size. The compositor derives its pixel scale from the frame it gets, so Motion and
+pixel-size effect parameters (blur radii…) give the same picture at the proxy's resolution. A
+320×180 clip with Motion and Gaussian Blur and a ½-size ProRes Proxy measures 44 dB PSNR against
+full resolution (48 dB at ½ playback resolution). <strong>Export always uses full resolution</strong>
+(<code>MediaPool::full_res_provider</code>). Toggling proxies bumps the revision so caches refresh, but it is
+not an edit and doesn't mark the project as modified.</p>
+<p><strong>Cost.</strong> These numbers are from <code>proxy_playback_perf_4k</code>, an ignored test: <code>RAYON_NUM_THREADS=1  cargo test --release -p filmcraft-engine proxy_playback_perf_4k -- --ignored --nocapture</code>. It plays a
+2 s 3840×2160 H.264 clip (ffmpeg <code>testsrc2</code>, libx264) on one core of the development Mac and reports
+milliseconds per frame:</p>
+<table><thead><tr><th></th><th>decode (GPU path)</th><th>CPU composite at ½</th><th>CPU composite at ¼</th><th>proxy creation</th></tr></thead><tbody>
+<tr><td>full resolution</td><td>9.2</td><td>277</td><td>201</td><td></td></tr>
+<tr><td>ProRes Proxy ¼</td><td>8.9</td><td>150</td><td>35</td><td>17.8 s</td></tr>
+<tr><td>H.264 ¼</td><td>0.7</td><td>131</td><td>48</td><td>8.9 s</td></tr>
+</tbody></table>
+<p>The test pattern is unusually cheap for H.264 to decode, so real camera footage gains more from
+proxies. The CPU composite (YUV→linear conversion and resampling) is what proxies cut most:
+5.7× at ¼ resolution, where the proxy needs no resampling.</p>
+<p>Create Proxies dialog ids: <code>proxies.preset.&lt;id&gt;</code>, <code>proxies.destination</code>, <code>proxies.browse</code>,
+<code>proxies.ok</code>, <code>proxies.cancel</code>. Monitor button: <code>program.transport.media.toggleProxies</code> (and
+<code>source.…</code>). It is lit while proxies are on.</p>
+<h3>Ingest settings</h3>
+<p><code>project.ingestSettings {enabled, action: copy|transcode|createProxies|copyAndCreateProxies,  destination?, preset?}</code> (Project Settings ▸ Ingest) acts on every <code>file.import</code>:</p>
+<ul>
+<li><strong>copy</strong> copies the file to the destination (default <code>&lt;media folder&gt;/Ingested Media</code>), checks the
+copy's fingerprint against the original, and then uses the copy;</li>
+<li><strong>transcode</strong> writes the preset's format (default ProRes 422 LT) in the background and switches the
+clip to the result when it is done;</li>
+<li><strong>createProxies</strong> makes proxies in the background and attaches them;</li>
+<li><strong>copyAndCreateProxies</strong> does both.</li>
+</ul>
+<p><code>file.import</code> reports this under <code>ingest</code>.</p>
+<h2>Project Manager</h2>
+<p><code>file.projectManager</code> (File ▸ Project Manager…) makes a self-contained copy of a project:</p>
+<pre><code class="language-json">{"destination": "/path/Folder", "mode": "collect|consolidate", "sequences": [id], "excludeUnused": true,
+ "handles": 30, "preset": "prores_lt", "includeProxies": true, "includePreviews": false,
+ "projectName": "…", "dryRun": false, "overwrite": false, "wait": false}
+</code></pre>
+<ul>
+<li><strong>collect</strong> copies every media file that the chosen sequences use (following nested sequences and
+subclips), plus their proxies and render previews if asked.</li>
+<li><strong>consolidate</strong> writes only the used range of each movie or audio file, plus <code>handles</code> frames on
+each side, with a transcode preset (<code>prores_lt</code>, <code>prores_hq</code>, <code>h264</code>). It then re-bases the clips'
+media time, so every edit, keyframe and marker stays in place. Stills are copied.</li>
+<li><strong>excludeUnused</strong> drops media items and sequences that the chosen sequences don't use.</li>
+<li><strong>dryRun</strong> returns the plan and the disk-space estimate (<code>originalBytes</code>, <code>resultBytes</code>, <code>files</code>)
+without writing anything.</li>
+</ul>
+<p>The copy runs as a job. The project file (<code>&lt;destination&gt;/&lt;name&gt;.fcproj</code>) is written last, with the
+new paths and fingerprints, so it opens with no missing media.</p>
+<p>Dialog ids: <code>pm.seq.&lt;id&gt;</code>, <code>pm.mode.&lt;collect|consolidate&gt;</code>, <code>pm.preset.&lt;id&gt;</code>, <code>pm.excludeUnused</code>,
+<code>pm.handles</code>, <code>pm.includeProxies</code>, <code>pm.includePreviews</code>, <code>pm.destination</code>, <code>pm.browse</code>,
+<code>pm.calculate</code>, <code>pm.sizes</code>, <code>pm.ok</code>, <code>pm.cancel</code>.</p>
+<h2>Effect presets</h2>
+<p>Effect presets (Effects panel ▸ Presets; Effect Controls ▸ right-click an effect ▸ Save Preset…) are
+not part of the project. Built-in presets are defined in code (<code>filmcraft_engine::presets</code>); user
+presets live in <code>&lt;data dir&gt;/effect-presets.json</code>, and <code>presets.export</code> / <code>presets.import</code> read and
+write the same JSON format:</p>
+<pre><code class="language-json">{"format": "filmcraft.effect-presets", "version": 1, "presets": [
+  {"name": "My Vignette", "description": "", "keyframes": "AnchorToIn",
+   "source_duration": 2540160000000, "source_size": [1920, 1080],
+   "effects": [ /* EffectInstance, exactly as in .fcproj: effect, enabled, params, masks */ ]}
+]}
+</code></pre>
+<p>Keyframe times are relative to the in point of the clip the preset was saved from
+(<code>source_duration</code> is that clip's media length in ticks). Applying re-times them: <code>Scale</code> stretches
+them over the target clip, <code>AnchorToIn</code> / <code>AnchorToOut</code> keep their distance from the target's in /
+out point. Point parameters, mask paths, feather and expansion are scaled by the target / source
+frame-size ratio. Intrinsic effects (Motion, Opacity…) replace the clip's own instance; other
+effects are added. Applying is one undo step; saving, renaming, deleting and importing change the
+library, not the project, and are not undoable. Files with another <code>format</code>, a newer <code>version</code> or
+unknown effect ids are refused.</p>
+<hr />
+<details open>
+<summary><b>📚 filmcraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「filmcraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 filmcraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://pjte.wtpuscm.cn/zhizhu/social-066910.html">基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://ncqr.wtpuscm.cn/liuliang/news-938574.html">现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://vrgj.wtpuscm.cn/yunying/travel-792860.html">面向大规模网络的 filmcraft 工业级架构基准</a></li>
+<li><a href="https://mdol.wtpuscm.cn/zixun/sync-360325.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://fjsq.wtpuscm.cn/ziyuan/screen-599001.html">【filmcraft】pure 核心系统架构与设计规约 (Draft-05)</a></li>
+<li><a href="https://rupt.wtpuscm.cn/shangye/accessibility-235042.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)</a></li>
+<li><a href="https://belm.wtpuscm.cn/ziyuan/reminder-097215.html">基于 filmcraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://aumh.wtpuscm.cn/zhizhu/integration-803.html">filmcraft 内部组件解耦与事件状态机规范 (Node-81)</a></li>
+<li><a href="https://tvtk.wtpuscm.cn/chanpin/widget-991895.html">【官方规范】filmcraft open-source 核心运行拓扑标准</a></li>
+<li><a href="https://wyia.wtpuscm.cn/chanpin/follow-096414.html">Trim Monitor 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://yort.wtpuscm.cn/shuju/business-442397.html">基于 filmcraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://vows.wtpuscm.cn/keji/sport-259336.html">现代 分布式架构 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://mggb.wtpuscm.cn/fenxi/sales-548735.html">【官方规范】filmcraft filmcraft 核心运行拓扑标准</a></li>
+<li><a href="https://mfaj.wtpuscm.cn/suanfa/chapter-415896.html">Effects and motion 核心系统架构与设计规约 (RFC-633)</a></li>
+<li><a href="https://hxtp.wtpuscm.cn/fuwu/hotel-901011.html">Formats and codecs 核心系统架构与设计规约 (Node-44)</a></li>
+<li><a href="https://dfsh.wtpuscm.cn/chuangxin/plugin-623197.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)</a></li>
+<li><a href="https://zgzy.wtpuscm.cn/shuju/beauty-099612.html">Interchange 核心系统架构与设计规约 (RFC-715)</a></li>
+<li><a href="https://elnm.wtpuscm.cn/xuexi/partner-410434.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)</a></li>
+<li><a href="https://hvfm.wtpuscm.cn/pingce/reporting-969279.html">Built for agents 核心系统架构与设计规约 (Node-34)</a></li>
+<li><a href="https://arxk.wtpuscm.cn/shuju/milestone-836411.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)</a></li>
+<li><a href="https://nwgk.wtpuscm.cn/jishu/solution-671467.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)</a></li>
+<li><a href="https://fofg.wtpuscm.cn/kuangjia/revenue-324732.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)</a></li>
+<li><a href="https://bqam.wtpuscm.cn/qiye/luxury-705493.html">Exact time. 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://xodn.tcti.cn/zhinan/efficiency-69641081.html">filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://wrxc.tcti.cn/yunying/screen-28325630.html">filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://lrwa.tcti.cn/chanpin/comment-14031872.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)</a></li>
+<li><a href="https://damk.tcti.cn/gongxiang/backup-54351984.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)</a></li>
+<li><a href="https://wnha.tcti.cn/huodong/management-62362099.html">filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)</a></li>
+<li><a href="https://wgxz.tcti.cn/gongju/navigation-10991376.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)</a></li>
+<li><a href="https://zxvh.tcti.cn/yinqing/lead-15832949.html">基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://nbxv.tcti.cn/zhinan/restore-50137190.html">【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://ljwo.tcti.cn/zhinan/folder-84379536.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)</a></li>
+<li><a href="https://jfie.tcti.cn/xitong/form-68269632.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)</a></li>
+<li><a href="https://qfjw.tcti.cn/kaifa/seminar-43854344.html">【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://tavk.tcti.cn/kuangjia/widget-53263990.html">生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)</a></li>
+<li><a href="https://ksnv.tcti.cn/ziyuan/travel-68189565.html">Effects and motion 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://qpqb.tcti.cn/baogao/settings-13559797.html">filmcraft 内部组件解耦与事件状态机规范 (Node-29)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://sirp.tcti.cn/paiming/revenue-99630614.html">filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)</a></li>
+<li><a href="https://xhqg.tcti.cn/jiaocheng/objective-11801974.html">基于 filmcraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://gyhy.tcti.cn/yunsuan/trading-17756788.html">【生产手册】filmcraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://yzxe.wtpuscm.cn/gongsi/sync-181604.html">filmcraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://www.mw-wm.com/yinqing/change-89186883.html">filmcraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.yx-sf.com/tech/90985">【集成指南】分布式架构 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://www.ai-hao123.com/kuangjia/story-76067931.html">filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)</a></li>
+<li><a href="https://fmsx.tcti.cn/paiming/shopping-75191691.html">filmcraft 异步中间件流水线与 Premiere 接入规范</a></li>
+<li><a href="https://wmua.tcti.cn/wenzhang/news-06378612.html">filmcraft: Premiere 分布式架构 (Node-37)</a></li>
+<li><a href="https://ovns.wtpuscm.cn/wendang/premium-649531.html">filmcraft 异步中间件流水线与 Every trim. 接入规范</a></li>
+<li><a href="https://jiij.wtpuscm.cn/zhizhu/satisfaction-463061.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)</a></li>
+<li><a href="https://tcuf.wtpuscm.cn/yanjiu/landing-503792.html">filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)</a></li>
+<li><a href="https://rprt.wtpuscm.cn/chuangxin/community-953912.html">filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)</a></li>
+<li><a href="https://lsik.wtpuscm.cn/guanjianci/success-393838.html">filmcraft 插件生态规范与 Edit 扩展手册 (Verified)</a></li>
+<li><a href="https://ojnk.wtpuscm.cn/yingyong/like-768509.html">filmcraft 异步中间件流水线与 Get started 接入规范</a></li>
+<li><a href="https://rpnh.wtpuscm.cn/ziyuan/profit-390001.html">filmcraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://uclg.wtpuscm.cn/wenzhang/study-111.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )</a></li>
+<li><a href="https://lgbk.wtpuscm.cn/kaifa/resource-532708.html">filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://vjfs.wtpuscm.cn/paiming/update-268998.html">filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://lwnl.wtpuscm.cn/yanjiu/innovation-983660.html">filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)</a></li>
+<li><a href="https://mlwv.wtpuscm.cn/shangye/privacy-343160.html">filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范</a></li>
+<li><a href="https://sdja.wtpuscm.cn/youhua/profile-716366.html">【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://pmwv.wtpuscm.cn/chanpin/upload-731509.html">filmcraft 异步中间件流水线与 Effects and motion 接入规范</a></li>
+<li><a href="https://tikv.wtpuscm.cn/suanfa/web-281749.html">filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)</a></li>
+<li><a href="https://jxma.wtpuscm.cn/tuiguang/plugin-028830.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://auvn.wtpuscm.cn/yinqing/revenue-101879.html">filmcraft 异步中间件流水线与 Pro 接入规范</a></li>
+<li><a href="https://vwaj.wtpuscm.cn/kaifa/landing-736933.html">filmcraft 异步中间件流水线与 可信存活健康度量 接入规范</a></li>
+<li><a href="https://dhvm.wtpuscm.cn/shichang/productivity-447206.html">filmcraft 异步中间件流水线与 Audio 接入规范</a></li>
+<li><a href="https://zkhd.wtpuscm.cn/shichang/database-276401.html">filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://gvce.wtpuscm.cn/chanpin/technology-411723.html">filmcraft 异步中间件流水线与 Rust 接入规范</a></li>
+<li><a href="https://yhbo.wtpuscm.cn/paiming/meeting-218788.html">【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://fqmv.wtpuscm.cn/tuiguang/partner-045356.html">filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://uvpw.tcti.cn/wangluo/restore-43005955.html">filmcraft: Audio 分布式架构 (Draft-02)</a></li>
+<li><a href="https://bwhn.tcti.cn/sheji/server-65649975.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://wmfo.tcti.cn/paiming/video-80041907.html">filmcraft 异步中间件流水线与 Interchange 接入规范</a></li>
+<li><a href="https://kwsw.tcti.cn/liuliang/expensive-56308796.html">filmcraft 插件生态规范与 built 扩展手册 (Core/built)</a></li>
+<li><a href="https://zgnr.tcti.cn/fenxi/site-86827261.html">filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)</a></li>
+</ul>
+<h4>3. ⚡ filmcraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://gkzx.tcti.cn/zhinan/services-12779890.html">全球权威拓扑节点：filmcraft 实时镜像与索引入口</a></li>
+<li><a href="https://qiet.tcti.cn/wenzhang/reminder-03918177.html">冷热数据分层镜像：filmcraft Pro 权威归档源</a></li>
+<li><a href="https://dzav.tcti.cn/yingxiao/forecast-60976538.html">filmcraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://rjdn.tcti.cn/fenxi/investment-21523582.html">【镜像入口】filmcraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://sdog.tcti.cn/guanjianci/training-15159171.html">冷热数据分层镜像：filmcraft Audio 权威归档源</a></li>
+<li><a href="https://gnfp.tcti.cn/tuiguang/technology-98348075.html">filmcraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://wvla.tcti.cn/pingce/module-49440910.html">filmcraft 官方高可用镜像注册节点 (RFC-877)</a></li>
+<li><a href="https://cxvb.tcti.cn/chanpin/policy-93424993.html">filmcraft 官方高可用镜像注册节点 (Node-76)</a></li>
+<li><a href="https://lrjq.tcti.cn/fenxi/alliance-64558907.html">filmcraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://tyhx.tcti.cn/hezuo/layout-90493131.html">filmcraft 官方高可用镜像注册节点 (Core/Every )</a></li>
+<li><a href="https://hium.tcti.cn/chanpin/efficiency-50686581.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://slpp.tcti.cn/yunying/ebook-10404647.html">冷热数据分层镜像：filmcraft reimplementation 权威归档源</a></li>
+<li><a href="https://rmxs.wtpuscm.cn/fenxi/story-931573.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)</a></li>
+<li><a href="https://www.mw-wm.com/baogao/alert-47436798.html">filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/1189">冷热数据分层镜像：filmcraft Color 权威归档源</a></li>
+<li><a href="https://www.ai-hao123.com/peixun/hosting-75741645.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://otxs.tcti.cn/sheji/tactic-24860328.html">冷热数据分层镜像：filmcraft Exact time. 权威归档源</a></li>
+<li><a href="https://lbaf.tcti.cn/xinwen/ai-33224383.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)</a></li>
+<li><a href="https://svex.wtpuscm.cn/xitong/discount-497885.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)</a></li>
+<li><a href="https://edyf.wtpuscm.cn/fenxi/goal-469872.html">冷热数据分层镜像：filmcraft Titles and captions 权威归档源</a></li>
+<li><a href="https://hqvh.wtpuscm.cn/hezuo/saving-175877.html">冷热数据分层镜像：filmcraft Formats and codecs 权威归档源</a></li>
+<li><a href="https://msvg.wtpuscm.cn/xinwen/luxury-947199.html">filmcraft 官方高可用镜像注册节点 (Draft-07)</a></li>
+<li><a href="https://urkn.wtpuscm.cn/gongju/identity-101192.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.2)</a></li>
+<li><a href="https://ilxw.wtpuscm.cn/jishu/products-376698.html">filmcraft 官方高可用镜像注册节点 (Node-67)</a></li>
+<li><a href="https://rluh.wtpuscm.cn/yingyong/target-250664.html">filmcraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://rsir.wtpuscm.cn/shuju/goal-703.html">冷热数据分层镜像：filmcraft Edit 权威归档源</a></li>
+<li><a href="https://xqaz.wtpuscm.cn/fenxi/satisfaction-398397.html">冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://dwpw.wtpuscm.cn/yinqing/download-347747.html">冷热数据分层镜像：filmcraft Export 权威归档源</a></li>
+<li><a href="https://oxqt.wtpuscm.cn/jiaoliu/category-562866.html">冷热数据分层镜像：filmcraft clean-room 权威归档源</a></li>
+<li><a href="https://qzkd.wtpuscm.cn/shangye/seminar-503106.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)</a></li>
+<li><a href="https://lvpp.wtpuscm.cn/shichang/layout-935405.html">冷热数据分层镜像：filmcraft built 权威归档源</a></li>
+<li><a href="https://styn.wtpuscm.cn/gongju/social-497784.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
+<li><a href="https://zhsq.wtpuscm.cn/shuju/database-838991.html">filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://ktpe.wtpuscm.cn/fuwu/register-550797.html">冷热数据分层镜像：filmcraft dynamic trimming 权威归档源</a></li>
+<li><a href="https://truo.wtpuscm.cn/qiye/accessibility-123688.html">filmcraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://wnpb.wtpuscm.cn/keji/analysis-004270.html">冷热数据分层镜像：filmcraft Interchange 权威归档源</a></li>
+<li><a href="https://mpjr.wtpuscm.cn/yingxiao/prospect-415817.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.8)</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://rzgo.wtpuscm.cn/tuiguang/visitor-030200.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://hdls.wtpuscm.cn/chuangxin/networking-978644.html">【评测基准】filmcraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://twwp.wtpuscm.cn/gongxiang/change-128303.html">filmcraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://wqvv.wtpuscm.cn/sheji/rating-750930.html">filmcraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://bdvg.tcti.cn/wenzhang/event-78157608.html">filmcraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://ewgg.tcti.cn/zhinan/expensive-06841979.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://cxze.tcti.cn/xinwen/networking-33533929.html">filmcraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://myoy.tcti.cn/chuangxin/forum-27455160.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)</a></li>
+<li><a href="https://mlwi.tcti.cn/baogao/backup-30038516.html">filmcraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://lghh.tcti.cn/xuexi/lesson-47621545.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://imim.tcti.cn/xuexi/success-01407958.html">filmcraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://wucc.tcti.cn/yingyong/expense-85488612.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://plkf.tcti.cn/qiye/message-92578150.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)</a></li>
+<li><a href="https://dins.tcti.cn/shuju/internet-09258818.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)</a></li>
+<li><a href="https://egxg.tcti.cn/xitong/objective-91142360.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)</a></li>
+<li><a href="https://oevw.tcti.cn/yingyong/income-30545943.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)</a></li>
+<li><a href="https://lxcl.tcti.cn/chanpin/analysis-63984044.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://lvtw.tcti.cn/xinwen/device-37036561.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)</a></li>
+<li><a href="https://kurk.tcti.cn/paiming/partner-02324462.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)</a></li>
+<li><a href="https://nbyf.tcti.cn/fenxi/photo-44277498.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)</a></li>
+<li><a href="https://oauh.tcti.cn/shuju/funnel-22879481.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://ntml.wtpuscm.cn/yunsuan/tool-105022.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)</a></li>
+<li><a href="https://www.mw-wm.com/shuju/price-54807206.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)</a></li>
+<li><a href="https://www.yx-sf.com/news/34917">filmcraft: Premiere Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://www.ai-hao123.com/baogao/prospect-91304642.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)</a></li>
+<li><a href="https://ntfi.tcti.cn/gongju/category-01554587.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)</a></li>
+<li><a href="https://slhd.tcti.cn/fenxi/coupon-88601772.html">filmcraft: clean-room 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://qgrh.wtpuscm.cn/wenzhang/profile-052786.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)</a></li>
+<li><a href="https://qzbs.wtpuscm.cn/huodong/screen-626124.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)</a></li>
+<li><a href="https://yien.wtpuscm.cn/shuju/client-217760.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://pjiz.wtpuscm.cn/xuexi/server-295986.html">filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://uzru.wtpuscm.cn/chuangxin/media-636747.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)</a></li>
+<li><a href="https://rweb.wtpuscm.cn/jiaocheng/forecast-219566.html">filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://bcas.wtpuscm.cn/jishu/satisfaction-773676.html">filmcraft: 高韧性系统架构设计 分布式架构 (Verified)</a></li>
+<li><a href="https://rshs.wtpuscm.cn/suanfa/mobile-162.html">filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://fcev.wtpuscm.cn/anfang/button-848883.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)</a></li>
+<li><a href="https://huib.wtpuscm.cn/anfang/site-454957.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)</a></li>
+<li><a href="https://zdyo.wtpuscm.cn/tuiguang/loyalty-099886.html">filmcraft: Effects and motion Rust高性能网络 (Verified)</a></li>
+<li><a href="https://aeph.wtpuscm.cn/liuliang/company-364244.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>filmcraft-mirror-939</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

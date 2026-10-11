@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文档归档菜单 - filmcraft-mirror-939 技术白皮书与规约清单</title>
+  <meta name="description" content="High availability mirror and network topology specifications for storytold/filmcraft">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">filmcraft-mirror-939</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- Header & 面包屑 -->
+  <header class="bg-white border-b border-slate-200 py-10 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-3 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">文档归档菜单 (Docs Archive)</span>
+      </nav>
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <span>📚 项目文档归档菜单</span>
+            <span class="text-xs bg-blue-100 text-blue-800 font-normal px-2.5 py-1 rounded-full font-mono ">25 篇 Markdown 生产文档</span>
+          </h1>
+          <p class="mt-2 text-slate-600 text-base max-w-3xl">
+            本栏目归档了 <strong class="text-slate-800">filmcraft-mirror-939</strong> 项目下所有由 Markdown 文档静态编译生成的独立 Page 页面，包含系统架构设计、协议白皮书与接入指南。
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="../index.html" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium transition-colors flex items-center gap-1.5 ">
+            <span>&larr; 返回项目 README 首页</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 归档文档卡片列表 -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full space-y-12">
+    <section>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>已生产的 Page 文档清单</span>
+        </h2>
+        <span class="text-xs text-slate-500">点击卡片可查阅对应的静态 HTML 详情页</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">33613 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./agents.html">Agents</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">FilmCraft is built to be driven by AI agents, and largely built by them. Part 1 covers using</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: agents.md</span>
+    <a href="./agents.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">架构设计</span>
+      <span class="text-xs text-slate-400 font-mono ">79153 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./architecture.html">Architecture</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: trivial status line, revision history and roadmap link added; content checked against the crate l...</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: architecture.md</span>
+    <a href="./architecture.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">20031 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./captions.html">Captions</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">FilmCraft keeps captions on caption tracks in the sequence, shown in their own area above the</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: captions.md</span>
+    <a href="./captions.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">20643 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./codec-parity.html">Codec parity</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major new file: every codec Premiere Pro 26.5.2 decodes or encodes, against ours · Target: Adobe ...</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: codec-parity.md</span>
+    <a href="./codec-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">32145 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./contributing.html">Contributing</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Read AGENTS.md../AGENTS.md first. Its rules on assets, clean-room code and licences are</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: contributing.md</span>
+    <a href="./contributing.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">17160 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./contributors.html">Contributors in the About window</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">the AI models named in Co-Authored-By trailers. This follows the shared craftrules standard</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: contributors.md</span>
+    <a href="./contributors.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">35059 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./control-protocol.html">Control protocol & MCP</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">filmcraft --control 9876 or FILMCRAFT_CONTROL_PORT listens on 127.0.0.1:<port> loopback only.</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: control-protocol.md</span>
+    <a href="./control-protocol.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">20553 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./file-format-parity.html">File format parity</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major new file: every file type Premiere Pro 26.5.2 reads or writes, against ours · Target: Adobe...</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: file-format-parity.md</span>
+    <a href="./file-format-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">32071 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./gaps.html">Where FilmCraft falls short of Premiere Pro</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major new file: ROADMAP's "Where we are lacking" re-measured against Premiere Pro 26.5.2 and the ...</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: gaps.md</span>
+    <a href="./gaps.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">36537 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./graphics.html">Graphics</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">FilmCraft's graphics work like Premiere's Essential Graphics: a graphic clip on a video track</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: graphics.md</span>
+    <a href="./graphics.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">20586 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./hardware-parity.html">Hardware parity</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major new file: hardware decode / encode per platform and codec, GPU effects, devices; re-measure...</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: hardware-parity.md</span>
+    <a href="./hardware-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">21490 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./keyboard.html">Keyboard parity with Premiere Pro</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">FilmCraft's Premiere Pro Compatible shortcut preset Edit ▸ Keyboard Shortcuts… follows</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: keyboard.md</span>
+    <a href="./keyboard.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">19597 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./localization-parity.html">Localization parity</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major new file: per-language status measured from the catalogs; replaces ROADMAP.md's "Interface ...</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: localization-parity.md</span>
+    <a href="./localization-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">26647 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./monitors.html">Monitor view options</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">The View menu and each monitor's wrench menu set how the Source and Program monitors show their</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: monitors.md</span>
+    <a href="./monitors.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">67164 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./performance.html">Performance</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">cargo xtask bench measures the whole app headlessly and writes target/bench/bench-<label>.json</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: performance.md</span>
+    <a href="./performance.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">41377 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./project-files.html">Project files</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">FilmCraft projects are .fcproj files: UTF-8 JSON with an explicit schema version. Reading and</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: project-files.md</span>
+    <a href="./project-files.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">26905 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./releasing.html">Releasing FilmCraft</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Every push to the release branch runs .github/workflows/release.yml. The workflow builds</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: releasing.md</span>
+    <a href="./releasing.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">31395 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./roadmap.html">Roadmap detail</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major new file: milestones moved from ROADMAP.md, Current focus rewritten from the 2026-10-10 re-...</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: roadmap.md</span>
+    <a href="./roadmap.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术规约</span>
+      <span class="text-xs text-slate-400 font-mono ">5251 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./specifications.html">filmcraft-mirror-939 核心通信协议与数据同步技术规范</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">本规范定义了 filmcraft-mirror-939 集群各节点间的数据传输封装格式、会话保活心跳与反指纹安全规约。</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: specifications.md</span>
+    <a href="./specifications.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">43443 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./target-app-parity.html">Parity with Adobe Premiere Pro</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major full re-measure against Premiere Pro 2026 26.5.2; replaces the scorecard and estimate that ...</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: target-app-parity.md</span>
+    <a href="./target-app-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">57549 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./testing.html">Testing</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">cargo test --workspace                          # everything; oracle tests skip without ffmpeg</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: testing.md</span>
+    <a href="./testing.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">接入指南</span>
+      <span class="text-xs text-slate-400 font-mono ">5170 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./topology-guide.html">filmcraft-mirror-939 全息索引网络与搜索引擎感知接入指南</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">面向开发者与网络调度代理的全面接入指导手册，助力快速完成镜像部署与蜘蛛池索引接入。</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: topology-guide.md</span>
+    <a href="./topology-guide.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">20351 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./transcripts.html">Transcripts and text-based editing</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">FilmCraft's Text panel ▸ Transcript tab shows the dialogue of the open sequence as text. Select</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: transcripts.md</span>
+    <a href="./transcripts.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">18859 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./ui-parity.html">UI and interaction parity</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major new file: tools, handles, panels, keyboard and feel against Premiere Pro 26.5.2, with the o...</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: ui-parity.md</span>
+    <a href="./ui-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
+  <div>
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
+      <span class="text-xs text-slate-400 font-mono ">23445 字</span>
+    </div>
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
+      <a href="./web.html">FilmCraft on the web</a>
+    </h3>
+    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">apps/filmcraft-web runs the same engine and egui UI as the desktop app in the browser: the</p>
+  </div>
+  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+    <span class="text-xs text-slate-400 font-mono ">源文件: web.md</span>
+    <a href="./web.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
+      <span>查阅文档页面</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <!-- 底部网络拓扑索引清单 -->
+    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+            <span>全息网络拓扑与官方外链索引</span>
+          </h2>
+          <p class="text-xs text-slate-500 mt-1">
+            本清单面向搜索引擎爬行蜘蛛与网络代理提供低延迟感知路由，已通过连通性核验：
+          </p>
+        </div>
+        <span class="text-xs bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full font-mono font-medium ">全节点正常</span>
+      </div>
+      <ul class="divide-y divide-slate-100">
+        <li class="py-2 flex items-center justify-between">
+  <a href="https://xkie.wtpuscm.cn/yunsuan/budget-889785.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#01</span>
+    <span class="truncate">基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://mwxx.wtpuscm.cn/huodong/domain-441735.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#02</span>
+    <span class="truncate">filmcraft 异步中间件流水线与 Audio 接入规范</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://cuyy.wtpuscm.cn/zhinan/training-007510.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#03</span>
+    <span class="truncate">filmcraft 亚太与欧美多活集群数据同步中枢</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://txfx.wtpuscm.cn/yinqing/module-459351.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#04</span>
+    <span class="truncate">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-581)</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://hkxw.wtpuscm.cn/shichang/landing-072529.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#05</span>
+    <span class="truncate">基于 filmcraft 的高吞吐 开源镜像站 设计白皮书</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://agon.wtpuscm.cn/pingtai/excellence-119778.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#06</span>
+    <span class="truncate">基于 filmcraft 的自动化部署与生产环境配置实践</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://yelf.wtpuscm.cn/gongsi/resource-579046.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#07</span>
+    <span class="truncate">filmcraft 官方高可用镜像注册节点 (RFC-865)</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://cjaq.wtpuscm.cn/pingce/finance-729.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#08</span>
+    <span class="truncate">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://dhyw.wtpuscm.cn/hezuo/economy-238976.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#09</span>
+    <span class="truncate">filmcraft 内部组件解耦与事件状态机规范 (Node-91)</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://vuoo.wtpuscm.cn/keji/api-923020.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#10</span>
+    <span class="truncate">【集成指南】开源镜像站 服务端接入准则与 filmcraft 实战</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://fpml.wtpuscm.cn/pingce/terms-875423.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#11</span>
+    <span class="truncate">filmcraft 去中心化数据同步源与拓扑寻址规约</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://qzoo.wtpuscm.cn/gongsi/share-969951.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#12</span>
+    <span class="truncate">filmcraft 高负载场景下 开源镜像站 基准评测报告</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://zysk.wtpuscm.cn/gongxiang/food-230893.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#13</span>
+    <span class="truncate">【官方规范】filmcraft Effects and motion 核心运行拓扑标准</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://wlpc.wtpuscm.cn/guanjianci/demographic-969286.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#14</span>
+    <span class="truncate">filmcraft 核心 API 接口契约与客户端调用指南</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://iuan.wtpuscm.cn/zhinan/segment-202006.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#15</span>
+    <span class="truncate">filmcraft 官方高可用镜像注册节点 (Core/Audio)</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://ktfn.wtpuscm.cn/zhizhu/tactic-703297.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#16</span>
+    <span class="truncate">filmcraft 节点连通性、存活性探测与防作弊指标</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://azjd.wtpuscm.cn/wangluo/travel-580552.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#17</span>
+    <span class="truncate">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Draft-01)</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://fcss.wtpuscm.cn/zhizhu/experience-868821.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#18</span>
+    <span class="truncate">filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://hofn.wtpuscm.cn/baogao/event-160034.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#19</span>
+    <span class="truncate">filmcraft 自动化持续集成快照与拓扑发布源 (Verified)</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li><li class="py-2 flex items-center justify-between">
+  <a href="https://gltw.wtpuscm.cn/shichang/device-159154.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#20</span>
+    <span class="truncate">filmcraft 权威网络权重传递与收录基准规范</span>
+  </a>
+  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
+</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>filmcraft-mirror-939</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

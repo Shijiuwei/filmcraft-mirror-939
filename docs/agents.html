@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agents - filmcraft-mirror-939 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">filmcraft-mirror-939</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Agents</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Agents</h1>
+<p>FilmCraft is built to be driven by AI agents, and largely built by them. Part 1 covers using
+FilmCraft from an agent. Part 2 covers developing FilmCraft as an agent.</p>
+<h1>Part 1: driving FilmCraft</h1>
+<h2>1. MCP server</h2>
+<p><code>filmcraft-cli mcp</code> serves MCP on stdio. It has two modes:</p>
+<table><thead><tr><th>Mode</th><th>Command</th><th>What it drives</th></tr></thead><tbody>
+<tr><td>Headless</td><td><code>filmcraft-cli mcp --demo</code> or <code>--project p.fcproj</code> (neither = empty project)</td><td>an in-process engine session, no window</td></tr>
+<tr><td>Bridge</td><td><code>filmcraft-cli mcp --bridge 127.0.0.1:9876</code></td><td>the running desktop app started with <code>filmcraft --control 9876</code></td></tr>
+</tbody></table>
+<p>Headless mode also takes <code>--data-dir DIR</code> (user presets). Any other option is rejected (exit 2):
+there are no folder-confinement flags such as <code>--automation-read-root</code>, so the server can read
+and write wherever the user can.</p>
+<p><strong>Claude Code.</strong> The repository's <code>.mcp.json</code> registers both servers (<code>filmcraft</code> = bridge,
+<code>filmcraft-headless</code> = demo). Both point at <code>target/release/filmcraft-cli</code>, so build it first:</p>
+<pre><code class="language-sh">cargo build --release -p filmcraft-cli -p filmcraft
+./target/release/filmcraft --control 9876 &amp;      # only for the bridge server
+claude                                           # approve the project MCP servers when asked
+</code></pre>
+<p>To register the server by hand, or for another MCP client, use the absolute binary path:</p>
+<pre><code class="language-sh">claude mcp add filmcraft-headless -- /abs/path/filmcraft/target/release/filmcraft-cli mcp --demo
+</code></pre>
+<pre><code class="language-json">{ "mcpServers": { "filmcraft": { "command": "/abs/path/filmcraft-cli", "args": ["mcp", "--bridge", "127.0.0.1:9876"] } } }
+</code></pre>
+<h3>From an installed release</h3>
+<p>The release packages ship <code>filmcraft-cli</code> alongside the desktop app, so no build is needed:</p>
+<table><thead><tr><th>Install</th><th>CLI</th></tr></thead><tbody>
+<tr><td>Windows (MSI)</td><td><code>C:\Program Files\FilmCraft\filmcraft-cli.exe</code> by default (wherever you installed it otherwise), not on <code>PATH</code></td></tr>
+<tr><td>Linux (deb, rpm)</td><td><code>/usr/bin/filmcraft-cli</code></td></tr>
+<tr><td>macOS</td><td>the separate <code>filmcraft-cli-&lt;version&gt;-macos-&lt;arch&gt;.zip</code> release asset (the <code>.app</code> holds only the desktop app)</td></tr>
+</tbody></table>
+<pre><code class="language-sh"># Windows, default install folder
+claude mcp add filmcraft -- "C:\Program Files\FilmCraft\filmcraft-cli.exe" mcp
+# Linux, or macOS with the CLI unzipped onto PATH
+claude mcp add filmcraft -- filmcraft-cli mcp
+</code></pre>
+<h3>Tools</h3>
+<table><thead><tr><th>Tool</th><th>Modes</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><code>command_list</code></td><td>both</td><td>every command: id, label, menu, shortcut, params, enabled now (<code>filter</code>, <code>enabled_only</code>)</td></tr>
+<tr><td><code>command_run</code></td><td>both</td><td>run a command <code>{id, params}</code>; edits are undoable</td></tr>
+<tr><td><code>command_batch</code></td><td>both</td><td>run several commands in order <code>{steps: [{id, params}], stop_on_error}</code> → <code>{completed, failed, results}</code></td></tr>
+<tr><td><code>doc_inspect</code></td><td>both</td><td>the project tree and the active sequence in one call (<code>project_inspect</code> + <code>sequence_inspect</code>)</td></tr>
+<tr><td><code>render_preview</code></td><td>both</td><td>same as <code>render_frame</code></td></tr>
+<tr><td><code>project_inspect</code></td><td>both</td><td>bins and items with ids, types, durations; active sequence</td></tr>
+<tr><td><code>sequence_inspect</code></td><td>both</td><td>the active sequence: tracks, clips (<code>start</code> / <code>end</code> and <code>sourceIn</code> / <code>sourceOut</code> in ticks, frames, <code>speed</code>, <code>reverse</code>: the clip plays its <code>sourceIn</code> to <code>sourceOut</code> stretch backward, <code>gainDb</code>), effects, transitions, markers (name and <code>comment</code>), playhead, selection</td></tr>
+<tr><td><code>media_import</code></td><td>both</td><td>import files by absolute path (<code>paths</code>, an array; optional <code>bin</code>, <code>image_sequence</code>)</td></tr>
+<tr><td><code>render_frame</code></td><td>both</td><td>PNG of the program frame at <code>seconds</code> (headless renders; bridge screenshots the Program monitor). Read-only: the playhead and selection are left as they were</td></tr>
+<tr><td><code>ui_inspect</code></td><td>bridge</td><td>UI state: tool, workspace, panels, zoom, playback, fps</td></tr>
+<tr><td><code>ui_elements</code></td><td>bridge</td><td>on-screen interactive elements with id, label and rect (<code>prefix</code> filter)</td></tr>
+<tr><td><code>ui_click</code></td><td>bridge</td><td>click by <code>id</code> or <code>x</code>,<code>y</code>; <code>button</code>, <code>count</code>, <code>modifiers</code></td></tr>
+<tr><td><code>ui_drag</code></td><td>bridge</td><td>press–move–release between points or element ids</td></tr>
+<tr><td><code>ui_key</code></td><td>bridge</td><td>key or shortcut: <code>Space</code>, <code>Cmd+K</code>, <code>Shift+Delete</code></td></tr>
+<tr><td><code>ui_type</code></td><td>bridge</td><td>type text into the focused field</td></tr>
+<tr><td><code>ui_screenshot</code></td><td>bridge</td><td>PNG of the window or one <code>panel</code></td></tr>
+<tr><td><code>ui_control</code></td><td>bridge</td><td>call any control-channel method directly (<code>ui.set</code>, <code>ui.scroll</code>, <code>ui.timeline.locate</code>, …)</td></tr>
+</tbody></table>
+<p>Typical loop: <code>project_inspect</code> / <code>sequence_inspect</code> → get ids → <code>command_run</code> → <code>render_frame</code> or
+<code>ui_screenshot</code> → look at the result → <code>edit.undo</code> if it's wrong.</p>
+<h3>Conventions</h3>
+<p>The server follows a few conventions that make it predictable for agents. They are not
+FilmCraft-specific: the sibling craft apps' MCP servers can follow the same ones, so an agent that has
+driven one app can drive the others.</p>
+<ul>
+<li><strong>Core tools.</strong> <code>command_list</code>, <code>command_run</code>, <code>command_batch</code>, <code>doc_inspect</code> and <code>render_preview</code>
+work in both modes. The FilmCraft tools above stay as they are.</li>
+<li><strong>Titles and annotations.</strong> Every tool has a <code>title</code> and the four MCP hints (<code>readOnlyHint</code>,
+<code>destructiveHint</code>, <code>idempotentHint</code>, <code>openWorldHint</code>), so a client can let the read-only tools
+(lists, inspects, renders, screenshots) run without asking and ask before edits. When you add a
+tool, set them in its <code>#[tool(...)]</code> attribute; a test checks every listed tool.</li>
+<li><strong>Strict arguments.</strong> An unknown tool argument is a JSON-RPC <code>-32602</code> error that names it and the
+accepted ones (<code>unknown argument "filtr" for command_list; expected: enabled_only, filter</code>), not a
+silently ignored key. <code>command_run.params</code> goes to the command unchanged.</li>
+<li><strong>Errors.</strong> A failing command is an <code>isError</code> result with the engine's message. A line that is not
+JSON gets a <code>-32700</code> parse error (id <code>null</code>) and the server keeps serving. A command that panics is
+reported as <code>internal error: …</code>, and the session stays usable.</li>
+<li><strong>Resources.</strong> <code>filmcraft://document</code> (the project tree and active sequence, as <code>doc_inspect</code>) and
+<code>filmcraft://commands</code> (the command catalog, as <code>command_list</code>), both <code>application/json</code>. For MCP
+2026-07-28 clients such as current Claude Code, list and read results carry the <code>ttlMs</code> and
+<code>cacheScope</code> hints that revision requires.</li>
+</ul>
+<h3>Long exports: progress and cancellation</h3>
+<p><code>command_run {"id": "file.exportMedia", "params": {…, "wait": true}}</code> in headless mode blocks until
+the file is written. It uses the MCP progress and cancellation utilities, so a client can show
+progress and stop it:</p>
+<ul>
+<li>The export runs as the same background job <code>jobs.list</code> shows. The session is locked only for short
+polls, so other requests (<code>ping</code>, <code>doc_inspect</code>, <code>jobs.list</code>, …) are answered while it encodes.</li>
+<li>Every job in <code>jobs.list</code>, and every encoding item of <code>export.queue.list</code>, carries <code>etaSeconds</code>: the
+time left at the job's speed over the last 15 seconds, <code>null</code> until a second of progress has been
+measured (a loudness pass, a seek) and once it is done. The app shows it as <code>37% · 2:05 left</code> in the
+status bar, the Export queue and the Progress panel.</li>
+<li>With <code>"_meta": {"progressToken": T}</code> on the <code>tools/call</code>, the server sends
+<code>notifications/progress</code> <code>{progressToken: T, progress: &lt;frames done&gt;, total: &lt;frames&gt;, message:  &lt;job status&gt;}</code> at most every 100 ms while frames advance. Without a token it sends none.</li>
+<li><code>notifications/cancelled</code> for the request stops the encode at the next batch (<code>jobs.cancel</code>),
+deletes the partial output (the movie, or the frames and caption sidecar written so far) and sends
+no response, as the MCP cancellation utility asks.</li>
+<li>Without <code>wait</code> the command returns <code>{job, path}</code> at once, as before: poll <code>jobs.list</code> and stop it
+with <code>jobs.cancel</code>. Other exports (<code>file.exportFrame</code>, interchange formats, …) finish quickly and
+ignore the token.</li>
+<li>Bridge mode works the same way: the export runs as an app job (the app stays responsive and shows
+"Exporting… NN%" in its status bar) and the call returns when it is written, however long it
+takes. <code>filmcraft-cli --bridge … exec file.exportMedia … wait=true</code> blocks the same way.</li>
+</ul>
+<h2>2. Control channel</h2>
+<p><code>filmcraft --control 9876</code> (or <code>FILMCRAFT_CONTROL_PORT=9876</code>) listens on <code>127.0.0.1</code> only. Send one
+JSON request per line and get one JSON reply per line. Full method table:
+<a href="control-protocol.md">control-protocol.md</a>.</p>
+<pre><code class="language-jsonc">{"id":1,"method":"engine.commands"}
+{"id":2,"method":"engine.execute","params":{"command":"file.openDemoProject"}}
+{"id":3,"method":"engine.execute","params":{"command":"playhead.set","params":{"seconds":2}}}
+{"id":4,"method":"engine.execute","params":{"command":"sequence.addEdit"}}
+{"id":5,"method":"engine.execute","params":{"command":"effects.apply","params":{"effect":"Gaussian Blur"}}}
+{"id":6,"method":"ui.elements","params":{"prefix":"tools."}}
+{"id":7,"method":"ui.click","params":{"id":"tools.Razor"}}
+{"id":8,"method":"ui.key","params":{"key":"Cmd+Z"}}
+{"id":9,"method":"ui.screenshot","params":{"path":"/tmp/timeline.png","panel":"Timeline"}}
+</code></pre>
+<p>Replies look like <code>{"id":4,"ok":true,"result":{"cuts":2}}</code> or <code>{"id":7,"ok":false,"error":"…"}</code>.
+Minimal client:</p>
+<pre><code class="language-python">import json, socket
+s = socket.create_connection(("127.0.0.1", 9876)); f = s.makefile("rw")
+def call(method, **params):
+    f.write(json.dumps({"id": 1, "method": method, "params": params}) + "\n"); f.flush()
+    return json.loads(f.readline())
+print(call("engine.execute", command="sequence.inspect"))
+</code></pre>
+<p>Notes:</p>
+<ul>
+<li>Time is in ticks (254 016 000 000 per second). Commands also accept <code>seconds</code>, <code>frame</code> or
+<code>timecode</code>.</li>
+<li>A track parameter (<code>track</code>, <code>audioTrack</code>) is a track id or a name such as <code>"V1"</code> / <code>"A2"</code>.
+Leaving it out picks the command's default track; naming a track the sequence does not have is
+an "invalid parameters" error, never a different track.
+In <code>timeline.place</code>, <code>track</code> is where the picture goes and <code>audioTrack</code> where the sound goes;
+an audio track given as <code>track</code> places the sound alone, on that track.</li>
+<li><code>engine.execute</code> also runs UI-only commands (<code>tool.razor</code>, <code>playback.toggle</code>,
+<code>window.workspace.color</code>, <code>window.panel.&lt;name&gt;</code>).</li>
+<li>A command that works on the selection is disabled ("no clips selected", "select a clip in the
+Project panel") until something is selected, unless the call names its targets under a key the
+command documents (<code>clips</code> / <code>clip</code> for timeline clips, <code>items</code> / <code>item</code> for project items):
+<code>clip.replaceFromBin {"clips":[12],"item":4}</code> runs with nothing selected and leaves the
+selection alone. Only the selection condition is answered by the named targets; every other
+one (an open sequence, a filled clipboard, the right kind of clip) still applies, and ids of
+nothing do not count. <code>command_list</code> / <code>engine.commands</code> keep reporting the selection's state.</li>
+<li>Element ids come from the previous frame. If an element is missing right after a layout change,
+the app retries on later frames before giving up.</li>
+<li><code>timeline.move</code> takes linked partners along while Linked Selection is on: moving a picture
+clip moves its sound by the same offset (pass <code>"linked": false</code> to move only the listed clips).
+It returns <code>{"moved": [ids]}</code>, every clip that moved.</li>
+<li>Without a window, <code>filmcraft-cli run script.jsonl</code> (lines of <code>{"id":"…","params":{…}}</code>) runs the
+same commands headlessly. See §2b for the rest of the CLI.</li>
+</ul>
+<h2>2b. Command-line interface</h2>
+<p>Every command is also one shell call away. Options go anywhere; output is JSON; exit status is 0 on
+success, 1 when a command fails and 2 on a usage error. <code>filmcraft-cli help</code>, <code>filmcraft-cli --help</code>
+and <code>filmcraft-cli -h</code> print the reference and exit successfully.
+If the reader of stdout closes the pipe early (<code>filmcraft-cli commands | head</code>), the CLI drops the rest
+of its output but still finishes the work, saves included, and the exit status still reports
+failures; any other stdout write error is reported and makes the status 1.</p>
+<pre><code class="language-sh">filmcraft-cli commands razor                     # find ids (add --json for machine output)
+filmcraft-cli describe timeline.razor            # one command: menu, shortcut, params, enabled now
+filmcraft-cli --demo inspect sequence            # project / sequence as JSON
+filmcraft-cli --project p.fcproj --save exec timeline.razor seconds=3.5
+filmcraft-cli --project p.fcproj exec effects.apply '{"effect":"Gaussian Blur"}'
+filmcraft-cli --project p.fcproj exec markers.exportCsv path=review.csv
+filmcraft-cli --project p.fcproj --save import a.mov b.wav
+filmcraft-cli --project p.fcproj export out.mp4  # format from the extension; waits for the job
+filmcraft-cli --project p.fcproj export out --preset "YouTube 1080p Full HD" --start 0 --end 10
+filmcraft-cli export --list-presets prores       # built-in + user presets (--data-dir for another library)
+filmcraft-cli --project p.fcproj exec export.queue.add preset="Apple ProRes 422 HQ" path=renders/ start=true wait=true
+echo '{"id":"file.newBin","params":{"name":"Selects"}}' | filmcraft-cli --project p.fcproj --save run -
+filmcraft-cli --bridge 127.0.0.1:9876 exec window.workspace.color   # the running app
+</code></pre>
+<p><code>key=value</code> values are parsed as JSON when they can be (<code>3.5</code>, <code>true</code>, <code>[1,2]</code>), otherwise taken as
+strings; dotted keys nest (<code>color.r=1</code>). <code>run</code> prints one JSON line per command
+(<code>{"line","id","ok","result"|"error"}</code>) and stops at the first failure unless <code>--keep-going</code>.
+<code>--save</code> writes back to <code>--project</code>; <code>--save-as path</code> writes elsewhere.</p>
+<p><code>markers.exportCsv {path}</code> exports all markers in the active sequence, including colours hidden
+in the UI and markers outside In/Out, sorted by start then id. The UTF-8 CSV has a header and CRLF
+records; quotes, commas and embedded newlines are escaped. Columns are Sequence, Marker ID, Name,
+Comment, Kind, Color, Start Timecode, End Timecode, Duration Frames, Start Ticks, Duration Ticks and
+Frame Rate (exact numerator/denominator). Color uses the user's display label from Settings ▸
+Labels. Timecodes include the sequence's start timecode and
+drop-frame setting; End is exclusive, and a point marker's End equals Start. Duration Frames is
+rounded down; tick columns preserve sub-frame timing (254016000000 ticks per second).
+An empty sequence writes just the header. User text starting with a spreadsheet formula character
+(<code>=</code>, <code>+</code>, <code>-</code>, <code>@</code>, including after whitespace) gets a leading apostrophe in the exported cell.
+The export leaves the project, dirty flag and undo history untouched, works with locked tracks,
+and uses the host's file service (atomic
+on desktop, a download on web). It exports sequence markers only, not clip/source markers;
+reports are limited to 100000 markers and a conservative 16 MiB output budget. Invalid timing or a
+failed write reports an error. The menu opens the normal save dialog; cancelling writes nothing.</p>
+<h2>3. Verifying UI work</h2>
+<p>For any UI change, look at the result:</p>
+<ol>
+<li><code>cargo run --release -p filmcraft -- --control 9876</code></li>
+<li>Drive the feature through the control channel or the MCP bridge: commands, then clicks and drags
+by automation id.</li>
+<li>Assert on <code>ui.inspect</code>, <code>ui.elements</code> and <code>sequence.inspect</code>.</li>
+<li>Take <code>ui.screenshot</code> (the whole window and the panel you changed) and open the PNG.</li>
+</ol>
+<p>Screenshots you commit must follow <a href="../AGENTS.md">AGENTS.md</a> §1: FilmCraft only, openly licensed
+media, sidecar and <code>ATTRIBUTION.md</code> entry.</p>
+<h1>Part 2: developing FilmCraft</h1>
+<h2>4. Orientation, in this order</h2>
+<ol>
+<li><a href="../AGENTS.md">AGENTS.md</a>: absolute rules (assets, clean-room, licences).</li>
+<li><a href="../CLAUDE.md">CLAUDE.md</a>: working instructions and non-negotiables.</li>
+<li><a href="../ROADMAP.md">ROADMAP.md</a> for the summary, then <a href="gaps.md">gaps.md</a> (the ranked shortfalls) first,
+<a href="target-app-parity.md">target-app-parity.md</a> and <a href="roadmap.md">roadmap.md</a> (milestones, current focus).</li>
+<li><a href="architecture.md">architecture.md</a>, then the README and tests of the crate you'll touch.</li>
+<li><a href="contributing.md">contributing.md</a> (how to add things, gates) and <a href="testing.md">testing.md</a>.</li>
+</ol>
+<p>Maintainers also keep a local planning folder, <code>plan/</code>. It is gitignored and not in the repository,
+and holds the task-level plan, the status file and behaviour reference notes. If you don't have it,
+everything you need to contribute is in the public docs above. Ask a maintainer for a task id.</p>
+<h2>5. Autonomous work loop</h2>
+<ol>
+<li><strong>Orient.</strong> Pick the next task: the next unchecked task in the maintainer status file, or an open
+<a href="gaps.md">gaps.md</a> entry. Prefer those gaps (stability, <code>.prproj</code>, camera media, measurement,
+hardware, Windows/Linux) over adding more checklist items. Read the relevant
+architecture section and crate README.</li>
+<li><strong>Plan tests first.</strong> Write down the acceptance test before writing code.</li>
+<li><strong>Implement and test.</strong></li>
+<li><strong>Verify.</strong> Run all gates (<code>cargo xtask ci</code>). For UI work, run the app with <code>--control</code>, drive it
+and look at the screenshots (§3).</li>
+<li><strong>Record.</strong> Update the crate README (behaviour decisions, test results, limitations) and
+the progress docs when a milestone moves (ROADMAP.md, docs/roadmap.md, the relevant parity doc
+and gaps.md, with their timestamps). Commit as <code>M&lt;n&gt;.&lt;k&gt;: …</code>, then move on to the next task.</li>
+</ol>
+<p>For parallel agents, use one git worktree and one <code>CARGO_TARGET_DIR</code> per agent, and keep each crate
+with one owner (<a href="contributing.md#5-parallel-work-several-agents-or-worktrees">contributing.md §5</a>).</p>
+<h2>6. Decision rules</h2>
+<p>Don't block on choices you can make yourself:</p>
+<ul>
+<li><strong>Behaviour.</strong> Match the publicly documented and observable behaviour of professional editors
+(help pages, published shortcut lists, using the app). Never inspect application internals
+(<a href="../AGENTS.md">AGENTS.md</a> §2). If behaviour is undocumented, choose what editors most commonly
+expect and record the choice in the crate README.</li>
+<li><strong>Ask a human only about:</strong>
+<ul>
+<li>licences outside the allowlist;</li>
+<li>spending money;</li>
+<li>publishing or pushing;</li>
+<li>personal data;</li>
+<li>destructive git operations;</li>
+<li>anything AGENTS.md leaves unclear ("when in doubt, leave it out").</li>
+</ul>
+</li>
+</ul>
+<h2>7. Definition of Done</h2>
+<p>A feature is done when:</p>
+<ul>
+<li><input disabled="" type="checkbox"/>
+its command(s) are registered with label, menu path, shortcut (if any) and a parameter doc;</li>
+<li><input disabled="" type="checkbox"/>
+engine tests cover it, including undo/redo and the disabled case;</li>
+<li><input disabled="" type="checkbox"/>
+the UI is wired: menu, panel control and shortcut;</li>
+<li><input disabled="" type="checkbox"/>
+every new interactive widget has an automation id;</li>
+<li><input disabled="" type="checkbox"/>
+you have driven it through the control channel and reviewed a screenshot;</li>
+<li><input disabled="" type="checkbox"/>
+all gates pass (<code>cargo xtask ci</code>), and new assets have sidecars;</li>
+<li><input disabled="" type="checkbox"/>
+the crate README and the progress docs (ROADMAP.md, docs/gaps.md, the parity docs) are updated where relevant;</li>
+<li><input disabled="" type="checkbox"/>
+it is committed with its task id.</li>
+</ul>
+<h3>Reporting progress honestly</h3>
+<p>ROADMAP.md and <a href="target-app-parity.md">target-app-parity.md</a> keep two numbers: <strong>feature breadth</strong>
+(does it exist?) and <strong>ready for real work</strong> (does it hold up?). When you update either:</p>
+<ul>
+<li>say how a number was obtained: <em>measured</em> (a test, a diff, a benchmark you ran) or <em>estimated</em>;</li>
+<li>count an approximation, a stub or a partly wired setting as such, never as done;</li>
+<li>record known bugs and limitations in the crate README and <a href="gaps.md">gaps.md</a>, not only
+what works;</li>
+<li>benchmarks state the machine, the load average and before/after on the same build;</li>
+<li>don't raise a percentage without evidence a reviewer can rerun.</li>
+</ul>
+<hr />
+<details open>
+<summary><b>📚 filmcraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「filmcraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 filmcraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://zrqs.wtpuscm.cn/yinqing/policy-836978.html">基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://jwpe.wtpuscm.cn/zhineng/tag-977625.html">现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://hetf.wtpuscm.cn/guanjianci/content-773267.html">面向大规模网络的 filmcraft 工业级架构基准</a></li>
+<li><a href="https://ayhw.wtpuscm.cn/shuju/price-071469.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://uflz.wtpuscm.cn/yunying/policy-058691.html">【filmcraft】pure 核心系统架构与设计规约 (Draft-05)</a></li>
+<li><a href="https://pfrx.wtpuscm.cn/jiaocheng/hotel-191784.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)</a></li>
+<li><a href="https://lpth.wtpuscm.cn/yunying/efficiency-708615.html">基于 filmcraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://vzin.wtpuscm.cn/kuangjia/browser-765.html">filmcraft 内部组件解耦与事件状态机规范 (Node-81)</a></li>
+<li><a href="https://vapm.wtpuscm.cn/gongju/enterprise-463443.html">【官方规范】filmcraft open-source 核心运行拓扑标准</a></li>
+<li><a href="https://mimx.wtpuscm.cn/youhua/experience-943913.html">Trim Monitor 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://zdpb.wtpuscm.cn/chanpin/planning-729602.html">基于 filmcraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://frfk.wtpuscm.cn/hezuo/global-309003.html">现代 分布式架构 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://pvjk.wtpuscm.cn/zixun/calendar-890547.html">【官方规范】filmcraft filmcraft 核心运行拓扑标准</a></li>
+<li><a href="https://ittg.wtpuscm.cn/zhizhu/kpi-273667.html">Effects and motion 核心系统架构与设计规约 (RFC-633)</a></li>
+<li><a href="https://kiyb.wtpuscm.cn/liuliang/global-635358.html">Formats and codecs 核心系统架构与设计规约 (Node-44)</a></li>
+<li><a href="https://bryo.wtpuscm.cn/huodong/demographic-531692.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)</a></li>
+<li><a href="https://wwfb.wtpuscm.cn/zhinan/demographic-407972.html">Interchange 核心系统架构与设计规约 (RFC-715)</a></li>
+<li><a href="https://qcbr.wtpuscm.cn/kaifa/guide-678416.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)</a></li>
+<li><a href="https://hdnq.wtpuscm.cn/jiaoliu/notification-418098.html">Built for agents 核心系统架构与设计规约 (Node-34)</a></li>
+<li><a href="https://qece.wtpuscm.cn/yunying/loyalty-976404.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)</a></li>
+<li><a href="https://zsuj.wtpuscm.cn/ziyuan/internet-321080.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)</a></li>
+<li><a href="https://sccc.wtpuscm.cn/zhizhu/finance-720379.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)</a></li>
+<li><a href="https://oqtz.wtpuscm.cn/xuexi/subject-335541.html">Exact time. 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://yewz.tcti.cn/jiaocheng/database-35264223.html">filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://ahfy.tcti.cn/zixun/social-28189794.html">filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://ksxl.tcti.cn/shuju/logo-58880322.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)</a></li>
+<li><a href="https://esni.tcti.cn/gongsi/section-43566177.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)</a></li>
+<li><a href="https://gqrn.tcti.cn/zixun/blog-17394420.html">filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)</a></li>
+<li><a href="https://djqh.tcti.cn/xinwen/tracking-18738895.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)</a></li>
+<li><a href="https://akln.tcti.cn/yingxiao/widget-65778803.html">基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://bitz.tcti.cn/yunying/wellness-67463592.html">【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://vifs.tcti.cn/sheji/case-81314206.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)</a></li>
+<li><a href="https://quei.tcti.cn/huodong/achievement-72083922.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)</a></li>
+<li><a href="https://sipu.tcti.cn/chuangxin/seminar-50723977.html">【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://cvpt.tcti.cn/yunsuan/digital-76543687.html">生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)</a></li>
+<li><a href="https://pmal.tcti.cn/jiaoliu/economy-30847203.html">Effects and motion 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://kjyp.tcti.cn/wendang/coupon-79404886.html">filmcraft 内部组件解耦与事件状态机规范 (Node-29)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://polx.tcti.cn/zhizhu/goal-76602912.html">filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)</a></li>
+<li><a href="https://uorv.tcti.cn/chanpin/optimization-65599980.html">基于 filmcraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://kjhb.tcti.cn/huodong/economy-17046191.html">【生产手册】filmcraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://qyqb.wtpuscm.cn/zhineng/upload-719231.html">filmcraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://www.mw-wm.com/yingxiao/feedback-52842400.html">filmcraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.yx-sf.com/news/82155">【集成指南】分布式架构 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://www.ai-hao123.com/zixun/services-44652768.html">filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)</a></li>
+<li><a href="https://wwpk.tcti.cn/gongsi/rating-67821716.html">filmcraft 异步中间件流水线与 Premiere 接入规范</a></li>
+<li><a href="https://innn.tcti.cn/pingtai/app-88738848.html">filmcraft: Premiere 分布式架构 (Node-37)</a></li>
+<li><a href="https://hyjs.wtpuscm.cn/anfang/presentation-095427.html">filmcraft 异步中间件流水线与 Every trim. 接入规范</a></li>
+<li><a href="https://foft.wtpuscm.cn/shuju/follow-401035.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)</a></li>
+<li><a href="https://stqo.wtpuscm.cn/chuangxin/objective-149693.html">filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)</a></li>
+<li><a href="https://tqhr.wtpuscm.cn/kaifa/cost-423707.html">filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)</a></li>
+<li><a href="https://buuv.wtpuscm.cn/zhinan/tutorial-817264.html">filmcraft 插件生态规范与 Edit 扩展手册 (Verified)</a></li>
+<li><a href="https://hbnw.wtpuscm.cn/yingyong/search-962578.html">filmcraft 异步中间件流水线与 Get started 接入规范</a></li>
+<li><a href="https://cmkf.wtpuscm.cn/xinwen/design-514334.html">filmcraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://qgsd.wtpuscm.cn/fuwu/services-502.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )</a></li>
+<li><a href="https://hxlq.wtpuscm.cn/qiye/article-377546.html">filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://hlmw.wtpuscm.cn/gongsi/lesson-785206.html">filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://dofo.wtpuscm.cn/suanfa/milestone-249069.html">filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)</a></li>
+<li><a href="https://ltab.wtpuscm.cn/keji/course-892353.html">filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范</a></li>
+<li><a href="https://npbn.wtpuscm.cn/zixun/networking-856891.html">【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://nbix.wtpuscm.cn/yanjiu/update-983335.html">filmcraft 异步中间件流水线与 Effects and motion 接入规范</a></li>
+<li><a href="https://bgdi.wtpuscm.cn/gongsi/faq-500890.html">filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)</a></li>
+<li><a href="https://xqgb.wtpuscm.cn/qiye/segment-130808.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://riac.wtpuscm.cn/jiaocheng/research-861617.html">filmcraft 异步中间件流水线与 Pro 接入规范</a></li>
+<li><a href="https://shgo.wtpuscm.cn/jiaoliu/visitor-324281.html">filmcraft 异步中间件流水线与 可信存活健康度量 接入规范</a></li>
+<li><a href="https://pkod.wtpuscm.cn/yanjiu/user-600478.html">filmcraft 异步中间件流水线与 Audio 接入规范</a></li>
+<li><a href="https://ivwn.wtpuscm.cn/xuexi/hosting-629910.html">filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://ukpd.wtpuscm.cn/fuwu/help-675063.html">filmcraft 异步中间件流水线与 Rust 接入规范</a></li>
+<li><a href="https://amal.wtpuscm.cn/sheji/collaboration-749951.html">【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://rxoc.wtpuscm.cn/shangye/update-632490.html">filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://acms.tcti.cn/yanjiu/digital-21429811.html">filmcraft: Audio 分布式架构 (Draft-02)</a></li>
+<li><a href="https://aoix.tcti.cn/yanjiu/deadline-26960461.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://fwnb.tcti.cn/tuiguang/health-73076972.html">filmcraft 异步中间件流水线与 Interchange 接入规范</a></li>
+<li><a href="https://kyqx.tcti.cn/liuliang/sales-02599204.html">filmcraft 插件生态规范与 built 扩展手册 (Core/built)</a></li>
+<li><a href="https://bobg.tcti.cn/ziyuan/tracking-78964887.html">filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)</a></li>
+</ul>
+<h4>3. ⚡ filmcraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://yqbc.tcti.cn/zhinan/networking-69511077.html">全球权威拓扑节点：filmcraft 实时镜像与索引入口</a></li>
+<li><a href="https://jkee.tcti.cn/liuliang/roi-30714759.html">冷热数据分层镜像：filmcraft Pro 权威归档源</a></li>
+<li><a href="https://ndzz.tcti.cn/ziyuan/team-85598855.html">filmcraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://hija.tcti.cn/qiye/ai-50138302.html">【镜像入口】filmcraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://yivf.tcti.cn/peixun/automation-22289827.html">冷热数据分层镜像：filmcraft Audio 权威归档源</a></li>
+<li><a href="https://cdvg.tcti.cn/sheji/mobile-10057341.html">filmcraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://hrdp.tcti.cn/chuangxin/api-48970062.html">filmcraft 官方高可用镜像注册节点 (RFC-877)</a></li>
+<li><a href="https://cczy.tcti.cn/chuangxin/affordable-38503150.html">filmcraft 官方高可用镜像注册节点 (Node-76)</a></li>
+<li><a href="https://aumd.tcti.cn/qiye/hosting-47616073.html">filmcraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://ajlu.tcti.cn/gongxiang/sync-02254205.html">filmcraft 官方高可用镜像注册节点 (Core/Every )</a></li>
+<li><a href="https://pqkd.tcti.cn/wenzhang/label-85102605.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://kkje.tcti.cn/gongju/data-22415405.html">冷热数据分层镜像：filmcraft reimplementation 权威归档源</a></li>
+<li><a href="https://icfu.wtpuscm.cn/fenxi/lesson-237171.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)</a></li>
+<li><a href="https://www.mw-wm.com/kaifa/analysis-38087240.html">filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/92246">冷热数据分层镜像：filmcraft Color 权威归档源</a></li>
+<li><a href="https://www.ai-hao123.com/keji/change-33623867.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://adzi.tcti.cn/wenzhang/lead-80277709.html">冷热数据分层镜像：filmcraft Exact time. 权威归档源</a></li>
+<li><a href="https://bhul.tcti.cn/xuexi/market-01942571.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)</a></li>
+<li><a href="https://hcjc.wtpuscm.cn/zhineng/tutorial-494459.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)</a></li>
+<li><a href="https://gyvg.wtpuscm.cn/yingxiao/supplier-125943.html">冷热数据分层镜像：filmcraft Titles and captions 权威归档源</a></li>
+<li><a href="https://nvtc.wtpuscm.cn/chuangxin/client-635889.html">冷热数据分层镜像：filmcraft Formats and codecs 权威归档源</a></li>
+<li><a href="https://asly.wtpuscm.cn/suanfa/shopping-415811.html">filmcraft 官方高可用镜像注册节点 (Draft-07)</a></li>
+<li><a href="https://aesl.wtpuscm.cn/gongxiang/income-992753.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.2)</a></li>
+<li><a href="https://twtb.wtpuscm.cn/yinqing/experience-475175.html">filmcraft 官方高可用镜像注册节点 (Node-67)</a></li>
+<li><a href="https://dbvy.wtpuscm.cn/wangluo/design-129691.html">filmcraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://kgpf.wtpuscm.cn/huodong/target-439.html">冷热数据分层镜像：filmcraft Edit 权威归档源</a></li>
+<li><a href="https://spzr.wtpuscm.cn/keji/satisfaction-057307.html">冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://tkjo.wtpuscm.cn/chanpin/global-529460.html">冷热数据分层镜像：filmcraft Export 权威归档源</a></li>
+<li><a href="https://osnj.wtpuscm.cn/keji/network-794298.html">冷热数据分层镜像：filmcraft clean-room 权威归档源</a></li>
+<li><a href="https://ffoq.wtpuscm.cn/kuangjia/forum-577497.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)</a></li>
+<li><a href="https://lgwf.wtpuscm.cn/jiaocheng/page-437807.html">冷热数据分层镜像：filmcraft built 权威归档源</a></li>
+<li><a href="https://oots.wtpuscm.cn/shichang/creative-566282.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
+<li><a href="https://ypks.wtpuscm.cn/gongju/layout-864772.html">filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://bfxu.wtpuscm.cn/jiaoliu/logo-341289.html">冷热数据分层镜像：filmcraft dynamic trimming 权威归档源</a></li>
+<li><a href="https://ivsw.wtpuscm.cn/guanjianci/data-938158.html">filmcraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://tmjy.wtpuscm.cn/zhineng/internet-899453.html">冷热数据分层镜像：filmcraft Interchange 权威归档源</a></li>
+<li><a href="https://qpiw.wtpuscm.cn/gongju/fitness-623219.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.8)</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://qjei.wtpuscm.cn/fenxi/audience-552374.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://iyxu.wtpuscm.cn/baogao/digital-005579.html">【评测基准】filmcraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://uozm.wtpuscm.cn/wangluo/productivity-992228.html">filmcraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://hfhg.wtpuscm.cn/yingxiao/coupon-685548.html">filmcraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://gfxz.tcti.cn/gongju/study-14419883.html">filmcraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://djgf.tcti.cn/xitong/learning-15504802.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://qeom.tcti.cn/tuiguang/discovery-92300048.html">filmcraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://aclg.tcti.cn/jiaoliu/seo-38940086.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)</a></li>
+<li><a href="https://tgws.tcti.cn/pingtai/link-37658197.html">filmcraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://rfbl.tcti.cn/wendang/management-87164232.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://ztfu.tcti.cn/shangye/trading-78985428.html">filmcraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://wtbm.tcti.cn/yingxiao/cheap-22093217.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://ztam.tcti.cn/yingyong/upload-87842722.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)</a></li>
+<li><a href="https://ubrl.tcti.cn/wenzhang/sale-02200844.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)</a></li>
+<li><a href="https://ghya.tcti.cn/jianzhan/home-78228848.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)</a></li>
+<li><a href="https://vgvd.tcti.cn/xuexi/course-62366793.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)</a></li>
+<li><a href="https://pywb.tcti.cn/tuiguang/services-96236978.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://srni.tcti.cn/zixun/target-43743092.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)</a></li>
+<li><a href="https://zrbc.tcti.cn/tuiguang/machine-37545656.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)</a></li>
+<li><a href="https://rlth.tcti.cn/fenxi/message-27864383.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)</a></li>
+<li><a href="https://glvp.tcti.cn/anfang/sale-12717880.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://rjgj.wtpuscm.cn/yunying/security-470384.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)</a></li>
+<li><a href="https://www.mw-wm.com/pingce/behavior-88019915.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/6275">filmcraft: Premiere Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://www.ai-hao123.com/suanfa/register-06825192.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)</a></li>
+<li><a href="https://fmxk.tcti.cn/xinwen/demographic-56253858.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)</a></li>
+<li><a href="https://kdqk.tcti.cn/kuangjia/update-29475373.html">filmcraft: clean-room 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://asbm.wtpuscm.cn/gongju/api-478507.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)</a></li>
+<li><a href="https://xcua.wtpuscm.cn/pingce/traffic-070065.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)</a></li>
+<li><a href="https://ovli.wtpuscm.cn/yingxiao/image-912563.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://uzgc.wtpuscm.cn/yunsuan/presentation-340348.html">filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://uyib.wtpuscm.cn/guanjianci/online-312271.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)</a></li>
+<li><a href="https://zvic.wtpuscm.cn/keji/fashion-116932.html">filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://htby.wtpuscm.cn/kaifa/forecast-486808.html">filmcraft: 高韧性系统架构设计 分布式架构 (Verified)</a></li>
+<li><a href="https://wxni.wtpuscm.cn/hezuo/customer-220.html">filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://rxdd.wtpuscm.cn/yanjiu/register-709395.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)</a></li>
+<li><a href="https://ingp.wtpuscm.cn/hezuo/system-810181.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)</a></li>
+<li><a href="https://vvpp.wtpuscm.cn/zhineng/coupon-756161.html">filmcraft: Effects and motion Rust高性能网络 (Verified)</a></li>
+<li><a href="https://yozk.wtpuscm.cn/shuju/income-849786.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>filmcraft-mirror-939</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

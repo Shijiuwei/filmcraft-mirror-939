@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture - filmcraft-mirror-939 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">filmcraft-mirror-939</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">架构设计</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Architecture</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Architecture</h1>
+<blockquote>
+<p><strong>Last reviewed:</strong> 2026-10-10 · <strong>Last updated:</strong> 2026-10-10 · <strong>Change:</strong> trivial (status line, revision history and roadmap link added; content checked against the crate list) · <strong>Target:</strong> Adobe Premiere Pro 2026 (26.5.2)</p>
+</blockquote>
+<p>FilmCraft is a Cargo workspace of small crates with strictly enforced layering. The engine is
+headless: every feature can be reached without a window, and the egui UI is one client among the
+CLI, the JSON control channel and the MCP server.</p>
+<p>Design principles:</p>
+<ol>
+<li><strong>Engine-first.</strong> Project-changing actions go through <code>Session::execute(id, params)</code>.</li>
+<li><strong>Everything is a command.</strong> Stable id, label, menu path, shortcut, parameter doc, <code>enabled()</code>
+predicate with a human-readable reason, and <code>run()</code>.</li>
+<li><strong>Exact time.</strong> Integer ticks, rational frame rates. No <code>f64</code> seconds in edit math.</li>
+<li><strong>Copy-on-write snapshots.</strong> The project is an <code>Arc&lt;Project&gt;</code>. Undo is a stack of snapshots, and
+background readers (playback, export) hold a snapshot without locking.</li>
+<li><strong>CPU reference, GPU fast path.</strong> The CPU compositor is the oracle. The GPU path is tested
+against it.</li>
+<li><strong>Pure Rust, clean-room.</strong> Codecs and containers are written from public specifications
+(see <a href="../AGENTS.md">AGENTS.md</a>).</li>
+</ol>
+<h2>1. Layers</h2>
+<pre><code class="language-text"> L6  apps/filmcraft · apps/filmcraft-cli · apps/filmcraft-web
+ L5  ui-egui · automation · platform
+ L4  engine
+ L3  render · gpu · export · golden (test-only)
+ L2  edit · codecs · interchange · captions · speech · tts · tts-text
+ L1  frame · media · project · audio-dsp · text
+ L0  foundation: time · geom · color · bitstream · testkit (dev-dependency only)
+     codecs/containers: isobmff · matroska · mxf · cfb · mpegts · ogg · h264 · h264enc · hevc · vp9 · av1 · mpeg2v · prores · dnx · apv · aac · ac3 · opus
+</code></pre>
+<p>Crates are named <code>filmcraft-&lt;dir&gt;</code> (<code>crates/time</code> is <code>filmcraft-time</code>). The apps are <code>filmcraft</code>
+and <code>filmcraft-cli</code>.</p>
+<table><thead><tr><th>Crate</th><th>Layer</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><code>time</code></td><td>L0</td><td><code>Tick</code>, <code>FrameRate</code>, <code>TimeRange</code>, timecode parse/format (NDF/DF, frames, feet+frames, samples)</td></tr>
+<tr><td><code>geom</code></td><td>L0</td><td><code>Vec2</code>, <code>Rect</code>, <code>Affine</code>, Motion-transform composition</td></tr>
+<tr><td><code>color</code></td><td>L0</td><td>colour spaces, transfer functions, YUV↔RGB matrices, LUTs</td></tr>
+<tr><td><code>bitstream</code></td><td>L0</td><td>bit reader/writer, Exp-Golomb, emulation prevention</td></tr>
+<tr><td><code>isobmff</code></td><td>L0</td><td>MP4/MOV demux and mux</td></tr>
+<tr><td><code>matroska</code></td><td>L0</td><td>MKV/WebM demux</td></tr>
+<tr><td><code>mxf</code></td><td>L0</td><td>MXF demux and mux (SMPTE ST 377-1): OP1a / OP-Atom, index tables, AVC / VC-3 / ProRes / MPEG-2 identification, PCM / AES3 sound, timecode; writer for OP1a / OP-Atom with VC-3, ProRes, AVC and PCM (<a href="../crates/mxf/README.md">README</a>)</td></tr>
+<tr><td><code>cfb</code></td><td>L0</td><td>Compound File Binary ([MS-CFB] structured storage) reader and writer, the container of AAF (<a href="../crates/cfb/README.md">README</a>)</td></tr>
+<tr><td><code>mpegts</code></td><td>L0</td><td>MPEG-2 Systems demux (H.222.0): transport streams (188 / 192-byte BDAV / 204), program streams (MPEG-2 / MPEG-1, VOB, MOD), PSI, PES, PTS / PCR, access-unit index built on open (<a href="../crates/mpegts/README.md">README</a>)</td></tr>
+<tr><td><code>ogg</code></td><td>L0</td><td>Ogg demux (RFC 3533), Ogg Opus timing (RFC 7845 granules, pre-skip, end trimming), Vorbis headers</td></tr>
+<tr><td><code>h264</code>, <code>h264enc</code></td><td>L0</td><td>H.264 decoder; H.264 encoder</td></tr>
+<tr><td><code>hevc</code></td><td>L0</td><td>H.265 Main/Main 10 decoder</td></tr>
+<tr><td><code>prores</code></td><td>L0</td><td>ProRes decoder and encoder</td></tr>
+<tr><td><code>dnx</code></td><td>L0</td><td>DNxHD / DNxHR (SMPTE ST 2019-1 VC-3) decoder and DNxHR encoder</td></tr>
+<tr><td><code>apv</code></td><td>L0</td><td>Advanced Professional Video (IETF RFC 9924) decoder and encoder (<a href="../crates/apv/README.md">README</a>)</td></tr>
+<tr><td><code>av1</code></td><td>L0</td><td>AV1 decoder (Main profile; bit-exact with libdav1d; see its README for the stage table)</td></tr>
+<tr><td><code>mpeg2v</code></td><td>L0</td><td>MPEG-2 video (Main / 4:2:2 profile; frame and field pictures, dual prime) and MPEG-1 video decoder (<a href="../crates/mpeg2v/README.md">README</a>)</td></tr>
+<tr><td><code>aac</code></td><td>L0</td><td>AAC-LC decoder and encoder</td></tr>
+<tr><td><code>ac3</code></td><td>L0</td><td>AC-3 (ATSC A/52) decoder (<a href="../crates/ac3/README.md">README</a>)</td></tr>
+<tr><td><code>testkit</code></td><td>L0</td><td>test-only helpers, used only as a dev-dependency: ffmpeg/ffprobe discovery, fixture dirs, golden images (<a href="testing.md">testing.md</a>)</td></tr>
+<tr><td><code>frame</code></td><td>L1</td><td><code>VideoFrame</code> (planar YUV / RGBA8 / linear RGBA f32, colour metadata), <code>AudioBuffer</code></td></tr>
+<tr><td><code>media</code></td><td>L1</td><td><code>MediaSource</code> trait, probing/openers, frame cache, generators, stills, image sequences, WAV / Broadcast WAV</td></tr>
+<tr><td><code>project</code></td><td>L1</td><td>document model, effect definitions, keyframes</td></tr>
+<tr><td><code>audio-dsp</code></td><td>L1</td><td>loudness metering (BS.1770 / R128), audio effects, channel layouts (BS.775 up/downmix, 5.1 panner), music remix analysis; no dependencies</td></tr>
+<tr><td><code>text</code></td><td>L1</td><td>text engine: font database (bundled OFL fonts + system fonts), shaping (harfrust), bidi, line breaking, paragraph layout, glyph/path rasteriser, strokes (<a href="../crates/text/README.md">crates/text/README.md</a>)</td></tr>
+<tr><td><code>edit</code></td><td>L2</td><td>pure edit algebra (insert, overwrite, razor, ripple, roll, slip, slide, rate stretch…; text-based editing: <code>edit::transcript</code>)</td></tr>
+<tr><td><code>speech</code></td><td>L2</td><td>speech-to-text: <code>Transcriber</code> trait, Whisper model catalogue + verified downloader (feature <code>download</code>), pure-Rust Whisper inference on candle with word timestamps (feature <code>whisper</code>), speaker labelling (<a href="transcripts.md">transcripts.md</a>)</td></tr>
+<tr><td><code>tts</code></td><td>L2</td><td>text to speech: <code>Voice</code> trait, voice catalogue, pause markers, built-in formant voices; Kokoro-82M natural voices on candle and their pinned package catalogue (feature <code>kokoro</code>). Same-layer edge to <code>tts-text</code></td></tr>
+<tr><td><code>tts-text</code></td><td>L2</td><td>text front end for narration: normalizer (numbers, money, dates, acronyms, pauses) and English pronunciation (CMUdict + letter-to-sound) to Kokoro phonemes</td></tr>
+<tr><td><code>codecs</code></td><td>L2</td><td>container + codec hub: MP4/MOV, MKV, MXF, Ogg and MPEG TS / PS / video elementary stream sources, GOP-aware seeking, decoder registry, audio decoding</td></tr>
+<tr><td><code>interchange</code></td><td>L2</td><td>EDL, FCP7 XML, FCPXML, OTIO, AAF (on <code>cfb</code>) and OMF 2.0 import/export (no file I/O; the engine supplies rendered audio essence) (<a href="../crates/interchange/README.md">README</a>)</td></tr>
+<tr><td><code>render</code></td><td>L3</td><td>sequence evaluation, CPU compositor, video effects (<code>effects</code>, <code>vfx</code>; effects needing other frames or tracks read them through <code>vfx::FxEnv</code>), transitions, audio mix</td></tr>
+<tr><td><code>gpu</code></td><td>L3</td><td>wgpu compositor (WGSL)</td></tr>
+<tr><td><code>golden</code></td><td>L3</td><td>test-only: golden-image tests of the CPU renderer and GPU-vs-CPU parity; empty library, dev-dependencies only</td></tr>
+<tr><td><code>scopes</code></td><td>L3</td><td>video scope maths: waveform, parade, histogram, YUV / HLS vectorscopes, numeric summaries (<a href="../crates/scopes/README.md">crates/scopes/README.md</a>)</td></tr>
+<tr><td><code>export</code></td><td>L3</td><td>render → encode → mux pipeline, progress/cancel</td></tr>
+<tr><td><code>engine</code></td><td>L4</td><td><code>Session</code>, command registry, undo history, media pool, jobs, interchange glue</td></tr>
+<tr><td><code>ui-egui</code></td><td>L5</td><td>the egui frontend: docking, panels, timeline, monitors, playback, control-channel handlers</td></tr>
+<tr><td><code>automation</code></td><td>L5</td><td>MCP server (<code>rmcp</code>, stdio), headless or bridged to the running app</td></tr>
+<tr><td><code>platform</code></td><td>L5</td><td>OS media FFI only: hardware video decoding (VideoToolbox H.264 / HEVC on macOS; Media Foundation / Direct3D 11 H.264 / HEVC / VP9 / AV1 on Windows; VA-API H.264 / HEVC on Linux, with our own parsers and DPBs driving the stateless hardware; a no-op elsewhere) behind <code>codecs::VideoDecoder</code>, with transparent fallback to our decoders, and hardware H.264 encoding (VideoToolbox, opt-in) and H.265 encoding (VideoToolbox, the only H.265 encoder; the format exists only where a hardware encoder does) and NVIDIA NVENC H.264 (Windows and 64-bit Linux, opt-in) and H.265 (Windows, FilmCraft's only H.265 encoder there) encoding behind <code>export::VideoEncoder</code>; H.264 declines to the built-in encoder for what the hardware does not take. The one crate allowed <code>unsafe</code> (<a href="adr/0001-platform-ffi.md">ADR 0001</a>, <a href="../crates/platform/README.md">README</a>)</td></tr>
+<tr><td><code>filmcraft</code></td><td>L6</td><td>desktop binary: eframe/wgpu window, cpal audio output, file dialogs, native macOS menu, TCP control server</td></tr>
+<tr><td><code>filmcraft-cli</code></td><td>L6</td><td>headless CLI: <code>exec</code>, <code>run</code>, <code>inspect</code>, <code>describe</code>, <code>commands</code>, <code>import</code>, <code>export</code>, <code>render</code>, <code>probe</code>, <code>mcp</code>; <code>--bridge</code> targets the running app</td></tr>
+<tr><td><code>filmcraft-web</code></td><td>L6</td><td>the browser app (wasm32): eframe web runner on WebGPU/WebGL2, Blob-backed services, OPFS recovery, WebAudio, WebCodecs, <code>window.filmcraft</code> API (<a href="web.md">web.md</a>)</td></tr>
+</tbody></table>
+<h3>What <code>cargo xtask layers</code> enforces</h3>
+<p>The table of layers lives in <code>xtask/src/main.rs</code> (<code>LAYERS</code>). It also reserves names for planned
+crates. The check reads <code>cargo metadata</code> and looks at normal and build dependencies (dev-dependencies
+are exempt):</p>
+<table><thead><tr><th>Rule</th><th>Detail</th></tr></thead><tbody>
+<tr><td>Every crate has a layer</td><td>A new crate fails the check until it is added to <code>LAYERS</code>.</td></tr>
+<tr><td>Only downward edges</td><td>A crate may not depend on a crate in a higher layer.</td></tr>
+<tr><td>Same-layer edges are listed</td><td>From L1 up, a same-layer edge must be in <code>SAME_LAYER</code>: <code>media→frame</code>, <code>project→media</code>, <code>project→frame</code>, <code>gpu→render</code>, <code>export→render</code>, <code>cli→filmcraft</code>, plus a few reserved for planned crates.</td></tr>
+<tr><td>L0 codecs stay standalone</td><td>L0 crates other than <code>time</code>, <code>geom</code>, <code>color</code>, <code>bitstream</code>, <code>testkit</code> may depend on no workspace crate except <code>filmcraft-bitstream</code>. External crates such as <code>thiserror</code> and <code>rayon</code> are allowed.</td></tr>
+<tr><td>No UI/OS crates below L5</td><td><code>egui</code>, <code>eframe</code>, <code>egui-wgpu</code>, <code>winit</code>, <code>rfd</code>, <code>cpal</code>, <code>muda</code> are allowed only in L5 and L6.</td></tr>
+</tbody></table>
+<p><code>cargo xtask wasm</code> runs <code>cargo check --target wasm32-unknown-unknown</code> on every L0–L4 crate, the
+egui UI and the web app, so everything up to the engine stays web-portable and the web app builds
+(<a href="web.md">web.md</a>). <code>unsafe_code = "forbid"</code> applies workspace-wide, except in <code>platform</code>
+(<code>deny</code>, allowed only on its FFI modules; <a href="adr/0001-platform-ffi.md">ADR 0001</a>).</p>
+<h2>2. Time base</h2>
+<p>All time is <code>filmcraft_time::Tick(i64)</code> at <code>TICKS_PER_SECOND = 254_016_000_000</code>.</p>
+<p>That number divides evenly into the frame duration of every broadcast rate (23.976, 24, 25, 29.97,
+30, 48, 50, 59.94, 60, 120…) and the sample duration of every common audio rate (8 kHz to 192 kHz,
+including the 44.1 kHz family). So frame and sample positions are exact integers, edits never drift
+at 29.97, and audio and video line up to the sample.</p>
+<table><thead><tr><th>Type</th><th>Use</th></tr></thead><tbody>
+<tr><td><code>Tick</code></td><td>timeline and media positions and durations</td></tr>
+<tr><td><code>FrameRate { num, den }</code></td><td><code>frame_duration()</code>, <code>tick_of(frame)</code>, <code>frame_at(tick)</code>, <code>snap(tick)</code></td></tr>
+<tr><td><code>TimeRange</code></td><td>half-open <code>start + duration</code></td></tr>
+<tr><td>Timecode</td><td>display only (SMPTE NDF/DF, frames, feet+frames, samples); <code>parse_timecode</code> and <code>format_time</code></td></tr>
+</tbody></table>
+<p>Commands take time as <code>time</code> (ticks), <code>frame</code>, <code>seconds</code> or <code>timecode</code>; the engine converts once at
+the boundary.</p>
+<h2>3. Data model (<code>filmcraft-project</code>)</h2>
+<pre><code class="language-text">Project
+├─ root: Bin                         tree of bins
+├─ items: map ItemId → ProjectItem   flat
+│    kind: Media(MediaClip) | Sequence(Sequence) | Subclip{..} | AdjustmentLayer{..} | Graphic{..}
+└─ next_id
+
+Sequence
+├─ settings: frame rate, size, sample rate, …
+├─ video_tracks / audio_tracks: Vec&lt;Track&gt;
+├─ markers, mark_in / mark_out
+Track
+├─ locked, sync lock, targeting, mute/solo/visibility
+├─ items: Vec&lt;TrackItem&gt;             sorted, never overlapping
+├─ transitions: Vec&lt;Transition&gt;
+└─ audio: volume_db, pan, effects (mixer inserts), mixer: MixerStrip
+     (automation mode + lanes, sends, output, record arm, solo safe, input map)
+Sequence (audio) ─ submix_tracks: Vec&lt;Track&gt;, master_volume_db / master_effects / master_mixer
+TrackItem (a clip instance)
+├─ item: ItemId, start (timeline ticks), source_in (media ticks), duration, speed
+├─ link group, label, enabled
+└─ effects: Vec&lt;EffectInstance&gt;      intrinsic Motion/Opacity/Volume… first, then standard effects
+EffectInstance
+├─ effect id, enabled, params: id → constant value or keyframe track
+└─ masks: Vec&lt;Mask&gt;                  path (keyframable Bézier), feather, opacity, expansion, inverted, mode
+</code></pre>
+<ul>
+<li><strong>Graphic clips</strong> (<a href="graphics.md">graphics.md</a>) reference a <code>Graphic</code> canvas item; their text and
+shape layers are hidden <code>graphic_text</code> / <code>graphic_shape</code> effect instances on the track item.</li>
+<li>Everything is plain serde data. <code>Sequence::check()</code> validates the invariants (no overlaps, unique
+ids), and the engine runs it after every sequence edit.</li>
+<li>Timeline positions are sequence ticks; <code>source_in</code> and keyframes are in media time, so trims and
+splits never move keyframes.</li>
+<li><strong>Effect definitions are data.</strong> <code>project::effect::effect_defs()</code> lists every video effect,
+audio effect and transition with its parameter schema. The Effects panel tree, the Effect
+Controls rows and the parameter docs agents see are all generated from it.</li>
+<li><strong>Project files</strong> (<code>.fcproj</code>) are the project serialised as JSON. Saves are atomic: write a
+temporary sibling file, then rename it over the target.</li>
+</ul>
+<h2>4. Command system (<code>filmcraft-engine</code>)</h2>
+<pre><code class="language-rust">pub struct CommandSpec {
+    pub id: &amp;'static str,                 // "sequence.addEdit"
+    pub label: &amp;'static str,              // "Add Edit"
+    pub menu: &amp;'static [&amp;'static str],    // ["Sequence"]; empty = not in menus
+    pub shortcut: Option&lt;&amp;'static str&gt;,   // "Cmd+K" (Cmd = ⌘ on macOS, Ctrl elsewhere)
+    pub params: &amp;'static str,             // r#"{"time":ticks?}"#, shown to agents
+    pub enabled: fn(&amp;Session) -&gt; Result&lt;(), String&gt;,  // Err carries the reason
+    pub run: fn(&amp;mut Session, &amp;Value) -&gt; Result&lt;Value&gt;,
+    pub journal: bool,                    // false for read-only queries
+}
+</code></pre>
+<ul>
+<li>All commands are in <code>crates/engine/src/commands.rs</code> (<code>cmd!</code> for actions, <code>query!</code> for read-only
+queries such as <code>project.inspect</code>, <code>sequence.inspect</code>, <code>effects.list</code>, <code>jobs.list</code>). Ids follow
+the menu structure: <code>file.*</code>, <code>edit.*</code>, <code>clip.*</code>, <code>sequence.*</code>, <code>markers.*</code>, <code>timeline.*</code>,
+<code>effects.*</code>…</li>
+<li><code>Session::execute(id, params)</code> finds the spec, checks <code>enabled</code>, runs it and appends it to the
+journal.</li>
+<li><strong>Undo.</strong> Edits go through <code>Session::edit(label, |project, state| …)</code> or
+<code>Session::edit_sequence(label, |seq, ctx, state| …)</code>. These clone the project, apply the closure,
+and on success push the old <code>Arc&lt;Project&gt;</code> with the label onto the undo stack (200 entries).
+On error nothing changes. <code>edit.undo</code> and <code>edit.redo</code> swap snapshots. Thanks to structural sharing
+a snapshot costs little.</li>
+<li><strong>Editor state</strong> (<code>EditorState</code>: active sequence, playheads, selection, targeting, edit points…)
+is serde, so agents can read it with <code>state.inspect</code>.</li>
+<li><strong>Events</strong> (<code>ProjectChanged</code>, <code>Toast</code>, <code>OpenSequence</code>, <code>OpenSource</code>) are drained by frontends
+each frame.</li>
+<li><strong>Event log</strong> (<code>Session::log</code>, <code>engine::panels</code>): every failed top-level command (an error; a
+disabled one is a warning), messages and error toasts, auto-save errors, and background jobs
+starting, finishing, failing or being cancelled. Repeats of the newest entry bump its count. The
+Events panel shows it; <code>events.list {level?, since?}</code> and <code>events.clear</code> reach it headless.</li>
+<li><strong>UI-only commands</strong> (tools, playback, zoom, panels, workspaces) live in
+<code>crates/ui-egui/src/menus.rs</code> (<code>UI_COMMANDS</code>). The menu bar is built from the engine registry plus
+this table, and <code>menus::invoke</code> is the single entry point for menus, shortcuts and the control
+channel.</li>
+</ul>
+<h2>5. Media, render and playback pipeline</h2>
+<pre><code class="language-text">file ──► codecs (MP4/MOV, MKV, audio)        demux + decode, GOP-aware seek
+          │   decoder registry: h264, hevc, vp9, av1, prores, dnx, mjpeg (+ any registered first:
+          │   platform's VideoToolbox (macOS) or Media Foundation (Windows) H.264 / HEVC, falling back to ours)
+          ▼
+        media::MediaSource ──► frame cache (byte-budgeted LRU, shared)
+          ▼
+        render::render_sequence(project, seq, t, scale)        CPU reference
+          per track bottom→top: map timeline t → media t (speed), fetch frame,
+          standard effects → Motion → Opacity/blend, transitions, composite
+          in linear-light premultiplied f32
+          │
+          └─ render::plan::plan_frame → gpu::GpuCompositor     GPU path
+               layers = decoded YUV/RGBA frames + matrix + opacity + blend mode;
+               anything the shaders don't cover is pre-rendered on the CPU
+          ▼
+        ui-egui frames.rs worker pool ──► monitors (program/source), thumbnails, prefetch
+</code></pre>
+<ul>
+<li><strong>Sources.</strong> <code>media::MediaSource</code> yields <code>video_frame(FrameRequest)</code> and
+<code>audio(start, frames, rate)</code> in media time. Sources are <code>Send + Sync</code> and shared by monitors,
+thumbnails, playback and export. The engine's <code>MediaPool</code> creates one per project item, lazily,
+through registered openers (<code>codecs::openers()</code>: MP4/MOV, MKV/WebM, audio files).</li>
+<li><strong>Pixel aspect ratio.</strong> Demuxers report it in <code>VideoStreamInfo::par</code> (MP4/MOV <code>pasp</code>, Matroska
+display size, MXF aspect ratio, MPEG sequence header / VUI); Interpret Footage's
+<code>Interpretation::par</code> overrides it (<code>clip.interpretFootage {pixelAspect}</code>), and
+<code>SequenceSettings::par</code> is the sequence's. Both go through <code>project::checked_par</code> (a zero term
+or more than 8:1 either way = square). <code>render::motion_matrix</code> works in square display units,
+so a 1440 x 1080 clip with 4:3 pixels fills a 1920 x 1080 square-pixel sequence at 100 %
+(Scale to Frame Size, Set to Frame Size and Fit / Fill use <code>Project::conformed_source_size</code>);
+graphics and adjustment layers are in sequence pixels. New Sequence From Clip copies the clip's
+ratio, and the Source and Program monitors draw the picture at its display aspect. The
+renderer does not read decoded frames' own <code>VideoFrame::par</code>.</li>
+<li><strong>Offline media and proxies.</strong> The pool caches each item's source per reference (path, offline
+flag), so relinking and undo take effect at once. Media that can't be opened renders the offline
+slate (<code>render::offline</code>) instead of failing. With proxies enabled, an item with a proxy reads
+it through <code>ProxySource</code>, which reports the original's size. Export always uses
+<code>MediaPool::full_res_provider</code>. See <a href="project-files.md#media-offline-relinking-proxies-ingest">project-files.md</a>.</li>
+<li><strong>Seeking.</strong> <code>codecs::Mp4Source</code> seeks to the preceding sync sample and decodes forward, caching
+every frame of the GOP. Sequential playback reuses the decoder. Decoders implement
+<code>codecs::VideoDecoder</code>. <code>register_video_decoder</code> puts a factory in front of the built-in ones, so a
+hardware decoder can take precedence. The GOP cache never holds its lock while decoding.</li>
+<li><strong>Hardware decoding.</strong> The apps (desktop, CLI / headless MCP, bench) call
+<code>filmcraft_platform::register()</code> at startup, which on macOS registers a VideoToolbox factory for
+<code>avcC</code> / <code>hvcC</code> streams (8 / 10-bit, 4:2:0 and 4:2:2; elsewhere it does nothing), and on Windows a
+Media Foundation one (below). The factory
+declines (our decoder is used) when Settings ▸ Playback ▸ Hardware decoding is Off
+(<code>codecs::hw::set_hardware_decoding</code>, applied by the engine whenever preferences change), for
+formats it does not take, and when the OS cannot create a <em>hardware</em> session for the stream.
+Its decoder is a <code>platform::HybridDecoder</code>: VideoToolbox decodes asynchronously (two access
+units in flight), a reorder buffer of the stream's own depth (<code>max_num_reorder_frames</code> /
+<code>sps_max_num_reorder_pics</code>, from <code>codecs::hw::NalStreamInfo</code>) restores presentation order, and
+the decoded biplanar <code>CVPixelBuffer</code> is copied into planar <code>Yuv8</code> / <code>Yuv16</code>. Colour, pixel
+aspect, random-access and disposable answers come from the same helpers as the software
+decoders (<code>video::vui_color</code>, <code>sar_par</code>, <code>h264_disposable</code>, <code>hevc_disposable</code>), so the two are
+interchangeable (bit-exact in the parity tests). If the hardware fails mid-stream (decode error,
+session lost to a GPU change or sleep, changed in-band parameter sets), the hybrid builds
+<code>codecs::software_video_decoder</code> (built-in factories only), replays the samples since the last
+restart point and continues in software for that instance; it is logged and counted. A source
+already open keeps its decoder when the setting changes, until it is reopened. <code>perf.stats</code>
+<code>decode.hardware</code> reports hardware vs software frames, sessions, declines and fallbacks, and the
+registered <code>backend</code>.
+On Windows the decoder (<code>platform::media_foundation</code>) is a Direct3D-aware decoder MFT driven at
+the level of single access units (no Source Reader: the demuxer above already delivers the
+samples): the <code>avcC</code> / <code>hvcC</code> sample becomes Annex B, the MFT is given the process's Direct3D 11
+video device through an <code>IMFDXGIDeviceManager</code> so it decodes with DXVA, and its NV12 (8-bit) /
+P010 (10-bit) texture is read back through a staging texture (the one GPU to CPU copy) into
+planar <code>Yuv8</code> / <code>Yuv16</code>. H.264 Baseline / Main / High, HEVC Main / Main 10, VP9 profiles 0 / 2 and AV1 main
+(8- and 10-bit), 4:2:0, progressive (VP9 / AV1 samples go in as they are, not as Annex B);
+everything else, and any stream the GPU's DXVA decoder does not list, is declined. A decoder that
+would hand back system-memory pictures (Microsoft's decoder MFTs do that when DXVA is not
+available) fails the stream, so the hybrid continues with our decoder and Windows' software
+decoding is never used in its place. Zero-copy (the texture straight to wgpu) is not done yet.
+Decoders run slices on rayon, so an export worker waiting inside a decode can pick up another
+frame of the same source. A request that finds the shared decoder busy decodes with a private
+decoder.</li>
+<li><strong>Hardware encoding.</strong> On Windows and 64-bit Linux, <code>platform::nvenc::export::factory</code> is registered with
+<code>filmcraft_export::register_encoder</code> (<code>register()</code> does this once), in front of the software H.264
+encoder. It takes an export only when Export ▸ Hardware encoding (<code>ExportSettings.hardwareEncoding</code>,
+<code>HardwareEncoding::Auto</code>) is Auto, which is off by default: hardware streams differ from ours, and
+exports are otherwise byte-identical from run to run. NVENC (<code>platform::nvenc</code>, the driver's
+<code>nvEncodeAPI64.dll</code> / <code>libnvidia-encode.so.1</code> loaded at run time) then takes RGBA frames, converted to 4:2:0 by the software
+encoder's own conversion, and produces the H.264 samples and <code>avcC</code> of an MP4 / MOV. It declines
+(the software encoder runs, counted in <code>export.hardware.declined</code>) two-pass VBR, HDR, MXF,
+interlaced output, sizes outside NVENC's limits, and systems without an NVIDIA GPU or driver.
+A failure during an export ends it with an error: the software encoder cannot take over a hardware
+stream. The same NVENC session also encodes H.265 (HEVC Main 8-bit 4:2:0 SDR, or Main 10 HDR: PQ / HLG,
+BT.2020, limited range, from the float R'G'B' pictures through <code>rgbf_to_yuv420_10</code> into P010 input
+buffers, with the HDR10 static metadata as SEI on every IDR for PQ; the <code>hvcC</code> is built from the SPS
+the encoder wrote). An HDR sequence exports as HDR H.265 only where a registered probe says so
+(<code>filmcraft_export::register_hdr_probe</code>, <code>hdr_available</code>; NVENC with 10-bit support), otherwise it is
+tone-mapped to SDR as on macOS: <code>register()</code> hands <code>platform::nvenc::hevc_available</code> to
+<code>filmcraft_export::register_format_probe</code>, so the H.265 format exists where an HEVC encoder does,
+and choosing it is the opt-in (the Hardware encoding toggle governs H.264 only). With no software
+H.265 encoder, what NVENC declines is counted and ends the export with an error that says why.</li>
+<li><strong>Compositor.</strong> <code>render</code> is the reference for monitors, thumbnails and export. <code>render::plan</code>
+turns a frame into GPU layers, each with its opacity and blend mode. All 27 blend modes run on the
+GPU (<code>filmcraft-gpu</code>): Normal and Dissolve with fixed-function "over" blending, the others by
+copying the accumulator under the layer into a backdrop texture and compositing in the fragment
+shader with the CPU reference's formulas. The common standard effects run on the GPU too
+(<code>render::gpufx</code>, <code>gpu::fx</code>): Brightness &amp; Contrast, ProcAmp, Tint, Black &amp; White, Color
+Balance, Leave Color, Change to Color, Color Pass, Color Replace, Channel Mix, ASC CDL, Gamma
+Correction, Levels, Extract, Invert, Posterize, Alpha Adjust, Gaussian Blur and Directional Blur
+(and their legacy aliases), Camera Blur, Sharpen, Unsharp Mask, Crop, Edge Feather, Transform,
+Horizontal / Vertical Flip, Mirror, Offset, Vignette and Video Limiter. When every enabled effect of a media clip is in
+that set (unmasked, with finite parameters, and no Transform shrinking the picture below half
+size, which the CPU pre-filters), the plan hands the GPU the clip's source with
+the effects' parameters evaluated at that time: the source is drawn into an <code>Rgba32Float</code>
+working image at the size the CPU decodes it, each effect runs as compute passes with the CPU
+reference's math (effects, then Motion, then Opacity / blend, as on the CPU), and the result is
+placed like any layer. Other standard effects, effect and opacity masks, adjustment layers,
+nested sequences (except a plain one, whose own layers go into the plan: same frame size and
+colour settings as its parent, nothing on the clip that changes the picture, every layer inside
+blended normally) and non-dissolve transitions are rendered on the CPU for that layer or frame
+and handed to the GPU as an image (a layer image keeps its clip's blend mode), so both paths
+give the same picture. Setting <code>FILMCRAFT_CPU_COMPOSITE=1</code>
+forces the CPU path in the desktop app.</li>
+<li><strong>CPU compositor shortcuts.</strong> The CPU compositor, which is what export runs, works on
+premultiplied linear <code>f32</code> images, 33 MB at 1080p, so what it does not allocate, convert or mix
+is time saved. Three shortcuts, each of which gives the general path's bits (compared bit for
+bit, with every blend mode, in <code>render/src/region_tests.rs</code>): the canvas stays unallocated
+until a layer needs it, and an opaque bottom layer (an 8-bit or 16-bit Y'CbCr frame without an
+alpha plane, opacity 100 %, Normal) simply becomes the canvas; a plain media frame with an alpha
+plane (a ProRes 4444 banner) is converted and mixed only inside the rectangle where its alpha is
+not zero (<code>VideoFrame::alpha_region</code>, <code>to_linear_f32_region</code>, <code>blend::composite_at</code>), the rest
+being transparent anyway; and working images are recycled through <code>filmcraft_frame::pool</code>
+(<code>take_f32_overwritten</code> / <code>recycle_f32</code>: the buffer comes back with its old contents, so there is
+no zero-fill) by the export pipeline once a frame is converted to 8 bits; a standalone export's
+pipeline frees the idle float images (<code>pool::trim_f32</code>) when it goes away, so a finished export
+leaves none behind (parts of a batch, such as render-preview segments, keep them for the next part). A clip
+with effects, opacity masks, frame blending, colour management, or a picture that is not placed
+one to one on the output takes the general path.</li>
+<li><strong>Frame scheduling.</strong> <code>crates/ui-egui/src/frames.rs</code> runs a small pool of worker threads with
+prioritised jobs: the frame on screen first, then playback prefetch, then thumbnails. The UI never
+decodes. It shows the exact frame when it is ready and holds the nearest cached frame meanwhile.
+Play waits for the first frames (<code>PREROLL_FRAMES</code>, at most 0.5 s) before starting the clock.
+Every refresh, <code>schedule_playback</code> asks for the next frames and drops (or cancels, through
+<code>filmcraft_media::cancel</code>) jobs for frames the playhead has passed; a new on-screen frame
+replaces the one asked for before (scrubbing); Stop cancels the prefetch. When frames cost more
+than the workers can render in real time (CPU effects), it starts only frames that can still be
+on time and spaces them evenly (<code>playback_plan</code>). When decoding is what falls behind, each job
+tells its sources which frames are already late (<code>filmcraft_media::cancel::with_catch_up</code>: the
+playhead's distance, two seconds for a scrubbed-to frame), and the GOP cache skips
+non-reference pictures of late frames on the way (<code>VideoDecoder::is_disposable</code>, H.264
+<code>nal_ref_idc</code> 0 and HEVC sub-layer non-reference pictures; the wanted frame decodes exactly as
+before). With Settings ▸ Playback ▸ Draft decoding (off by default), frames played at 1/2
+resolution or lower are requested as draft frames (<code>FrameKey::draft</code>,
+<code>filmcraft_media::cancel::with_draft</code>): the H.264 decoder skips deblocking of non-reference
+pictures (<code>VideoDecoder::set_draft</code>), the GOP cache serves those draft frames to draft
+requests only (a paused frame, render or export decodes them again exactly), and draft plans
+hand the GPU box-decimated Y'CbCr planes at the drawn size. <code>perf.stats</code> reports the counters.
+GPU plans carry their texels already converted for upload (<code>filmcraft_gpu::prepare</code>), so the UI
+thread only copies them.</li>
+<li><strong>Audio clock.</strong> The desktop app passes a cpal output (<code>apps/filmcraft/src/audio.rs</code>) to the UI as
+<code>AudioOut</code>. While playing, the samples played by the sound card drive the playhead and video follows.
+Without an audio device, playback falls back to the wall clock. <code>PlaybackMeter</code> counts timeline
+frames: shown when the exact picture was on screen while due, dropped otherwise (including frames
+passed over without a refresh, not while the window is hidden). <code>cargo xtask bench-playback</code>
+measures the whole path headlessly (<a href="testing.md">testing.md</a> §5).
+Sequence audio goes through the mixer graph (<code>render::mixer</code>, §5.1); clip audio effects run on
+<code>audio-dsp</code> via <code>render::audio_fx</code>.</li>
+</ul>
+<h3>5.1 Audio mixer</h3>
+<pre><code class="language-text">clip: gain → clip effects → Volume / Channel Volume / Panner (clip keyframes, media time)
+      → audio transitions → summed per track                           render::audio::track_input
+track / submix strip:  input map, mono fold → pre-fader inserts → pre-fader sends → mute
+      → fader (volume) → meter → post-fader inserts → post-fader sends → pan / balance → output
+Mix:  bus sum → pre-fader inserts → fader → meter → post-fader inserts → out    render::mixer
+</code></pre>
+<ul>
+<li><strong>Model</strong> (<code>project::mixer</code>). Every audio track, submix and the Mix has a <code>MixerStrip</code>. Static
+values stay in <code>Track::volume_db</code>, <code>pan</code>, <code>muted</code> and the send/effect parameters; automation is
+keyframes in sequence ticks: lanes <code>volume</code>, <code>pan</code>, <code>mute</code> (hold), <code>send.&lt;i&gt;.level</code> in
+<code>MixerStrip::lanes</code>, and insert parameters (<code>fx.&lt;slot&gt;.&lt;param&gt;</code>) in the effect's own keyframes.
+Up to 5 inserts (<code>EffectInstance::post_fader</code> picks the side) and 5 sends per strip. Submixes feed
+the Mix or a submix after them (no feedback). All fields have serde defaults, so older projects
+load unchanged.</li>
+<li><strong>Graph</strong> (<code>render::mixer::mix_graph</code>). Lanes are evaluated per sample; effect parameters update
+on an absolute 64-sample grid, so the output does not depend on how callers cut the timeline into
+requests (export batches and device callbacks give identical samples). Inserts that report
+latency delay their strip; each route into a bus gets a compensation delay and the graph is read
+ahead by its total latency. Graph state (DSP, delay lines) is cached per structure and continued by
+sequential readers; other requests start fresh with a pre-roll (effect tails, ≤ 3 s). Tracks run
+in parallel (rayon), buses in order. Mono tracks pan with the −3 dB constant-power law; stereo
+tracks and sends use balance. Solo keeps soloed and solo-safe strips plus everything feeding them
+or fed by them. 24 tracks × (EQ + Dynamics + Studio Reverb) + a compressed submix renders at
+~6× realtime on one core (release).</li>
+<li><strong>Automation modes</strong> (Premiere semantics). Off ignores lanes; Read plays them; Latch records from
+the first touch and holds the last value until playback stops; Touch records while held and ramps
+back to the existing automation over the <strong>automatch time</strong> (Preferences ▸ Audio, 1 s); Write
+records every control from playback start (then switches to Touch unless "Switch to Touch after
+Write" is off).</li>
+<li><strong>Recording</strong> (<code>engine::mixer</code>). Playback start runs <code>mixer.recordStart</code>, stop runs
+<code>mixer.recordStop</code>. Fader and knob drags send <code>mixer.touch</code> (value, playhead) while held and
+<code>mixer.release</code> when let go. Held values go to <code>render::mixer::LiveMix</code>, which the playing mix
+reads, so moves are heard at once. At stop each gesture stream is thinned (linear keyframe
+thinning, optional minimum time interval) and written over its time range as one undo step,
+with boundary keyframes that keep the automation outside the range unchanged.</li>
+<li><strong>Live state.</strong> <code>PreviewStore::live</code> (<code>LiveMix</code>) also carries per-strip meter peaks posted by the
+mix (one per channel; Track Mixer and Audio Meters read them), the voice-over input level (Meter
+Input(s) Only) and the newest project snapshot, which the audio callback uses, so edits made
+during playback are heard.</li>
+<li><strong>Audio Clip Mixer automation.</strong> Each audio track has a Clip Mixer mode (<code>clipMixer.setMode</code>,
+session state <code>EditorState::clip_mixer_modes</code>, Read by default). During a pass the Clip Mixer's
+fader and pan knob are gestures on the track's <code>clip.volume</code> / <code>clip.pan</code> lanes
+(<code>clipMixer.touch</code> / <code>clipMixer.release</code>): the clip under the playhead plays the held value at
+once (<code>render::audio::track_input_live</code>), and Latch / Touch / Write follow the track rules. At
+<code>mixer.recordStop</code> each stream is thinned and written as <strong>clip keyframes</strong> (Volume <code>level</code>,
+Panner <code>balance</code>, in media time) into every clip it covers, with boundary keyframes that keep the
+clip's values outside the range; one undo step for the whole pass.</li>
+<li><strong>Track Mixer view.</strong> The panel menu (<code>mixer.menu</code>) has Show/Hide Tracks (<code>UiState::mixer_hidden</code>)
+and Meter Input(s) Only (<code>UiState::mixer_meter_input_only</code>: record-armed tracks meter the
+voice-over input). The transport's record button runs <code>voiceover.recordToggle</code>.</li>
+</ul>
+<h3>5.1.1 Multichannel and 5.1</h3>
+<pre><code class="language-text">5.1 track (6 ch: L R C LFE Ls Rs) ─┐                         ┌─► 5.1 Mix ─► 6-ch export / 5.1 device
+stereo / mono track ──5.1 panner───┼─► 5.1 submix / 5.1 Mix ─┤
+5.1 strip ──BS.775 downmix─────────┴─► stereo bus            └─► stereo device: 5.1 Mixdown Type fold
+</code></pre>
+<ul>
+<li><strong>Model.</strong> <code>Track::channels</code> (Standard = Stereo, Mono, 5.1, Adaptive) and
+<code>SequenceSettings::audio_master</code> (the Mix: Stereo, Mono, 5.1, Adaptive) existed already;
+<code>file.newSequence {mix, trackType}</code> and <code>sequence.settings {mix}</code> set them, <code>mixer.setStrip  {channels}</code> / <code>mixer.addSubmix {channels}</code> per strip. The 5.1 panner is four lanes in
+<code>MixerStrip::lanes</code> (<code>pan51.x</code>, <code>pan51.y</code> −100…100, <code>pan51.center</code> 0…100 %, <code>pan51.lfe</code> dB): a
+lane without keyframes stores the static value, so no new project fields were needed and the
+puck is automatable like any lane.</li>
+<li><strong>Maths</strong> (<code>audio_dsp::channels</code>). 5.1 order is L, R, C, LFE, Ls, Rs everywhere inside FilmCraft.
+Downmix is ITU-R BS.775 (<code>Lo = L + k·C + k·Ls</code>, <code>Ro = R + k·C + k·Rs</code>, mono
+<code>M = k·L + k·R + C + ½·Ls + ½·Rs</code>, <code>k = 1/√2</code>, LFE omitted); upmix puts mono on C and stereo on
+L/R. The panner splits a point source front/rear and left/right with the sine/cosine
+constant-power law and gives the centre speaker <code>center·(1 − |x|)</code> of the front power (Σg² = 1).
+Stereo sources sit at the puck ± 1 in x; 5.1 sources keep their layout moved by the puck's offset
+from front-centre (the default puck is the identity). LFE gets the source LFE (5.1) or the mean of
+the source channels (mono/stereo, default −∞) times the LFE level.</li>
+<li><strong>Graph.</strong> Buses are 2 or 6 channels wide (<code>render::mixer::width_of</code>); inserts are built for the
+strip's width; routes convert between widths (5.1 panner into 5.1 buses, BS.775 into stereo
+buses); meters have one value per channel. <code>mix_graph</code> returns the Mix's width;
+<code>audio::mix_sequence</code> always returns stereo, <code>mix_sequence_layout</code> any layout and mixdown. Clips
+on 5.1 tracks play the source's first six channels (or the six picked with Modify ▸ Audio
+Channels), mono/stereo sources upmixed; clip effects run on all six channels.</li>
+<li><strong>Playback.</strong> On a device with ≥ 6 output channels a 5.1 Mix plays as six channels; on a stereo
+device it is folded with Preferences ▸ Audio ▸ 5.1 Mixdown Type (Front Only, Front + Rear
+Surround = BS.775, Front + LFE, Front + Rear Surround + LFE; <code>PreviewStore::mix_layout</code>).</li>
+<li><strong>Export.</strong> Audio Channels Mono / Stereo / 5.1: WAV writes <code>WAVE_FORMAT_EXTENSIBLE</code> with channel
+mask <code>0x3F</code>; QuickTime PCM (ProRes, DNxHR, MJPEG) adds a <code>chan</code> atom
+(<code>kAudioChannelLayoutTag_MPEG_5_1_A</code>); AAC uses channel configuration 6 (our encoder already
+supported 1–8 channels; the exporter reorders to AAC's C, L, R, Ls, Rs, LFE). A stereo export of a
+5.1 Mix is the BS.775 downmix.</li>
+</ul>
+<h3>5.1.2 Voice-over recording</h3>
+<p><strong>Voice-over recording</strong> (<code>engine::voiceover</code>, <code>audio.voiceover.*</code>). The record point R is the playhead, or the In point when In/Out are set (punch-in; punch-out at Out). Playback starts the pre-roll before it (C = max(0, R − pre-roll)) and the input is captured from C. When the UI's audio clock really starts, <code>audio.voiceover.sync</code> restarts the capture there. <code>audio.voiceover.stop</code> keeps the audio from R to min(stop, Out), writes a mono 32-bit float WAV <code>&lt;Name&gt; &lt;n&gt;.wav</code> (Scratch Disks ▸ Captured, else next to the project, else the data or temporary directory), imports it and overwrites it onto the record track at R as one undo step. The record track is the given one, else the record-armed one, else the first targeted one. Input goes through the <code>AudioInput</code> trait: cpal in the desktop app (<code>apps/filmcraft/src/audio_in.rs</code>, on its own thread), and <code>SyntheticInput</code> headless, which produces exactly the samples the timeline asks for so recordings land sample-accurately. Voice-Over Record Settings (Source, Input channel, Name, Countdown Sound Cues, Pre-/Post-roll) are preferences (<code>voiceOver</code>). The track header's microphone records or stops, and a right-click opens the settings dialog. Countdown beeps (1 kHz, 100 ms, each whole second of pre-roll and at R) are mixed into playback, an overlay counts down, and playback stops at Out + post-roll.</p>
+<h3>5.1.2a Text to Speech (narrations)</h3>
+<p><strong>Narrations</strong> (<code>engine::narration</code>, <code>tts.*</code>; voices in <code>filmcraft-tts</code>). The Text to Speech panel (Window ▸ Text to Speech) writes a script with pause markers (<code>[pause 1s]</code>), a voice, a vocal pitch and a pace; <code>tts.create</code> synthesizes it, writes <code>Narration &lt;n&gt;.wav</code> (mono 32-bit float, 24 kHz, where voice-over recordings go), imports it and places it at the playhead on the first free targeted audio track, else the first free audio track, else a new one, as one undo step. The settings are kept per generated item in <code>Project::narrations</code> (schema v14). Selecting a narration clip loads it into the panel; <code>tts.edit</code> writes a new file (beside the previous one) and swaps the clip to it, keeping the clip's start, duration and speed: longer speech is kept whole in the file but plays only to the clip's end; shorter speech is padded with silence to the clip's length. The old item and narration stay, so undo is exact. <code>tts.preview</code> synthesizes without changing the project and the UI plays <code>Session::tts_preview</code> on the audio output. Built-in voices are an original formant synthesizer (robotic, no download). The natural voices (feature <code>neural-voices</code> of the desktop app, off by default like <code>whisper</code>) are Kokoro-82M on candle (<code>filmcraft-tts</code>) fed by <code>filmcraft-tts-text</code> (normalizer, CMUdict + letter-to-sound); their 336 MB package is downloaded once after the user confirms (<code>tts.downloadVoices</code>, a job). The UI synthesizes with <code>tts.render</code> (a job filling <code>Session::tts_cache</code>) and then runs create / edit / preview, which use the cache.</p>
+<h3>5.1.3 Remix</h3>
+<pre><code class="language-text">clip media (source In … +duration) ─► audio_dsp::remix::analyze: spectral-flux onsets → tempo (autocorrelation, 50–200 BPM)
+  → DP beat tracker → per-beat chroma + mel cepstra → beat self-similarity
+  ─► plan(target, Segments, Variations): intro … joints at beat boundaries … outro, length within one beat
+  ─► hidden clip effect `remix` (target, sliders, original duration, plan in ticks) ─► render::remix::read (20 ms equal-power crossfades)
+</code></pre>
+<p>Clip ▸ Remix ▸ Enable Remix / Remix Properties… / Revert Remix (<code>clip.remix.*</code>; agents can use <code>clip.remix {duration|seconds…}</code>) and the Remix tool in the Rate Stretch group (drag a music clip's Out edge) retime a music clip to a target duration. The analysis finds the beat and compares every pair of beats by harmony (chroma) and timbre (cepstra). Each joint leaves the music at one beat boundary and continues at the beat boundary whose four beats on either side sound most alike. The intro and outro are kept, and the result lands within one beat of the target. Segments (0–100) sets the number of joints (1–3, more for long extensions). Variations (0–100) sets how far a joint may move from its evenly spaced position (±1–8 beats). The state is a hidden effect instance with no definition, so panels, the effect chain and Paste Attributes ignore it. The plan is stored in ticks, so playback and export read it without re-analysing. A remix never moves other clips: one that would overlap the next clip is refused, and Revert restores the original duration. Results are deterministic and the analysis is cached per media range.</p>
+<h3>5.2 Essential Sound</h3>
+<pre><code class="language-text">clip.essential (type + settings)  ──apply()──►  clip effects marked `essential`, clip gain, Volume, Panner
+essentialSound.autoMatch   BS.1770 integrated loudness of render::audio::clip_signal (mono clips as one channel) → match gain (clip gain)
+essentialSound.generateDucking   trigger clips' summed level (10 ms hops) → activity regions → Volume keyframes
+</code></pre>
+<ul>
+<li><strong>Model</strong> (<code>project::essential</code>). A clip's <code>essential: Option&lt;EssentialSound&gt;</code> holds its audio type
+(Dialogue / Music / SFX / Ambience) and per-type sections: Loudness (match gain, measured and target
+LUFS), Repair (Reduce Noise, Reduce Rumble, DeHum 50/60 Hz, DeEss, Reduce Reverb), Clarity
+(Dynamics, EQ preset + amount, Enhance Speech), Creative (Reverb preset + amount, Stereo Width for
+Ambience), Ducking (against types, sensitivity, reduce by, fades), Pan, Clip Volume and Mute.</li>
+<li><strong>Effects under the hood.</strong> <code>essential::apply(item, old, t)</code> turns the settings into ordinary clip
+effects (Highpass, DeNoise, DeHummer, DeEsser, DeReverb, Dynamics Processing, Parametric Equalizer,
+Enhance Speech, Stereo Width, Studio Reverb) flagged <code>EffectInstance::essential</code>, in that order, ahead
+of the user's own effects. Only parameters whose derived value changed are written (at the playhead),
+so keyframes added in Effect Controls survive. A section switch bypasses its effects, a slot switch
+removes its effect, clearing the type removes them all. Auto-match gain, Clip Volume (an offset on
+the Volume level or on all its keyframes) and Pan are applied as deltas, so clearing restores the
+clip. Because these are normal effects, playback, the mixer and export need nothing special.</li>
+<li><strong>Loudness.</strong> The clip signal (clip gain + effects, before Volume) is measured with the BS.1770
+meter; the gain is linear after the effects, so one measurement hits the target exactly. Targets are
+preferences (<code>audio.dialogueTargetLufs</code> −23, <code>musicTargetLufs</code> −25, <code>sfxTargetLufs</code> −21,
+<code>ambienceTargetLufs</code> −30).</li>
+<li><strong>Ducking.</strong> Sensitivity 0…10 maps to a threshold −20 − 4·s dBFS on the summed trigger signal (50 ms
+window); regions shorter than 100 ms are dropped and pauses under 250 ms bridged; each region gets a
+fade-down before it and a fade-up after it (<code>audio_dsp::ducking::duck_keyframes</code>), written as Volume
+level keyframes that replace earlier ones.</li>
+<li><strong>Presets</strong> (our own names and values) per type; user presets are saved in preferences
+(<code>essentialSound.userPresets</code>). Music remixing to a duration is Clip ▸ Remix (§5.1.3).</li>
+<li><strong>Enhance Speech</strong> is a DSP chain (high-pass, de-mud, presence and air EQ, expander, compressor), not a
+model: no speech-enhancement model with an open licence that we could ship and verify is bundled.
+DeepFilterNet (MIT/Apache-2.0, Rust inference via tract) is the candidate for a future optional
+integration behind a trait.</li>
+</ul>
+<h3>5.3 Masks</h3>
+<p>Every video effect and the intrinsic Opacity carry <code>EffectInstance::masks</code> (<code>project::mask</code>).
+A mask is a closed cubic Bézier <code>MaskPath</code> in clip pixels (ellipse = four smooth vertices with
+circular tangents, 4-point polygon = corner vertices, the pen draws arbitrary vertices), stored as a
+<code>ParamValue::Path</code> so the ordinary keyframe engine animates it (vertex-wise interpolation; paths
+with different vertex counts hold). Feather, Opacity and Expansion are ordinary float parameters.</p>
+<ul>
+<li><strong>Coverage</strong> (<code>render::mask</code>): the path is flattened (≤ 0.05 working px chord error); the
+signed distance to the polygon (nonzero winding) plus Expansion goes through a falloff of width
+max(Feather, 1) centred on the edge (linear = exact box-filtered antialiasing at Feather 0,
+blending into smoothstep as Feather grows). Masks combine top to bottom with Add / Subtract /
+Intersect / Lighten / Darken / Difference; Inverted and Opacity apply per mask.</li>
+<li><strong>Semantics.</strong> A masked effect is <code>lerp(original, effected, coverage)</code> per premultiplied channel
+(the effect only applies inside); Opacity masks scale the clip's layer before Motion, so they
+follow the clip's transform. Adjustment-layer masks are in sequence pixels.</li>
+<li><strong>GPU.</strong> <code>filmcraft-gpu::GpuMask</code> evaluates the same coverage and mix in WGSL (compute), tested
+to agree with the CPU within 3·10⁻⁶. Layers with masks are CPU-rendered images in frame plans.</li>
+<li><strong>Editing.</strong> <code>masks.*</code> commands (add / remove / set / moveVertex / translate / addVertex /
+removeVertex / toggleVertexSmooth / roundCorners / select / list; <code>masks.add</code> takes a
+<code>cornerRadius</code> for a rounded rectangle); keyframe commands take <code>"mask": n</code>. The
+Program monitor overlay drags vertices, Bézier handles, the whole mask and the feather /
+expansion handles; drags merge into one undo step.</li>
+<li><strong>Tracking</strong> (<code>render::track</code>, <code>masks.track</code>): Shi–Tomasi features inside the mask, pyramidal
+Lucas–Kanade (4 levels, 15×15 window) with a forward–backward check, then RANSAC + least squares
+for Position / Position &amp; Rotation / Position, Scale &amp; Rotation (2D Procrustes). Each frame's
+transform moves the path, written as Mask Path keyframes while the background job runs (one undo
+step per run; <code>jobs.cancel</code> stops and keeps what was tracked). Frames are tracked at ≤ 960 px
+wide. On synthetic footage with known similarity motion the path stays within 0.3 px over 20 frames.</li>
+</ul>
+<h3>5.4 Colour management</h3>
+<pre><code class="language-text">frame (Y'CbCr/RGB + metadata) ─► source colour space: Interpret Footage override, else VUI/colr/MKV Colour
+  ─► decode table (sRGB/BT.709, PQ, HLG scene light, camera log) ─► HLG OOTF ─► 3×3 to working gamut
+  ─► BT.2390 tone map (HDR/log into an SDR sequence, Auto Tone Map Media) ─► gamut compression
+  ─► effects + compositing in working linear (1.0 = reference white = SDR white = 203 cd/m²)
+  ─► monitors: working → SDR BT.709 (tone map from HDR, gamut map from BT.2020)
+  ─► HDR export: working → PQ/HLG BT.2020 R'G'B' → Y'CbCr (BT.2020 NCL) + VUI/colr/mdcv/clli/SEI
+</code></pre>
+<ul>
+<li><strong>Model.</strong> <code>SequenceSettings::color</code> (<code>ColorPipeline</code>: working space Rec. 709 / Rec. 2100 PQ /
+Rec. 2100 HLG, wide gamut, auto tone map) and <code>Interpretation::color_space</code> (per media item;
+<code>None</code> = from metadata). Commands: <code>sequence.colorSettings</code>, <code>clip.interpretFootage</code>,
+<code>color.spaces</code>, <code>media.colorInfo</code>.</li>
+<li><strong>Maths</strong> in <code>filmcraft-color</code> (<code>transform</code>, <code>log</code>, <code>spaces</code>; formulas and sources in
+<a href="../crates/color/README.md">crates/color/README.md</a>); the renderer side is <code>render::colorman</code>.</li>
+<li><strong>Fast path.</strong> A Rec. 709 sequence without wide gamut and media whose metadata says Rec. 709 /
+sRGB decodes exactly as before, and its layers stay on the GPU. Log, HDR or wide-gamut media,
+and every layer of an HDR/wide-gamut sequence, are converted on the CPU (the GPU path draws them
+as pre-rendered images, like layers with effects).</li>
+<li><strong>Outputs.</strong> <code>RenderOptions::working_output</code> returns working-space pixels (HDR exports,
+scopes); otherwise the top-level render is converted for an SDR monitor. The other colour
+effects work on display-encoded values clamped to 0..1 (they clip HDR highlights above
+reference white).</li>
+<li><strong>HDR grading (Lumetri).</strong> <code>FxCtx::working</code> carries the sequence's working space. In a PQ or HLG
+sequence Lumetri grades the working space's own signal normalised to <strong>HDR White</strong> (cd/m²,
+Basic Correction; the curves, wheels, looks and HSL Secondary use the Curves section's <strong>HDR
+Range</strong>): <code>filmcraft_color::GradeSpace</code> (PQ: <code>PQ⁻¹(nits/10000) / PQ⁻¹(white/10000)</code>; HLG: the
+BT.2100 inverse OOTF of a display with that peak, then the OETF). So the sliders and curves span
+0 … HDR White like black … white in SDR, exposure is stops of light, and highlights above HDR
+White pass through (contrast leaves them alone; <strong>HDR Specular</strong> scales them). Rec. 709
+sequences grade exactly as before. HSL Secondary ▸ Refine: <strong>Denoise</strong> (median of the key,
+radius 1–3 px) and <strong>Blur</strong> (Gaussian of the key, σ ≤ 20 px), both scaled with the playback
+resolution.</li>
+<li><strong>HDR metadata.</strong> <code>VideoStreamInfo::hdr</code> (<code>HdrMetadata</code>: ST 2086 mastering luminance, MaxCLL,
+MaxFALL) is read from <code>mdcv</code> / <code>clli</code> (MP4 / MOV) and Matroska <code>MasteringMetadata</code> / <code>MaxCLL</code> /
+<code>MaxFALL</code>. PQ media tone mapped into an SDR working space uses it as the BT.2390 source peak
+(MaxCLL, else the mastering peak; 1000 cd/m² without metadata), so a 4000-nit master keeps its
+highlight detail instead of clipping at 1000. <code>media.colorInfo</code> reports it (<code>hdrMetadata</code>,
+<code>toneMapPeakNits</code>). The field is optional and serde-defaulted (no schema change).</li>
+<li><strong>HDR export.</strong> H.264 and ProRes exports of a PQ/HLG sequence encode BT.2020 PQ/HLG (ProRes
+10-bit; our H.264 encoder is 8-bit, so H.264 HDR is 8-bit) and signal it in the VUI / ProRes
+frame header, <code>colr</code>, and for PQ <code>mdcv</code> (BT.2020 / D65, 1000 / 0.0001 cd/m²) and <code>clli</code>
+(MaxCLL/MaxFALL 0 = unknown, they are not measured) plus the matching H.264 SEI. <code>sdr: true</code>
+exports the tone-mapped SDR picture instead; render previews always do.</li>
+<li><strong>Monitors / display colour management.</strong> The monitors are SDR (sRGB-encoded RGBA8 textures):
+HDR sequences are shown tone mapped. macOS EDR (extended-range <code>CAMetalLayer</code> output) is not
+wired up: there is no <code>platform</code> crate yet and eframe/wgpu do not expose an EDR surface, so HDR
+values above SDR white are never sent to the display. The scopes of an HDR sequence show the
+working-space values (waveform in cd/m² on a PQ scale, BT.2020 vectorscope).</li>
+<li><strong>LUTs.</strong> Lumetri Input LUT and Creative Look reference <code>lib:&lt;id&gt;</code> (the project's LUT library,
+<code>Project::luts</code>, embedded <code>.cube</code>/<code>.3dl</code> text) or <code>builtin:&lt;id&gt;</code> (code-generated camera
+conversions and looks). <code>filmcraft-gpu::GpuLut</code> is the WGSL tetrahedral counterpart, tested for
+parity.</li>
+</ul>
+<h3>5.4 Multi-camera and synchronisation</h3>
+<pre><code class="language-text">clips ──sync (in | out | timecode[±hours] | marker | audio)──► anchors (media time ↔ common instant)
+  ├─ clip.synchronize        moves selected timeline clips (link groups together) onto the reference
+  ├─ clip.mergeClips         video + ≤16 audio clips → a merged-clip sequence
+  └─ clip.createMulticam     cameras → a multi-camera source sequence (one video track per angle)
+multi-camera clip = nested source + TrackItem::multicam {enabled, angle}
+  render: only the angle's video track · audio: camera 1 | all | the angle (Switch Audio)
+</code></pre>
+<ul>
+<li><strong>Model</strong> (<code>project::multicam</code>). <code>Sequence::multicam</code> (<code>MulticamSource</code>: cameras with their video
+track, audio tracks, name, shown flag and source item; audio mode) marks a multi-camera source;
+<code>Sequence::merged</code> a merged clip. <code>TrackItem::multicam</code> (<code>MulticamSel</code>) makes a nested clip a
+multi-camera clip; any nest can be one (its video tracks are then the angles,
+<code>Sequence::cameras()</code>). Editing a multi-camera source into a sequence gives an enabled clip on the
+first angle (<code>Project::make_track_item</code>). Project schema v7.</li>
+<li><strong>Sync</strong> (<code>engine::sync</code>). Each method reduces a clip to an <em>anchor</em> (the media time that lines up
+with the common instant). Audio uses <code>audio_dsp::sync::find_offset</code>: DC removal, windowed-sinc
+decimation to ≤ 8 kHz, GCC-PHAT-β (β = 0.75) via one packed complex FFT for the coarse lag, then
+the same at the full rate on the loudest common window (≤ 2.7 s) and parabolic interpolation.
+Recordings with different gains, microphones (filtered), 0 dB SNR noise or a strong echo are
+aligned to the sample; two 10-minute recordings take ~2.4 s (release). Clips are placed on frame
+boundaries with the sub-frame remainder taken from their source In, so video stays on frames
+while audio keeps sample accuracy.</li>
+<li><strong>Render.</strong> <code>render::item_layer</code> renders a multi-camera clip's angle track only
+(<code>render_seq_tracks</code>); <code>render::audio</code> mixes the nested source with only the audible tracks
+(<code>Sequence::with_angle_audio</code>). Nested audio now plays at all (it was skipped when the nest had
+no media source) and is limited to the clip's range. <code>render::multicam::render_grid_page</code> renders
+one page of the shown angles at the cell scale in parallel (rayon) and tiles them: the
+Multi-Camera view is one frame job (<code>frames::Target::MulticamGrid(source, layout, page)</code>),
+prefetched while playing like the program. Only the page's angles are decoded.</li>
+<li><strong>Multi-Camera view settings</strong> (<code>EditorState::multicam_view</code>, Program ▸ wrench menu): grid
+layout (automatic = smallest square up to 4×4, or fixed 2×2 / 3×3 / 4×4) with pages when the
+angles don't fit (<code>render::multicam::page_layout</code>; <code>multicam.gridLayout</code>, <code>multicam.page</code>,
+page arrows; keys 1–9 pick cameras on the shown page, <code>multicam.cut {camera}</code> stays absolute);
+Multi-Camera Selection Top Down (stacked multi-camera clips: topmost instead of lowest);
+Show Multi-Camera Preview Monitor (off: the grid fills the monitor); Auto-Adjust Multi-Camera
+Playback Quality (<code>grid_cell_scale</code>: ½ / ¼ of the cell scale while playing); Transmit
+Multi-Camera View (stored; there is no transmit device yet). <code>multicam.grid</code> returns the page.
+Edit Cameras… shows a thumbnail per angle (<code>frames::Target::MulticamAngle</code>).</li>
+<li><strong>Editing</strong> (<code>edit::multicam</code>, <code>engine::multicam</code>). <code>multicam.switchAngle</code> (click an angle,
+Ctrl/⌘-click for video only), <code>multicam.selectCamera1…9</code> (keys 1–9) and <code>cutToCamera1…9</code>
+(Ctrl+1–9), Enable/Flatten, Edit Cameras, Audio Follows Video (<code>EditorState</code>). Live switching:
+playback in the Multi-Camera view runs <code>multicam.recordStart</code>; each key/click is a
+<code>multicam.cut</code> that is applied at once (the program shows it) by re-applying the whole pass to
+the project from before the pass (<code>edit_merged</code>), so a pass is one undo step; Stop runs
+<code>multicam.recordStop</code>, which ends the last angle at the stop point. Through edits inside the
+recorded range are healed, so pressing the angle already showing adds no edit. Flatten replaces
+a clip by the clip(s) its angle shows (outer effects carried over; linked pairs stay linked).</li>
+</ul>
+<h2>6. Export jobs (<code>filmcraft-export</code>)</h2>
+<pre><code class="language-text">file.exportMedia {path, preset?, settings?, format?, range?, …}     export.quick {preset?, path?}
+  → engine::export_tools: preset ⊕ settings JSON ⊕ flat overrides → ExportSettings; range resolved
+  → a Job {id, label, progress, result} on a background thread (export.queue.* runs them in order)
+  → export: per output frame render (output rate) → fit into the output frame → overlays → limiter
+            → encode in order → mux; audio mixed at the output rate, folded to mono/stereo,
+            loudness-normalized (measuring pass + gain + true-peak limiter) per batch
+  → jobs.list shows progress; jobs.cancel sets the shared cancel flag
+</code></pre>
+<table><thead><tr><th>Format</th><th>Encoder</th><th>Container</th></tr></thead><tbody>
+<tr><td><code>h264</code></td><td><code>filmcraft-h264enc</code> (profile, level, CBR / VBR 1-pass / VBR 2-pass, keyframe distance) + <code>filmcraft-aac</code></td><td>MP4 or QuickTime (<code>isobmff</code>, the Multiplexer setting)</td></tr>
+<tr><td><code>prores</code></td><td><code>filmcraft-prores</code> (Proxy / LT / 422 / HQ)</td><td>MOV</td></tr>
+<tr><td><code>dnxhr</code></td><td><code>filmcraft-dnx</code> (LB / SQ / HQ / HQX)</td><td>MOV (<code>AVdh</code>)</td></tr>
+<tr><td><code>mjpeg</code></td><td>built in</td><td>MOV</td></tr>
+<tr><td><code>aac</code></td><td><code>filmcraft-aac</code> (AAC-LC, the audio settings' bitrate)</td><td>audio only: MPEG-4 audio <code>.m4a</code> (<code>isobmff</code>, priming in an edit list), or raw ADTS when the path ends in <code>.aac</code></td></tr>
+<tr><td><code>mxf-op1a</code></td><td>DNxHR (default), ProRes or H.264 (Annex B, long GOP), <code>mxfVideoCodec</code>; PCM 16/24-bit</td><td>MXF OP1a (<code>filmcraft-mxf</code> writer: frame-wrapped, index with temporal offsets, start timecode)</td></tr>
+<tr><td><code>mxf-opatom</code></td><td>as <code>mxf-op1a</code></td><td>Avid-style MXF OP-Atom: clip-wrapped picture at <code>path</code>, one mono PCM file per channel (<code>&lt;stem&gt;_A1.mxf</code> …, <code>Report::extra_files</code>)</td></tr>
+<tr><td><code>png</code>, <code>tiff</code>, <code>bmp</code>, <code>jpg</code></td><td><code>image</code></td><td>numbered stills <code>&lt;name&gt;000.&lt;ext&gt;</code>, <code>&lt;name&gt;001.&lt;ext&gt;</code> …</td></tr>
+<tr><td><code>tga</code>, <code>dpx</code>, <code>exr</code></td><td>built in (<code>raster.rs</code>: uncompressed Targa 24/32-bit; DPX 10-bit RGB, SMPTE ST 268; OpenEXR half-float linear RGB(A), uncompressed scan lines)</td><td>numbered stills, as above</td></tr>
+<tr><td><code>gif</code>, <code>wav</code>, <code>aiff</code></td><td>built in / <code>image</code></td><td>GIF / RIFF WAVE (<code>WAVE_FORMAT_EXTENSIBLE</code> for 5.1) / AIFF (16- or 24-bit PCM)</td></tr>
+</tbody></table>
+<ul>
+<li><strong>Reproducible.</strong> The same project and settings give the same file on every machine. Frames render
+in batches of one per core, but the muxer gets them in fixed groups of 16 output frames
+(<code>INTERLEAVE</code> in <code>crates/export/src/job.rs</code>), each followed by its audio, and H.264 uses one slice
+per four macroblock rows instead of one per core. MXF files are the exception: their UMIDs and
+modification date come from the clock, as SMPTE ST 330 / ST 377 expect.</li>
+<li><strong>Settings.</strong> <code>ExportSettings</code> (serde, camelCase, every field optional) holds Video (frame size or
+Match Source, frame rate, Scale to Fit / Fill / Stretch, pixel aspect, field order — progressive
+only, profile / level, bitrate encoding, target / maximum / adaptive bitrate, keyframe distance,
+maximum render quality), Audio (codec, sample rate, channels, AAC bitrate, PCM sample size),
+Multiplexer (audio channels: mono, stereo or 5.1, §5.1.1), Captions (burn-in or SRT / WebVTT sidecar), Effects (image / name / timecode
+overlays, video limiter, loudness normalization), Metadata (<code>udta</code> <code>©nam</code>, <code>©ART</code>, <code>©cpy</code>, <code>©des</code>,
+<code>©cmt</code>). <code>settings.summary()</code> / <code>estimate_bytes()</code> feed Export mode's Summary.</li>
+<li><strong>Presets.</strong> <code>export::presets::builtin_presets()</code> are our own definitions (Match Source adaptive
+H.264 at 0.2 / 0.1 / 0.05 bits per pixel, 1080p / 2160p delivery, vertical 1080×1920, ProRes,
+DNxHR, MXF OP1a (DNxHR HQ / ProRes 422 HQ / H.264) and OP-Atom (DNxHR, Avid), image sequences, GIF, WAV / AIFF). User presets and favourites persist in
+<code>&lt;data dir&gt;/export-presets.json</code> (<code>export.presets.*</code>).</li>
+<li><strong>Queue.</strong> <code>export.queue.add</code> snapshots the project and the resolved settings (several sequences
+or ranges add several items); <code>export.queue.start</code> encodes ready items one after another as
+ordinary jobs, advanced by <code>Session::poll_persistence</code> / <code>pump_jobs</code> (or synchronously with
+<code>wait</code>). Cancel, retry, reorder, remove and clear work per item. The queue is session state, not
+part of the project file.</li>
+</ul>
+<p>Video encoders implement <code>export::VideoEncoder</code>. Codec crates plug in with <code>register_encoder</code> and
+<code>register_audio_encoder</code>.</p>
+<p>Timelines can be exchanged as EDL, FCP7 XML, FCPXML, OTIO, AAF or OMF. <code>file.import</code> detects these
+formats and merges the result into the project as one undoable step (AAF / OMF embedded audio is
+written next to the document first). <code>file.import {replace: true}</code> starts from an empty project
+with the same name (<code>file.newProject</code>) so a headless import→export round-trip contains only the
+imported timeline. <code>file.exportInterchange</code>, <code>file.exportEdl</code>,
+<code>file.exportFcpxml</code>, <code>file.exportOtio</code>, <code>file.exportAaf</code> and <code>file.exportOmf</code> write them.
+<code>file.exportInterchange {format}</code> takes <code>edl</code>, <code>xml</code> (the default), <code>fcpxml</code>, <code>otio</code>, <code>aaf</code> or <code>omf</code>;
+any other value is a parameter error and nothing is written. For AAF and
+OMF the engine (<code>engine::aaf_omf</code>) first prepares the audio the document references: it lists the
+used ranges (<code>interchange::essence::audio_needs</code>), decodes or renders them (clip effects through the
+export audio pipeline), embeds them or writes WAV / AIFF files, and optionally renders a video
+mixdown. A nested sequence is exported the way Premiere Pro does it: a composition of its own in
+AAF (the media of the clips inside it is prepared with the rest), its sound mixed into the document
+in OMF, a nested sequence in FCP7 XML, FCPXML and OTIO, and one <code>AX</code> event in an EDL (table in the
+<a href="../crates/interchange/README.md">interchange README</a>).</p>
+<h2>7. Automation surfaces</h2>
+<p>All of these dispatch the same command ids.</p>
+<table><thead><tr><th>Surface</th><th>Where</th><th>Scope</th></tr></thead><tbody>
+<tr><td>UI</td><td><code>ui-egui</code> menus, shortcuts, panels</td><td><code>menus::invoke</code> → engine or UI command</td></tr>
+<tr><td>CLI</td><td><code>filmcraft-cli</code></td><td><code>exec &lt;id&gt; key=value…</code>, <code>run script.jsonl</code> (one <code>{"id","params"}</code> per line), <code>inspect</code>, <code>import</code>, <code>export</code>, <code>render</code>, <code>probe</code>; <code>--save</code>, <code>--bridge</code></td></tr>
+<tr><td>Control channel</td><td><code>filmcraft --control &lt;port&gt;</code></td><td>JSON lines on loopback TCP: engine commands plus synthetic input, inspection and screenshots of the live UI</td></tr>
+<tr><td>MCP</td><td><code>filmcraft-cli mcp</code></td><td>stdio MCP server: headless in-process session, or <code>--bridge</code> to the control channel</td></tr>
+</tbody></table>
+<ul>
+<li>
+<p><strong>Automation ids.</strong> Every interactive widget calls <code>app.auto.add(id, rect, label)</code> each frame
+(<code>crates/ui-egui/src/automation.rs</code>). Agents click by id, e.g. <code>tools.Razor</code>,
+<code>timeline.clip.&lt;id&gt;</code>, <code>effects.item.gaussian_blur</code>, <code>panel.Timeline</code>.</p>
+</li>
+<li>
+<p><strong>UI state</strong> that is not project data (tool, workspace, dock layout, zoom, scroll, monitor
+settings) is in <code>crates/ui-egui/src/state.rs</code> as serde structs, so <code>ui.inspect</code> and <code>ui.set</code> can
+read and write it.</p>
+</li>
+<li>
+<p><strong>Panels with engine data</strong> (M8.9 / M12.6): Lumetri Scopes (<code>scopes.read</code> returns the same
+scopes as numbers), Metadata (<code>metadata.get</code> / <code>metadata.set</code>, one undo step per edit, stored in
+<code>ProjectItem::metadata</code>), Events (<code>events.list</code> / <code>events.clear</code>), Progress (<code>jobs.list</code> /
+<code>jobs.cancel</code>), Project Notes (<code>project.notes</code> / <code>project.setNotes</code>, plain text in
+<code>Project::notes</code>, schema v15; one typing session is one undo step). Timecode and Reference Monitor are frontend-only views. Their settings are
+<code>UiState::panels</code> (<code>ui.set {"panels": {...}}</code>).</p>
+</li>
+<li>
+<p><strong>Project panel and Media Browser</strong> (M12.7). View settings (List / Icon / Freeform, thumbnail
+and font size, Preview Area, Hover Scrub), the List view's columns, widths and sort, and ten view
+presets are preferences (<code>Preferences::project_panel</code>; <code>project.view.*</code>, <code>project.columns.*</code>,
+<code>project.sort</code>, <code>project.viewPreset.*</code>). Freeform positions, Clip Size, stacks and saved
+arrangements are item metadata (<code>Freeform Position</code>, <code>Freeform Stack</code>,
+<code>Freeform Arrangement: &lt;name&gt;</code>; <code>project.freeform.*</code>), so they are undoable and saved with the
+project without a schema change. The Media Browser lists directories through
+<code>Services::list_entries</code> / <code>volumes</code> / <code>home_dir</code> (native: <code>std::fs</code>; web: the virtual file
+table; tests: a fake filesystem): <code>engine::media_browser</code> keeps navigation history and the
+selection in <code>Session::browser</code>, Favorites / recent directories / file types / columns in
+<code>Preferences::media_browser</code> (<code>mediaBrowser.*</code>). Bins opened in a tab or a window, the inline
+rename, dialogs and the hover-scrubbed card are <code>UiState::project_panel</code>; the browser's tree
+state is <code>UiState::media_browser</code> (<code>ui.set {"projectPanel": …, "mediaBrowser": …}</code>).</p>
+</li>
+</ul>
+<p>Protocol reference: <a href="control-protocol.md">control-protocol.md</a>. Agent guide: <a href="agents.md">agents.md</a>.</p>
+<h2>8. Not built yet</h2>
+<p>The layer table reserves names for crates that don't exist yet: <code>riff</code>, <code>mjpeg</code>,
+<code>keyframe</code>, <code>effects</code>, <code>audio</code> and <code>playback</code>. (<code>platform</code> exists but holds only OS media FFI;
+other OS integration stays in <code>apps/filmcraft</code>.)
+Until they exist, that work lives elsewhere: keyframes and effect definitions in <code>project</code>, effects
+and the audio mix in <code>render</code>, playback in <code>ui-egui</code>, and OS integration (cpal, rfd,
+native menus) in <code>apps/filmcraft</code>. <a href="roadmap.md">roadmap.md</a> has the milestone status and <a href="gaps.md">gaps.md</a> what is missing.</p>
+<h2>Revision history</h2>
+<table><thead><tr><th>Date</th><th>Change</th><th>Summary</th></tr></thead><tbody>
+<tr><td>2026-10-10</td><td>trivial</td><td>Status line and revision history added (craftrules progress-docs standard); milestone link points at docs/roadmap.md</td></tr>
+</tbody></table>
+<hr />
+<details open>
+<summary><b>📚 filmcraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「filmcraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 filmcraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://nxfe.wtpuscm.cn/pingtai/conference-629850.html">基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://lbia.wtpuscm.cn/fuwu/webinar-996538.html">现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://zbjv.wtpuscm.cn/jishu/retention-326453.html">面向大规模网络的 filmcraft 工业级架构基准</a></li>
+<li><a href="https://tywt.wtpuscm.cn/chuangxin/client-686791.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://dtmc.wtpuscm.cn/suanfa/responsive-147898.html">【filmcraft】pure 核心系统架构与设计规约 (Draft-05)</a></li>
+<li><a href="https://dgqt.wtpuscm.cn/anfang/url-130112.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)</a></li>
+<li><a href="https://ivhn.wtpuscm.cn/yinqing/file-879207.html">基于 filmcraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://aoyd.wtpuscm.cn/zixun/navigation-980.html">filmcraft 内部组件解耦与事件状态机规范 (Node-81)</a></li>
+<li><a href="https://hzqw.wtpuscm.cn/fenxi/keyword-178421.html">【官方规范】filmcraft open-source 核心运行拓扑标准</a></li>
+<li><a href="https://mgdx.wtpuscm.cn/tuiguang/privacy-062395.html">Trim Monitor 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://lmdu.wtpuscm.cn/gongxiang/integration-708282.html">基于 filmcraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://ypno.wtpuscm.cn/peixun/discount-018254.html">现代 分布式架构 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://oicn.wtpuscm.cn/yinqing/collaborate-279888.html">【官方规范】filmcraft filmcraft 核心运行拓扑标准</a></li>
+<li><a href="https://kqxg.wtpuscm.cn/liuliang/landing-176883.html">Effects and motion 核心系统架构与设计规约 (RFC-633)</a></li>
+<li><a href="https://qbdg.wtpuscm.cn/baogao/success-357276.html">Formats and codecs 核心系统架构与设计规约 (Node-44)</a></li>
+<li><a href="https://yvbn.wtpuscm.cn/kuangjia/link-635593.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)</a></li>
+<li><a href="https://ylge.wtpuscm.cn/kuangjia/logo-831908.html">Interchange 核心系统架构与设计规约 (RFC-715)</a></li>
+<li><a href="https://njve.wtpuscm.cn/peixun/privacy-105069.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)</a></li>
+<li><a href="https://unqf.wtpuscm.cn/pingce/chapter-588684.html">Built for agents 核心系统架构与设计规约 (Node-34)</a></li>
+<li><a href="https://frwo.wtpuscm.cn/qiye/home-396013.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)</a></li>
+<li><a href="https://xfnp.wtpuscm.cn/zhinan/home-884980.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)</a></li>
+<li><a href="https://mfgo.wtpuscm.cn/yingyong/prospect-350616.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)</a></li>
+<li><a href="https://xnbf.wtpuscm.cn/anfang/link-020484.html">Exact time. 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://xfyj.tcti.cn/ziyuan/domain-05351467.html">filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://ketp.tcti.cn/yunying/premium-61643014.html">filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://fbit.tcti.cn/youhua/education-61063845.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)</a></li>
+<li><a href="https://tlmn.tcti.cn/qiye/update-43238046.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)</a></li>
+<li><a href="https://aoti.tcti.cn/liuliang/event-68655814.html">filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)</a></li>
+<li><a href="https://jfwv.tcti.cn/zhizhu/productivity-63089855.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)</a></li>
+<li><a href="https://royh.tcti.cn/zhinan/services-58543885.html">基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://vrqx.tcti.cn/jiaocheng/productivity-58119730.html">【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://psux.tcti.cn/yinqing/forecast-84834470.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)</a></li>
+<li><a href="https://ubng.tcti.cn/gongsi/plugin-05614849.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)</a></li>
+<li><a href="https://ldmq.tcti.cn/xuexi/accessibility-44744353.html">【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://fhmb.tcti.cn/gongju/revenue-07254451.html">生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)</a></li>
+<li><a href="https://ywhz.tcti.cn/wenzhang/subject-89948729.html">Effects and motion 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://wzat.tcti.cn/zhineng/company-76910183.html">filmcraft 内部组件解耦与事件状态机规范 (Node-29)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://fnsb.tcti.cn/qiye/training-50487894.html">filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)</a></li>
+<li><a href="https://dmgs.tcti.cn/gongsi/kpi-54323810.html">基于 filmcraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://pexw.tcti.cn/xitong/video-50354880.html">【生产手册】filmcraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://cevo.wtpuscm.cn/wenzhang/deadline-816730.html">filmcraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://www.mw-wm.com/yingyong/layout-23334281.html">filmcraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.yx-sf.com/news/3466">【集成指南】分布式架构 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://www.ai-hao123.com/fuwu/presentation-43653243.html">filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)</a></li>
+<li><a href="https://giub.tcti.cn/guanjianci/module-64754470.html">filmcraft 异步中间件流水线与 Premiere 接入规范</a></li>
+<li><a href="https://khhg.tcti.cn/fenxi/sale-55706873.html">filmcraft: Premiere 分布式架构 (Node-37)</a></li>
+<li><a href="https://rtyf.wtpuscm.cn/paiming/page-232527.html">filmcraft 异步中间件流水线与 Every trim. 接入规范</a></li>
+<li><a href="https://pgjf.wtpuscm.cn/keji/segment-645941.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)</a></li>
+<li><a href="https://yuxc.wtpuscm.cn/paiming/careers-473311.html">filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)</a></li>
+<li><a href="https://subv.wtpuscm.cn/xuexi/cheap-655713.html">filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)</a></li>
+<li><a href="https://ucwk.wtpuscm.cn/hezuo/beauty-164706.html">filmcraft 插件生态规范与 Edit 扩展手册 (Verified)</a></li>
+<li><a href="https://ohqu.wtpuscm.cn/shichang/partner-702779.html">filmcraft 异步中间件流水线与 Get started 接入规范</a></li>
+<li><a href="https://sblk.wtpuscm.cn/yunying/logo-890214.html">filmcraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://bpfq.wtpuscm.cn/guanjianci/domain-721.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )</a></li>
+<li><a href="https://mfho.wtpuscm.cn/wangluo/objective-859992.html">filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://kgyo.wtpuscm.cn/shuju/sync-148689.html">filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://uiai.wtpuscm.cn/pingtai/photo-079639.html">filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)</a></li>
+<li><a href="https://aqwo.wtpuscm.cn/shichang/seminar-421492.html">filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范</a></li>
+<li><a href="https://fcpn.wtpuscm.cn/zhinan/security-494458.html">【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://uoda.wtpuscm.cn/gongju/recipe-454404.html">filmcraft 异步中间件流水线与 Effects and motion 接入规范</a></li>
+<li><a href="https://oxtj.wtpuscm.cn/anli/alert-071208.html">filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)</a></li>
+<li><a href="https://uzki.wtpuscm.cn/anli/collaboration-057519.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://xebk.wtpuscm.cn/guanjianci/hotel-169729.html">filmcraft 异步中间件流水线与 Pro 接入规范</a></li>
+<li><a href="https://kcmg.wtpuscm.cn/sheji/course-283172.html">filmcraft 异步中间件流水线与 可信存活健康度量 接入规范</a></li>
+<li><a href="https://qjte.wtpuscm.cn/xuexi/policy-906825.html">filmcraft 异步中间件流水线与 Audio 接入规范</a></li>
+<li><a href="https://fzus.wtpuscm.cn/huodong/terms-854686.html">filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://menb.wtpuscm.cn/gongsi/navigation-085609.html">filmcraft 异步中间件流水线与 Rust 接入规范</a></li>
+<li><a href="https://zoqg.wtpuscm.cn/yingxiao/segment-317216.html">【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://djnj.wtpuscm.cn/xitong/deadline-637796.html">filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://vtfx.tcti.cn/shangye/data-91972251.html">filmcraft: Audio 分布式架构 (Draft-02)</a></li>
+<li><a href="https://qxhb.tcti.cn/suanfa/logo-83507916.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://mgnf.tcti.cn/yunsuan/label-42281800.html">filmcraft 异步中间件流水线与 Interchange 接入规范</a></li>
+<li><a href="https://whpk.tcti.cn/shuju/finance-23756901.html">filmcraft 插件生态规范与 built 扩展手册 (Core/built)</a></li>
+<li><a href="https://rnnl.tcti.cn/wenzhang/consulting-56794262.html">filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)</a></li>
+</ul>
+<h4>3. ⚡ filmcraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://ycsy.tcti.cn/jishu/expensive-56288102.html">全球权威拓扑节点：filmcraft 实时镜像与索引入口</a></li>
+<li><a href="https://prxz.tcti.cn/pingtai/database-64923659.html">冷热数据分层镜像：filmcraft Pro 权威归档源</a></li>
+<li><a href="https://mpsq.tcti.cn/anfang/enterprise-05083351.html">filmcraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://omru.tcti.cn/jiaocheng/network-74712628.html">【镜像入口】filmcraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://wbws.tcti.cn/zhineng/metric-93947816.html">冷热数据分层镜像：filmcraft Audio 权威归档源</a></li>
+<li><a href="https://jkak.tcti.cn/huodong/sport-59142608.html">filmcraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://xgry.tcti.cn/yinqing/whitepaper-57196399.html">filmcraft 官方高可用镜像注册节点 (RFC-877)</a></li>
+<li><a href="https://nfof.tcti.cn/gongju/economy-31405902.html">filmcraft 官方高可用镜像注册节点 (Node-76)</a></li>
+<li><a href="https://uvjm.tcti.cn/yingyong/about-29454180.html">filmcraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://kzop.tcti.cn/yingyong/digital-70252904.html">filmcraft 官方高可用镜像注册节点 (Core/Every )</a></li>
+<li><a href="https://gdsa.tcti.cn/yingyong/consulting-17878726.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://tjzw.tcti.cn/yunsuan/page-62133194.html">冷热数据分层镜像：filmcraft reimplementation 权威归档源</a></li>
+<li><a href="https://temf.wtpuscm.cn/ziyuan/affordable-033316.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)</a></li>
+<li><a href="https://www.mw-wm.com/yunsuan/reporting-21620964.html">filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/92526">冷热数据分层镜像：filmcraft Color 权威归档源</a></li>
+<li><a href="https://www.ai-hao123.com/shichang/page-53215038.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://otan.tcti.cn/wendang/navigation-65237260.html">冷热数据分层镜像：filmcraft Exact time. 权威归档源</a></li>
+<li><a href="https://btwa.tcti.cn/chanpin/seminar-56740388.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)</a></li>
+<li><a href="https://udbf.wtpuscm.cn/jishu/download-206375.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)</a></li>
+<li><a href="https://wfkx.wtpuscm.cn/kuangjia/account-915112.html">冷热数据分层镜像：filmcraft Titles and captions 权威归档源</a></li>
+<li><a href="https://uyva.wtpuscm.cn/baogao/responsive-024669.html">冷热数据分层镜像：filmcraft Formats and codecs 权威归档源</a></li>
+<li><a href="https://pnrl.wtpuscm.cn/suanfa/integration-554723.html">filmcraft 官方高可用镜像注册节点 (Draft-07)</a></li>
+<li><a href="https://sjts.wtpuscm.cn/jianzhan/seminar-758847.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.2)</a></li>
+<li><a href="https://mmuw.wtpuscm.cn/anfang/help-912261.html">filmcraft 官方高可用镜像注册节点 (Node-67)</a></li>
+<li><a href="https://wghe.wtpuscm.cn/ziyuan/innovation-115782.html">filmcraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://zyxb.wtpuscm.cn/yingyong/resource-152.html">冷热数据分层镜像：filmcraft Edit 权威归档源</a></li>
+<li><a href="https://siyd.wtpuscm.cn/xinwen/affordable-824725.html">冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://rytm.wtpuscm.cn/peixun/conference-241911.html">冷热数据分层镜像：filmcraft Export 权威归档源</a></li>
+<li><a href="https://yuxm.wtpuscm.cn/suanfa/demographic-869652.html">冷热数据分层镜像：filmcraft clean-room 权威归档源</a></li>
+<li><a href="https://dvfw.wtpuscm.cn/yanjiu/innovation-490274.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)</a></li>
+<li><a href="https://qtng.wtpuscm.cn/gongju/tutorial-919199.html">冷热数据分层镜像：filmcraft built 权威归档源</a></li>
+<li><a href="https://xcew.wtpuscm.cn/wendang/trading-426600.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
+<li><a href="https://zawr.wtpuscm.cn/kaifa/satisfaction-561476.html">filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://dtiq.wtpuscm.cn/shichang/data-614753.html">冷热数据分层镜像：filmcraft dynamic trimming 权威归档源</a></li>
+<li><a href="https://lgza.wtpuscm.cn/pingtai/account-069695.html">filmcraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://wzsc.wtpuscm.cn/guanjianci/technology-817375.html">冷热数据分层镜像：filmcraft Interchange 权威归档源</a></li>
+<li><a href="https://nxsa.wtpuscm.cn/jishu/theme-302412.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.8)</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://jjmi.wtpuscm.cn/zhinan/case-789091.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://voeo.wtpuscm.cn/jiaocheng/website-505941.html">【评测基准】filmcraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://lwek.wtpuscm.cn/kuangjia/presentation-126801.html">filmcraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://nsem.wtpuscm.cn/wendang/client-793854.html">filmcraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://tsnl.tcti.cn/yanjiu/topic-88573228.html">filmcraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://ggjn.tcti.cn/gongsi/advertising-59344172.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://sgxa.tcti.cn/xitong/event-46963821.html">filmcraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://nici.tcti.cn/gongsi/data-91756670.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)</a></li>
+<li><a href="https://vcmr.tcti.cn/xitong/app-89420686.html">filmcraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://krkm.tcti.cn/yunsuan/social-85375739.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://uzvi.tcti.cn/yanjiu/machine-44936366.html">filmcraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://wxfi.tcti.cn/fuwu/image-87849326.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://ksoe.tcti.cn/yingxiao/visitor-78994257.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)</a></li>
+<li><a href="https://picl.tcti.cn/liuliang/global-06547950.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)</a></li>
+<li><a href="https://clig.tcti.cn/anfang/loyalty-96338600.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)</a></li>
+<li><a href="https://jnzc.tcti.cn/jiaoliu/software-46347495.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)</a></li>
+<li><a href="https://zzvo.tcti.cn/huodong/rating-97114821.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://fdyi.tcti.cn/fuwu/personalization-56797143.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)</a></li>
+<li><a href="https://ohpa.tcti.cn/xuexi/button-38761589.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)</a></li>
+<li><a href="https://gdnu.tcti.cn/anfang/innovation-73087985.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)</a></li>
+<li><a href="https://blqo.tcti.cn/kaifa/browser-57547826.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://ljms.wtpuscm.cn/jiaoliu/personalization-883556.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)</a></li>
+<li><a href="https://www.mw-wm.com/fenxi/learning-36411128.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)</a></li>
+<li><a href="https://www.yx-sf.com/tech/5114">filmcraft: Premiere Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://www.ai-hao123.com/xitong/luxury-32462947.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)</a></li>
+<li><a href="https://bazf.tcti.cn/gongxiang/goal-55899930.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)</a></li>
+<li><a href="https://vzcd.tcti.cn/jishu/identity-72663084.html">filmcraft: clean-room 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://bqxm.wtpuscm.cn/chuangxin/saving-180943.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)</a></li>
+<li><a href="https://nolj.wtpuscm.cn/zhizhu/guide-421841.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)</a></li>
+<li><a href="https://nkcy.wtpuscm.cn/paiming/marketing-603852.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://kafi.wtpuscm.cn/chuangxin/performance-550280.html">filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://njgu.wtpuscm.cn/huodong/project-446173.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)</a></li>
+<li><a href="https://rqsj.wtpuscm.cn/wenzhang/optimization-435880.html">filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://ixfb.wtpuscm.cn/jiaoliu/subscribe-329013.html">filmcraft: 高韧性系统架构设计 分布式架构 (Verified)</a></li>
+<li><a href="https://xiib.wtpuscm.cn/shichang/mobile-399.html">filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://aozd.wtpuscm.cn/shichang/reminder-237684.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)</a></li>
+<li><a href="https://gnej.wtpuscm.cn/shuju/achievement-756611.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)</a></li>
+<li><a href="https://nrqd.wtpuscm.cn/fenxi/policy-573914.html">filmcraft: Effects and motion Rust高性能网络 (Verified)</a></li>
+<li><a href="https://htsa.wtpuscm.cn/paiming/team-860191.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>filmcraft-mirror-939</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

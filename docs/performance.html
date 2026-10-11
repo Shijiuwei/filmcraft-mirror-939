@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance - filmcraft-mirror-939 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">filmcraft-mirror-939</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Performance</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Performance</h1>
+<p><code>cargo xtask bench</code> measures the whole app headlessly and writes <code>target/bench/bench-&lt;label&gt;.json</code>
+and <code>.md</code> (options and sections: <a href="testing.md">testing.md</a> §5). Agents read live counters with
+<code>perf.stats</code> (<a href="control-protocol.md">control-protocol.md</a>).</p>
+<p><strong>Read the numbers with the load average.</strong> These results come from a shared Apple M4 Pro
+(14 cores, 48 GB, macOS 15 / Darwin 24.6) with parallel agent builds running: load average
+<strong>75–200</strong> during every run below. Wall-clock columns (fps, shown/dropped frames, seek latency)
+swing by 2–5× between back-to-back runs at that load and are only comparable within one run. CPU
+time per frame, samples decoded and skipped, and peak RSS are much less sensitive, and are what
+the before/after comparison relies on. Each milestone below alternated base / after runs (2 rounds
+each); the most load-independent figure is the decoder's own cycle count (<code>proc_pid_rusage</code>
+instructions and cycles of a process, all threads summed).</p>
+<h2>Memory of clips on a timeline (MEM1–MEM3)</h2>
+<p>Measured on the desktop release build with <code>footprint</code>, <code>heap</code> and <code>malloc_history</code>
+(<code>MallocStackLogging=lite</code>), 2026-10-05: twelve H.264 clips dropped on a timeline took the process
+to a 12 GB footprint, 10.8 GB of it live heap in three piles.</p>
+<ol>
+<li>
+<p><strong>Media files read whole (2.9 GB), MEM1.</strong> The desktop host had no <code>Services::reader</code>, so
+<code>MediaPool::open_file</code> fell back to <code>read_file</code> and every clip's bytes stayed in memory for as
+long as its source was open. <code>FsServices::reader</code> now returns a
+<code>filmcraft_media::reader::FileReader</code>: the file stays open and containers read their index and
+then single samples with positional reads, as the web host already did through <code>BlobReader</code>
+(<a href="web.md">web.md</a>). Formats decoded in one go (stills, WAV, MPEG elementary streams) are still
+read whole through the reader.</p>
+</li>
+<li>
+<p><strong>A decoder per clip, for good (3.5 GB), MEM2.</strong> Every source kept its decoder once it had
+decoded a frame, with its reference pictures and the pictures its frame threads have in flight:
+about 290 MB per clip here (<code>h264</code> <code>PicState</code>, <code>Frame::make_row</code>). The GOP caches now share a
+pool (<code>crates/codecs/src/gop.rs</code>): beyond <code>MAX_LIVE_DECODERS</code> (4) the least recently used
+caches that have been idle for 3 s drop their decoder and make a new one when asked again,
+which costs what a seek costs. A cache in use (a layer of the frame being composited, the next
+clip being prefetched) always keeps its decoder, so a composite of more than four clips does
+not restart decoders on every frame. <code>perf.stats</code> reports <code>decode.liveDecoders</code>.</p>
+</li>
+<li>
+<p><strong>A frame budget per clip, none overall (3.8 GB), MEM3.</strong> Each GOP cache keeps up to 384 MB
+of decoded frames (at least 64 frames), which every clip on the timeline filled and kept. The
+pool now counts the frames of all caches against <code>FRAME_BUDGET</code> (1 GiB): over it, caches idle
+for 3 s give up frames, least recently used cache first, earliest frames first. Caches in use
+keep their own budget, because a frame evicted before it is shown costs a re-decode from the
+keyframe. <code>perf.stats</code> reports <code>decode.cacheMB</code> and <code>decode.cacheBudgetMB</code>; before, this
+memory appeared in no counter (<code>frames.cache</code> covers the frame server's rendered images and
+GPU plans only).</p>
+</li>
+<li>
+<p><strong>Freed planes the allocator keeps (2.5 GB), MEM4.</strong> With MEM1–MEM3 the same twelve clips took
+5.1 GB, only 2.5 GB of it live: every decoded picture allocated three planes and every
+eviction freed them, and the system allocator kept the freed pages (<code>footprint</code>: 1.7 GB
+reclaimable). <code>filmcraft_frame::pool</code> now keeps the planes of evicted frames (up to 192 MiB per
+sample type; a frame something else still holds is left alone) and the H.264 decoder and the
+VideoToolbox path decode into them, so steady-state decoding allocates no planes.
+<code>perf.stats</code> reports <code>decode.planePoolMB</code> and <code>decode.planesReused</code>.</p>
+</li>
+</ol>
+<p>The same session showed that the desktop app never used hardware decoding: <code>register()</code> was an
+argument of a <code>log::info!</code> that no logger evaluated (fixed under HW1; <code>decode.hardware.sessions</code>
+was 0 with every frame decoded in software).</p>
+<p>What remains per live decoder is unchanged: the H.264 decoder publishes each macroblock row of a
+picture as its own allocations (<code>Frame::make_row</code>, five per row), which is where the 290 MB per
+decoder comes from.</p>
+<h2>Results (CPU compositor: layer rectangles, an opaque bottom layer and recycled images, before → after)</h2>
+<p>The CPU compositor is what export runs. In a profile of a 9:29 export it took about a third of the
+busy CPU with the built-in H.264 encoder (the encoder took the other two thirds), and a faster
+encoder leaves it as the largest cost of an export. It works on premultiplied linear <code>f32</code> images,
+33 MB each at 1080p, and every layer was one of them: a banner that is transparent except for its
+bottom 100 rows still cost a full conversion and a full mix, and the bottom layer paid for a
+zero-filled canvas and a pass that mixes it over that canvas.</p>
+<p>Apple M1 (8 cores: 4 performance + 4 efficiency), 2026-10-06, a machine that was not idle, so the
+two builds ran alternately in the same session and the median is reported.</p>
+<h3>Per frame, synthetic 1080p sources</h3>
+<p><code>cargo run --release -p filmcraft-render --example frame_bench</code>: an 8-bit 4:2:0 camera picture and a
+10-bit 4:4:4 banner with alpha only in its bottom 100 rows; <code>render_sequence</code> followed by the
+conversion to 8-bit RGBA, milliseconds per frame (median of 40 frames, 5 alternating rounds):</p>
+<table><thead><tr><th>scenario</th><th>before</th><th>after</th></tr></thead><tbody>
+<tr><td>camera only</td><td>8.9</td><td>6.5</td></tr>
+<tr><td>camera + banner</td><td>16.2</td><td>7.8</td></tr>
+</tbody></table>
+<p>Both builds give the same picture (same checksum).</p>
+<h3>A real export</h3>
+<p>30 s of a 1080p25 camera clip with a ProRes 4444 banner, exported with the built-in encoder
+(deterministic, byte for byte): 46.4 s before, 36.7 s after. <strong>The two exports are the same file</strong>
+(same bytes, same MD5), so every frame of the real pipeline (camera decode, ProRes decode,
+compositing, conversion) matches. The encoder is most of that time; with a faster one the
+compositor's savings are a larger part of the export.</p>
+<p>What is left in a frame without overlays is the Y'CbCr → linear float conversion of the camera
+picture (4.5 ms in the synthetic case) and the conversion to 8 bits (2 ms).</p>
+<h2>Results (GPU3: GPU export rendering, Off → Auto, #30)</h2>
+<p>Export ▸ GPU Rendering composites the exported frames on the GPU (<code>filmcraft-gpu</code>'s off-screen
+compositor, a pool of up to four renderers) instead of the CPU reference renderer, which stays the
+fallback for anything the GPU stage does not run. Linux, Ryzen 7 9700X (16 threads) + Radeon
+RX 7900 (Mesa 26.2.2), 2026-10-08 / 09, same build, <code>cargo xtask bench --sections export --only  &lt;scene&gt; --hw off|auto</code>: 191 frames to H.264 + AAC with the built-in encoder. <code>h264</code> is one 1080p
+clip; <code>h264_fx</code> the same clip on V1 with Proc Amp, Gaussian Blur and Vignette, plus two
+picture-in-picture copies (50 % with Brightness &amp; Contrast, 33 % at 70 % opacity with Sharpen).
+Every Auto row rendered all its frames on the GPU, without fallbacks.</p>
+<table><thead><tr><th>scene</th><th>Off: s / CPU ms per frame</th><th><strong>Auto</strong>: s / CPU ms per frame</th></tr></thead><tbody>
+<tr><td><code>h264</code>, 1080p (load 12–33)</td><td>5.96, 6.08 / 292</td><td>6.07, 6.36 / 281</td></tr>
+<tr><td><code>h264_fx</code>, 1080p (load 12–33)</td><td>13.00, 12.67 / 737</td><td><strong>5.63, 5.00 / 238</strong></td></tr>
+<tr><td><code>h264_fx</code>, 4K sequence and clip (load 2–19)</td><td>38.74, 39.34 / 2955</td><td><strong>11.99 / 775</strong></td></tr>
+</tbody></table>
+<p>On a plain clip the export is decoding- and encoding-bound and both take the same time; with
+layers and effects the GPU is 2.4× (1080p) to 3.2× (4K) faster, with a third to a quarter of the
+CPU. GPU rendering is nevertheless <strong>Off by default</strong> (opt-in per export) until it has been
+measured on Windows and macOS: the GPU result matches the CPU within the compositor's parity
+tolerance, not bit for bit, and Off keeps exports byte-reproducible on every machine. (The 4K row used the same scene with the sequence, clip and positions scaled to 4K.)</p>
+<h3>Memory after an export</h3>
+<p>The recycled images stay on the shelves of <code>filmcraft_frame::pool</code> (up to 320 MiB of them, and
+192 MiB of each plane type), and nothing else asks for images of an export's size, so a finished
+export left them idle. A standalone export's pipeline now frees the idle float images when it goes
+away, however the export ended (done, failed, cancelled, dropped half way). The plane shelves are
+kept (playback recycles decoded frames through them), and so are the float images after one part
+of a batch (a render-preview segment, a proxy), which the next part reuses. A process that exported a synthetic 3 s 1080p24 matte as PNG frames three times
+(Apple M1, <code>footprint</code>, 10 s after the last export) rested at <strong>575 MB</strong> with the pool holding
+332 MB idle and at <strong>258 MB</strong> with the trim. The memory does not come back at once: macOS returns
+freed pages over a few seconds (892 MB right after the export in both cases, 726 MB after 2 s).</p>
+<h2>Results (GPU2: standard effects on the GPU compositor, #30, before → after)</h2>
+<p>Before = this change with clips that carry standard effects sent back to the CPU layer path in
+<code>render::plan</code> (same binary otherwise); after = GPU2. New <code>stack3-fx</code> scenario: <code>stack3</code> with
+Brightness &amp; Contrast + Gaussian Blur (blurriness 8) on V2 and Tint (70 %) on V3. <code>bench_playback  --scenario stack3-fx,stack3 --res full|half --gpu</code> (release), 8 s plays, two rounds alternating
+before / after on 2026-10-05 at load average 107–170 (1-minute; 5-minute 141–152). <code>stack3</code> in
+the same runs is the control; it shows how much the load alone moved the numbers.</p>
+<table><thead><tr><th>case</th><th>shown/dropped before (2 runs)</th><th>after (2 runs)</th><th>CPU ms/frame before → after</th><th>worker svc p50 before → after</th></tr></thead><tbody>
+<tr><td>stack3-fx Full</td><td>0/192, 0/192</td><td><strong>192/0, 132/60</strong></td><td>84, 92 → 94, 89</td><td>245, 220 → <strong>1.8, 93</strong> ms</td></tr>
+<tr><td>stack3-fx 1/2</td><td>9/183, 15/177</td><td><strong>181/11, 166/26</strong></td><td>111, 110 → 92, 92</td><td>295, 307 → <strong>6.5, 28</strong> ms</td></tr>
+<tr><td>stack3 Full (control)</td><td>180/12, 189/3</td><td>172/19, 80/112</td><td>92, 92 → 89, 80</td><td>7.2, 5.1 → 17.8, 185 ms</td></tr>
+<tr><td>stack3 1/2 (control)</td><td>138/54, 181/11</td><td>116/76, 134/53</td><td>91, 92 → 83, 91</td><td>61, 15 → 123, 106 ms</td></tr>
+</tbody></table>
+<p>Before, every frame of the effect stack was rendered on the CPU (Gaussian Blur and the two colour
+effects on 1080p layers): ≈ 250 ms of worker time per frame, so playback showed nothing at Full
+and 5–8 % of frames at ½ (CPU ms/frame stays near 90 only because most jobs were cancelled
+before finishing). After, the workers only decode, as for <code>stack3</code>: the effect stage runs on the
+GPU at present time (UI present p50 11–24 ms vs 11–39 ms for the control in the same runs). The
+second "after Full" run coincided with a load spike (load 155 → 170; the control dropped 112
+frames in the same minute).</p>
+<h2>Results (HW1: VideoToolbox hardware decoding, Off → Auto)</h2>
+<p>Same commit, Settings ▸ Playback ▸ Hardware decoding switched with the bench flag <code>--hw off</code> /
+<code>--hw auto</code> (<code>cargo xtask bench --sections decode --only dec_h --repeat 3 --hw …</code>, then
+<code>--sections playback --only h264</code> and <code>--only hevc-2160</code>), 2026-10-05, Apple M4 Pro, load average
+<strong>150–190</strong> throughout (shared with other agent builds). The decoded pictures are identical either
+way (bit-exact parity tests, <code>crates/platform/tests/videotoolbox.rs</code>); only who decodes changes.</p>
+<h3>Decode (every frame through the media stack)</h3>
+<table><thead><tr><th>codec</th><th>size</th><th>CPU ms/frame Off → <strong>Auto</strong></th><th>fps Off → <strong>Auto</strong> (best of 3)</th></tr></thead><tbody>
+<tr><td>H.264</td><td>1080p</td><td>31.8 → <strong>1.2</strong></td><td>153 → <strong>389</strong></td></tr>
+<tr><td>H.264</td><td>2160p</td><td>119.3 → <strong>4.2</strong></td><td>35 → <strong>107</strong></td></tr>
+<tr><td>HEVC</td><td>1080p</td><td>22.2 → <strong>1.1</strong></td><td>185 → <strong>708</strong></td></tr>
+<tr><td>HEVC</td><td>2160p</td><td>85.7 → <strong>3.7</strong></td><td>49 → <strong>217</strong></td></tr>
+</tbody></table>
+<p>CPU time per frame is what is left on the CPU: the sample copy into a <code>CMSampleBuffer</code>, copying
+the decoded biplanar picture out into planar Y'CbCr (chroma deinterleaved; 10-bit shifted down),
+and the GOP cache. An earlier synchronous version (one picture decoding at a time) reached only
+155 / 51 / 449 / 149 fps; asynchronous decompression with two access units in flight overlaps
+decoding with the copy-out.</p>
+<h3>Program-monitor playback (8 s, GPU path)</h3>
+<table><thead><tr><th>case</th><th>shown/dropped Off → <strong>Auto</strong></th><th>CPU ms/frame Off → <strong>Auto</strong></th></tr></thead><tbody>
+<tr><td>H.264 1080p Full</td><td>192/0 → <strong>192/0</strong></td><td>38.1 → <strong>3.8</strong></td></tr>
+<tr><td>H.264 2160p Full</td><td>104/88 → <strong>192/0</strong></td><td>119.8 → <strong>9.2</strong></td></tr>
+<tr><td>H.264 2160p 1/2</td><td>1/191 → <strong>192/0</strong></td><td>95.5 → <strong>9.0</strong></td></tr>
+<tr><td>H.264 2160p 1/4</td><td>0/192 → <strong>192/0</strong></td><td>94.3 → <strong>8.8</strong></td></tr>
+<tr><td>HEVC 2160p Full</td><td>175/17 → <strong>192/0</strong></td><td>105.6 → <strong>9.1</strong></td></tr>
+<tr><td>HEVC 2160p 1/2</td><td>190/2 → <strong>192/0</strong></td><td>97.4 → <strong>8.8</strong></td></tr>
+<tr><td>HEVC 2160p 1/2 draft</td><td>190/2 → <strong>191/1</strong></td><td>107.0 → <strong>22.3</strong></td></tr>
+</tbody></table>
+<p>At this load the software decoders drop most 4K H.264 frames; with hardware decoding every case
+plays in real time at a tenth of the CPU. Draft playback costs more CPU than full-quality
+playback with hardware decoding: the hardware ignores draft mode (<code>set_draft</code> is a no-op) and
+the draft plan's box decimation of the planes, cheap next to software decoding, is now the main
+CPU cost. Zero-copy upload of the decoded <code>CVPixelBuffer</code> into wgpu (no copy-out at all) is the
+next step (issue #30).</p>
+<h2>Results (HW2: VideoToolbox hardware H.264 encoding, built-in → hardware)</h2>
+<p>Apple M1 (8 cores, 16 GB), 2026-10-06, single runs on an otherwise idle machine, release build.
+Hardware encoding is opt-in per export (<code>hardware_encoding: auto</code>); the built-in encoder is unchanged.</p>
+<h3>The encoder alone (100 frames of 1920×1080 25 fps camera footage, High, one-pass VBR, keyframe every 50)</h3>
+<p>Frames go in as planar Y'CbCr and out as compressed frames (NV12 fill, <code>VTCompressionSessionEncodeFrame</code>,
+flush); quality is the luma PSNR of our software decoder's output against the input.</p>
+<table><thead><tr><th>target</th><th>B-frames</th><th>real bitrate</th><th>luma PSNR</th><th>frames/s</th></tr></thead><tbody>
+<tr><td>4 Mb/s</td><td>off</td><td>3982 kb/s</td><td>41.66 dB</td><td>202</td></tr>
+<tr><td>8 Mb/s</td><td>off</td><td>7987 kb/s</td><td>43.44 dB</td><td>202</td></tr>
+<tr><td>16 Mb/s</td><td>off</td><td>15972 kb/s</td><td>45.55 dB</td><td>202</td></tr>
+<tr><td>4 Mb/s</td><td>on</td><td>4220 kb/s</td><td>41.37 dB</td><td>183</td></tr>
+<tr><td>8 Mb/s</td><td>on</td><td>8268 kb/s</td><td>43.41 dB</td><td>197</td></tr>
+<tr><td>16 Mb/s</td><td>on</td><td>16388 kb/s</td><td>45.66 dB</td><td>199</td></tr>
+</tbody></table>
+<p>B-frames buy nothing measurable here (±0.3 dB) and overshoot the target by up to 5 %, so the hardware
+encoder runs without them: frames come out in presentation order and the muxer needs no composition
+offsets or edit list.</p>
+<h3>Whole exports (1080p25 camera clip with ProRes 4444 overlays with alpha, AAC, loudness normalised to −14 LUFS)</h3>
+<p>A 9:29 timeline (569 s, 14 227 frames): the camera clip, an intro, six banners, three subscribe bars
+and an outro.</p>
+<table><thead><tr><th>encoder</th><th>wall time</th><th>frames/s</th><th>vs real time</th><th>file</th></tr></thead><tbody>
+<tr><td>built-in (<code>filmcraft-h264enc</code>)</td><td>793 s</td><td>17.9</td><td>1.4× slower</td><td>1445 MB, 20.0 Mb/s</td></tr>
+<tr><td>hardware (VideoToolbox)</td><td><strong>311 s</strong></td><td><strong>45.7</strong></td><td>1.8× faster</td><td>1417 MB, 19.6 Mb/s</td></tr>
+</tbody></table>
+<p>2.5× faster. The first 134 s of the same timeline, where the overlays are densest (intro, a banner, a
+subscribe bar and the outro in 134 s):</p>
+<table><thead><tr><th>encoder</th><th>wall time</th><th>frames/s</th><th>vs real time</th><th>file</th></tr></thead><tbody>
+<tr><td>built-in (<code>filmcraft-h264enc</code>)</td><td>395 s</td><td>8.5</td><td>2.9× slower</td><td>340 MB, 20.0 Mb/s</td></tr>
+<tr><td>hardware (VideoToolbox)</td><td><strong>84 s</strong></td><td><strong>39.9</strong></td><td>1.6× faster</td><td>312 MB, 18.3 Mb/s</td></tr>
+</tbody></table>
+<p>4.7× faster there. The gain depends on what else an export spends its time on: with the encoder
+off the CPU, what is left is decoding the camera clip, the CPU compositor (every layer, alpha
+included) and the RGBA → Y'CbCr conversion.</p>
+<p>The pairs of files have the same frame count and duration, decode in ffmpeg without a message, and
+compare at SSIM 0.990 / PSNR 46.7 dB over the 134 s (lowest frame: 45.1 dB) and SSIM 0.989–0.990 /
+PSNR 46.3–46.6 dB at six 3-second spots of the full export. Audio is identical.</p>
+<p>Where the built-in export's time goes (<code>sample</code> on the process during a 20 s export, inclusive CPU
+time in the call tree; the figures overlap because work-stealing mixes the tasks): about two thirds
+of the busy CPU is in the encoder, about a third in compositing and layer decoding. Moving the encoder to
+the media engine removes most of the first and lets the next batch render while the previous one
+encodes (the exporter now does that: see "Export: rendering the next batch while the current one is
+encoded" below). What is left is the
+CPU compositor, the next target of #30 ("GPU export").</p>
+<h2>Export: rendering the next batch while the current one is encoded</h2>
+<p>Until now a step of the stepped exporter (<code>filmcraft_export::Exporter</code>) rendered a batch of frames in
+parallel and only then encoded, muxed and mixed the audio of that batch on one thread, so the wall
+time was the sum of the stages. Where the sum was large (1080p30, 300 frames, <code>perf.stats</code>
+<code>export.stages</code>) the stages were: software H.264 render 4257 ms, encode 17845 (RGB to YUV 766 of it),
+audio 462, mux 17, finish 142 = 22.96 s; NVENC H.264 setup 465, render 3316, encode 1113 (convert 794),
+audio 471, mux 20, finish 24 = 5.69 s.</p>
+<p>Now a step renders batch k+1 on the rayon pool while the calling thread encodes, muxes and mixes the
+audio of batch k (<code>rayon::in_place_scope</code>), and the next step starts from the frames already rendered.
+Wall time is about <code>max(render, encode + audio + mux)</code> instead of the sum. What did not change:</p>
+<ul>
+<li><strong>The file.</strong> Batches are cut and encoded in the same order and the audio / mux interleave still
+follows the 16-frame groups, so the output is byte-identical with or without overlap, on any core count
+and with any step size, including one frame per step (tests in <code>determinism_tests.rs</code>: H.264, ProRes,
+Motion-JPEG, two-pass).</li>
+<li><strong>Pending media.</strong> A prefetched batch whose sources were not ready is dropped and rendered again by a
+later step; nothing is encoded from an incomplete batch. The web app (no threads) never overlaps: it runs
+the sequential render-then-encode as before.</li>
+<li><strong>Cancel and errors.</strong> Cancelling drops the prefetched frames; a panic while rendering ahead becomes an
+export error. The encoder stays on the thread that called <code>step</code>.</li>
+<li><strong>Memory.</strong> Two batches are in flight (the one being encoded and the one being rendered), so up to
+<code>2 * batch * frame_bytes</code> of finished frames are held, and the batch is lowered until that fits in
+<code>IN_FLIGHT_BUDGET</code> (512 MiB; at least one frame): 16 frames of 1080p (8 MB), 8 + 8 frames of 4K SDR
+(33 MB), 2 + 2 frames of 4K HDR (100 MB, 3840 x 2160 x 3 f32), 1 of 8K HDR. A batch never grows, and
+frames are freed as soon as they are encoded. A first try with a 1 GiB budget (16 + 16 frames of 4K SDR,
+5 + 5 of 4K HDR) raised the peak RSS of the 4K SDR exports by 80-700 MB over the old code; 512 MiB
+brings it under the old peak (table below). <code>Exporter::set_overlap(false)</code> gives the old behaviour.</li>
+<li><strong>Known web issue, not changed here.</strong> <code>AudioOut::pull</code> moves its position before the pending check, so
+when a web export retries a batch after a pending audio source, that group of audio is lost. It is
+independent of the overlap (the web never overlaps); TODO: fix separately.</li>
+</ul>
+<p><code>perf.stats</code> <code>export.stages</code>: <code>renderMs</code> and <code>encodeMs</code> (and audio / mux) now run at the same time, so
+their sum can exceed the export's wall time. <code>waitMs</code> is the time the encoding side spent waiting for the
+next batch to finish rendering after it was done encoding: large means render-bound, near zero means
+encode-bound.</p>
+<p>Measured (Xeon E5-2680 v4 14C/28T, RTX 5060, driver 617.42, Windows 11, release CLI, 300 frames of
+30 fps, mean of 2 alternated rounds, export wall time, peak RSS of the CLI process; "before" is the same
+harness on the commit without the overlap, "now" the 512 MiB budget; the 1080p rows were measured with a
+1 GiB budget, which gives the same batches at that size):</p>
+<table><thead><tr><th>Case</th><th>wall before</th><th>wall now</th><th>speedup</th><th><code>waitMs</code> now</th><th>peak RSS before / now</th></tr></thead><tbody>
+<tr><td>1080p SW H.264 + AAC</td><td>22.60 s</td><td>20.66 s</td><td>1.09x</td><td>0</td><td>1279 / 1427 MB (+148)</td></tr>
+<tr><td>1080p NVENC H.264</td><td>5.56 s</td><td>4.99 s</td><td>1.11x</td><td>49 ms</td><td>1318 / 1441 MB (+123)</td></tr>
+<tr><td>1080p ProRes 422 HQ</td><td>16.97 s</td><td>15.32 s</td><td>1.11x</td><td>0</td><td>1234 / 1392 MB (+158)</td></tr>
+<tr><td>2160p SW H.264</td><td>60.79 s</td><td>54.12 s</td><td>1.12x</td><td>0</td><td>4030 / 3113 MB (-917)</td></tr>
+<tr><td>2160p NVENC H.264</td><td>18.08 s</td><td>15.64 s</td><td>1.16x</td><td>678 ms</td><td>4177 / 3250 MB (-927)</td></tr>
+<tr><td>2160p ProRes 422 HQ</td><td>60.92 s</td><td>55.71 s</td><td>1.09x</td><td>0</td><td>3675 / 3140 MB (-535)</td></tr>
+<tr><td>2160p HDR PQ SW H.264</td><td>82.79 s</td><td>77.62 s</td><td>1.07x</td><td>6758 ms</td><td>5284 / 2560 MB (-2724)</td></tr>
+<tr><td>2160p HDR PQ ProRes 422 HQ</td><td>89.14 s</td><td>83.95 s</td><td>1.06x</td><td>215 ms</td><td>5183 / 2565 MB (-2618)</td></tr>
+<tr><td>1080p effects NVENC H.264</td><td>28.70 s</td><td>26.82 s</td><td>1.07x</td><td>13116 ms</td><td>2044 / 2130 MB (+86)</td></tr>
+<tr><td>1080p effects SW H.264</td><td>39.60 s</td><td>34.35 s</td><td>1.15x</td><td>0</td><td>2017 / 2084 MB (+67)</td></tr>
+</tbody></table>
+<p>With the first 1 GiB budget the 2160p rows were 55.42 / 16.00 / 56.75 s at 4404 / 4254 / 4376 MB peak and
+the HDR rows 76.69 / 84.39 s at 3504 / 3532 MB: the same speed within 2 % (the HDR SW row 1.2 % slower
+at 512 MiB), but 4K SDR used up to 700 MB more than the old code. Halving the budget costs no time and
+makes every 4K export smaller than before.</p>
+<p>The gain is 6-16 %, well under the <code>max(render, encode + audio + mux)</code> bound (1.06-1.86x). The reason is
+that the encode side is not one core: the software H.264 and ProRes encoders run their slices on the same
+rayon pool, and the RGB to YUV conversion is parallel too, so render and encode compete for the same
+cores and overlapping them only fills idle gaps (the serial parts: entropy coding tails, muxing, audio,
+the encoder's hand-off). Only NVENC, whose encode is light on the CPU, comes close to the bound in the
+1080p case (4.99 s against 4.00 s). The effects case on NVENC is render-bound (<code>waitMs</code> 13 s of 27 s: the
+encoder waits for the renderer), as expected. 1080p exports use 70-160 MB more (the second batch of 16
+frames); 4K exports use less than before because the batch is smaller (8 for SDR, 2 for HDR instead of 16).</p>
+<h2>Results (HW3: VideoToolbox hardware H.265 (HEVC) encoding, against hardware H.264)</h2>
+<p>Apple M1 (8 cores, 16 GB), 2026-10-07, single runs on an otherwise idle machine, release build. Both
+encoders are the M1's media engine. H.265 is <code>Format::Hevc</code> (Main, 8-bit 4:2:0, one-pass VBR, no
+B-frames); H.264 is the opt-in hardware encoder of HW2 (High).</p>
+<h3>Speed</h3>
+<p>The raw encoders (ffmpeg's <code>hevc_videotoolbox</code> and <code>h264_videotoolbox</code> on a 1080p25 test pattern, 500
+frames): 166 and 189 frames/s. H.265 is the codec that compresses further, not the faster one to encode.</p>
+<p>The 9:29 timeline of HW2 (camera clip, ProRes 4444 overlays, AAC, loudness normalised to −14 LUFS), 20 Mb/s
+H.264 and 10 Mb/s H.265: <strong>204 s and 195 s</strong> (CPU 1042 s and 1029 s), files of 1417 MB and 719 MB. The
+same time: the same H.264 export took 193 s and 200 s on other runs. The export is bound by the CPU
+compositor and the decoders, not by the encoder, so a different hardware codec does not change it.</p>
+<h3>Quality per bit</h3>
+<p>30 s with a banner (15–45 s of that timeline), exported by FilmCraft as ProRes 422 HQ (the reference)
+and by each encoder at several bitrates; ffmpeg's <code>psnr</code> and <code>ssim</code> of the decoded 4:2:0 pictures against
+the reference. Average PSNR over the three planes, and SSIM (higher is better):</p>
+<table><thead><tr><th>Mb/s</th><th>H.264</th><th>H.265</th><th>difference</th><th>H.264 Mb/s for H.265's PSNR</th></tr></thead><tbody>
+<tr><td>20</td><td>46.88 dB, 0.9902</td><td>46.91 dB, 0.9903</td><td>+0.03 dB</td><td>beyond the range measured</td></tr>
+<tr><td>10</td><td>44.96 dB, 0.9863</td><td>45.09 dB, 0.9863</td><td>+0.13 dB</td><td>10.5</td></tr>
+<tr><td>6</td><td>43.72 dB, 0.9833</td><td>44.31 dB, 0.9843</td><td>+0.59 dB</td><td>7.7</td></tr>
+<tr><td>4</td><td>42.91 dB, 0.9807</td><td>43.64 dB, 0.9825</td><td>+0.73 dB</td><td>5.8</td></tr>
+<tr><td>3</td><td>42.37 dB, 0.9786</td><td>43.05 dB, 0.9807</td><td>+0.68 dB</td><td>4.3</td></tr>
+</tbody></table>
+<p>At 10 Mb/s and above the two give the same picture. At 3–6 Mb/s H.265 reaches the same PSNR with 22–31 %
+less bitrate. Its worst frame is better at every bitrate (lowest per-frame PSNR 45.9 against 42.1 dB at
+20 Mb/s, 43.1 against 41.5 dB at 10, 39.5 against 37.8 dB at 3).</p>
+<p>So there is no case for a lower default bitrate: the two formats start at the same 20 Mb/s. H.265
+pays off where the file size matters, at 3–6 Mb/s; that 9:29 timeline is 428 MB at 6 Mb/s.</p>
+<h2>Results (HW2: Windows Media Foundation / Direct3D 11 hardware decoding, Off → Auto)</h2>
+<p>Same binary (release build of the HW2 commit), Settings ▸ Playback ▸ Hardware decoding switched
+with <code>--hw off</code> / <code>--hw auto</code>, 2026-10-07: Intel Xeon E5-2680 v4 (14 cores / 28 threads, 2.4 GHz),
+NVIDIA GeForce RTX 5060 8 GB (driver 617.14), Windows 11 Pro 26200, idle machine. Two alternating
+rounds; the table gives the range of the two (decode: best of 3 within each). Reproduce with
+<code>cargo xtask bench --sections decode --only dec_h264 --repeat 3 --hw off|auto</code> (likewise <code>dec_hevc</code>)
+and <code>--sections playback --only "h264-2160 full" --hw off|auto</code>; set <code>FILMCRAFT_FFMPEG</code> if ffmpeg is not
+on <code>PATH</code> for the fixture generator. Pictures are identical either way (bit-exact parity tests,
+<code>crates/platform/tests/media_foundation.rs</code>). The decoder MFTs were Microsoft's H.264 decoder
+(<code>Microsoft H264 Video Decoder MFT</code>) and the <code>HEVCVideoExtension</code> decoder, both decoding with DXVA
+on the RTX 5060's NVDEC: <code>nvidia-smi dmon -s u</code> showed the decoder engine at 18–27 % during an
+Auto run and 0 % otherwise, and every picture came back as a Direct3D 11 texture.</p>
+<h3>Decode (every frame through the media stack)</h3>
+<table><thead><tr><th>codec</th><th>size</th><th>CPU ms/frame Off → <strong>Auto</strong></th><th>fps Off → <strong>Auto</strong></th></tr></thead><tbody>
+<tr><td>H.264</td><td>1080p</td><td>77–80 → <strong>3.3</strong></td><td>162–166 → <strong>347–353</strong></td></tr>
+<tr><td>H.264</td><td>2160p</td><td>310–315 → <strong>11.9</strong></td><td>39–43 → <strong>93</strong></td></tr>
+<tr><td>HEVC Main</td><td>1080p</td><td>69–73 → <strong>3.5</strong></td><td>89–93 → <strong>307–308</strong></td></tr>
+<tr><td>HEVC Main</td><td>2160p</td><td>315–348 → <strong>12–13</strong></td><td>26–28 → <strong>87–90</strong></td></tr>
+<tr><td>HEVC Main 10</td><td>2160p</td><td>314–336 → <strong>17.6</strong></td><td>32 → <strong>57</strong></td></tr>
+</tbody></table>
+<p>Counters: every Auto row had <code>hw frames</code> = frames × 3 repeats (360 at 1080p, 216 at 2160p), 3
+sessions, 0 fallbacks, 0 declined; every Off row had 0 hardware frames and 0 sessions.</p>
+<p>What is left on the CPU is the readback: <code>examples/mfprobe.rs --time</code> splits a 2160p H.264 picture
+into 1.1 ms DXVA decode (feeding the MFT), 2.8 ms GPU to CPU copy (staging texture + map) and 7 ms
+CPU conversion (Annex B, biplanar to planar Y'CbCr); Main 10 is 1.4 / 4.5 / 10 ms (twice the bytes).
+A zero-copy path removes the last two.</p>
+<h3>Program-monitor playback (8 s, GPU path)</h3>
+<table><thead><tr><th>case</th><th>shown/dropped Off → <strong>Auto</strong></th><th>CPU ms/frame Off → <strong>Auto</strong></th></tr></thead><tbody>
+<tr><td>H.264 1080p Full</td><td>192/0 → <strong>192/0</strong></td><td>86–89 → <strong>8.5–8.8</strong></td></tr>
+<tr><td>H.264 2160p Full</td><td>192/0 → <strong>189–190/2–3</strong></td><td>338–353 → <strong>17–20</strong></td></tr>
+<tr><td>H.264 2160p 1/2</td><td>192/0 → <strong>190/2</strong></td><td>355–361 → <strong>22</strong></td></tr>
+<tr><td>HEVC 2160p Full</td><td>112–152/40–80 → <strong>191–192/0–1</strong></td><td>355–364 → <strong>18</strong></td></tr>
+</tbody></table>
+<p>This machine has 28 software-decoding threads, so Off keeps up with 4K H.264 (at 340 ms of CPU per
+frame, about 8 cores busy); Auto uses a twentieth of that CPU but drops 2–3 of 192 frames
+(readback latency at the start of the run). 4K HEVC is where Off drops frames and Auto does not.
+Draft playback (1/2 draft: 410–416 → 93–105 CPU ms/frame) is dominated by the draft plan's decimation,
+as on macOS, because the hardware ignores draft mode.</p>
+<h2>Results (HW4: Windows NVENC H.264 export, software → hardware)</h2>
+<p>Same machine as the HW2 results (Xeon E5-2680 v4, 28 threads, RTX 5060, driver 617.14, idle,
+2026-10-07). <code>cargo xtask bench --sections export --only h264 --hw off|auto --repeat 3</code>: the export
+of 8 s of a 1080p23.976 H.264 clip (191 frames) to H.264 with the default preset, VBR one pass.
+<code>--hw off</code> runs the software encoder; <code>--hw auto</code> sets <code>hardwareEncoding</code> to auto and runs NVENC
+(preset P5, high-quality tuning). Every NVENC row had <code>hw frames</code> = 573 = 191 × 3 repeats.</p>
+<table><thead><tr><th>encoder</th><th>fps</th><th>CPU ms/frame</th><th>MB</th></tr></thead><tbody>
+<tr><td>software</td><td>15.0 (12.7–12.8 s)</td><td>1050</td><td>20.4</td></tr>
+<tr><td><strong>NVENC</strong></td><td><strong>44</strong> (4.3 s)</td><td><strong>356–373</strong></td><td>21.7</td></tr>
+</tbody></table>
+<ul>
+<li>The remaining CPU is the compositing and render of the frames and the RGBA → YUV conversion, not
+the encoder.</li>
+<li>The NVENC file is slightly larger at the same settings (21.7 vs 20.4 MB). The bitrate is not
+matched, so these rows are not a quality comparison.</li>
+</ul>
+<p>Quality at equal bitrate: see the PR description.</p>
+<h2>Results (HW2 follow-up: Windows VP9 and AV1 hardware decoding, Off → Auto)</h2>
+<p>Same machine and method as the H.264 / HEVC results above (Xeon E5-2680 v4, RTX 5060 driver 617.14,
+idle, 2026-10-07, two alternating rounds of <code>--hw off</code> / <code>--hw auto</code>, the same binary). MFTs:
+<code>VP9VideoExtensionDecoder</code> and <code>AV1VideoExtension</code> (Microsoft Store codec extensions), DXVA on the
+GPU's NVDEC (profiles VP9 0 / 2, AV1 main). AV1 fixtures here are libaom (<code>libsvtav1</code> is not in this
+ffmpeg build; the bench falls back to it) and VP9 are libvpx-vp9, as in the bench's <code>dec_*</code> specs.
+<code>cargo xtask bench --sections decode --only dec_vp9 --repeat 3 --hw off|auto</code> (likewise <code>dec_av1</code>),
+<code>--sections playback --only "av1-2160 full" --hw off|auto</code>.</p>
+<table><thead><tr><th>codec</th><th>size</th><th>CPU ms/frame Off → <strong>Auto</strong></th><th>fps Off → <strong>Auto</strong> (best of 3)</th></tr></thead><tbody>
+<tr><td>VP9</td><td>1080p</td><td>38-43 → <strong>3.5-3.6</strong></td><td>60 → <strong>281-283</strong></td></tr>
+<tr><td>VP9</td><td>2160p</td><td>165-169 → <strong>15-16</strong></td><td>16 → <strong>70-79</strong></td></tr>
+<tr><td>AV1</td><td>1080p</td><td>55-56 → <strong>3.3-3.4</strong></td><td>22 → <strong>373-374</strong></td></tr>
+<tr><td>AV1</td><td>2160p</td><td>219-221 → <strong>10.9-11.3</strong></td><td>5.5 → <strong>106-107</strong></td></tr>
+</tbody></table>
+<p>Every Auto row had <code>hw frames</code> = frames × 3 repeats, 3 sessions, 0 fallbacks, 0 declined.</p>
+<table><thead><tr><th>playback 8 s, Full</th><th>shown/dropped Off → <strong>Auto</strong></th><th>CPU ms/frame Off → <strong>Auto</strong></th></tr></thead><tbody>
+<tr><td>VP9 2160p</td><td>11-12/180-181 → <strong>191/1</strong></td><td>117-124 → <strong>24-27</strong></td></tr>
+<tr><td>AV1 2160p</td><td>0/192 → <strong>192/0</strong></td><td>47.5-47.9 → <strong>17-20</strong></td></tr>
+</tbody></table>
+<p>Software AV1 decodes 4K at 5.5 fps here, so it never plays in real time; with the hardware decoder it
+plays without a drop. As on the other codecs, the hardware ignores draft mode and what is left on the
+CPU is the readback and plane conversion.</p>
+<h2>Results (Linux VA-API H.264 and HEVC hardware decoding, Off → Auto)</h2>
+<p>Same commit, Settings ▸ Playback ▸ Hardware decoding switched with the bench flag
+(<code>cargo xtask bench --sections decode --only dec_h --repeat 3 --hw off|auto</code>), 2026-10-08, Intel
+Core i5-13500H with Iris Xe graphics (Raptor Lake-P), 7.4 GB RAM, Intel iHD driver 26.1.2 through
+libva 2.22, load average 5–15. Only H.264 goes through VA-API so far; the HEVC rows decode in
+software either way and show the run-to-run spread. The decoded pictures are identical
+(bit-exact parity tests, <code>crates/platform/tests/vaapi.rs</code>).</p>
+<table><thead><tr><th>codec</th><th>size</th><th>CPU ms/frame Off → <strong>Auto</strong></th><th>fps Off → <strong>Auto</strong> (best of 3)</th><th>hw frames</th></tr></thead><tbody>
+<tr><td>H.264</td><td>1080p</td><td>103.7 → <strong>2.3</strong></td><td>133 → <strong>263</strong></td><td>360</td></tr>
+<tr><td>H.264</td><td>2160p</td><td>416.5 → <strong>11.4</strong></td><td>32 → <strong>56</strong></td><td>216</td></tr>
+<tr><td>HEVC</td><td>1080p</td><td>63.2 → 46.5</td><td>99 → 131</td><td>0</td></tr>
+<tr><td>HEVC</td><td>2160p</td><td>349.5 → 353.7</td><td>30 → 35</td><td>0</td></tr>
+<tr><td>HEVC Main 10</td><td>2160p</td><td>348.9 → 352.6</td><td>29 → 29</td><td>0</td></tr>
+</tbody></table>
+<p>What is left on the CPU per H.264 frame is the host side of stateless decoding (parsing, DPB,
+filling the VA buffers) and the read-back: <code>vaGetImage</code> into an NV12 image and the copy into
+planar Y'CbCr. One picture is decoded at a time and read back as soon as the DPB outputs it, so
+4K throughput (56 fps) is bound by that round trip, not by the video engine; overlapping decode
+and read-back, or zero-copy into wgpu, would raise it.</p>
+<h3>HEVC through VA-API (HW5 follow-up)</h3>
+<p>Same machine and commands on 2026-10-09 with HEVC added, at a lower load (the software decoders ran
+faster than in the table above; compare within a row). H.264 is unchanged; every HEVC stream now
+goes through VA-API too (216–360 hardware frames, no fallbacks), bit-exact with the software decoder.</p>
+<table><thead><tr><th>codec</th><th>size</th><th>CPU ms/frame Off → <strong>Auto</strong></th><th>fps Off → <strong>Auto</strong> (best of 3)</th></tr></thead><tbody>
+<tr><td>H.264</td><td>1080p</td><td>57.3 → <strong>2.6</strong></td><td>227 → <strong>241</strong></td></tr>
+<tr><td>H.264</td><td>2160p</td><td>231.8 → <strong>12.6</strong></td><td>58 → <strong>52</strong></td></tr>
+<tr><td>HEVC</td><td>1080p</td><td>45.6 → <strong>2.3</strong></td><td>141 → <strong>341</strong></td></tr>
+<tr><td>HEVC</td><td>2160p</td><td>202.5 → <strong>10.1</strong></td><td>47 → <strong>76</strong></td></tr>
+<tr><td>HEVC Main 10</td><td>2160p</td><td>211.6 → <strong>18.4</strong></td><td>42 → <strong>46</strong></td></tr>
+</tbody></table>
+<p>At this lower load the multi-threaded software decoders keep up with the one-picture-at-a-time
+hardware path on throughput for H.264 and 10-bit HEVC, at 5–20 % of their CPU time; under load
+(the run above) the hardware path is ahead on both. 10-bit pictures cost more to read back (P010 is
+twice the bytes of NV12 and is shifted down into 16-bit planes).</p>
+<h2>Results (GPU1: blend modes on the GPU compositor, #30, before → after)</h2>
+<p>Before = this change with the old whole-frame CPU fallback for non-Normal blend modes put back
+in <code>render::plan</code> (same binary otherwise); after = GPU1. New <code>stack3-blend</code> scenario: <code>stack3</code>
+(three 1080p23.976 H.264 clips, V2/V3 scaled, positioned, rotated, 70–85 % opacity) with V2 in
+Screen and V3 in Overlay. <code>cargo xtask bench-playback --scenario stack3-blend,stack3 --res  full,half</code>, GPU path, 8 s plays, two alternating rounds each on 2026-10-05 at load average
+33–63 (1-minute; 5-minute 67–81).</p>
+<table><thead><tr><th>case</th><th>shown/dropped before (2 runs)</th><th>after (2 runs)</th><th>CPU ms/frame before → after</th><th>worker svc p50 before → after</th></tr></thead><tbody>
+<tr><td>stack3-blend Full</td><td>19/173, 138/54</td><td><strong>191/1, 192/0</strong></td><td>168, 214 → <strong>86, 87</strong></td><td>258, 219 → 1.2, 1.2 ms</td></tr>
+<tr><td>stack3-blend 1/2</td><td>192/0, 192/0</td><td>191/1, 192/0</td><td>158, 151 → <strong>89, 88</strong></td><td>66, 99 → 1.1, 1.0 ms</td></tr>
+<tr><td>stack3 Full (control, Normal)</td><td>192/0, 192/0</td><td>191/1, 192/0</td><td>88, 88 → 91, 88</td><td>1.3, 1.6 → 0.9, 1.5 ms</td></tr>
+<tr><td>stack3 1/2 (control, Normal)</td><td>191/1, 192/0</td><td>192/0, 192/0</td><td>82, 90 → 90, 89</td><td></td></tr>
+</tbody></table>
+<p>A stack with blend modes now costs what the same stack in Normal does: the frame workers only
+decode, and the UI-thread present (upload and draw, including the backdrop copies for the two
+blended layers) stays at 9–10 ms p50, as for <code>stack3</code>. Before, every frame was composited on the
+CPU (≈ 2 cores more at 23.976 fps) and Full resolution could not keep up at this load.</p>
+<h2>Results (M4.10: 4K VP9, AV1 and HEVC, before → after)</h2>
+<p>Baseline = commit <code>a814ff6</code> (decoders unchanged since M4.8); after = M4.10. Interleaved runs on
+2026-10-03 at load average 170-320 (two base and two after rounds; the second bench round of
+each overlapped another bench run, so its wall-clock columns are extra pessimistic).</p>
+<h3>Decoder work per frame (load-independent)</h3>
+<p>Codec examples (<code>vp9dec</code>, <code>av1dec</code>, <code>hevcdec</code>) on the <code>cargo xtask bench</code> decode clips, CPU
+cycles counted by the kernel (<code>/usr/bin/time -l</code>, all threads summed), mean of the two rounds;
+output bit-exact with ffmpeg / libdav1d at every thread count:</p>
+<table><thead><tr><th>stream</th><th>1 thread before → after</th><th>14 threads before → after</th><th>wall ms / frame, 14 threads, before → after</th></tr></thead><tbody>
+<tr><td>VP9 1080p</td><td>68.0 → <strong>52.0</strong> (−24 %)</td><td>100.7 → <strong>57.9</strong> (−43 %)</td><td>95, 82 → 18, 17</td></tr>
+<tr><td>VP9 2160p</td><td>273.6 → <strong>205.8</strong> (−25 %)</td><td>391.7 → <strong>219.2</strong> (−44 %)</td><td>146, 118 → 38, 36</td></tr>
+<tr><td>HEVC 1080p</td><td>90.9 → <strong>67.3</strong> (−26 %)</td><td>100.2 → <strong>75.1</strong> (−25 %)</td><td>17, 10 → 5, 13</td></tr>
+<tr><td>HEVC 2160p</td><td>362.6 → <strong>262.3</strong> (−28 %)</td><td>398.3 → <strong>284.8</strong> (−28 %)</td><td>24, 55 → 26, 25</td></tr>
+<tr><td>AV1 1080p</td><td>60.5 → <strong>48.3</strong> (−20 %)</td><td>63.6 → <strong>51.9</strong> (−18 %)</td><td>26, 8 → 8, 7</td></tr>
+<tr><td>AV1 2160p</td><td>212.5 → <strong>172.4</strong> (−19 %)</td><td>220.0 → <strong>177.1</strong> (−20 %)</td><td>158, 39 → 20, 32</td></tr>
+</tbody></table>
+<p>Mcycles per frame. Draft mode (1 thread): HEVC 2160p 232.5 (−11 % on top), AV1 2160p 167.9
+(−3 %: SVT-AV1's top-layer frames filter little); the VP9 clips have no non-reference frames.</p>
+<h3>Decode (every frame through the media stack)</h3>
+<table><thead><tr><th>codec</th><th>size</th><th>CPU ms/frame before (2 rounds)</th><th>after (2 rounds)</th><th>fps before → after</th></tr></thead><tbody>
+<tr><td>VP9</td><td>1080p</td><td>33.6, 30.8</td><td><strong>23.5, 21.7</strong></td><td>14, 17 → 67, 56</td></tr>
+<tr><td>VP9</td><td>2160p</td><td>120.2, 117.7</td><td><strong>68.4, 67.9</strong></td><td>9.1, 7.8 → <strong>34, 27</strong></td></tr>
+<tr><td>HEVC</td><td>1080p</td><td>31.2, 29.3</td><td><strong>23.9, 22.4</strong></td><td>50, 58 → 138, 145</td></tr>
+<tr><td>HEVC</td><td>2160p</td><td>117.9, 111.8</td><td><strong>86.9, 82.1</strong></td><td>13, 14 → <strong>30, 41</strong></td></tr>
+<tr><td>AV1</td><td>1080p</td><td>18.5, 18.9</td><td><strong>15.1, 15.7</strong></td><td>53, 44 → 122, 69</td></tr>
+<tr><td>AV1</td><td>2160p</td><td>64.8, 66.7</td><td><strong>48.4, 51.3</strong></td><td>16, 8.9 → <strong>25, 25</strong></td></tr>
+</tbody></table>
+<h3>Program-monitor playback, 2160p (8 s, GPU path; new <code>vp9-2160</code> / <code>av1-2160</code> scenarios)</h3>
+<table><thead><tr><th>case</th><th>before: shown/dropped (4 runs)</th><th>after (4 runs)</th><th>CPU ms/frame before → after</th></tr></thead><tbody>
+<tr><td>VP9 Full</td><td>6/186, 53/139, 0/192, 0/192</td><td><strong>192/0, 192/0, 189/3, 192/0</strong></td><td>23-49 → 75-83</td></tr>
+<tr><td>VP9 1/2</td><td>6/186, 58/134, 2/190, 52/140</td><td><strong>192/0, 191/1, 192/0, 192/0</strong></td><td>34-70 → 78-80</td></tr>
+<tr><td>HEVC Full</td><td>6/186, 1/191, 0/192, 9/183</td><td><strong>192/0, 192/0, 192/0, 192/0</strong></td><td>74-124 → 91-97</td></tr>
+<tr><td>HEVC 1/2</td><td>0/192, 9/183, 0/192, 19/173</td><td><strong>192/0, 192/0, 192/0, 185/7</strong></td><td>64-118 → 94-97</td></tr>
+<tr><td>HEVC 1/2 draft</td><td>5/187, 88/104, 97/95, 138/54</td><td><strong>188/4, 192/0, 187/5, 189/3</strong></td><td>135-148 → 96-104</td></tr>
+<tr><td>AV1 Full</td><td>4/188, 19/173, 0/192, 36/156</td><td>52/140, 0/192, <strong>178/14</strong>, 0/192</td><td>31-47 → 38-56</td></tr>
+<tr><td>AV1 1/2</td><td>32/160, 44/148, 1/191, 38/154</td><td>2/190, <strong>150/42, 184/8</strong>, 50/142</td><td>30-50 → 41-72</td></tr>
+<tr><td>AV1 1/2 draft</td><td>1/191, 24/168, 1/191, 27/165</td><td><strong>192/0, 187/5, 184/8, 192/0</strong></td><td>25-51 → 68-70</td></tr>
+</tbody></table>
+<p>CPU per <em>displayed</em> frame rises where the decoder now keeps up: before, most frames were never
+decoded (dropped jobs cost nothing). At load ~180-220, 4K VP9 and HEVC now play in real time at
+Full and 1/2; AV1 does at 1/2 with draft decoding and sometimes at 1/2 / Full: its frames
+decode concurrently only once their references are complete (whole-frame dependencies) and the
+clip has a single tile, so a 4K frame waits for its references' deblocking, CDEF and output
+copy.</p>
+<h2>What M4.10 changed</h2>
+<ol>
+<li><strong>VP9 frame threading</strong> (the decoder had none: tile columns, then a loop-filter wavefront,
+then assembly and output, each a barrier — 14 threads used 40-50 % more cycles than one and
+barely ran faster). Frames are now published one superblock row at a time once loop
+filtered; each frame's post stage (band assembly from the tile strips, loop filter in raster
+order, publication, output picture) runs on its own thread while the next frames' tile
+columns decode, their motion compensation waiting per band for exactly the reference rows it
+reads. Backward-adaptive streams only wait for the previous frame's symbol counts.</li>
+<li><strong>VP9 kernels</strong>: the loop filter's lane masks were <code>bool</code>s with <code>clamp</code> and branchy selects,
+which kept it scalar; 0 / -1 integer masks, bitwise selects and min / max make it NEON. The
+inverse transform's column pass runs the generated butterflies on 4 / 8 columns at once;
+8-bit sub-pixel filters accumulate in 16-bit lanes (every VP9 filter sum fits modulo 2^16).</li>
+<li><strong>HEVC</strong>: motion compensation zeroed two 10 KB windows per block (11 % of the time in
+<code>memset</code>) and filtered with dynamic-width scalar sums; it now reuses scratch windows and
+filters taps-outer over fixed widths. SAO (20 % of the time) selects edge / band offsets per
+lane instead of a table lookup per sample. Runs of bypass bins decode with one division;
+output clipping uses min / max. Frame threading with per-CTB-row waits was already in place.</li>
+<li><strong>AV1</strong>: fixed-width sub-pixel filter passes; frame and tile-region planes recycled through a
+bounded pool instead of a fresh <code>calloc</code> / <code>munmap</code> per frame (~10 % of the time); palette
+mode-info arrays (40 bytes per 4x4) only with screen content tools; branch-free CDF update.</li>
+<li><strong>Draft mode</strong> for all three through <code>VideoDecoder::set_draft</code> (Settings ▸ Playback ▸ Draft
+decoding, reduced-resolution playback only): VP9 frames that refresh no reference slot skip
+the loop filter; HEVC sub-layer non-reference pictures of the top sub-layer skip deblocking
+and SAO; AV1 shown frames that refresh no slot skip deblocking, CDEF and loop restoration.
+Tested per codec (unflagged pictures bit-exact, single- and multi-threaded) and through the
+media stack (<code>crates/codecs/tests/draft_decoders.rs</code>: draft frames reach draft requests only;
+an export after draft playback is bit-exact with ffmpeg).</li>
+</ol>
+<p>Not done: AV1 row-level frame threading (references are waited for as whole frames) and its
+per-edge deblocking; VP9 and HEVC coefficient / CABAC parsing are now the largest single costs
+(~27 %); HEVC reference windows are still copied per block (~11 %).</p>
+<h2>Results (M4.9: 4K H.264, before → after)</h2>
+<p>Baseline = commit <code>3d14099</code> (M3.12, unchanged decoder); after = M4.9. Interleaved runs on
+2026-10-02/03, load average 92–178 (the playback rows say which load each run saw).</p>
+<h3>Decoder work per frame (load-independent)</h3>
+<p><code>h264dec</code> example, one decoder, CPU cycles and instructions counted by the kernel (all threads),
+output bit-exact with ffmpeg:</p>
+<table><thead><tr><th>stream</th><th>Mcycles / frame before</th><th>after</th><th>after, draft mode</th></tr></thead><tbody>
+<tr><td>2160p (<code>a2160.mp4</code>, 170 Mbit/s, first 48 frames)</td><td>505</td><td><strong>390</strong> (−23 %)</td><td><strong>356</strong> (−30 %)</td></tr>
+<tr><td>1080p (<code>dec_h264_1080.mp4</code>, 120 frames)</td><td>132</td><td><strong>100</strong> (−24 %)</td><td><strong>90</strong> (−32 %)</td></tr>
+</tbody></table>
+<p>The cycle count is the same with 1, 4 or 14 frame threads (no spinning or contention overhead):
+at ~4.5 GHz a 4K frame is ~85 ms of one core, so 23.976 fps needs about two cores.</p>
+<h3>Decode (every frame through the media stack)</h3>
+<table><thead><tr><th>codec</th><th>size</th><th>CPU ms/frame before (2 rounds)</th><th>after (2 rounds)</th></tr></thead><tbody>
+<tr><td>H.264</td><td>1080p</td><td>35.8, 39.5</td><td><strong>33.0, 29.4</strong></td></tr>
+<tr><td>H.264</td><td>2160p</td><td>138.9, 152.1</td><td><strong>125.7, 112.3</strong></td></tr>
+</tbody></table>
+<p>(A run at load ~190 before any change gave 41.6 / 160.2 ms; an intermediate build 32.2 / 118.3.)</p>
+<h3>Cold seeks on the 4K fixture (12 random targets, GOP 250, fresh source per seek)</h3>
+<table><thead><tr><th>mode</th><th>CPU ms per seek before</th><th>after</th><th>wall p50 ms before → after</th></tr></thead><tbody>
+<tr><td>full decode from the keyframe</td><td>7529, 7418</td><td><strong>5531, 5268</strong> (−27 %)</td><td>2757, 1848 → 924, 739</td></tr>
+<tr><td>keep 2 s (scrub)</td><td>7488, 7373</td><td><strong>5442, 5397</strong></td><td>2408, 1995 → 872, 795</td></tr>
+<tr><td>late (playback catch-up)</td><td>5597, 5487</td><td><strong>4079, 3949</strong></td><td>2014, 1248 → 735, 526</td></tr>
+</tbody></table>
+<p>Samples decoded per seek are identical (~48, ~34 in catch-up): the same pictures, decoded with
+less work. The cold seek is a chain of reference pictures, so it shows the per-picture cost
+directly.</p>
+<h3>Program-monitor playback, 2160p (8 s, GPU path)</h3>
+<table><thead><tr><th>case</th><th>before: shown/dropped (load)</th><th>after: shown/dropped (load)</th><th>CPU ms/frame before → after</th></tr></thead><tbody>
+<tr><td>Full</td><td>192/0 (92), 9/183 (167)</td><td>113/79 (171), <strong>192/0</strong> (139)</td><td>159 (no skips), 133 (17 skipped) → 131, 130</td></tr>
+<tr><td>1/2</td><td>12/180 (95), 5/187 (169)</td><td>173/19 (172), <strong>192/0</strong> (124)</td><td>143, 127 → 133, 132</td></tr>
+<tr><td>1/2 draft</td><td>–</td><td>183/9 (175), <strong>192/0</strong> (119)</td><td>– → 144, 134</td></tr>
+<tr><td>1/4</td><td>–</td><td>186/6 (177), <strong>192/0</strong> (111)</td><td>– → 134, 125</td></tr>
+<tr><td>1/4 draft</td><td>–</td><td><strong>192/0</strong> (178), 190/2 (101)</td><td>– → 132, 131</td></tr>
+<tr><td>1080p Full</td><td>192/0, 192/0</td><td>192/0, 192/0</td><td>41, 48 → 39, 36</td></tr>
+</tbody></table>
+<p>Before, the 4K clip kept up in one run (Full at load 92; 1/2 dropped 94 % at load 95) and dropped
+95–97 % at load ~168. After, every 4K case plays 192/0 at load 100–140; at load 171–178 Full drops
+41 %, 1/2 10 % (5 % with draft decoding), 1/4 3 % (none with draft decoding). CPU per
+displayed frame (whole process: decode, frame workers, compositing) drops ~15 % where no frames
+were skipped; draft decoding at 1/2 and 1/4 is within run-to-run noise in this column (its saving
+is the ~9 % of decoder cycles above, plus a quarter / sixteenth of the texture upload), while the
+frame jobs wait for the decoder less (decode ms/job 212 → 67 at 1/2, 98 → 44 at 1/4 in the busy
+round). On an idle machine the 4K clip needs about two cores.</p>
+<h2>What M4.9 changed</h2>
+<ol>
+<li><strong>Deblocking</strong> (25–30 % of 4K decode time before): the edge filter runs on all 16 luma / 8
+chroma lines of an edge at once with per-lane masks and min/max clipping (no <code>clamp</code>, whose
+bounds assert blocked vectorisation), so it compiles to NEON; edges whose alpha or beta index
+is 0 are skipped. Bit-exact with the per-line filter (random-edge unit test) and ffmpeg.</li>
+<li><strong>CABAC</strong>: <code>decode_decision</code> / <code>decode_bypass</code> select instead of branching on the bin value
+(the MPS/LPS outcome is close to random at high bit rates), renormalisation has no branch on
+the range, and context / state indexing has no bounds checks.</li>
+<li><strong>Inverse transforms</strong>: the 4x4 / 8x8 column pass and the add/clip run across all columns.</li>
+<li><strong>Frame threading</strong> was already in place (M2): pictures decode concurrently and wait per
+macroblock row for the reference rows their motion vectors reach, with deblocking pipelined row
+by row inside each picture's job. The conformance suite now decodes every fixture with 1, 3 and
+all threads (bit-exact each time). A separate deblocking thread was not added: a picture's rows
+are published about two rows after they are reconstructed, so a reference chain advances a few
+rows behind its predecessor and the pool already has more pictures in flight than cores
+(crates/h264/README.md, "Threading model").</li>
+<li><strong>Draft decoding</strong> (Settings ▸ Playback ▸ Draft decoding, off by default; <code>perf.stats</code>
+<code>playback.draftDecode</code>, <code>decode.draftFrames</code>, <code>decode.h264Threads</code>): while the Program monitor
+plays at 1/2 or 1/4, H.264 non-reference pictures skip deblocking (no other picture can change),
+and draft plans hand the GPU box-decimated Y'CbCr planes at the drawn size. Draft frames carry
+their own frame-cache keys and the GOP cache serves them to draft requests only, so pausing,
+rendering and exporting always decode exact pictures (tested through the media stack against
+ffmpeg after draft playback). The CPU renderer already converted reduced-resolution frames
+straight to the decimated size (<code>to_linear_f32_decimated</code>).</li>
+</ol>
+<p>Not done: CABAC residual decoding (now 41 % of the work, ~19 cycles per bin) is inherently serial;
+the remaining deblocking cost is mostly the vertical-edge transposes; motion compensation and the
+per-row / per-picture copies (4 %) are unchanged.</p>
+<h2>Results (M4.8, before → after)</h2>
+<p>Baseline = commit <code>457aca1</code> (the harness on unchanged code); after = M4.8. Runs alternated base /
+after (2 rounds each, 2026-10-02).</p>
+<h3>Decode (every frame through the media stack: container, GOP cache, decoder, conversion)</h3>
+<p>CPU ms per frame (both rounds; lower is better). fps is the best of the run at that moment's load.</p>
+<table><thead><tr><th>codec</th><th>size</th><th>CPU ms/frame before</th><th>after</th><th>fps before → after (same-round pairs)</th></tr></thead><tbody>
+<tr><td>H.264</td><td>1080p</td><td>43.4 / 43.7</td><td>48.2 / 46.1</td><td>101, 105 → 51, 34 (load 99 → 127)</td></tr>
+<tr><td>H.264</td><td>2160p</td><td>169 / 166</td><td>171 / 178</td><td>17, 31 → 16, 9</td></tr>
+<tr><td><strong>HEVC</strong></td><td>1080p</td><td>80.5 / 76.4</td><td><strong>31.4 / 34.5</strong></td><td>25, 58 → 69, 41</td></tr>
+<tr><td><strong>HEVC</strong></td><td>2160p</td><td>325 / 314</td><td><strong>122 / 136</strong></td><td>8.2, 12 → 17, 11</td></tr>
+<tr><td>VP9</td><td>1080p / 2160p</td><td>39.7 / 137.6</td><td>36.5 / 136.8</td><td>18 / 12 → 18 / 7.8</td></tr>
+<tr><td>AV1</td><td>1080p / 2160p</td><td>20.2 / 78.2</td><td>19.7 / 72.6</td><td>106 / 23 → 50 / 9.4</td></tr>
+<tr><td>ProRes 422 HQ</td><td>1080p / 2160p</td><td>23.6 / 89.0</td><td>23.2 / 86.7</td><td>59 / 28 → 34 / 15</td></tr>
+</tbody></table>
+<p>On a quieter moment earlier in the session (load ~70) the same binaries decoded H.264 at 100 fps
+(1080p) / 24 fps (2160p), AV1 131 / 44 fps and ProRes 202 / 49 fps.</p>
+<h3>Seeking (cold seek through the media stack, 12 random targets, modes interleaved, load ~150)</h3>
+<table><thead><tr><th>fixture (GOP 250)</th><th>full decode from keyframe</th><th>skip non-reference &gt; 2 s before (scrub)</th><th>skip all late non-reference (playback catch-up)</th></tr></thead><tbody>
+<tr><td>H.264 1080p</td><td>1405 ms, 3.3 s CPU</td><td>1276 ms, 3.1 s CPU</td><td><strong>789 ms, 2.3 s CPU</strong></td></tr>
+<tr><td>H.264 2160p</td><td>3394 ms, 8.5 s CPU</td><td>2828 ms, 8.4 s CPU</td><td><strong>2274 ms, 6.3 s CPU</strong></td></tr>
+<tr><td>HEVC 2160p</td><td>4091 ms, 17.8 s CPU</td><td>3058 ms, 12.3 s CPU</td><td><strong>2512 ms, 9.8 s CPU</strong></td></tr>
+</tbody></table>
+<p>The target frame is identical in every mode (only pictures nothing references are left out).</p>
+<h3>Program-monitor playback (8 s, GPU path)</h3>
+<table><thead><tr><th>scenario</th><th>shown/dropped before</th><th>after</th><th>CPU ms/frame before → after</th><th>non-ref samples skipped</th></tr></thead><tbody>
+<tr><td>H.264 1080p</td><td>192/0, 192/0</td><td>191/1, 191/1</td><td>55 → 55</td><td>0 (keeps up)</td></tr>
+<tr><td>3 × 1080p stacked</td><td>192/0, 190/2</td><td>188/4, 185/7</td><td>120 → 128</td><td>0</td></tr>
+<tr><td>H.264 2160p Full</td><td>22/170, 192/0</td><td>0/192, 0/192</td><td>183 → <strong>87</strong></td><td>39–52</td></tr>
+<tr><td>H.264 2160p Half</td><td>180/12, 192/0</td><td>0/192, 0/192</td><td>198 → <strong>102</strong></td><td>46–49</td></tr>
+<tr><td>HEVC 2160p Full</td><td>0/192, 0/192</td><td>0/192, 0/192</td><td>164 → <strong>90</strong></td><td>88</td></tr>
+<tr><td>HEVC 2160p Half</td><td>0/192, 0/192</td><td>0/192, 0/192</td><td>160 → <strong>97</strong></td><td>33–92</td></tr>
+</tbody></table>
+<p>Shown/dropped at 2160p is decided by the load at the moment (base round 2 happened to play 192/0
+at a quiet minute; a later three-way run at load 175–195 gave 0–21 shown for every binary, and
+143/49 for HEVC once). CPU per displayed second halved at 2160p: frames that are already late are
+no longer fully decoded, and HEVC decodes 2.5× cheaper.</p>
+<h3>Scrubbing (24 random seeks + 8 playhead drags through the monitor's request path)</h3>
+<table><thead><tr><th>scenario</th><th>seek p50 / p95 ms before</th><th>after</th><th>drag-stop p50 ms before → after</th></tr></thead><tbody>
+<tr><td>H.264 1080p</td><td>357 / 940, 582 / 1535</td><td>840 / 1567, 770 / 1389</td><td>27, 62 → 281, 103</td></tr>
+<tr><td>H.264 2160p</td><td>1063 / 2377, 1499 / 3028</td><td>2445 / 5357, 2390 / 4562</td><td>288, 513 → 560, 834</td></tr>
+<tr><td>HEVC 2160p</td><td>130 / 4100 (9 timeouts), 318 / 1397</td><td>2466 / 6441, 2476 / 7596 (0 timeouts)</td><td>9, 3872 → 462, 1893</td></tr>
+</tbody></table>
+<p>These runs coincided with load rising from 99 to 170 for "after". A later interleaved three-way
+run (base / after with catch-up disabled / after) at load 80–200 gave H.264 1080p seek p50 345 /
+712 / 572 ms then 379 / 389 / 461 ms, and H.264 2160p 913 / 1312 / 2105 then 1946 / 931 / 840 ms:
+within the noise. The cold-seek table above is the load-independent comparison.</p>
+<h3>Timeline UI (1000 clips on 20 tracks, 1920×1080 window, <code>egui_kittest</code>)</h3>
+<table><thead><tr><th>view</th><th>update p50 / p95 ms before</th><th>after</th><th>tessellate p50 ms</th><th>wgpu render p50 ms (incl. readback)</th><th>vertices</th></tr></thead><tbody>
+<tr><td>fit (all 1000 clips)</td><td>3.1 / 4.9, 3.4 / 5.7</td><td>2.9 / 4.5, 2.9 / 3.3</td><td>0.3</td><td>15</td><td>35.7 k</td></tr>
+<tr><td>zoomed, scrolling</td><td>2.8 / 3.8, 2.8 / 4.8</td><td>2.9 / 4.9, 2.6 / 6.8</td><td>0.2</td><td>15</td><td>29.2 k</td></tr>
+</tbody></table>
+<p>The timeline is not a bottleneck: the whole app frame (all panels) costs ~3 ms with 1000 clips
+visible; it already culls clips outside the view. The waveform display gain no longer rescans the
+whole source's peaks for every clip every frame (cached per peak list).</p>
+<h3>Export (8 s of 1080p23.976 H.264 + AAC source)</h3>
+<table><thead><tr><th>format</th><th>fps before → after</th><th>CPU ms/frame before → after</th></tr></thead><tbody>
+<tr><td>H.264 + AAC</td><td>10.6, 5.8 → 10.2, 11.9</td><td>256 → 250</td></tr>
+<tr><td>ProRes 422</td><td>4.7, 3.0 → 6.3, 9.6</td><td>249 → 232</td></tr>
+</tbody></table>
+<p>Profile (<code>sample</code>): H.264 export is ~45 % encoder, ~30 % decoding the noisy 45 Mbit/s source,
+~25 % CPU compositing; ProRes export spends most in <code>prores::encode::slice_bits</code> /
+<code>choose_quantisers</code> (rate search), then source decode and compositing. Not changed in M4.8.</p>
+<h3>Project save / open (5 sequences × 1000 clips, 3.7 MB)</h3>
+<p>save 24 / 68 → 36 / 21 ms, open 26 / 82 → 21 / 19 ms (p50 of 3; noise).</p>
+<h3>Peak RSS per section (MB)</h3>
+<p>decode 2642 / 2925 → 2506 / 2064; playback 5246 / 7903 → 3379 / 3121; scrub 4205 / 5022 →
+5390 / 4183; timeline 626 / 650 → 660 / 675; export 2367 / 2286 → 2606 / 2619; project 114 / 136 →
+124 / 133.</p>
+<h2>What M4.8 changed</h2>
+<ol>
+<li><strong>HEVC inverse transform</strong> (largest hotspot: &gt;50 % of HEVC decode CPU). Sums contiguous basis
+rows scaled by non-zero coefficients, size as a const generic so loops vectorise; bit-exact
+(exact integer sums), tested against the direct matrix product on random blocks and by the
+ffmpeg conformance fixtures. <strong>SAO edge offset</strong> gets a check-free inner loop. HEVC CPU per
+frame −60 %.</li>
+<li><strong>No redundant plane copies</strong>: H.264 / HEVC / VP9 pictures are moved into <code>VideoFrame</code>s instead
+of copied (12 MB per 2160p frame; HEVC 10-bit also lost a per-sample widening pass).</li>
+<li><strong>Catch-up decoding</strong>: frame jobs carry how far before their frame the playhead is
+(<code>filmcraft_media::cancel::with_catch_up</code>); the GOP cache skips non-reference samples of late
+frames (<code>VideoDecoder::is_disposable</code>: H.264 <code>nal_ref_idc</code> 0, HEVC sub-layer non-reference
+pictures of the top temporal layer). Scrub requests keep the last 2 s fully decoded so dragging
+back stays cached. The wanted frame is decoded exactly as before; a later request for a skipped
+frame re-seeks. ~50 % of the fixtures' pictures are non-reference.</li>
+<li><strong><code>perf.stats</code></strong> (engine query + UI/control method): decode counters (cache hit rate, seeks,
+samples decoded / skipped, decoder ms), playback shown / dropped, frame-worker decode / render
+ms (p50 / p95), request hit rate, cache use, UI fps, process CPU.</li>
+<li><strong>Timeline</strong>: waveform source peak cached.</li>
+</ol>
+<p>Not feasible / not done: reduced-resolution decode for H.264 / HEVC (inter prediction needs
+full-resolution references, so it cannot be bit-exact; ½/¼ playback already decimates after
+decode); AV1 internals untouched (measured only); export encoders not optimised.</p>
+<hr />
+<details open>
+<summary><b>📚 filmcraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「filmcraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 filmcraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://rxxj.wtpuscm.cn/yinqing/conversion-420357.html">基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://ujml.wtpuscm.cn/yingxiao/movie-877385.html">现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://avlp.wtpuscm.cn/yanjiu/screen-433403.html">面向大规模网络的 filmcraft 工业级架构基准</a></li>
+<li><a href="https://iqtj.wtpuscm.cn/gongju/game-465960.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://eejm.wtpuscm.cn/jiaocheng/podcast-374317.html">【filmcraft】pure 核心系统架构与设计规约 (Draft-05)</a></li>
+<li><a href="https://kcmx.wtpuscm.cn/anli/digital-627590.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)</a></li>
+<li><a href="https://yxfq.wtpuscm.cn/anfang/photo-443775.html">基于 filmcraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://hbuq.wtpuscm.cn/wendang/market-033.html">filmcraft 内部组件解耦与事件状态机规范 (Node-81)</a></li>
+<li><a href="https://ghcs.wtpuscm.cn/jiaocheng/theme-097366.html">【官方规范】filmcraft open-source 核心运行拓扑标准</a></li>
+<li><a href="https://hcrw.wtpuscm.cn/wendang/page-146659.html">Trim Monitor 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://odma.wtpuscm.cn/zhinan/guide-839453.html">基于 filmcraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://nlni.wtpuscm.cn/wendang/image-833013.html">现代 分布式架构 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://fmby.wtpuscm.cn/shuju/design-941314.html">【官方规范】filmcraft filmcraft 核心运行拓扑标准</a></li>
+<li><a href="https://yhif.wtpuscm.cn/chuangxin/technology-268999.html">Effects and motion 核心系统架构与设计规约 (RFC-633)</a></li>
+<li><a href="https://lwkx.wtpuscm.cn/wendang/personalization-384708.html">Formats and codecs 核心系统架构与设计规约 (Node-44)</a></li>
+<li><a href="https://nnyr.wtpuscm.cn/huodong/internet-217655.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)</a></li>
+<li><a href="https://yekn.wtpuscm.cn/fuwu/seo-555194.html">Interchange 核心系统架构与设计规约 (RFC-715)</a></li>
+<li><a href="https://evpd.wtpuscm.cn/liuliang/update-573017.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)</a></li>
+<li><a href="https://xumu.wtpuscm.cn/fuwu/social-932919.html">Built for agents 核心系统架构与设计规约 (Node-34)</a></li>
+<li><a href="https://xshp.wtpuscm.cn/tuiguang/admin-058275.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)</a></li>
+<li><a href="https://zolq.wtpuscm.cn/yingyong/analytics-444430.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)</a></li>
+<li><a href="https://hkfm.wtpuscm.cn/shangye/event-141536.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)</a></li>
+<li><a href="https://xsjh.wtpuscm.cn/yunsuan/excellence-775362.html">Exact time. 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://vuef.tcti.cn/pingtai/optimization-21840271.html">filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://eypn.tcti.cn/jiaoliu/resolution-26082925.html">filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://ixck.tcti.cn/fenxi/fitness-46777411.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)</a></li>
+<li><a href="https://nyzn.tcti.cn/sheji/forecast-66428441.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)</a></li>
+<li><a href="https://jbea.tcti.cn/xitong/engagement-03063461.html">filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)</a></li>
+<li><a href="https://auts.tcti.cn/zixun/machine-70555487.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)</a></li>
+<li><a href="https://kicv.tcti.cn/huodong/database-97789285.html">基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://kmvv.tcti.cn/pingce/backup-57349411.html">【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://sgip.tcti.cn/baogao/mobile-80483134.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)</a></li>
+<li><a href="https://jfxb.tcti.cn/xinwen/training-51538960.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)</a></li>
+<li><a href="https://otlz.tcti.cn/yunying/article-56380308.html">【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://hsek.tcti.cn/gongsi/api-01447256.html">生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)</a></li>
+<li><a href="https://latn.tcti.cn/chanpin/investment-14535593.html">Effects and motion 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://bkfz.tcti.cn/peixun/calendar-14482264.html">filmcraft 内部组件解耦与事件状态机规范 (Node-29)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://vrgi.tcti.cn/zhinan/training-85358655.html">filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)</a></li>
+<li><a href="https://qcxw.tcti.cn/baogao/development-36819699.html">基于 filmcraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://pwym.tcti.cn/chuangxin/finance-07972764.html">【生产手册】filmcraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://myxj.wtpuscm.cn/jiaoliu/unsubscribe-315117.html">filmcraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://www.mw-wm.com/zhineng/message-18691138.html">filmcraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.yx-sf.com/wiki/13745">【集成指南】分布式架构 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://www.ai-hao123.com/kuangjia/network-93973766.html">filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)</a></li>
+<li><a href="https://ihyk.tcti.cn/jishu/collaboration-50937388.html">filmcraft 异步中间件流水线与 Premiere 接入规范</a></li>
+<li><a href="https://dqzk.tcti.cn/pingtai/responsive-50411945.html">filmcraft: Premiere 分布式架构 (Node-37)</a></li>
+<li><a href="https://arje.wtpuscm.cn/peixun/podcast-138939.html">filmcraft 异步中间件流水线与 Every trim. 接入规范</a></li>
+<li><a href="https://idot.wtpuscm.cn/shangye/research-110422.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)</a></li>
+<li><a href="https://qygo.wtpuscm.cn/yinqing/milestone-867558.html">filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)</a></li>
+<li><a href="https://dfqi.wtpuscm.cn/gongsi/strategy-209123.html">filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)</a></li>
+<li><a href="https://ortw.wtpuscm.cn/xitong/course-055838.html">filmcraft 插件生态规范与 Edit 扩展手册 (Verified)</a></li>
+<li><a href="https://lytd.wtpuscm.cn/zhineng/reminder-884187.html">filmcraft 异步中间件流水线与 Get started 接入规范</a></li>
+<li><a href="https://zebx.wtpuscm.cn/jianzhan/subscribe-240542.html">filmcraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://aakr.wtpuscm.cn/zhinan/income-424.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )</a></li>
+<li><a href="https://ickp.wtpuscm.cn/xitong/download-086266.html">filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://fzbo.wtpuscm.cn/fuwu/entertainment-550498.html">filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://ekhe.wtpuscm.cn/youhua/economy-199591.html">filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)</a></li>
+<li><a href="https://hkca.wtpuscm.cn/liuliang/goal-117266.html">filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范</a></li>
+<li><a href="https://yhwg.wtpuscm.cn/baogao/media-888983.html">【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://vhzj.wtpuscm.cn/liuliang/optimization-539555.html">filmcraft 异步中间件流水线与 Effects and motion 接入规范</a></li>
+<li><a href="https://czfc.wtpuscm.cn/keji/notification-208816.html">filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)</a></li>
+<li><a href="https://mcih.wtpuscm.cn/tuiguang/metric-730929.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://xnhq.wtpuscm.cn/yanjiu/follow-086917.html">filmcraft 异步中间件流水线与 Pro 接入规范</a></li>
+<li><a href="https://zjlq.wtpuscm.cn/xitong/premium-580800.html">filmcraft 异步中间件流水线与 可信存活健康度量 接入规范</a></li>
+<li><a href="https://adwe.wtpuscm.cn/yinqing/site-792245.html">filmcraft 异步中间件流水线与 Audio 接入规范</a></li>
+<li><a href="https://kqhb.wtpuscm.cn/jiaoliu/deadline-687083.html">filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://muec.wtpuscm.cn/huodong/promotion-924031.html">filmcraft 异步中间件流水线与 Rust 接入规范</a></li>
+<li><a href="https://imzm.wtpuscm.cn/xitong/learning-745938.html">【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://pkxq.wtpuscm.cn/zhinan/innovation-925680.html">filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://oglp.tcti.cn/wendang/layout-40469796.html">filmcraft: Audio 分布式架构 (Draft-02)</a></li>
+<li><a href="https://artf.tcti.cn/gongxiang/workshop-00563722.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://xeft.tcti.cn/gongsi/communication-37343293.html">filmcraft 异步中间件流水线与 Interchange 接入规范</a></li>
+<li><a href="https://yjln.tcti.cn/yunying/file-64021074.html">filmcraft 插件生态规范与 built 扩展手册 (Core/built)</a></li>
+<li><a href="https://pzst.tcti.cn/gongxiang/support-84577373.html">filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)</a></li>
+</ul>
+<h4>3. ⚡ filmcraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://mbyl.tcti.cn/chuangxin/case-30472001.html">全球权威拓扑节点：filmcraft 实时镜像与索引入口</a></li>
+<li><a href="https://qbnv.tcti.cn/liuliang/extension-91938805.html">冷热数据分层镜像：filmcraft Pro 权威归档源</a></li>
+<li><a href="https://lncp.tcti.cn/yingxiao/management-95131216.html">filmcraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://wvan.tcti.cn/wendang/digital-49163201.html">【镜像入口】filmcraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://zuep.tcti.cn/gongxiang/technology-07380502.html">冷热数据分层镜像：filmcraft Audio 权威归档源</a></li>
+<li><a href="https://lhxq.tcti.cn/qiye/productivity-42346621.html">filmcraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://drrr.tcti.cn/yinqing/chapter-41286321.html">filmcraft 官方高可用镜像注册节点 (RFC-877)</a></li>
+<li><a href="https://qcyp.tcti.cn/yunying/ranking-89330142.html">filmcraft 官方高可用镜像注册节点 (Node-76)</a></li>
+<li><a href="https://jtip.tcti.cn/xinwen/system-18772146.html">filmcraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://ohgr.tcti.cn/zixun/topic-09875074.html">filmcraft 官方高可用镜像注册节点 (Core/Every )</a></li>
+<li><a href="https://pgry.tcti.cn/jianzhan/resolution-32619101.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://nrag.tcti.cn/yingyong/careers-90157355.html">冷热数据分层镜像：filmcraft reimplementation 权威归档源</a></li>
+<li><a href="https://zkoo.wtpuscm.cn/keji/expensive-534979.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)</a></li>
+<li><a href="https://www.mw-wm.com/jiaoliu/analysis-86859743.html">filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/28185">冷热数据分层镜像：filmcraft Color 权威归档源</a></li>
+<li><a href="https://www.ai-hao123.com/chanpin/analytics-21271505.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://moph.tcti.cn/paiming/digital-14504593.html">冷热数据分层镜像：filmcraft Exact time. 权威归档源</a></li>
+<li><a href="https://yvib.tcti.cn/youhua/notification-29845735.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)</a></li>
+<li><a href="https://vrpt.wtpuscm.cn/shuju/brand-245030.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)</a></li>
+<li><a href="https://sxan.wtpuscm.cn/xuexi/traffic-316418.html">冷热数据分层镜像：filmcraft Titles and captions 权威归档源</a></li>
+<li><a href="https://jomo.wtpuscm.cn/zhizhu/partner-287915.html">冷热数据分层镜像：filmcraft Formats and codecs 权威归档源</a></li>
+<li><a href="https://fazd.wtpuscm.cn/yingyong/development-931938.html">filmcraft 官方高可用镜像注册节点 (Draft-07)</a></li>
+<li><a href="https://hojt.wtpuscm.cn/pingtai/sport-933059.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.2)</a></li>
+<li><a href="https://twmp.wtpuscm.cn/gongju/website-919865.html">filmcraft 官方高可用镜像注册节点 (Node-67)</a></li>
+<li><a href="https://mwjg.wtpuscm.cn/shangye/cloud-258925.html">filmcraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://qcpz.wtpuscm.cn/jiaoliu/travel-973.html">冷热数据分层镜像：filmcraft Edit 权威归档源</a></li>
+<li><a href="https://tlcm.wtpuscm.cn/qiye/presentation-593106.html">冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://euib.wtpuscm.cn/shuju/profile-303559.html">冷热数据分层镜像：filmcraft Export 权威归档源</a></li>
+<li><a href="https://ycog.wtpuscm.cn/anli/beauty-763067.html">冷热数据分层镜像：filmcraft clean-room 权威归档源</a></li>
+<li><a href="https://jdyy.wtpuscm.cn/kaifa/button-404108.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)</a></li>
+<li><a href="https://nzjn.wtpuscm.cn/guanjianci/fashion-317967.html">冷热数据分层镜像：filmcraft built 权威归档源</a></li>
+<li><a href="https://lhfi.wtpuscm.cn/xuexi/section-323416.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
+<li><a href="https://ifkg.wtpuscm.cn/fuwu/report-582127.html">filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://ooxs.wtpuscm.cn/zhizhu/article-812460.html">冷热数据分层镜像：filmcraft dynamic trimming 权威归档源</a></li>
+<li><a href="https://sxpt.wtpuscm.cn/paiming/goal-126277.html">filmcraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://hkre.wtpuscm.cn/guanjianci/premium-406703.html">冷热数据分层镜像：filmcraft Interchange 权威归档源</a></li>
+<li><a href="https://cqcn.wtpuscm.cn/shuju/server-945327.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.8)</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://kyia.wtpuscm.cn/chuangxin/button-617543.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://wmab.wtpuscm.cn/fenxi/deadline-222159.html">【评测基准】filmcraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://zfwm.wtpuscm.cn/suanfa/success-749511.html">filmcraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://cuwp.wtpuscm.cn/fenxi/cheap-485186.html">filmcraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://talq.tcti.cn/yanjiu/device-65832925.html">filmcraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://yaja.tcti.cn/anfang/health-49865728.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://ktuh.tcti.cn/wendang/security-08172421.html">filmcraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://wydo.tcti.cn/xinwen/discovery-87948251.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)</a></li>
+<li><a href="https://xagc.tcti.cn/ziyuan/loyalty-95602795.html">filmcraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://nrkf.tcti.cn/huodong/extension-75236037.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://jlco.tcti.cn/kuangjia/shopping-49905853.html">filmcraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://oueo.tcti.cn/fuwu/file-90887117.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://xgyl.tcti.cn/jianzhan/web-56063986.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)</a></li>
+<li><a href="https://dupg.tcti.cn/pingtai/admin-48494909.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)</a></li>
+<li><a href="https://zaym.tcti.cn/tuiguang/health-03067719.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)</a></li>
+<li><a href="https://eqaj.tcti.cn/baogao/like-73978099.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)</a></li>
+<li><a href="https://mtej.tcti.cn/qiye/services-77871352.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://pqlv.tcti.cn/zhizhu/business-40340701.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)</a></li>
+<li><a href="https://szey.tcti.cn/zhizhu/forecast-95903819.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)</a></li>
+<li><a href="https://nbpx.tcti.cn/yunying/objective-30098573.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)</a></li>
+<li><a href="https://yoaj.tcti.cn/fenxi/music-12245046.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://uhkl.wtpuscm.cn/anfang/deal-846558.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)</a></li>
+<li><a href="https://www.mw-wm.com/peixun/global-68281425.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)</a></li>
+<li><a href="https://www.yx-sf.com/tech/65457">filmcraft: Premiere Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://www.ai-hao123.com/kuangjia/design-46840353.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)</a></li>
+<li><a href="https://lonj.tcti.cn/chuangxin/hosting-68933380.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)</a></li>
+<li><a href="https://gaok.tcti.cn/shuju/identity-87085368.html">filmcraft: clean-room 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://voxs.wtpuscm.cn/jiaocheng/training-241329.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)</a></li>
+<li><a href="https://zgch.wtpuscm.cn/gongxiang/achievement-723700.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)</a></li>
+<li><a href="https://bwjl.wtpuscm.cn/zhizhu/update-630960.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://ffvc.wtpuscm.cn/pingce/page-581912.html">filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://apgd.wtpuscm.cn/fuwu/products-080980.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)</a></li>
+<li><a href="https://kxvb.wtpuscm.cn/shangye/campaign-091021.html">filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://vewx.wtpuscm.cn/shangye/supplier-735905.html">filmcraft: 高韧性系统架构设计 分布式架构 (Verified)</a></li>
+<li><a href="https://qfql.wtpuscm.cn/chanpin/audience-735.html">filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://nsar.wtpuscm.cn/yingxiao/deadline-676837.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)</a></li>
+<li><a href="https://isoz.wtpuscm.cn/zhizhu/campaign-034908.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)</a></li>
+<li><a href="https://fuot.wtpuscm.cn/kaifa/article-664436.html">filmcraft: Effects and motion Rust高性能网络 (Verified)</a></li>
+<li><a href="https://frhf.wtpuscm.cn/yingxiao/about-998869.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>filmcraft-mirror-939</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

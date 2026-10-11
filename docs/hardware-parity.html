@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware parity - filmcraft-mirror-939 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">filmcraft-mirror-939</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Hardware parity</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Hardware parity</h1>
+<blockquote>
+<p><strong>Last reviewed:</strong> 2026-10-10 · <strong>Last updated:</strong> 2026-10-10 · <strong>Change:</strong> major (new file: hardware decode / encode per platform and codec, GPU effects, devices; re-measured after NVDEC #549 and GPU export #421) · <strong>Target:</strong> Adobe Premiere Pro 2026 (26.5.2)</p>
+</blockquote>
+<p>Each hardware feature Premiere uses, per platform, against ours. Implementation detail lives in
+<a href="../crates/platform/README.md"><code>crates/platform/README.md</code></a> (decode / encode backends, the one
+crate allowed <code>unsafe</code>, <a href="adr/0001-platform-ffi.md">ADR 0001</a>), the GPU compositor in
+<a href="architecture.md">architecture.md</a>, and timings in <a href="performance.md">performance.md</a>.
+Hardware paths are always optional: our software codecs are the tested fallback, and a hardware
+decoder that fails mid-stream hands over to software (<code>HybridDecoder</code>).</p>
+<p>Premiere's side is from Adobe's published GPU and hardware-acceleration documentation and
+release notes (Premiere does not run on Linux).</p>
+<h2>Hardware decode</h2>
+<table><thead><tr><th>Codec / profile</th><th>Premiere macOS</th><th><strong>Ours macOS</strong> (VideoToolbox)</th><th>Premiere Windows</th><th><strong>Ours Windows</strong> (Media Foundation / D3D11)</th><th><strong>Ours Linux</strong> (NVDEC, VA-API)</th></tr></thead><tbody>
+<tr><td>H.264 8-bit 4:2:0</td><td>yes</td><td><strong>yes</strong></td><td>Intel, NVIDIA, AMD</td><td><strong>yes</strong> (Baseline / Main / High)</td><td><strong>yes</strong> (NVDEC; VA-API Intel / AMD / Mesa)</td></tr>
+<tr><td>H.264 10-bit / 4:2:2</td><td>Apple silicon</td><td><strong>yes</strong> where the chip decodes it</td><td>Intel; NVIDIA Blackwell (MXF too)</td><td>no (declined; no software fallback, <a href="gaps.md#g3-10-bit-and-422-camera-media-needs-hardware">G3</a>)</td><td>no</td></tr>
+<tr><td>HEVC Main / Main 10 4:2:0</td><td>yes</td><td><strong>yes</strong></td><td>yes</td><td><strong>yes</strong></td><td><strong>yes</strong> (NVDEC 8/10; VA-API Main / Main 10)</td></tr>
+<tr><td>HEVC 4:2:2 10-bit</td><td>Apple silicon</td><td><strong>yes</strong> where supported</td><td>Intel; NVIDIA Blackwell</td><td>no</td><td>no</td></tr>
+<tr><td>VP9 profile 0 / 2</td><td>—</td><td>software</td><td>—</td><td><strong>yes</strong></td><td>software (VA-API VP9 not yet)</td></tr>
+<tr><td>AV1 main 8 / 10</td><td>—</td><td>software</td><td>yes</td><td><strong>yes</strong></td><td>software</td></tr>
+<tr><td>ProRes</td><td>Apple silicon (M1 Pro / Max and later)</td><td>software (fast: 318 fps)</td><td>software</td><td>software</td><td>software</td></tr>
+<tr><td>Field-coded H.264</td><td>yes</td><td>no</td><td>yes</td><td>no</td><td>no</td></tr>
+</tbody></table>
+<p>Measured (<code>cargo xtask bench --hw off|auto</code>): M4 Pro, CPU per 2160p frame H.264 119 → 4.2 ms,
+HEVC 86 → 3.7 ms, 4K plays with no dropped frames at Full; Intel Iris Xe VA-API H.264 2160p
+417 → 11.4 ms, HEVC Main 10 2160p 212 → 18.4 ms. Every decoded picture is read back to the CPU
+and re-uploaded to wgpu (<strong>no zero-copy</strong> yet), which Premiere avoids.</p>
+<h2>Hardware encode</h2>
+<table><thead><tr><th>Codec</th><th>Premiere macOS</th><th><strong>Ours macOS</strong></th><th>Premiere Windows</th><th><strong>Ours Windows</strong></th><th><strong>Ours Linux</strong></th></tr></thead><tbody>
+<tr><td>H.264 8-bit</td><td>yes</td><td><strong>yes</strong> (VideoToolbox, opt-in, no B-frames)</td><td>Intel QSV, NVENC, AMD</td><td><strong>NVENC only</strong> (opt-in)</td><td><strong>NVENC only</strong></td></tr>
+<tr><td>H.264 10-bit / 4:2:2</td><td>yes (Apple silicon)</td><td>no</td><td>Intel</td><td>no</td><td>no</td></tr>
+<tr><td>HEVC Main 8-bit</td><td>yes</td><td><strong>yes</strong> (hardware-only format)</td><td>QSV, NVENC, AMD</td><td><strong>NVENC only</strong></td><td>no</td></tr>
+<tr><td>HEVC Main 10 / HDR (PQ, HLG)</td><td>yes</td><td><strong>no</strong> (tone-mapped to 8-bit SDR)</td><td>yes</td><td><strong>NVENC yes</strong> (HDR10 SEI, <code>mdcv</code> / <code>clli</code>)</td><td>no</td></tr>
+<tr><td>ProRes</td><td>Apple silicon</td><td>software only</td><td>software</td><td>software</td><td>software</td></tr>
+<tr><td>AV1</td><td>—</td><td>no</td><td>via plug-ins / newer GPUs</td><td>no</td><td>no</td></tr>
+</tbody></table>
+<p>Measured: VideoToolbox H.264 1080p25 encode 200 fps on M1; a 9:29 timeline exported in 311 s
+against 793 s with our software encoder (SSIM 0.990). NVENC HEVC round trip 48.9 dB luma PSNR
+(8-bit), 71.1 dB (10-bit) on an RTX 5060.</p>
+<h2>GPU rendering</h2>
+<table><thead><tr><th>Feature</th><th>Premiere (Mercury Playback Engine: Metal, CUDA, OpenCL)</th><th>Ours (wgpu: Metal, D3D12, Vulkan)</th><th>%</th></tr></thead><tbody>
+<tr><td>Compositing, blend modes, transforms</td><td>GPU</td><td><strong>GPU</strong> (#32), CPU compositor is the oracle</td><td>90%</td></tr>
+<tr><td>Accelerated video effects</td><td>~82 of ~92 effects marked Accelerated (reference list <code>plan/premiere/10-effects-list.md</code>)</td><td><strong>34 effect ids</strong> (<code>render::gpufx::GPU_EFFECTS</code>): colour, levels, blurs, sharpen, crop, transform, flips, vignette, video limiter, ASC CDL, channel mix, Lumetri basic / creative / vignette</td><td>~40%</td></tr>
+<tr><td>Lumetri curves, wheels, HSL secondary</td><td>GPU</td><td>CPU</td><td>0%</td></tr>
+<tr><td>Keys (Ultra Key), masks, distortions, transitions</td><td>GPU</td><td>CPU (masks have WGSL parity tests, not in the live path)</td><td>10%</td></tr>
+<tr><td>Export rendering on the GPU</td><td>yes</td><td><strong>yes</strong> (#421; Export ▸ GPU Rendering, Auto): 2.4× (1080p) to 3.2× (4K) faster on effects-heavy timelines</td><td>80%</td></tr>
+<tr><td>Thumbnails on the GPU (26.0)</td><td>yes</td><td>CPU</td><td>0%</td></tr>
+<tr><td>Software adapter fallback</td><td>warns</td><td>silently renders everything on the CPU (#632)</td><td>—</td></tr>
+<tr><td>Intel integrated graphics</td><td>supported</td><td>start-up crash on Intel UHD (#512)</td><td>—</td></tr>
+</tbody></table>
+<h2>Devices and I/O</h2>
+<table><thead><tr><th>Hardware</th><th>Premiere</th><th>Ours</th><th>%</th></tr></thead><tbody>
+<tr><td>Audio interfaces</td><td>CoreAudio, ASIO, WASAPI; multichannel mapping</td><td>cpal (CoreAudio, WASAPI, ALSA); no ASIO; device reports #605, #602</td><td>60%</td></tr>
+<tr><td>Voice-over microphone</td><td>yes</td><td>yes (punch-in); macOS privacy declaration missing (#659)</td><td>80%</td></tr>
+<tr><td>External video monitoring (Mercury Transmit, Blackmagic DeckLink, AJA)</td><td>yes</td><td>no</td><td>0%</td></tr>
+<tr><td>Second computer monitor full-screen playback</td><td>yes</td><td>full screen inside the app window; no separate-display output or floating windows on other screens (#466)</td><td>40%</td></tr>
+<tr><td>HDR / EDR display</td><td>macOS EDR, Windows HDR</td><td>no (SDR display of HDR sequences)</td><td>0%</td></tr>
+<tr><td>Control surfaces (EUCON, Mackie HUI / MCU)</td><td>yes</td><td>no</td><td>0%</td></tr>
+<tr><td>LTC timecode input</td><td>yes</td><td>no</td><td>0%</td></tr>
+<tr><td>Tape / deck control</td><td>legacy</td><td>no</td><td>n/a</td></tr>
+</tbody></table>
+<h2>Summary</h2>
+<p><strong>Hardware dimension: ~45%, 120–200 h.</strong> Ahead of Premiere: hardware decode on Linux (VA-API,
+NVDEC) and FreeBSD builds. Behind, by user impact: zero-copy upload; GPU effects beyond 34
+(Lumetri curves / wheels / HSL, keys, masks, transitions); Quick Sync and AMD encoders on Windows;
+VideoToolbox Main 10 HDR encode; 10-bit / 4:2:2 decode off macOS; HDR display; external video
+I/O and control surfaces (need hardware we don't own). Calibration: one decode backend ~3–5 h,
+one encoder ~4–8 h (<a href="target-app-parity.md#calibration">target-app-parity.md</a>).</p>
+<h2>Revision history</h2>
+<table><thead><tr><th>Date</th><th>Change</th><th>Summary</th></tr></thead><tbody>
+<tr><td>2026-10-10</td><td>major</td><td>Created from ROADMAP.md's performance-and-hardware row and <code>crates/platform/README.md</code>; added Linux NVDEC (#549), GPU export and Lumetri on the GPU (#421), Premiere's per-platform hardware list, devices and I/O</td></tr>
+</tbody></table>
+<hr />
+<details open>
+<summary><b>📚 filmcraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「filmcraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 filmcraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://grvm.wtpuscm.cn/jiaoliu/demographic-569590.html">基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://gbtx.wtpuscm.cn/pingtai/like-235052.html">现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://reer.wtpuscm.cn/fuwu/premium-708422.html">面向大规模网络的 filmcraft 工业级架构基准</a></li>
+<li><a href="https://snqp.wtpuscm.cn/yinqing/webinar-437874.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://bnbb.wtpuscm.cn/yanjiu/follow-859324.html">【filmcraft】pure 核心系统架构与设计规约 (Draft-05)</a></li>
+<li><a href="https://ppph.wtpuscm.cn/zhizhu/careers-515356.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)</a></li>
+<li><a href="https://acnh.wtpuscm.cn/zixun/contact-101991.html">基于 filmcraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://xpvn.wtpuscm.cn/paiming/integration-770.html">filmcraft 内部组件解耦与事件状态机规范 (Node-81)</a></li>
+<li><a href="https://dmlz.wtpuscm.cn/gongsi/tool-809712.html">【官方规范】filmcraft open-source 核心运行拓扑标准</a></li>
+<li><a href="https://ixza.wtpuscm.cn/huodong/upload-036211.html">Trim Monitor 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://zqnp.wtpuscm.cn/qiye/solution-864288.html">基于 filmcraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://incg.wtpuscm.cn/shangye/services-884817.html">现代 分布式架构 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://vrau.wtpuscm.cn/pingce/help-799301.html">【官方规范】filmcraft filmcraft 核心运行拓扑标准</a></li>
+<li><a href="https://qyqp.wtpuscm.cn/ziyuan/excellence-568441.html">Effects and motion 核心系统架构与设计规约 (RFC-633)</a></li>
+<li><a href="https://gxrp.wtpuscm.cn/anli/guide-318886.html">Formats and codecs 核心系统架构与设计规约 (Node-44)</a></li>
+<li><a href="https://rlqa.wtpuscm.cn/kaifa/luxury-125420.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)</a></li>
+<li><a href="https://jhdv.wtpuscm.cn/gongsi/movie-022806.html">Interchange 核心系统架构与设计规约 (RFC-715)</a></li>
+<li><a href="https://esbt.wtpuscm.cn/ziyuan/server-146517.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)</a></li>
+<li><a href="https://xfib.wtpuscm.cn/hezuo/design-062612.html">Built for agents 核心系统架构与设计规约 (Node-34)</a></li>
+<li><a href="https://csnl.wtpuscm.cn/liuliang/system-051698.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)</a></li>
+<li><a href="https://icbz.wtpuscm.cn/anli/prospect-988564.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)</a></li>
+<li><a href="https://skew.wtpuscm.cn/pingtai/update-299487.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)</a></li>
+<li><a href="https://erxk.wtpuscm.cn/shangye/calculator-760377.html">Exact time. 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://ucne.tcti.cn/anli/travel-86192840.html">filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://ivdn.tcti.cn/liuliang/online-72830267.html">filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://mkmk.tcti.cn/kuangjia/satisfaction-37684274.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)</a></li>
+<li><a href="https://nijz.tcti.cn/paiming/creative-15151935.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)</a></li>
+<li><a href="https://osyd.tcti.cn/fuwu/data-04946302.html">filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)</a></li>
+<li><a href="https://allr.tcti.cn/kaifa/admin-65299788.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)</a></li>
+<li><a href="https://iwuo.tcti.cn/jiaoliu/deal-33950559.html">基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://uwlt.tcti.cn/chanpin/collaborate-77745744.html">【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://cocb.tcti.cn/gongxiang/workshop-61444991.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)</a></li>
+<li><a href="https://mduv.tcti.cn/fenxi/web-88772725.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)</a></li>
+<li><a href="https://jfvp.tcti.cn/jishu/document-00854721.html">【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://bdfy.tcti.cn/suanfa/content-47176544.html">生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)</a></li>
+<li><a href="https://zctj.tcti.cn/fuwu/document-83955526.html">Effects and motion 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://dsja.tcti.cn/xitong/follow-40560783.html">filmcraft 内部组件解耦与事件状态机规范 (Node-29)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://lfbi.tcti.cn/guanjianci/forum-93642957.html">filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)</a></li>
+<li><a href="https://lbls.tcti.cn/chuangxin/restaurant-89027150.html">基于 filmcraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://vboo.tcti.cn/xinwen/food-26089056.html">【生产手册】filmcraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://gezu.wtpuscm.cn/qiye/interface-739147.html">filmcraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://www.mw-wm.com/fuwu/study-27592117.html">filmcraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.yx-sf.com/news/15207">【集成指南】分布式架构 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://www.ai-hao123.com/jianzhan/help-06984660.html">filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)</a></li>
+<li><a href="https://qybf.tcti.cn/jishu/device-22089668.html">filmcraft 异步中间件流水线与 Premiere 接入规范</a></li>
+<li><a href="https://siap.tcti.cn/jiaocheng/partner-23112961.html">filmcraft: Premiere 分布式架构 (Node-37)</a></li>
+<li><a href="https://gvqd.wtpuscm.cn/jianzhan/social-122988.html">filmcraft 异步中间件流水线与 Every trim. 接入规范</a></li>
+<li><a href="https://mlmd.wtpuscm.cn/jiaoliu/consulting-796997.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)</a></li>
+<li><a href="https://gddh.wtpuscm.cn/wenzhang/domain-367702.html">filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)</a></li>
+<li><a href="https://ayfv.wtpuscm.cn/xuexi/identity-571613.html">filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)</a></li>
+<li><a href="https://wwbl.wtpuscm.cn/jiaocheng/expense-723280.html">filmcraft 插件生态规范与 Edit 扩展手册 (Verified)</a></li>
+<li><a href="https://ccbv.wtpuscm.cn/yanjiu/about-752922.html">filmcraft 异步中间件流水线与 Get started 接入规范</a></li>
+<li><a href="https://ogte.wtpuscm.cn/baogao/movie-179227.html">filmcraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://odeo.wtpuscm.cn/jishu/shopping-152.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )</a></li>
+<li><a href="https://crrt.wtpuscm.cn/chanpin/optimization-680476.html">filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://updk.wtpuscm.cn/anfang/shopping-785951.html">filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://xjot.wtpuscm.cn/liuliang/target-446382.html">filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)</a></li>
+<li><a href="https://spuw.wtpuscm.cn/anli/local-027322.html">filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范</a></li>
+<li><a href="https://srqg.wtpuscm.cn/wenzhang/photo-403735.html">【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://ifla.wtpuscm.cn/jiaoliu/management-784563.html">filmcraft 异步中间件流水线与 Effects and motion 接入规范</a></li>
+<li><a href="https://pdow.wtpuscm.cn/shichang/premium-562486.html">filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)</a></li>
+<li><a href="https://mcyg.wtpuscm.cn/huodong/analysis-733219.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://hzex.wtpuscm.cn/youhua/traffic-728971.html">filmcraft 异步中间件流水线与 Pro 接入规范</a></li>
+<li><a href="https://zfin.wtpuscm.cn/pingtai/status-792490.html">filmcraft 异步中间件流水线与 可信存活健康度量 接入规范</a></li>
+<li><a href="https://ydfg.wtpuscm.cn/yanjiu/retention-403988.html">filmcraft 异步中间件流水线与 Audio 接入规范</a></li>
+<li><a href="https://pgpa.wtpuscm.cn/shuju/social-904740.html">filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://cndt.wtpuscm.cn/fuwu/website-479332.html">filmcraft 异步中间件流水线与 Rust 接入规范</a></li>
+<li><a href="https://hawq.wtpuscm.cn/yanjiu/movie-225217.html">【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://ozto.wtpuscm.cn/shuju/networking-309067.html">filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://sbeo.tcti.cn/pingce/music-79380301.html">filmcraft: Audio 分布式架构 (Draft-02)</a></li>
+<li><a href="https://tmrn.tcti.cn/peixun/planning-04037063.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://fsbq.tcti.cn/youhua/research-42832631.html">filmcraft 异步中间件流水线与 Interchange 接入规范</a></li>
+<li><a href="https://cjjq.tcti.cn/kuangjia/url-23308670.html">filmcraft 插件生态规范与 built 扩展手册 (Core/built)</a></li>
+<li><a href="https://ufgo.tcti.cn/ziyuan/automation-47775360.html">filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)</a></li>
+</ul>
+<h4>3. ⚡ filmcraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://tprs.tcti.cn/fuwu/internet-30137253.html">全球权威拓扑节点：filmcraft 实时镜像与索引入口</a></li>
+<li><a href="https://cgoi.tcti.cn/pingtai/like-68757808.html">冷热数据分层镜像：filmcraft Pro 权威归档源</a></li>
+<li><a href="https://pheq.tcti.cn/huodong/solution-61509781.html">filmcraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://qkzh.tcti.cn/wangluo/social-75838215.html">【镜像入口】filmcraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://heto.tcti.cn/gongxiang/expensive-88057433.html">冷热数据分层镜像：filmcraft Audio 权威归档源</a></li>
+<li><a href="https://exwh.tcti.cn/zhizhu/analytics-39592384.html">filmcraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://ilvn.tcti.cn/chuangxin/page-30062577.html">filmcraft 官方高可用镜像注册节点 (RFC-877)</a></li>
+<li><a href="https://aiip.tcti.cn/yingxiao/careers-34917086.html">filmcraft 官方高可用镜像注册节点 (Node-76)</a></li>
+<li><a href="https://aqbp.tcti.cn/anfang/saving-51263622.html">filmcraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://svpi.tcti.cn/xuexi/login-68230359.html">filmcraft 官方高可用镜像注册节点 (Core/Every )</a></li>
+<li><a href="https://msdy.tcti.cn/yingyong/investment-14266651.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://fdxm.tcti.cn/zhizhu/lesson-32181727.html">冷热数据分层镜像：filmcraft reimplementation 权威归档源</a></li>
+<li><a href="https://tkee.wtpuscm.cn/guanjianci/revenue-865290.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)</a></li>
+<li><a href="https://www.mw-wm.com/yanjiu/responsive-49849127.html">filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)</a></li>
+<li><a href="https://www.yx-sf.com/news/69056">冷热数据分层镜像：filmcraft Color 权威归档源</a></li>
+<li><a href="https://www.ai-hao123.com/liuliang/app-73342759.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://kluv.tcti.cn/pingce/feedback-78949089.html">冷热数据分层镜像：filmcraft Exact time. 权威归档源</a></li>
+<li><a href="https://qths.tcti.cn/gongju/community-26992816.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)</a></li>
+<li><a href="https://xzna.wtpuscm.cn/chuangxin/search-452119.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)</a></li>
+<li><a href="https://ggto.wtpuscm.cn/jishu/tactic-890791.html">冷热数据分层镜像：filmcraft Titles and captions 权威归档源</a></li>
+<li><a href="https://ugwr.wtpuscm.cn/yingyong/tag-346542.html">冷热数据分层镜像：filmcraft Formats and codecs 权威归档源</a></li>
+<li><a href="https://xxmm.wtpuscm.cn/pingtai/version-786026.html">filmcraft 官方高可用镜像注册节点 (Draft-07)</a></li>
+<li><a href="https://ppwb.wtpuscm.cn/shuju/subject-953313.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.2)</a></li>
+<li><a href="https://yrwq.wtpuscm.cn/chanpin/sport-885237.html">filmcraft 官方高可用镜像注册节点 (Node-67)</a></li>
+<li><a href="https://ijpw.wtpuscm.cn/qiye/subscribe-107734.html">filmcraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://dlsw.wtpuscm.cn/xuexi/growth-140.html">冷热数据分层镜像：filmcraft Edit 权威归档源</a></li>
+<li><a href="https://kkvy.wtpuscm.cn/fuwu/presentation-379289.html">冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://wfvh.wtpuscm.cn/zixun/supplier-003286.html">冷热数据分层镜像：filmcraft Export 权威归档源</a></li>
+<li><a href="https://qjgm.wtpuscm.cn/sheji/machine-516527.html">冷热数据分层镜像：filmcraft clean-room 权威归档源</a></li>
+<li><a href="https://reyg.wtpuscm.cn/jiaocheng/recommendation-911518.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)</a></li>
+<li><a href="https://atte.wtpuscm.cn/fuwu/research-934890.html">冷热数据分层镜像：filmcraft built 权威归档源</a></li>
+<li><a href="https://qwzg.wtpuscm.cn/zhinan/search-034395.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
+<li><a href="https://vwbg.wtpuscm.cn/chanpin/deadline-706875.html">filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://dtiv.wtpuscm.cn/fuwu/document-732008.html">冷热数据分层镜像：filmcraft dynamic trimming 权威归档源</a></li>
+<li><a href="https://eoko.wtpuscm.cn/yunsuan/investment-741816.html">filmcraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://imsr.wtpuscm.cn/yunsuan/change-129476.html">冷热数据分层镜像：filmcraft Interchange 权威归档源</a></li>
+<li><a href="https://yrpp.wtpuscm.cn/zhizhu/profile-964109.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.8)</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://jkmq.wtpuscm.cn/shangye/company-481763.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://dogp.wtpuscm.cn/xuexi/music-336723.html">【评测基准】filmcraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://kmee.wtpuscm.cn/jiaocheng/loyalty-902261.html">filmcraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://iqpk.wtpuscm.cn/yanjiu/customization-189346.html">filmcraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://gjxv.tcti.cn/ziyuan/audience-48917581.html">filmcraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://ybag.tcti.cn/anli/system-77125456.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://pcvl.tcti.cn/yunying/growth-26393376.html">filmcraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://pqzy.tcti.cn/suanfa/meeting-76648856.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)</a></li>
+<li><a href="https://gfei.tcti.cn/jianzhan/home-84960994.html">filmcraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://tbpv.tcti.cn/tuiguang/goal-81851388.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://hjyw.tcti.cn/youhua/tool-91871697.html">filmcraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://avxz.tcti.cn/chuangxin/training-61456557.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://jytt.tcti.cn/guanjianci/game-13353357.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)</a></li>
+<li><a href="https://qdbt.tcti.cn/guanjianci/chapter-75413507.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)</a></li>
+<li><a href="https://ksan.tcti.cn/yanjiu/machine-51891320.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)</a></li>
+<li><a href="https://dzle.tcti.cn/qiye/experience-57146025.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)</a></li>
+<li><a href="https://bixi.tcti.cn/wenzhang/support-01975500.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://acyq.tcti.cn/wangluo/consulting-51848527.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)</a></li>
+<li><a href="https://vzsv.tcti.cn/yingyong/screen-71774401.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)</a></li>
+<li><a href="https://tyng.tcti.cn/xinwen/achievement-98611374.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)</a></li>
+<li><a href="https://mmwd.tcti.cn/gongsi/navigation-58650200.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://yihd.wtpuscm.cn/yingxiao/sync-039031.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)</a></li>
+<li><a href="https://www.mw-wm.com/shichang/technology-04032389.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/92597">filmcraft: Premiere Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://www.ai-hao123.com/sheji/conversion-79439817.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)</a></li>
+<li><a href="https://cuye.tcti.cn/suanfa/price-27363904.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)</a></li>
+<li><a href="https://fsqj.tcti.cn/gongxiang/productivity-47423544.html">filmcraft: clean-room 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://wndh.wtpuscm.cn/wangluo/economy-797299.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)</a></li>
+<li><a href="https://ofge.wtpuscm.cn/xuexi/register-625352.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)</a></li>
+<li><a href="https://deni.wtpuscm.cn/keji/device-539503.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://upqk.wtpuscm.cn/chanpin/conversion-367856.html">filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://jtcr.wtpuscm.cn/liuliang/sales-518226.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)</a></li>
+<li><a href="https://inre.wtpuscm.cn/qiye/feedback-484613.html">filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://mftu.wtpuscm.cn/suanfa/widget-228095.html">filmcraft: 高韧性系统架构设计 分布式架构 (Verified)</a></li>
+<li><a href="https://rpkb.wtpuscm.cn/xuexi/automation-672.html">filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://bnkl.wtpuscm.cn/zhinan/ai-705172.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)</a></li>
+<li><a href="https://ynrk.wtpuscm.cn/yingxiao/community-580487.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)</a></li>
+<li><a href="https://lanx.wtpuscm.cn/zhizhu/objective-527309.html">filmcraft: Effects and motion Rust高性能网络 (Verified)</a></li>
+<li><a href="https://qmad.wtpuscm.cn/jiaoliu/revenue-630224.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>filmcraft-mirror-939</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

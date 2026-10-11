@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphics - filmcraft-mirror-939 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">filmcraft-mirror-939</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/filmcraft-mirror-939/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Graphics</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Graphics</h1>
+<p>FilmCraft's graphics work like Premiere's Essential Graphics: a <strong>graphic clip</strong> on a video track
+holds <strong>text</strong> and <strong>shape</strong> layers. Text is set by the text engine in <code>crates/text</code>
+(<a href="../crates/text/README.md">README</a>): bundled OFL fonts plus system fonts, OpenType shaping with
+kerning and ligatures, bidi, line breaking, all drawn as vectors in linear light.</p>
+<h2>Model</h2>
+<ul>
+<li>A graphic clip's project item is an <code>ItemKind::Graphic { width, height, rate }</code>: a transparent
+canvas the size of the sequence frame, with unlimited duration. These items are internal and do
+not appear in the Project panel.</li>
+<li>Its <strong>layers</strong> are effect instances <code>graphic_text</code> / <code>graphic_shape</code> in the clip's effect list,
+in paint order (first = back). They are hidden from the Effects panel. Because they are effect
+instances they save with the project, take keyframes on every animatable property (Source Text
+keyframes hold), appear in Effect Controls and copy with the clip. Standard effects on a graphic
+clip apply to the composed graphic; Motion and Opacity apply last.</li>
+<li><code>filmcraft_project::graphic::eval_layer</code> evaluates a layer at a time into a <code>LayerSpec</code>.</li>
+<li>Projects with graphics need no schema migration: everything is additive (new item kind, new
+effect ids). Builds older than this one refuse such files with a parse error.</li>
+</ul>
+<h3>Layer properties</h3>
+<table><thead><tr><th>Group</th><th>Properties (parameter ids)</th></tr></thead><tbody>
+<tr><td>Text</td><td><code>text</code> (Source Text), <code>font</code>, <code>font_style</code>, <code>size</code> (px), <code>align</code> (Left/Center/Right/Justify), <code>tracking</code> (1/1000 em), <code>kerning</code>, <code>ligatures</code>, <code>leading</code> (px added to the natural line height), <code>baseline_shift</code>, <code>faux_bold</code>, <code>faux_italic</code>, <code>caps</code> (Normal/All Caps/Small Caps), <code>underline</code>, <code>box_width</code> (0 = point text, else paragraph text wrapped at that width), <code>box_height</code> (paragraph text: lines that do not fit are not shown; 0 = as tall as the text)</td></tr>
+<tr><td>Shape</td><td><code>shape</code> (Rectangle/Ellipse/Polygon/Path), <code>size</code> [w, h], <code>sides</code>, <code>corner_radius</code> (one radius for all four corners, at most half the shorter side; on the Program monitor, drag one of the four small circles just inside a selected rectangle's corners), <code>points</code> (path vertices relative to the layer origin)</td></tr>
+<tr><td>Appearance</td><td><code>fill</code>, <code>fill_color</code>; <code>stroke</code>, <code>stroke_color</code>, <code>stroke_width</code>, <code>stroke_type</code> (Outer/Center/Inner) and the same for <code>stroke2</code>; <code>background</code>, <code>background_color</code>, <code>background_opacity</code>, <code>background_size</code> (padding), <code>background_radius</code>; <code>shadow</code>, <code>shadow_color</code>, <code>shadow_opacity</code>, <code>shadow_angle</code> (135° = down-right), <code>shadow_distance</code>, <code>shadow_size</code>, <code>shadow_blur</code></td></tr>
+<tr><td>Transform</td><td><code>position</code> (graphic canvas px), <code>anchor</code> (layer px), <code>scale</code>, <code>scale_width</code>, <code>uniform_scale</code>, <code>rotation</code>, <code>opacity</code></td></tr>
+</tbody></table>
+<p>Point text's origin is its alignment point on the first baseline (the click point of the Type
+tool); paragraph text's origin is the top-left corner of its box; a shape's origin is its centre.
+Colours are <code>#rrggbb</code> (sRGB).</p>
+<h3>Point text and paragraph text</h3>
+<p>A text layer is one of two types, as in Premiere Pro (behaviour observed in Premiere Pro 26):</p>
+<table><thead><tr><th></th><th>Point text</th><th>Paragraph text</th></tr></thead><tbody>
+<tr><td>Made with the Type tool by</td><td>a click</td><td>a drag: the dragged rectangle is the box</td></tr>
+<tr><td>Lines</td><td>only where Return was typed</td><td>wrap at the box's width; lines below the box's bottom are not shown, and the bottom-right handle turns into a red plus</td></tr>
+<tr><td>Selection box</td><td>fits the text</td><td>the box, whatever it holds</td></tr>
+<tr><td>New layer's anchor point</td><td>the origin (left end of the first baseline)</td><td>the box's top-left corner</td></tr>
+<tr><td>Dragging a handle</td><td>scales the layer about its anchor point: every handle scales both axes alike (Uniform Scale stays on), the font size is untouched</td><td>moves that side or corner of the box to the pointer, the opposite side stays; the text re-wraps at the same size and Scale is untouched</td></tr>
+</tbody></table>
+<ul>
+<li><strong>Point-text scale.</strong> Only the pointer's travel along one side of the box counts: along its
+width for the two side handles, along its height for the corners and the top and bottom handles.
+Travel <code>d</code> away from the anchor scales by <code>1 + d / r</code>, where <code>r</code> is the handle's distance from
+the anchor along that side, plus 60 points when the handle is nearer than 60 points (so a handle
+on the anchor does not scale without bound). A handle exactly on the anchor grows the text when
+dragged into the box.</li>
+<li><strong>Paragraph box.</strong> A side dragged past its opposite stops at half the font size. When the top or
+left side moves, the layer's origin moves with the corner, so the anchor point is renumbered to
+stay on the same spot of the picture and Position does not change.</li>
+<li><strong>Anchor point.</strong> Drag it with the Selection tool: the anchor moves, the layer stays (Position
+and Anchor Point change together). It is picked before anything under it: a shape dragged by
+its exact centre moves its anchor, not the shape, and the top-left handle of a new paragraph
+box is reached only after moving the anchor.</li>
+<li><strong>Switching type.</strong> Properties ▸ Text ▸ wrench ▸ <strong>Text Properties</strong> ▸ Text Layer Type
+(<code>graphics.setTextType</code>). To point text: the wrapped lines become real lines (also those the
+box hid). To paragraph text: the box is fitted to the text. Either way the text stays where it
+is and Position is untouched; only Anchor Point is renumbered. Vertical text is always point
+text.</li>
+</ul>
+<p>Known differences from Premiere: the first line of paragraph text sits one font ascent below the
+box's top (Premiere places it higher, about one cap height below); Premiere's smallest box and
+the box it fits when switching to paragraph text were not measured exactly; the 60 points were
+measured with the Program monitor at Fit only; Text Properties has no Hindi Digits option.</p>
+<h2>Rendering</h2>
+<p><code>crates/render/src/graphic_clip.rs</code> rasterises each layer straight to the output transform
+(sequence Motion × layer transform), so text stays sharp at any scale or rotation. Fill coverage
+comes from the text engine; strokes come from a Euclidean distance transform of that coverage
+(outer strokes sit under the fill, centre and inner strokes over it); the shadow is the union of
+all parts, spread by Size, offset and blurred. Each layer's raster is cached while it stays the same.
+The GPU plan receives one tight image per graphic clip and places it with a translation. The
+Timecode and Clip Name effects also draw with the text engine.</p>
+<h2>Commands</h2>
+<table><thead><tr><th>Command</th><th>Menu / shortcut</th><th>Params</th></tr></thead><tbody>
+<tr><td><code>graphics.newText</code></td><td>Graphics and Titles ▸ New Layer ▸ Text (⌘T)</td><td><code>text</code>, <code>position</code>, <code>box</code> (<code>[w, h]</code>: paragraph text in a box, <code>position</code> is its top-left corner), <code>clip</code> (add to this graphic), <code>vertical</code>, <code>size</code>, <code>font</code>, <code>fontStyle</code>, <code>seconds</code> (5), <code>track</code>, <code>time</code></td></tr>
+<tr><td><code>graphics.newVerticalText</code></td><td>New Layer ▸ Vertical Text</td><td>as <code>graphics.newText</code>; characters stack top to bottom, paragraphs are columns right to left</td></tr>
+<tr><td><code>graphics.newRectangle</code>, <code>graphics.newEllipse</code>, <code>graphics.newPolygon</code></td><td>New Layer ▸ Rectangle (⌥⌘R), Ellipse (⌥⌘E), Polygon</td><td><code>position</code> (the shape's centre), <code>size</code>, <code>clip</code>, <code>seconds</code> (5), <code>track</code>, <code>time</code>; polygon <code>sides</code> (6)</td></tr>
+<tr><td><code>graphics.newFromFile</code></td><td>New Layer ▸ From file…</td><td><code>path</code> — imports the image or video and places it above the clips at the playhead (a separate clip; graphics have no media layers yet)</td></tr>
+<tr><td><code>graphics.newShape</code></td><td>(agents)</td><td><code>shape</code> (rectangle/ellipse/polygon/path), <code>position</code> (the shape's centre), <code>size</code>, <code>points</code>, <code>clip</code> (add to this graphic), <code>seconds</code> (5), <code>track</code>, <code>time</code></td></tr>
+<tr><td><code>graphics.setTextType</code></td><td>Text Properties ▸ Text Layer Type</td><td><code>clip</code>, <code>layer</code>, <code>type</code> (<code>point</code> / <code>paragraph</code>); the text stays where it is</td></tr>
+<tr><td><code>graphics.setText</code></td><td>typing on the monitor</td><td><code>clip</code>, <code>layer</code>, <code>text</code>, <code>merge</code> (coalesce one typing session into one undo step)</td></tr>
+<tr><td><code>graphics.set</code></td><td>Properties panel</td><td><code>clip</code>, <code>layer</code>, <code>props</code> {parameter id or camelCase alias: value; choices by index or name}, <code>time</code>, <code>merge</code> + <code>begin</code> (a drag is one undo step: send <code>merge: true</code> on every change and <code>begin: true</code> on the first change of each press)</td></tr>
+<tr><td><code>graphics.selectLayer</code></td><td>layer list / monitor click</td><td><code>clip</code>, <code>layers</code></td></tr>
+<tr><td><code>graphics.deleteLayer</code>, <code>graphics.arrangeLayer</code></td><td>layer list</td><td><code>clip</code>, <code>layer</code>, <code>to</code> (front/back/forward/backward/index)</td></tr>
+<tr><td><code>graphics.align</code></td><td>Align and Transform</td><td><code>align</code> (left/hcenter/right/top/vcenter/bottom), <code>to</code> (frame/group/selection), <code>layers</code></td></tr>
+<tr><td><code>graphics.alignFrame.&lt;how&gt;</code></td><td>Align to Video Frame ▸ Left / Center Horizontally / Right / Top / Center Vertically / Bottom</td><td>each selected layer to the frame</td></tr>
+<tr><td><code>graphics.alignGroup.&lt;how&gt;</code></td><td>Align to Video Frame as Group ▸ …</td><td>the selected layers' union to the frame (2+ layers; relative positions kept)</td></tr>
+<tr><td><code>graphics.alignSelection.&lt;how&gt;</code></td><td>Align to Selection ▸ …</td><td>each selected layer to the selection's union (2+ layers)</td></tr>
+<tr><td><code>graphics.distribute</code></td><td>Align and Transform</td><td><code>axis</code> (horizontal/vertical), <code>space</code> (equal gaps), <code>layers</code> (3+)</td></tr>
+<tr><td><code>graphics.distributeVertically</code>, <code>…SpaceVertically</code>, <code>…Horizontally</code>, <code>…SpaceHorizontally</code></td><td>Distribute ▸ …</td><td>the selected layers (3+): equal centre spacing or equal gaps</td></tr>
+<tr><td><code>graphics.bringToFront</code>, <code>graphics.bringForward</code>, <code>graphics.sendBackward</code>, <code>graphics.sendToBack</code></td><td>Arrange ▸ … (⇧⌘], ⌘], ⌘[, ⇧⌘[)</td><td><code>clip</code>, <code>layer</code></td></tr>
+<tr><td><code>graphics.selectNextGraphic</code>, <code>graphics.selectPreviousGraphic</code></td><td>Select ▸ Select Next / Previous Graphic</td><td>selects the next / previous graphic clip in timeline order (moves the playhead onto it)</td></tr>
+<tr><td><code>graphics.selectNextLayer</code>, <code>graphics.selectPreviousLayer</code></td><td>Select ▸ Select Next / Previous Layer (⌥⌘], ⌥⌘[)</td><td>cycles the selected layer</td></tr>
+<tr><td><code>graphics.resetAllParameters</code></td><td>Reset All Parameters</td><td><code>layers</code> (default: the selected layers, else all) — appearance, text formatting and transform back to defaults; text, shape and geometry kept</td></tr>
+<tr><td><code>graphics.resetDuration</code></td><td>Reset Duration</td><td><code>seconds</code> (5), limited by the next clip on the track</td></tr>
+<tr><td><code>graphics.list</code></td><td>(query)</td><td><code>clip</code> — layers with names, kinds, text, <code>textType</code> (point / paragraph), <code>box</code>, <code>overflow</code> (the box hides text), position, anchor, scale and on-canvas quads</td></tr>
+<tr><td><code>fonts.list</code></td><td>(query)</td><td><code>system</code> (scan system font folders, default true) — families and styles</td></tr>
+</tbody></table>
+<p>Without <code>clip</code>, commands use the selected graphic clip, else the topmost graphic clip under the
+playhead. Without <code>layer</code>, they use the selected layer, else the front one. New graphic clips are
+placed at the playhead on the first video track above the clips there that is free for the
+duration (a track is added if needed).</p>
+<h2>Program monitor</h2>
+<table><thead><tr><th>Tool</th><th>On the Program monitor</th></tr></thead><tbody>
+<tr><td>Type (T)</td><td>Click empty picture: new point-text layer with a caret. Drag on empty picture: new paragraph-text layer with that box. Click a text layer: caret there. The box of the text being typed into is red. Type; ←/→ (⌥ word, ⌘ line), ↑/↓, Home/End, Shift to select, ⌘A, ⌘C/⌘X/⌘V, Return = new line, Backspace/Delete, Esc = stop editing. Drag inside the edited text to select.</td></tr>
+<tr><td>Selection (V)</td><td>Click a layer to select it (box with handles and anchor point; only selected layers have a box, and a layer whose visibility is off has none and cannot be clicked); drag to move; drag the anchor point to move it alone; drag a handle to scale point text about its anchor, resize a paragraph-text box (see <em>Point text and paragraph text</em>), or change a shape's Size: the dragged side or corner follows the pointer while the opposite one and the anchor point stay, Scale is untouched, and Shift on a corner keeps the proportions (a path, which has no Size, stretches instead); double-click a text layer to edit it.</td></tr>
+<tr><td>Rectangle / Ellipse</td><td>Drag to draw a shape layer.</td></tr>
+<tr><td>Pen (P)</td><td>Click to place points; click the first point (or Return) to close the path; Esc cancels.</td></tr>
+</tbody></table>
+<p>Moving a layer snaps its edges or centre to the frame edges, the frame centre and the guides
+(View ▸ Snap in Program Monitor, on by default; hold ⌘/Ctrl to move freely). See
+<a href="monitors.md">monitors.md</a> for rulers and guides.</p>
+<p>Automation ids: <code>program.layer.&lt;clip&gt;.&lt;layer&gt;</code>, <code>program.layer.&lt;clip&gt;.&lt;layer&gt;.handle.&lt;n&gt;</code>
+(0–3 the corners from the top-left clockwise, 4–7 the top, right, bottom and left sides),
+<code>program.layer.&lt;clip&gt;.&lt;layer&gt;.anchor</code>,
+<code>program.textEdit</code> (while editing).</p>
+<h2>Properties / Essential Graphics panels</h2>
+<p>With a graphic clip selected, the Properties panel (and Essential Graphics) shows: <strong>Layers</strong>
+(front first; new text / rectangle / ellipse, bring forward / send backward, delete, visibility),
+<strong>Align and Transform</strong> (six align buttons, two distribute buttons, position, anchor, scale,
+rotation, opacity), <strong>Text</strong> (Source Text field, font family and style, size, paragraph alignment,
+tracking, leading, baseline shift, box width and height, faux bold / faux italic / all caps /
+small caps / underline, kerning and ligatures; the wrench in the section's header opens <strong>Text
+Properties</strong>: Text Layer Type and Ligatures), <strong>Shape</strong>, and <strong>Appearance</strong> (fill, two strokes, background,
+shadow). Automation ids: <code>graphics.layers.&lt;n&gt;</code>, <code>graphics.prop.&lt;parameter id&gt;</code>,
+<code>graphics.align.&lt;how&gt;</code>, <code>graphics.distribute.&lt;axis&gt;</code>, <code>graphics.sourceText</code>, <code>graphics.NewTextLayer</code>,
+<code>graphics.NewRectangle</code>, <code>graphics.NewEllipse</code>, <code>graphics.deleteLayer</code>, <code>graphics.section.&lt;name&gt;</code>,
+<code>graphics.textProperties</code> (the wrench) and in its dialog <code>graphics.textProperties.type</code>,
+<code>.type.point</code>, <code>.type.paragraph</code>, <code>.ligatures</code>, <code>.ok</code>, <code>.cancel</code>.</p>
+<h2>Per-character styles</h2>
+<p>Select characters with the Type tool and change font, style, size, colour, faux bold / italic,
+underline, tracking, baseline shift or caps in the Properties panel: the change applies to the
+selection only (<code>graphics.setCharStyle</code>). Styles are stored on the layer as runs of characters
+(<code>EffectInstance::layer.runs</code>, character offsets, sorted and non-overlapping) and follow the text
+when it is edited (typed characters take the style of the character before them). The text engine
+lays the runs out together (<code>filmcraft_text::layout_rich</code>): a run can change the font and size,
+lines grow to fit the largest run, and each run can have its own fill colour.</p>
+<table><thead><tr><th>Command</th><th>Params</th></tr></thead><tbody>
+<tr><td><code>graphics.setCharStyle</code></td><td><code>clip</code>, <code>layer</code>, <code>start</code>, <code>end</code> (characters; default the whole text), <code>style</code> {<code>font</code>, <code>fontStyle</code>, <code>size</code>, <code>color</code>, <code>bold</code>, <code>italic</code>, <code>underline</code>, <code>tracking</code>, <code>baselineShift</code>, <code>caps</code>}, <code>clear</code> (remove styles from the range)</td></tr>
+</tbody></table>
+<h2>Responsive design</h2>
+<p><strong>Position (pins).</strong> A layer's edges can be pinned to another layer of the same graphic or to the
+video frame (<code>graphics.pin {layer, to: "frame" | layer index | name | "none", edges}</code>). Each
+pinned edge keeps its distance to the <em>same</em> edge of the target, measured when the pin is made:
+a box pinned on all four edges to a text layer grows with the text; a shape pinned on two opposite
+edges is resized, a text layer only moves. Pins resolve in dependency order (cycles are ignored).
+Moving a pinned layer keeps the pin at its new distance. Layers get a stable <code>uid</code> for this.</p>
+<p><strong>Time (intro / outro).</strong> <code>graphics.setResponsiveTime {introFrames, outroFrames}</code> protects the
+first and last part of a graphic: when the clip is trimmed or extended, keyframes inside the intro
+keep their timing from the clip start, those inside the outro from the clip end, and the middle is
+stretched or squeezed (<code>graphic_design::remap_time</code>). Trimming the head keeps the intro playing
+from the new start.</p>
+<p><strong>Rolls and crawls.</strong> <code>graphics.setRoll {mode: off | roll | crawlLeft | crawlRight,  startOffScreen, endOffScreen, prerollFrames, easeInFrames, easeOutFrames, postrollFrames}</code> (the
+Roll options of Responsive Design – Time) moves the whole graphic: up for a roll, sideways for a
+crawl. <em>Start Off Screen</em> starts with the content just outside the frame (below it / right of it /
+left of it), otherwise where it was laid out; <em>End Off Screen</em> lets it leave completely, otherwise
+it stops when its last edge reaches the frame edge. The speed is constant between the preroll and
+the postroll, with linear acceleration over Ease In and deceleration over Ease Out
+(<code>graphic_design::roll_progress</code>). The offset is exact maths on the union of the layers' bounds
+(with background padding), at the clip-relative time.</p>
+<p>These settings are <code>TrackItem::graphic</code> (<code>GraphicMeta</code>, schema v12).</p>
+<h2>Graphics templates (<code>.fcgt</code>)</h2>
+<p>FilmCraft's equivalent of motion graphics templates is its <strong>own</strong> format: a <code>.fcgt</code> file is
+documented, versioned JSON (<code>filmcraft_project::gtemplate</code>):</p>
+<table><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><code>format</code>, <code>version</code></td><td><code>"filmcraft.graphicsTemplate"</code>, <code>1</code> (newer versions are refused)</td></tr>
+<tr><td><code>id</code>, <code>name</code>, <code>category</code>, <code>description</code>, <code>author</code>, <code>license</code>, <code>tags</code></td><td>library information</td></tr>
+<tr><td><code>canvas</code>, <code>duration</code></td><td>frame size it was designed for, default clip length (ticks)</td></tr>
+<tr><td><code>layers</code></td><td>the graphic's layers, exactly as in a project file, each with a <code>uid</code></td></tr>
+<tr><td><code>graphic</code></td><td>roll / crawl and responsive time</td></tr>
+<tr><td><code>controls</code></td><td>editable properties: <code>{id, name, kind: text|color|slider|checkbox|font|position, layer: uid, param, min, max}</code>; <code>param: "enabled"</code> is the layer's visibility</td></tr>
+<tr><td><code>resources.fonts</code></td><td>optional embedded font files (base64) with their licence; registered on install</td></tr>
+</tbody></table>
+<p>Placing a template on a sequence of another size scales and centres its layers (pin distances
+scale too).</p>
+<p><strong>FilmCraft never reads or imports Adobe <code>.mogrt</code> files</strong> (or any other application's template
+packages): Install refuses <code>.mogrt</code> paths without opening them, and the reader rejects ZIP
+archives. Built-in templates are original designs made for FilmCraft in code (no image, font or
+template files): lower thirds (Slab, Rule, Ticker crawl), titles (Centered, Boxed), end credits
+(Roll) and callouts (Pointer, Tag), with the bundled Inter font. Thumbnails are rendered by the
+engine at runtime.</p>
+<table><thead><tr><th>Command</th><th>Menu</th><th>Params</th></tr></thead><tbody>
+<tr><td><code>graphics.template.list</code></td><td>(query)</td><td><code>query</code>, <code>category</code>, <code>source</code> (builtin / user)</td></tr>
+<tr><td><code>graphics.template.apply</code></td><td>Browse tab: drag or double-click</td><td><code>template</code> (id, name or <code>.fcgt</code> path), <code>values</code> {control: value}, <code>time</code>, <code>track</code></td></tr>
+<tr><td><code>graphics.template.export</code></td><td>Graphics and Titles ▸ Export As Motion Graphics Template…</td><td><code>clip</code>, <code>name</code>, <code>category</code>, <code>description</code>, <code>controls</code> [{<code>layer</code>, <code>param</code>, <code>name</code>, <code>kind</code>, <code>min</code>, <code>max</code>}], <code>path</code> (default: the user folder), <code>embedFonts</code></td></tr>
+<tr><td><code>file.exportGraphicsTemplate</code></td><td>File ▸ Export ▸ Motion Graphics Template…</td><td>as above</td></tr>
+<tr><td><code>graphics.template.install</code></td><td>Graphics and Titles ▸ Install Motion Graphics Template…</td><td><code>path</code> (a <code>.fcgt</code>)</td></tr>
+<tr><td><code>graphics.template.remove</code></td><td>Browse tab</td><td><code>template</code> (user templates)</td></tr>
+<tr><td><code>graphics.template.set</code> / <code>graphics.template.controls</code></td><td>Essential Graphics ▸ Edit</td><td><code>clip</code>, <code>control</code>, <code>value</code> / <code>values</code></td></tr>
+<tr><td><code>graphics.template.thumbnail</code></td><td>(query)</td><td><code>template</code>, <code>width</code>, <code>path</code> (PNG)</td></tr>
+</tbody></table>
+<p>User templates live in <code>&lt;data dir&gt;/Graphics Templates/</code>.</p>
+<p><strong>Essential Graphics panel.</strong> <em>Browse</em> lists the built-in and user templates as cards with
+engine-rendered thumbnails, a search field and a category filter; click selects, double-click or
+Apply places the template at the playhead, dragging a card onto a video track places it there,
+Install… picks a <code>.fcgt</code>, Remove deletes a user template. <em>Edit</em> is the graphic editor; for a graphic
+made from a template it starts with <strong>Template Properties</strong> (one editor per control). With no layer
+selected it shows <strong>Responsive Design – Time</strong> (intro / outro, Roll with its options); with a layer
+selected, <strong>Responsive Design – Position</strong> (Pin To and the pinned edges). With characters selected
+by the Type tool, the Text section's controls style just those characters. Export As Motion
+Graphics Template… opens a dialog (name, category, description and a checklist of properties to
+expose); Replace Fonts in Projects… lists the fonts in use (missing ones flagged) and replaces one.
+Automation ids: <code>essentialGraphics.tab.browse|edit</code>, <code>gfxTemplates.search</code>, <code>gfxTemplates.category</code>,
+<code>gfxTemplates.item.&lt;id&gt;</code>, <code>gfxTemplates.apply|install|remove</code>, <code>gfxTemplates.control.&lt;control id&gt;</code>,
+<code>graphics.roll.*</code>, <code>graphics.time.intro|outro</code>, <code>graphics.pin.to|left|top|right|bottom</code>,
+<code>exportTemplate.*</code>, <code>replaceFonts.*</code>; <code>ui.set {"gfxTemplates": {...}, "gfxEdit": {...}}</code> sets the
+panel state and the Type-tool selection.</p>
+<h2>Captions, source graphics and fonts</h2>
+<table><thead><tr><th>Command</th><th>Menu</th><th>Params</th></tr></thead><tbody>
+<tr><td><code>graphics.upgradeCaption</code></td><td>Graphics and Titles ▸ Upgrade Caption to Graphic</td><td><code>captions</code> (default: the selection, else the one under the playhead): each caption becomes a graphic clip on a video track with the track style (font, size, colour, background, outline, alignment, position); <code>&lt;i&gt;</code>/<code>&lt;b&gt;</code>/<code>&lt;u&gt;</code> become character styles; one undo step</td></tr>
+<tr><td><code>graphics.upgradeToSourceGraphic</code></td><td>Graphics and Titles ▸ Upgrade to Source Graphic</td><td><code>clip</code>: the graphic gets its own project item (shown in the Project panel); every clip of that item shares its layers — editing one updates the others in the same undo step (<code>project.source_graphics</code>)</td></tr>
+<tr><td><code>file.replaceFonts</code></td><td>Graphics and Titles ▸ Replace Fonts in Projects…</td><td><code>from</code> (family or {family, style}), <code>to</code>, <code>toStyle</code>: graphic layers, character styles, source graphics and caption tracks</td></tr>
+<tr><td><code>graphics.fonts.used</code></td><td>(query)</td><td>fonts in use with counts and whether they are missing</td></tr>
+</tbody></table>
+<h2>Gradient fills</h2>
+<p>Appearance › Fill Type › Linear Gradient paints the shape or the text with a ramp from Gradient
+Start to Gradient End. Stops are blended in linear light. The angle is degrees clockwise on
+screen; 0° runs left to right across the layer's own bounds, and the ramp turns with the layer.
+<code>graphics.set</code> accepts <code>fill_kind</code> (<code>solid</code> or <code>linear gradient</code>), <code>gradient_start</code>,
+<code>gradient_end</code> and <code>gradient_angle</code>. A per-character fill colour still paints those characters
+as a solid; the rest of the text keeps the ramp. A singular layer transform falls back to the
+solid fill colour.</p>
+<h2>Not yet</h2>
+<p>Mask-with-text, per-layer blend modes, Bézier curves in the pen tool (paths are polygons), media
+layers inside graphics, and template controls grouped into folders.</p>
+<hr />
+<details open>
+<summary><b>📚 filmcraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「filmcraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 filmcraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://sdee.wtpuscm.cn/baogao/company-928656.html">基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://likx.wtpuscm.cn/chanpin/profile-116741.html">现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://pcqi.wtpuscm.cn/gongju/planning-195798.html">面向大规模网络的 filmcraft 工业级架构基准</a></li>
+<li><a href="https://lrwt.wtpuscm.cn/keji/tool-517799.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://dvxn.wtpuscm.cn/ziyuan/widget-826768.html">【filmcraft】pure 核心系统架构与设计规约 (Draft-05)</a></li>
+<li><a href="https://xnqx.wtpuscm.cn/ziyuan/keyword-735936.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)</a></li>
+<li><a href="https://pgjw.wtpuscm.cn/xuexi/story-477349.html">基于 filmcraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://mxqp.wtpuscm.cn/yanjiu/lead-158.html">filmcraft 内部组件解耦与事件状态机规范 (Node-81)</a></li>
+<li><a href="https://jnkd.wtpuscm.cn/kuangjia/about-698149.html">【官方规范】filmcraft open-source 核心运行拓扑标准</a></li>
+<li><a href="https://ltyb.wtpuscm.cn/yunsuan/fitness-044215.html">Trim Monitor 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://kceh.wtpuscm.cn/jiaocheng/landing-574410.html">基于 filmcraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://kyxg.wtpuscm.cn/zhizhu/collaborate-322174.html">现代 分布式架构 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://pvsg.wtpuscm.cn/zhineng/community-503706.html">【官方规范】filmcraft filmcraft 核心运行拓扑标准</a></li>
+<li><a href="https://dpqo.wtpuscm.cn/paiming/satisfaction-319225.html">Effects and motion 核心系统架构与设计规约 (RFC-633)</a></li>
+<li><a href="https://iras.wtpuscm.cn/zhinan/beauty-446376.html">Formats and codecs 核心系统架构与设计规约 (Node-44)</a></li>
+<li><a href="https://ytbg.wtpuscm.cn/kuangjia/admin-254542.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)</a></li>
+<li><a href="https://jaoj.wtpuscm.cn/liuliang/review-092234.html">Interchange 核心系统架构与设计规约 (RFC-715)</a></li>
+<li><a href="https://rhiw.wtpuscm.cn/yinqing/site-641396.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)</a></li>
+<li><a href="https://kbmv.wtpuscm.cn/hezuo/expensive-261479.html">Built for agents 核心系统架构与设计规约 (Node-34)</a></li>
+<li><a href="https://cffd.wtpuscm.cn/shuju/deadline-377658.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)</a></li>
+<li><a href="https://femc.wtpuscm.cn/wenzhang/deadline-502268.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)</a></li>
+<li><a href="https://ktfo.wtpuscm.cn/fuwu/about-753348.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)</a></li>
+<li><a href="https://ugvd.wtpuscm.cn/shuju/template-110581.html">Exact time. 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://tzug.tcti.cn/zhinan/network-13596474.html">filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://wbth.tcti.cn/yunying/security-20677160.html">filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://siyd.tcti.cn/pingtai/section-16526404.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)</a></li>
+<li><a href="https://xrok.tcti.cn/xinwen/device-75480917.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)</a></li>
+<li><a href="https://wjbu.tcti.cn/baogao/shopping-55835796.html">filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)</a></li>
+<li><a href="https://legu.tcti.cn/anfang/version-54600513.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)</a></li>
+<li><a href="https://bwuz.tcti.cn/zhinan/training-87401386.html">基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://wroc.tcti.cn/kuangjia/productivity-21916849.html">【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://ydpp.tcti.cn/pingtai/deadline-60768315.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)</a></li>
+<li><a href="https://onma.tcti.cn/liuliang/music-82001850.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)</a></li>
+<li><a href="https://lijq.tcti.cn/keji/efficiency-47856801.html">【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://eeeb.tcti.cn/liuliang/user-67524440.html">生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)</a></li>
+<li><a href="https://ncyv.tcti.cn/yanjiu/app-30277236.html">Effects and motion 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://yugy.tcti.cn/chanpin/server-33713741.html">filmcraft 内部组件解耦与事件状态机规范 (Node-29)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://mhtq.tcti.cn/pingce/goal-14751403.html">filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)</a></li>
+<li><a href="https://pgiy.tcti.cn/chanpin/reporting-81427248.html">基于 filmcraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://howt.tcti.cn/yingyong/tactic-02424900.html">【生产手册】filmcraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://yxkk.wtpuscm.cn/wendang/responsive-260091.html">filmcraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://www.mw-wm.com/liuliang/seminar-71240461.html">filmcraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.yx-sf.com/news/99512">【集成指南】分布式架构 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://www.ai-hao123.com/jiaocheng/promotion-04697074.html">filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)</a></li>
+<li><a href="https://gsnd.tcti.cn/jishu/reporting-69108372.html">filmcraft 异步中间件流水线与 Premiere 接入规范</a></li>
+<li><a href="https://euqr.tcti.cn/yunsuan/video-03015973.html">filmcraft: Premiere 分布式架构 (Node-37)</a></li>
+<li><a href="https://bzxz.wtpuscm.cn/peixun/system-156403.html">filmcraft 异步中间件流水线与 Every trim. 接入规范</a></li>
+<li><a href="https://mtvb.wtpuscm.cn/yanjiu/client-928316.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)</a></li>
+<li><a href="https://ivbo.wtpuscm.cn/chuangxin/privacy-840054.html">filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)</a></li>
+<li><a href="https://yobx.wtpuscm.cn/kaifa/alert-413451.html">filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)</a></li>
+<li><a href="https://gzpu.wtpuscm.cn/qiye/collaborate-466616.html">filmcraft 插件生态规范与 Edit 扩展手册 (Verified)</a></li>
+<li><a href="https://fwvn.wtpuscm.cn/xinwen/sales-812060.html">filmcraft 异步中间件流水线与 Get started 接入规范</a></li>
+<li><a href="https://yfii.wtpuscm.cn/yanjiu/price-422511.html">filmcraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://eyat.wtpuscm.cn/zhineng/growth-604.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )</a></li>
+<li><a href="https://gurn.wtpuscm.cn/wenzhang/business-708675.html">filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://mkin.wtpuscm.cn/kaifa/music-863165.html">filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://fwhm.wtpuscm.cn/anfang/partner-879995.html">filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)</a></li>
+<li><a href="https://vrft.wtpuscm.cn/yinqing/automation-340825.html">filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范</a></li>
+<li><a href="https://jjni.wtpuscm.cn/pingtai/unsubscribe-633185.html">【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://gxnr.wtpuscm.cn/zhizhu/server-149748.html">filmcraft 异步中间件流水线与 Effects and motion 接入规范</a></li>
+<li><a href="https://oikh.wtpuscm.cn/fuwu/database-190511.html">filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)</a></li>
+<li><a href="https://hpib.wtpuscm.cn/guanjianci/consulting-259969.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://fugr.wtpuscm.cn/shangye/company-839597.html">filmcraft 异步中间件流水线与 Pro 接入规范</a></li>
+<li><a href="https://bcwv.wtpuscm.cn/zhinan/help-969186.html">filmcraft 异步中间件流水线与 可信存活健康度量 接入规范</a></li>
+<li><a href="https://niov.wtpuscm.cn/jianzhan/download-818863.html">filmcraft 异步中间件流水线与 Audio 接入规范</a></li>
+<li><a href="https://ycpi.wtpuscm.cn/xinwen/interface-723273.html">filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://glzi.wtpuscm.cn/wendang/alliance-462637.html">filmcraft 异步中间件流水线与 Rust 接入规范</a></li>
+<li><a href="https://mgrr.wtpuscm.cn/kuangjia/goal-318313.html">【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://bbuf.wtpuscm.cn/kaifa/communication-195203.html">filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://drgh.tcti.cn/wangluo/article-11587044.html">filmcraft: Audio 分布式架构 (Draft-02)</a></li>
+<li><a href="https://swih.tcti.cn/zhinan/profile-79731194.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://zqbx.tcti.cn/xinwen/schedule-81436909.html">filmcraft 异步中间件流水线与 Interchange 接入规范</a></li>
+<li><a href="https://oujm.tcti.cn/zhizhu/topic-79335426.html">filmcraft 插件生态规范与 built 扩展手册 (Core/built)</a></li>
+<li><a href="https://rici.tcti.cn/qiye/education-10040957.html">filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)</a></li>
+</ul>
+<h4>3. ⚡ filmcraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://dxbu.tcti.cn/liuliang/cost-45735901.html">全球权威拓扑节点：filmcraft 实时镜像与索引入口</a></li>
+<li><a href="https://wzzb.tcti.cn/gongsi/fashion-49056940.html">冷热数据分层镜像：filmcraft Pro 权威归档源</a></li>
+<li><a href="https://axcb.tcti.cn/jiaoliu/funnel-54739852.html">filmcraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://zclb.tcti.cn/sheji/automation-83083241.html">【镜像入口】filmcraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://rjxp.tcti.cn/huodong/contact-96253056.html">冷热数据分层镜像：filmcraft Audio 权威归档源</a></li>
+<li><a href="https://ftoq.tcti.cn/yinqing/solution-77854895.html">filmcraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://khxo.tcti.cn/chanpin/fashion-32378085.html">filmcraft 官方高可用镜像注册节点 (RFC-877)</a></li>
+<li><a href="https://syfr.tcti.cn/sheji/form-20316824.html">filmcraft 官方高可用镜像注册节点 (Node-76)</a></li>
+<li><a href="https://myea.tcti.cn/keji/finance-70083886.html">filmcraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://nowr.tcti.cn/chanpin/kpi-55212319.html">filmcraft 官方高可用镜像注册节点 (Core/Every )</a></li>
+<li><a href="https://aeeq.tcti.cn/anli/sport-85571496.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://cghh.tcti.cn/fuwu/learning-85591237.html">冷热数据分层镜像：filmcraft reimplementation 权威归档源</a></li>
+<li><a href="https://wzcl.wtpuscm.cn/pingtai/sales-615473.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)</a></li>
+<li><a href="https://www.mw-wm.com/qiye/user-56754168.html">filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)</a></li>
+<li><a href="https://www.yx-sf.com/tech/47695">冷热数据分层镜像：filmcraft Color 权威归档源</a></li>
+<li><a href="https://www.ai-hao123.com/pingtai/reminder-82000590.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://yyzt.tcti.cn/youhua/client-20873186.html">冷热数据分层镜像：filmcraft Exact time. 权威归档源</a></li>
+<li><a href="https://jbmy.tcti.cn/huodong/register-70539185.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)</a></li>
+<li><a href="https://edyf.wtpuscm.cn/wendang/like-608229.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)</a></li>
+<li><a href="https://fysd.wtpuscm.cn/yingyong/planning-804201.html">冷热数据分层镜像：filmcraft Titles and captions 权威归档源</a></li>
+<li><a href="https://ohqg.wtpuscm.cn/zhizhu/webinar-177563.html">冷热数据分层镜像：filmcraft Formats and codecs 权威归档源</a></li>
+<li><a href="https://tggy.wtpuscm.cn/fenxi/careers-241091.html">filmcraft 官方高可用镜像注册节点 (Draft-07)</a></li>
+<li><a href="https://vpeq.wtpuscm.cn/gongxiang/webinar-996677.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.2)</a></li>
+<li><a href="https://fetz.wtpuscm.cn/shangye/integration-940871.html">filmcraft 官方高可用镜像注册节点 (Node-67)</a></li>
+<li><a href="https://soeq.wtpuscm.cn/paiming/digital-685684.html">filmcraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://qwaa.wtpuscm.cn/gongju/tool-716.html">冷热数据分层镜像：filmcraft Edit 权威归档源</a></li>
+<li><a href="https://bqde.wtpuscm.cn/jiaoliu/fitness-661753.html">冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://cvdc.wtpuscm.cn/anli/tag-679614.html">冷热数据分层镜像：filmcraft Export 权威归档源</a></li>
+<li><a href="https://imrw.wtpuscm.cn/gongju/logo-269063.html">冷热数据分层镜像：filmcraft clean-room 权威归档源</a></li>
+<li><a href="https://lref.wtpuscm.cn/tuiguang/subject-427262.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)</a></li>
+<li><a href="https://eind.wtpuscm.cn/xuexi/backup-182435.html">冷热数据分层镜像：filmcraft built 权威归档源</a></li>
+<li><a href="https://qjrt.wtpuscm.cn/liuliang/target-279631.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
+<li><a href="https://rvjd.wtpuscm.cn/gongxiang/cost-043527.html">filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://hhcc.wtpuscm.cn/huodong/deal-452488.html">冷热数据分层镜像：filmcraft dynamic trimming 权威归档源</a></li>
+<li><a href="https://ouwu.wtpuscm.cn/xuexi/module-579368.html">filmcraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://annd.wtpuscm.cn/ziyuan/deal-056790.html">冷热数据分层镜像：filmcraft Interchange 权威归档源</a></li>
+<li><a href="https://nhie.wtpuscm.cn/xinwen/button-318738.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.8)</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://wqpv.wtpuscm.cn/wendang/register-964547.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://aicz.wtpuscm.cn/suanfa/game-304557.html">【评测基准】filmcraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://rybd.wtpuscm.cn/tuiguang/traffic-274246.html">filmcraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://likl.wtpuscm.cn/peixun/study-309731.html">filmcraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://anii.tcti.cn/yinqing/case-05939556.html">filmcraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://ojyq.tcti.cn/sheji/wellness-84807811.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://xtjt.tcti.cn/baogao/analytics-30194680.html">filmcraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://mvrv.tcti.cn/kuangjia/hotel-94411257.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)</a></li>
+<li><a href="https://iamn.tcti.cn/zhinan/keyword-73684407.html">filmcraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://dzxy.tcti.cn/gongxiang/network-53746312.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://nafc.tcti.cn/qiye/revenue-46336381.html">filmcraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://xvxi.tcti.cn/zhinan/fitness-96296013.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://eqgm.tcti.cn/wendang/hosting-89309600.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)</a></li>
+<li><a href="https://gpmv.tcti.cn/xinwen/networking-94978626.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)</a></li>
+<li><a href="https://grlv.tcti.cn/xuexi/retention-42936830.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)</a></li>
+<li><a href="https://hypi.tcti.cn/huodong/global-99575546.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)</a></li>
+<li><a href="https://fbkx.tcti.cn/gongsi/client-86626231.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://yddg.tcti.cn/peixun/performance-87991087.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)</a></li>
+<li><a href="https://vnrx.tcti.cn/yingxiao/partner-72955994.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)</a></li>
+<li><a href="https://geyp.tcti.cn/huodong/article-23057294.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)</a></li>
+<li><a href="https://qibr.tcti.cn/zixun/system-17894736.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://yorl.wtpuscm.cn/chanpin/tutorial-042745.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)</a></li>
+<li><a href="https://www.mw-wm.com/anli/company-28526308.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)</a></li>
+<li><a href="https://www.yx-sf.com/news/77334">filmcraft: Premiere Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://www.ai-hao123.com/huodong/behavior-09852887.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)</a></li>
+<li><a href="https://xlgg.tcti.cn/paiming/login-17775315.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)</a></li>
+<li><a href="https://qemd.tcti.cn/yunsuan/beauty-44796121.html">filmcraft: clean-room 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://ezhw.wtpuscm.cn/shangye/media-196964.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)</a></li>
+<li><a href="https://kkbl.wtpuscm.cn/jiaoliu/api-332763.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)</a></li>
+<li><a href="https://gfbf.wtpuscm.cn/paiming/health-873272.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://ljkn.wtpuscm.cn/jiaoliu/article-778790.html">filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://rcdp.wtpuscm.cn/baogao/podcast-574933.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)</a></li>
+<li><a href="https://adyj.wtpuscm.cn/sheji/whitepaper-073027.html">filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://eebo.wtpuscm.cn/liuliang/ranking-866306.html">filmcraft: 高韧性系统架构设计 分布式架构 (Verified)</a></li>
+<li><a href="https://gkpt.wtpuscm.cn/chuangxin/terms-476.html">filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://rgzz.wtpuscm.cn/qiye/sport-838301.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)</a></li>
+<li><a href="https://yyfg.wtpuscm.cn/chuangxin/online-288736.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)</a></li>
+<li><a href="https://xysi.wtpuscm.cn/gongxiang/study-264594.html">filmcraft: Effects and motion Rust高性能网络 (Verified)</a></li>
+<li><a href="https://fkpm.wtpuscm.cn/liuliang/register-723833.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>filmcraft-mirror-939</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
