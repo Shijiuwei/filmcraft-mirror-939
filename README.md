@@ -1,11 +1,11 @@
 
 <p align="left">
-  <a href="https://www.yx-sf.com/wiki/98481.html"><img src="https://img.shields.io/badge/GitHub_Pages-在线文档中心-2563eb?style=flat-square&logo=github" alt="GitHub Pages"></a>
-  <a href="https://www.poykq.cn/redian/tutorial-673489.html"><img src="https://img.shields.io/badge/Docs_Archive-文档归档菜单-10b981?style=flat-square" alt="Docs Archive"></a>
+  <a href="https://ankmz.cn/anquan/tag-68558329.html"><img src="https://img.shields.io/badge/GitHub_Pages-在线文档中心-2563eb?style=flat-square&logo=github" alt="GitHub Pages"></a>
+  <a href="https://jsmw.wtpuscm.cn/pingtai/success-293217.html"><img src="https://img.shields.io/badge/Docs_Archive-文档归档菜单-10b981?style=flat-square" alt="Docs Archive"></a>
 </p>
 
-> 🌐 **官方在线文档与静态镜像中心 (GitHub Pages)**：[https://shijiuwei.github.io/filmcraft-mirror-939/](https://owfm.tcti.cn/shangye/education-63674207.html)  
-> 📚 **技术规约与文档归档菜单 (Docs Catalog)**：[https://shijiuwei.github.io/filmcraft-mirror-939/docs/](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)  
+> 🌐 **官方在线文档与静态镜像中心 (GitHub Pages)**：[https://shijiuwei.github.io/filmcraft-mirror-939/](https://ankmz.cn/anquan/tag-68558329.html)  
+> 📚 **技术规约与文档归档菜单 (Docs Catalog)**：[https://shijiuwei.github.io/filmcraft-mirror-939/docs/](https://fljr.yx-sf.com/jiaocheng/sale-99240382.html)  
 
 <p align="center">
   <a href="https://getartcraft.com/">
@@ -36,13 +36,13 @@
 </p>
 
 <p align="center">
-  <a href="https://uxqa.wtpuscm.cn/gongju/success-607.html"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
+  <a href="https://skyy.tcti.cn/shuju/price-06442157.html"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 </p>
 
 <p align="center">
-  <a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html"><b>FilmCraft on getartcraft.com</b></a> ·
-  <a href="https://fjoc.tcti.cn/yingyong/contact-00610313.html">ArtCraft</a> ·
-  <a href="https://kvaf.tcti.cn/yunsuan/settings-81875461.html">All Crafting Apps</a>
+  <a href="https://zaaj.yx-sf.com/xuexi/digital-45758894.html"><b>FilmCraft on getartcraft.com</b></a> ·
+  <a href="https://khaw.ai-hao123.com/anli/behavior-35439337.html">ArtCraft</a> ·
+  <a href="https://nnfu.tcti.cn/gongxiang/excellence-64418623.html">All Crafting Apps</a>
 </p>
 
 <br>
@@ -55,7 +55,7 @@
 
 > [!NOTE]
 > **ArtCraft is a community of artists from all walks of life.** Digital, generative, music,
-> games &mdash; if you make things, you're one of us. **[Come say hi on Discord](https://yyns.spidernode-mesh.net/wendang/review-40421998.html).**
+> games &mdash; if you make things, you're one of us. **[Come say hi on Discord](https://eqrt.wtpuscm.cn/paiming/discovery-059548.html).**
 
 <p align="center">
   <a href="#edit">Edit</a> ·
@@ -189,12 +189,12 @@ No FFmpeg inside. The video codecs, AAC, Opus and the containers are our own Rus
 | **AV1** | ✓ | | Main profile, 8/10-bit 4:2:0 and monochrome, every coding tool incl. film grain, superres and spatial layers; bit-exact with libdav1d on the libaom vectors tested; in MP4 and WebM/Matroska |
 | **Avid DNxHD / DNxHR** | ✓ | ✓ | All SMPTE ST 2019-1 CIDs (LB to 444, 8/10/12-bit); export writes DNxHR in MOV |
 | **MJPEG, PCM** | ✓ | ✓ | |
-| **MP3, FLAC, ALAC, Vorbis** | ✓ | | Via the [symphonia](https://szjp.tcti.cn/shichang/retention-16647312.html) crate (MPL-2.0) for now, to be replaced by our own |
+| **MP3, FLAC, ALAC, Vorbis** | ✓ | | Via the [symphonia](https://vkoa.tcti.cn/fenxi/learning-41863024.html) crate (MPL-2.0) for now, to be replaced by our own |
 | **MP4 / MOV** | ✓ | ✓ | Fragmented MP4, edit lists, timecode tracks |
 | **Matroska / WebM** | ✓ | | Lacing, Cues, header stripping, HDR colour metadata |
 | **Stills** | ✓ | ✓ | Import PNG, JPEG, GIF, WebP, TIFF and BMP; export PNG sequences and animated GIF |
 
-Also imported: MPEG-2 / MPEG-1 video, AC-3, MP2, MXF (OP1a / OP-Atom), MPEG transport and program streams (AVCHD, broadcast, DVD), Ogg and image sequences. Not yet: AV1 export, camera RAW, E-AC-3. Hardware decoding works on macOS (VideoToolbox), Windows (Media Foundation) and, for H.264 and HEVC, Linux (VA-API); H.264 export can use NVIDIA's encoder on Windows and Linux (opt-in), and H.265 (HEVC Main, 8-bit) export works through it (NVENC on Windows, VideoToolbox on macOS) ([#30](https://ankmz.cn/anquan/tag-68558329.html)).
+Also imported: MPEG-2 / MPEG-1 video, AC-3, MP2, MXF (OP1a / OP-Atom), MPEG transport and program streams (AVCHD, broadcast, DVD), Ogg and image sequences. Not yet: AV1 export, camera RAW, E-AC-3. Hardware decoding works on macOS (VideoToolbox), Windows (Media Foundation) and, for H.264 and HEVC, Linux (VA-API); H.264 export can use NVIDIA's encoder on Windows and Linux (opt-in), and H.265 (HEVC Main, 8-bit) export works through it (NVENC on Windows, VideoToolbox on macOS) ([#30](https://skyy.tcti.cn/shuju/price-06442157.html)).
 
 <br>
 
@@ -262,14 +262,14 @@ cargo run --release -p filmcraft-cli -- commands           # list every engine c
 cargo run --release -p filmcraft-cli -- mcp                # MCP server (headless)
 ```
 
-Japanese text in the interface and in titles comes from [craft-fonts](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html), an optional build input (release builds always include it; without it FilmCraft uses its own and the system's fonts):
+Japanese text in the interface and in titles comes from [craft-fonts](https://yyak.yx-sf.com/liuliang/learning-84631732.html), an optional build input (release builds always include it; without it FilmCraft uses its own and the system's fonts):
 
 ```sh
 git clone https://github.com/storytold/craft-fonts ../craft-fonts
 CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo run --release -p filmcraft
 ```
 
-The control protocol is documented in [docs/control-protocol.md](docs/control-protocol.md). Stuck, or want to show what you made? Ask in [Discord](https://api.pvucttcv.cn/yinyue/innovation-37390655.html).
+The control protocol is documented in [docs/control-protocol.md](docs/control-protocol.md). Stuck, or want to show what you made? Ask in [Discord](https://aabe.tcti.cn/shichang/chapter-43416989.html).
 
 ## Documentation
 
@@ -298,14 +298,14 @@ FilmCraft is in **alpha**. We track two numbers ([docs/target-app-parity.md](doc
 
 The biggest gaps today:
 
-- **Speed on big footage.** Hardware decoding works on macOS and Windows, and for H.264 and HEVC on Linux (VA-API, or NVDEC with NVIDIA's driver; VP9 and AV1 decode in software there). Blend modes and the most common effects run on the GPU, but Lumetri, keys and export rendering still run on the CPU; H.264 encoding can use the hardware encoder on macOS and on Windows and Linux with an NVIDIA GPU (opt-in, Export ▸ Hardware encoding), and H.265 export is hardware-only on both (HDR sequences export Main 10 PQ / HLG with NVENC; VideoToolbox writes 8-bit SDR) ([#30](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)).
+- **Speed on big footage.** Hardware decoding works on macOS and Windows, and for H.264 and HEVC on Linux (VA-API, or NVDEC with NVIDIA's driver; VP9 and AV1 decode in software there). Blend modes and the most common effects run on the GPU, but Lumetri, keys and export rendering still run on the CPU; H.264 encoding can use the hardware encoder on macOS and on Windows and Linux with an NVIDIA GPU (opt-in, Export ▸ Hardware encoding), and H.265 export is hardware-only on both (HDR sequences export Main 10 PQ / HLG with NVENC; VideoToolbox writes 8-bit SDR) ([#30](https://xobx.tcti.cn/paiming/beauty-62525661.html)).
 - **Premiere projects.** `.prproj` files can't be opened yet; bring sequences over as FCP7 XML, AAF or OTIO.
 - **No plugins.** No VST3 / Audio Units or OpenFX hosting.
 - **Delivery codecs.** H.264 is our only software delivery-codec export; H.265 exports only through a hardware encoder (NVIDIA on Windows: Main 8-bit SDR and Main 10 HDR PQ / HLG; VideoToolbox on macOS: 8-bit Main, SDR); no AV1 export yet.
 - **Real-world media and platforms.** Our decoders are bit-exact on conformance streams, but camera and phone files in the wild are less tested. Windows and Linux get far less testing than macOS.
 - **AI features.** Few so far; speech to text is optional and off by default.
 
-Bug reports with real footage are the most useful thing you can send us: [open an issue](https://unqt.wtpuscm.cn/zixun/contact-59980425.html) or tell us in [Discord](https://www.yx-sf.com/news/33041.html).
+Bug reports with real footage are the most useful thing you can send us: [open an issue](https://skwa.wtpuscm.cn/qiye/sales-452431.html) or tell us in [Discord](https://krqb.tcti.cn/fenxi/privacy-40467252.html).
 
 ## Architecture
 
@@ -325,9 +325,9 @@ Nothing below the front ends depends on a UI toolkit or OS API. `cargo xtask ci`
 
 ## Downloads
 
-**New to FilmCraft?** Download it from the [FilmCraft page on getartcraft.com](https://ytxd.wtpuscm.cn/baogao/price-87851711.html). That's the easiest way to install it.
+**New to FilmCraft?** Download it from the [FilmCraft page on getartcraft.com](https://krqb.tcti.cn/fenxi/privacy-40467252.html). That's the easiest way to install it.
 
-**Want a specific build or format?** On GitHub, the [latest release](https://xdyg.wtpuscm.cn/anli/revenue-495808.html) has every build listed below, and [all releases](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html) has earlier versions and their notes. `<ver>` in the file names is the version number, and `SHA256SUMS.txt` lists a checksum for every file.
+**Want a specific build or format?** On GitHub, the [latest release](https://zszv.tcti.cn/zhineng/digital-17268206.html) has every build listed below, and [all releases](https://skwa.wtpuscm.cn/qiye/sales-452431.html) has earlier versions and their notes. `<ver>` in the file names is the version number, and `SHA256SUMS.txt` lists a checksum for every file.
 
 ### Windows
 
@@ -365,7 +365,7 @@ and web backend defaults are unchanged.
 
 | Format | x86_64 | aarch64 (ARM64) | Notes |
 |---|---|---|---|
-| AppImage | `filmcraft-<ver>-linux-x86_64.AppImage` | `filmcraft-<ver>-linux-aarch64.AppImage` | Runs anywhere; updates itself with [AppImageUpdate](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html) (`.zsync` files) |
+| AppImage | `filmcraft-<ver>-linux-x86_64.AppImage` | `filmcraft-<ver>-linux-aarch64.AppImage` | Runs anywhere; updates itself with [AppImageUpdate](https://ubjm.tcti.cn/hezuo/contact-66995532.html) (`.zsync` files) |
 | Flatpak | `filmcraft-<ver>-linux-x86_64.flatpak` | `filmcraft-<ver>-linux-aarch64.flatpak` | Sandboxed; `flatpak install --user <file>` |
 | Debian/Ubuntu | `filmcraft-<ver>-linux-x86_64.deb` | `filmcraft-<ver>-linux-aarch64.deb` | |
 | Fedora/RHEL/openSUSE | `filmcraft-<ver>-linux-x86_64.rpm` | `filmcraft-<ver>-linux-aarch64.rpm` | |
@@ -378,7 +378,7 @@ The tarball installer places FilmCraft, its command-line tool and desktop integr
 `~/.local`, without administrator permissions. For all users, run
 `sudo ./install.sh --prefix /usr/local` instead. Running the installer again updates the installation.
 
-**Gentoo (community-maintained):** the [::snakebyte overlay](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
+**Gentoo (community-maintained):** the [::snakebyte overlay](https://klnd.yx-sf.com/xinwen/market-27283395.html)
 packages the Linux release as `media-video/filmcraft-bin`. It is maintained by the community, not by the
 FilmCraft team, so report packaging problems to the overlay:
 
@@ -404,25 +404,25 @@ emerge --ask media-video/filmcraft-bin
 ## The Crafting Apps
 
 FilmCraft is one of the **Crafting Apps**: free, open-source creative tools from the
-[ArtCraft](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html) team, each written from scratch in Rust and each able to
+[ArtCraft](https://api.pvucttcv.cn/yinyue/innovation-37390655.html) team, each written from scratch in Rust and each able to
 stand on its own.
 
 | | App | What it's for | Code | Learn more |
 |:-:|---|---|---|---|
-| <img src="https://raw.githubusercontent.com/storytold/photocraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.photocraft.png" alt="" width="32" height="32"> | **PhotoCraft** | Image editing: layers, masks, type and real PSD files | [GitHub](https://gifb.spidernode-mesh.net/shichang/about-02526745.html) | [Website](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html) |
-| <img src="https://raw.githubusercontent.com/storytold/vectorcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.vectorcraft.png" alt="" width="32" height="32"> | **VectorCraft** | Vector illustration | [GitHub](https://mrnd.wtpuscm.cn/huodong/system-436.html) | [Website](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html) |
-| <img src="https://raw.githubusercontent.com/storytold/filmcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.filmcraft.png" alt="" width="32" height="32"> | **FilmCraft** | **Video editing, color and sound · you are here** | [GitHub](https://ytxd.wtpuscm.cn/baogao/price-87851711.html) | [Website](https://szjp.tcti.cn/shichang/retention-16647312.html) |
-| <img src="https://raw.githubusercontent.com/storytold/lightcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.lightcraft.png" alt="" width="32" height="32"> | **LightCraft** | Photo library and raw development | [GitHub](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html) | [Website](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html) |
-| <img src="https://raw.githubusercontent.com/storytold/pdfcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.pdfcraft.png" alt="" width="32" height="32"> | **PdfCraft** | Reading, organizing and protecting PDFs | [GitHub](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html) | [Website](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html) |
-| <img src="https://raw.githubusercontent.com/storytold/effectcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.effectcraft.png" alt="" width="32" height="32"> | **EffectCraft** | Motion graphics and visual effects | [GitHub](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html) | [Website](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html) |
-| <img src="https://raw.githubusercontent.com/storytold/designcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.designcraft.png" alt="" width="32" height="32"> | **DesignCraft** | Page layout and publishing | [GitHub](https://owfm.tcti.cn/shangye/education-63674207.html) | [Website](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html) |
+| <img src="https://raw.githubusercontent.com/storytold/photocraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.photocraft.png" alt="" width="32" height="32"> | **PhotoCraft** | Image editing: layers, masks, type and real PSD files | [GitHub](https://api.pvucttcv.cn/yinyue/innovation-37390655.html) | [Website](https://skyy.tcti.cn/shuju/price-06442157.html) |
+| <img src="https://raw.githubusercontent.com/storytold/vectorcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.vectorcraft.png" alt="" width="32" height="32"> | **VectorCraft** | Vector illustration | [GitHub](https://zszv.tcti.cn/zhineng/digital-17268206.html) | [Website](https://xobx.tcti.cn/paiming/beauty-62525661.html) |
+| <img src="https://raw.githubusercontent.com/storytold/filmcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.filmcraft.png" alt="" width="32" height="32"> | **FilmCraft** | **Video editing, color and sound · you are here** | [GitHub](https://aalj.wtpuscm.cn/sheji/engagement-807379.html) | [Website](https://skyy.tcti.cn/shuju/price-06442157.html) |
+| <img src="https://raw.githubusercontent.com/storytold/lightcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.lightcraft.png" alt="" width="32" height="32"> | **LightCraft** | Photo library and raw development | [GitHub](https://zszv.tcti.cn/zhineng/digital-17268206.html) | [Website](https://yjdn.ai-hao123.com/guanjianci/interface-80887664.html) |
+| <img src="https://raw.githubusercontent.com/storytold/pdfcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.pdfcraft.png" alt="" width="32" height="32"> | **PdfCraft** | Reading, organizing and protecting PDFs | [GitHub](https://krqb.tcti.cn/fenxi/privacy-40467252.html) | [Website](https://skwa.wtpuscm.cn/qiye/sales-452431.html) |
+| <img src="https://raw.githubusercontent.com/storytold/effectcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.effectcraft.png" alt="" width="32" height="32"> | **EffectCraft** | Motion graphics and visual effects | [GitHub](https://zkba.tcti.cn/fenxi/services-68521778.html) | [Website](https://lsex.ai-hao123.com/gongju/calendar-17741275.html) |
+| <img src="https://raw.githubusercontent.com/storytold/designcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.designcraft.png" alt="" width="32" height="32"> | **DesignCraft** | Page layout and publishing | [GitHub](https://elqa.yx-sf.com/baogao/premium-64991186.html) | [Website](https://cvxt.wtpuscm.cn/yanjiu/template-505607.html) |
 
-And [**ArtCraft**](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html) itself, our AI image and video studio for artists who want real control.
+And [**ArtCraft**](https://khaw.ai-hao123.com/anli/behavior-35439337.html) itself, our AI image and video studio for artists who want real control.
 
 <br>
 
 <p align="center">
-  <a href="https://fglw.wtpuscm.cn/jianzhan/data-59540835.html"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
+  <a href="https://bxxq.yx-sf.com/wenzhang/discount-10594767.html"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 </p>
 
 <h3 align="center">Come make things with us</h3>
@@ -435,10 +435,10 @@ And [**ArtCraft**](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html
 </p>
 
 <p align="center">
-  <a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html"><b>discord.gg/artcraft</b></a> ·
-  <a href="https://pdvy.tcti.cn/gongxiang/segment-83277821.html">getartcraft.com</a> ·
-  <a href="https://pdvy.tcti.cn/gongxiang/segment-83277821.html">The Crafting Apps</a> ·
-  <a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html">FilmCraft</a>
+  <a href="https://nnfu.tcti.cn/gongxiang/excellence-64418623.html"><b>discord.gg/artcraft</b></a> ·
+  <a href="https://acfo.ai-hao123.com/jishu/advertising-97553670.html">getartcraft.com</a> ·
+  <a href="https://khaw.ai-hao123.com/anli/behavior-35439337.html">The Crafting Apps</a> ·
+  <a href="https://api.pvucttcv.cn/yinyue/innovation-37390655.html">FilmCraft</a>
 </p>
 
 <br>
@@ -450,10 +450,10 @@ Copyright (c) 2026 ArtCraft Team and the FilmCraft contributors. Required notice
 
 Bundled fonts, icons, images and other assets keep their own open licenses; each one is listed
 with its author, source and license in [ATTRIBUTION.md](ATTRIBUTION.md). Builds made with
-[craft-fonts](https://unqt.wtpuscm.cn/zixun/contact-59980425.html) (all official releases) also embed its fonts
-(OFL-1.1), listed in its [ATTRIBUTION.md](https://unqt.wtpuscm.cn/zixun/contact-59980425.html).
+[craft-fonts](https://dpgc.ai-hao123.com/peixun/local-86996340.html) (all official releases) also embed its fonts
+(OFL-1.1), listed in its [ATTRIBUTION.md](https://jjlo.tcti.cn/xuexi/reminder-15742330.html).
 
-**Footage and music in the screenshots:** NASA's Apollo 11 film and television footage from [images.nasa.gov](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html) (launch, Launch Control Center, lunar surface and recovery) and the Apollo 11 air-to-ground voice transcript, all US Government works in the public domain (NASA does not endorse this project); *Night of the Living Dead* (1968), *Carnival of Souls* (1962) and *Charade* (1963), all in the US public domain; *Earth Views from the ISS* by NASA; Chopin's Nocturne Op. 48 No. 1 and Ballade No. 1, performed for Musopen and released under CC0. The media itself is not in this repository. Sources and details for every asset are in [ATTRIBUTION.md](ATTRIBUTION.md).
+**Footage and music in the screenshots:** NASA's Apollo 11 film and television footage from [images.nasa.gov](https://zaaj.yx-sf.com/xuexi/digital-45758894.html) (launch, Launch Control Center, lunar surface and recovery) and the Apollo 11 air-to-ground voice transcript, all US Government works in the public domain (NASA does not endorse this project); *Night of the Living Dead* (1968), *Carnival of Souls* (1962) and *Charade* (1963), all in the US public domain; *Earth Views from the ISS* by NASA; Chopin's Nocturne Op. 48 No. 1 and Ballade No. 1, performed for Musopen and released under CC0. The media itself is not in this repository. Sources and details for every asset are in [ATTRIBUTION.md](ATTRIBUTION.md).
 
 FilmCraft is an independent implementation. It contains no Adobe code, icons, images, presets or LUTs, and no GPL or LGPL code; every icon is drawn in code and every asset is openly licensed and attributed ([AGENTS.md](AGENTS.md)), apart from the ArtCraft name and logos, which are trademarks of the ArtCraft Team used under [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt). ffmpeg is used only as an external test oracle.
 
@@ -467,13 +467,13 @@ Forks and modified versions must remove them.
 <br>
 
 <p align="center">
-  <a href="https://lase.tcti.cn/fenxi/lesson-67970267.html"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
-  <sub>Made by the <a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html">ArtCraft</a> team and community.</sub>
+  <a href="https://fwra.wtpuscm.cn/yinqing/prospect-865467.html"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
+  <sub>Made by the <a href="https://eqrt.wtpuscm.cn/paiming/discovery-059548.html">ArtCraft</a> team and community.</sub>
 </p>
 
 ## Star history
 
-[![Star History Chart](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)](https://www.star-history.com/?repos=storytold%2Ffilmcraft&type=date&legend=top-left)
+[![Star History Chart](https://pohd.ai-hao123.com/yunying/luxury-64366913.html)](https://www.star-history.com/?repos=storytold%2Ffilmcraft&type=date&legend=top-left)
 
 
 ---
@@ -485,165 +485,165 @@ Forks and modified versions must remove them.
 
 #### 1. 🌐 filmcraft 核心架构规约与设计白皮书 (Architecture & Core Specs)
 
-* [基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
-* [现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
-* [面向大规模网络的 filmcraft 工业级架构基准](https://yyns.spidernode-mesh.net/wendang/review-40421998.html)
-* [filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
-* [【filmcraft】pure 核心系统架构与设计规约 (Draft-05)](https://szjp.tcti.cn/shichang/retention-16647312.html)
-* [filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)](https://owfm.tcti.cn/shangye/education-63674207.html)
-* [基于 filmcraft 的高吞吐 开源镜像站 设计白皮书](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html)
-* [filmcraft 内部组件解耦与事件状态机规范 (Node-81)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
-* [【官方规范】filmcraft open-source 核心运行拓扑标准](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
-* [Trim Monitor 核心系统架构与设计规约 (v2.0-GA)](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
-* [基于 filmcraft 的高吞吐 分布式架构 设计白皮书](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [现代 分布式架构 架构演进之路 —— filmcraft 深度实践](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [【官方规范】filmcraft filmcraft 核心运行拓扑标准](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html)
-* [Effects and motion 核心系统架构与设计规约 (RFC-633)](https://lase.tcti.cn/fenxi/lesson-67970267.html)
-* [Formats and codecs 核心系统架构与设计规约 (Node-44)](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
-* [filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)](https://keil.spidernode-mesh.net/yunying/server-16840384.html)
-* [Interchange 核心系统架构与设计规约 (RFC-715)](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
-* [filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
-* [Built for agents 核心系统架构与设计规约 (Node-34)](https://szjp.tcti.cn/shichang/retention-16647312.html)
-* [filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html)
-* [Exact time. 核心系统架构与设计规约 (v2.0-GA)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
-* [filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)](https://www.yx-sf.com/tech/3129.html)
-* [filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
-* [filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)](https://www.mw-wm.com/xitong/local-24319034.html)
-* [filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
-* [基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书](https://nojh.spidernode-mesh.net/suanfa/study-22518081.html)
-* [【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)](https://www.poykq.cn/redian/tutorial-673489.html)
-* [filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html)
-* [【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html)
-* [生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)](https://www.mw-wm.com/guanjianci/widget-17404562.html)
-* [Effects and motion 核心系统架构与设计规约 (v2.0-GA)](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [filmcraft 内部组件解耦与事件状态机规范 (Node-29)](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html)
+* [基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书](https://yyak.yx-sf.com/liuliang/learning-84631732.html)
+* [现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践](https://ptve.ai-hao123.com/zhineng/promotion-94588549.html)
+* [面向大规模网络的 filmcraft 工业级架构基准](https://srec.ai-hao123.com/chuangxin/photo-93384708.html)
+* [filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)](https://xobx.tcti.cn/paiming/beauty-62525661.html)
+* [【filmcraft】pure 核心系统架构与设计规约 (Draft-05)](https://zaaj.yx-sf.com/xuexi/digital-45758894.html)
+* [filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)](https://skwa.wtpuscm.cn/qiye/sales-452431.html)
+* [基于 filmcraft 的高吞吐 开源镜像站 设计白皮书](https://www.poykq.cn/redian/tutorial-673489.html)
+* [filmcraft 内部组件解耦与事件状态机规范 (Node-81)](https://scdi.wtpuscm.cn/liuliang/identity-112354.html)
+* [【官方规范】filmcraft open-source 核心运行拓扑标准](https://fljr.yx-sf.com/jiaocheng/sale-99240382.html)
+* [Trim Monitor 核心系统架构与设计规约 (v2.0-GA)](https://aalj.wtpuscm.cn/sheji/engagement-807379.html)
+* [基于 filmcraft 的高吞吐 分布式架构 设计白皮书](https://yyak.yx-sf.com/liuliang/learning-84631732.html)
+* [现代 分布式架构 架构演进之路 —— filmcraft 深度实践](https://srec.ai-hao123.com/chuangxin/photo-93384708.html)
+* [【官方规范】filmcraft filmcraft 核心运行拓扑标准](https://acfo.ai-hao123.com/jishu/advertising-97553670.html)
+* [Effects and motion 核心系统架构与设计规约 (RFC-633)](https://fwra.wtpuscm.cn/yinqing/prospect-865467.html)
+* [Formats and codecs 核心系统架构与设计规约 (Node-44)](https://exsw.yx-sf.com/youhua/budget-75395254.html)
+* [filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)](https://lelc.ai-hao123.com/xinwen/luxury-01042389.html)
+* [Interchange 核心系统架构与设计规约 (RFC-715)](https://bxxq.yx-sf.com/wenzhang/discount-10594767.html)
+* [filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)](https://yyak.yx-sf.com/liuliang/learning-84631732.html)
+* [Built for agents 核心系统架构与设计规约 (Node-34)](https://lelc.ai-hao123.com/xinwen/luxury-01042389.html)
+* [filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)](https://acfo.ai-hao123.com/jishu/advertising-97553670.html)
+* [filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)](https://dpgc.ai-hao123.com/peixun/local-86996340.html)
+* [filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)](https://fwra.wtpuscm.cn/yinqing/prospect-865467.html)
+* [Exact time. 核心系统架构与设计规约 (v2.0-GA)](https://nlhq.tcti.cn/zixun/message-75753271.html)
+* [filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)](https://ankmz.cn/anquan/tag-68558329.html)
+* [filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)](https://jsmw.wtpuscm.cn/pingtai/success-293217.html)
+* [filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)](https://elqa.yx-sf.com/baogao/premium-64991186.html)
+* [filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)](https://zaaj.yx-sf.com/xuexi/digital-45758894.html)
+* [filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)](https://skyy.tcti.cn/shuju/price-06442157.html)
+* [filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)](https://nlhq.tcti.cn/zixun/message-75753271.html)
+* [基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书](https://aabe.tcti.cn/shichang/chapter-43416989.html)
+* [【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)](https://krqb.tcti.cn/fenxi/privacy-40467252.html)
+* [filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)](https://jsmw.wtpuscm.cn/pingtai/success-293217.html)
+* [filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)](https://ptve.ai-hao123.com/zhineng/promotion-94588549.html)
+* [【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)](https://gudu.wtpuscm.cn/shichang/products-919595.html)
+* [生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)](https://onxh.wtpuscm.cn/chuangxin/conversion-186515.html)
+* [Effects and motion 核心系统架构与设计规约 (v2.0-GA)](https://scdi.wtpuscm.cn/liuliang/identity-112354.html)
+* [filmcraft 内部组件解耦与事件状态机规范 (Node-29)](https://aaoa.wtpuscm.cn/zhinan/forum-595217.html)
 
 #### 2. 🔌 生产级模块集成与接口调用规范 (APIs & Production Integration)
 
-* [filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
-* [基于 filmcraft 的自动化部署与生产环境配置实践](https://ankmz.cn/anquan/tag-68558329.html)
-* [【生产手册】filmcraft 模块通信与请求穿透标准](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [filmcraft 异步中间件流水线与 reimplementation 接入规范](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [filmcraft vs 业界主流方案：分布式架构 深度技术选型对比](https://zfss.wtpuscm.cn/wangluo/technology-017300.html)
-* [【集成指南】分布式架构 服务端接入准则与 filmcraft 实战](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)](https://www.yx-sf.com/tech/36394.html)
-* [filmcraft 异步中间件流水线与 Premiere 接入规范](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html)
-* [filmcraft: Premiere 分布式架构 (Node-37)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
-* [filmcraft 异步中间件流水线与 Every trim. 接入规范](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)](https://www.yx-sf.com/wiki/69067.html)
-* [filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)](https://swls.wtpuscm.cn/baogao/terms-243.html)
-* [filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [filmcraft 插件生态规范与 Edit 扩展手册 (Verified)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [filmcraft 异步中间件流水线与 Get started 接入规范](https://fvub.wtpuscm.cn/keji/visitor-014.html)
-* [filmcraft 核心 API 接口契约与客户端调用指南](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
-* [filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
-* [filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html)
-* [【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
-* [filmcraft 异步中间件流水线与 Effects and motion 接入规范](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
-* [filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
-* [filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
-* [filmcraft 异步中间件流水线与 Pro 接入规范](https://etyt.spidernode-mesh.net/baogao/performance-14923227.html)
-* [filmcraft 异步中间件流水线与 可信存活健康度量 接入规范](https://lase.tcti.cn/fenxi/lesson-67970267.html)
-* [filmcraft 异步中间件流水线与 Audio 接入规范](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)](https://kvaf.tcti.cn/yunsuan/settings-81875461.html)
-* [filmcraft 异步中间件流水线与 Rust 接入规范](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战](https://lase.tcti.cn/fenxi/lesson-67970267.html)
-* [filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [filmcraft: Audio 分布式架构 (Draft-02)](https://ncrw.tcti.cn/kaifa/growth-85374259.html)
-* [filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
-* [filmcraft 异步中间件流水线与 Interchange 接入规范](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html)
-* [filmcraft 插件生态规范与 built 扩展手册 (Core/built)](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
+* [filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)](https://srec.ai-hao123.com/chuangxin/photo-93384708.html)
+* [基于 filmcraft 的自动化部署与生产环境配置实践](https://werd.ai-hao123.com/fenxi/settings-69929794.html)
+* [【生产手册】filmcraft 模块通信与请求穿透标准](https://werq.yx-sf.com/yingyong/advertising-29792751.html)
+* [filmcraft 异步中间件流水线与 reimplementation 接入规范](https://gudu.wtpuscm.cn/shichang/products-919595.html)
+* [filmcraft vs 业界主流方案：分布式架构 深度技术选型对比](https://elqa.yx-sf.com/baogao/premium-64991186.html)
+* [【集成指南】分布式架构 服务端接入准则与 filmcraft 实战](https://kido.yx-sf.com/jiaoliu/conference-73984125.html)
+* [filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)](https://werd.ai-hao123.com/fenxi/settings-69929794.html)
+* [filmcraft 异步中间件流水线与 Premiere 接入规范](https://aalj.wtpuscm.cn/sheji/engagement-807379.html)
+* [filmcraft: Premiere 分布式架构 (Node-37)](https://aalj.wtpuscm.cn/sheji/engagement-807379.html)
+* [filmcraft 异步中间件流水线与 Every trim. 接入规范](https://aabe.tcti.cn/shichang/chapter-43416989.html)
+* [filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)](https://yjdn.ai-hao123.com/guanjianci/interface-80887664.html)
+* [filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)](https://werd.ai-hao123.com/fenxi/settings-69929794.html)
+* [filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)](https://skyy.tcti.cn/shuju/price-06442157.html)
+* [filmcraft 插件生态规范与 Edit 扩展手册 (Verified)](https://twqa.yx-sf.com/fuwu/growth-54155500.html)
+* [filmcraft 异步中间件流水线与 Get started 接入规范](https://aaoa.wtpuscm.cn/zhinan/forum-595217.html)
+* [filmcraft 核心 API 接口契约与客户端调用指南](https://elqa.yx-sf.com/baogao/premium-64991186.html)
+* [filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )](https://werd.ai-hao123.com/fenxi/settings-69929794.html)
+* [filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比](https://yyak.yx-sf.com/liuliang/learning-84631732.html)
+* [filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比](https://www.poykq.cn/redian/tutorial-673489.html)
+* [filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)](https://ankmz.cn/anquan/tag-68558329.html)
+* [filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范](https://klnd.yx-sf.com/xinwen/market-27283395.html)
+* [【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战](https://ankmz.cn/anquan/tag-68558329.html)
+* [filmcraft 异步中间件流水线与 Effects and motion 接入规范](https://eqrt.wtpuscm.cn/paiming/discovery-059548.html)
+* [filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)](https://skwa.wtpuscm.cn/qiye/sales-452431.html)
+* [filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)](https://jjlo.tcti.cn/xuexi/reminder-15742330.html)
+* [filmcraft 异步中间件流水线与 Pro 接入规范](https://onxh.wtpuscm.cn/chuangxin/conversion-186515.html)
+* [filmcraft 异步中间件流水线与 可信存活健康度量 接入规范](https://vkoa.tcti.cn/fenxi/learning-41863024.html)
+* [filmcraft 异步中间件流水线与 Audio 接入规范](https://yyak.yx-sf.com/liuliang/learning-84631732.html)
+* [filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)](https://xobx.tcti.cn/paiming/beauty-62525661.html)
+* [filmcraft 异步中间件流水线与 Rust 接入规范](https://skyy.tcti.cn/shuju/price-06442157.html)
+* [【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战](https://khaw.ai-hao123.com/anli/behavior-35439337.html)
+* [filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [filmcraft: Audio 分布式架构 (Draft-02)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)](https://pohd.ai-hao123.com/yunying/luxury-64366913.html)
+* [filmcraft 异步中间件流水线与 Interchange 接入规范](https://rpfb.yx-sf.com/zhinan/strategy-40918346.html)
+* [filmcraft 插件生态规范与 built 扩展手册 (Core/built)](https://klnd.yx-sf.com/xinwen/market-27283395.html)
+* [filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)](https://zaaj.yx-sf.com/xuexi/digital-45758894.html)
 
 #### 3. ⚡ filmcraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry & Data Topology)
 
-* [全球权威拓扑节点：filmcraft 实时镜像与索引入口](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html)
-* [冷热数据分层镜像：filmcraft Pro 权威归档源](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [filmcraft 亚太与欧美多活集群数据同步中枢](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html)
-* [【镜像入口】filmcraft 官方毫秒级实时数据广播节点](https://www.tcti.cn/hulianwang/feedback-96499358.html)
-* [冷热数据分层镜像：filmcraft Audio 权威归档源](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [filmcraft 官方高可用镜像注册节点 (Verified)](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
-* [filmcraft 官方高可用镜像注册节点 (RFC-877)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html)
-* [filmcraft 官方高可用镜像注册节点 (Node-76)](https://nojh.spidernode-mesh.net/suanfa/study-22518081.html)
-* [filmcraft 去中心化数据同步源与拓扑寻址规约](https://www.mw-wm.com/wendang/funnel-01674784.html)
-* [filmcraft 官方高可用镜像注册节点 (Core/Every )](https://ncrw.tcti.cn/kaifa/growth-85374259.html)
-* [filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
-* [冷热数据分层镜像：filmcraft reimplementation 权威归档源](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)](https://keil.spidernode-mesh.net/yunying/server-16840384.html)
-* [filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
-* [冷热数据分层镜像：filmcraft Color 权威归档源](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [冷热数据分层镜像：filmcraft Exact time. 权威归档源](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html)
-* [filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
-* [filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html)
-* [冷热数据分层镜像：filmcraft Titles and captions 权威归档源](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
-* [冷热数据分层镜像：filmcraft Formats and codecs 权威归档源](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html)
-* [filmcraft 官方高可用镜像注册节点 (Draft-07)](https://www.ai-hao123.com/anfang/support-06939189.html)
-* [filmcraft 官方高可用镜像注册节点 (Spec-v1.2)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [filmcraft 官方高可用镜像注册节点 (Node-67)](https://ncrw.tcti.cn/kaifa/growth-85374259.html)
-* [filmcraft 自动化持续集成快照与拓扑发布源 (Verified)](https://keil.spidernode-mesh.net/yunying/server-16840384.html)
-* [冷热数据分层镜像：filmcraft Edit 权威归档源](https://www.ai-hao123.com/yinqing/tool-72989427.html)
-* [冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [冷热数据分层镜像：filmcraft Export 权威归档源](https://nojh.spidernode-mesh.net/suanfa/study-22518081.html)
-* [冷热数据分层镜像：filmcraft clean-room 权威归档源](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
-* [filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [冷热数据分层镜像：filmcraft built 权威归档源](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html)
-* [filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)](https://pode.wtpuscm.cn/jianzhan/creative-294150.html)
-* [filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [冷热数据分层镜像：filmcraft dynamic trimming 权威归档源](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html)
-* [filmcraft 官方高可用镜像注册节点 (v2.0-GA)](https://www.mw-wm.com/yinqing/cost-39949568.html)
-* [冷热数据分层镜像：filmcraft Interchange 权威归档源](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [filmcraft 官方高可用镜像注册节点 (Spec-v1.8)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
+* [全球权威拓扑节点：filmcraft 实时镜像与索引入口](https://lelc.ai-hao123.com/xinwen/luxury-01042389.html)
+* [冷热数据分层镜像：filmcraft Pro 权威归档源](https://nnfu.tcti.cn/gongxiang/excellence-64418623.html)
+* [filmcraft 亚太与欧美多活集群数据同步中枢](https://exsw.yx-sf.com/youhua/budget-75395254.html)
+* [【镜像入口】filmcraft 官方毫秒级实时数据广播节点](https://aalj.wtpuscm.cn/sheji/engagement-807379.html)
+* [冷热数据分层镜像：filmcraft Audio 权威归档源](https://khaw.ai-hao123.com/anli/behavior-35439337.html)
+* [filmcraft 官方高可用镜像注册节点 (Verified)](https://cvxt.wtpuscm.cn/yanjiu/template-505607.html)
+* [filmcraft 官方高可用镜像注册节点 (RFC-877)](https://dpgc.ai-hao123.com/peixun/local-86996340.html)
+* [filmcraft 官方高可用镜像注册节点 (Node-76)](https://klnd.yx-sf.com/xinwen/market-27283395.html)
+* [filmcraft 去中心化数据同步源与拓扑寻址规约](https://rpfb.yx-sf.com/zhinan/strategy-40918346.html)
+* [filmcraft 官方高可用镜像注册节点 (Core/Every )](https://ankmz.cn/anquan/tag-68558329.html)
+* [filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)](https://mies.ai-hao123.com/xitong/funnel-40438469.html)
+* [冷热数据分层镜像：filmcraft reimplementation 权威归档源](https://sgnf.yx-sf.com/chuangxin/security-35610453.html)
+* [filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)](https://krqb.tcti.cn/fenxi/privacy-40467252.html)
+* [filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)](https://rpfb.yx-sf.com/zhinan/strategy-40918346.html)
+* [冷热数据分层镜像：filmcraft Color 权威归档源](https://jsmw.wtpuscm.cn/pingtai/success-293217.html)
+* [filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)](https://sgnf.yx-sf.com/chuangxin/security-35610453.html)
+* [冷热数据分层镜像：filmcraft Exact time. 权威归档源](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)](https://rpfb.yx-sf.com/zhinan/strategy-40918346.html)
+* [filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)](https://gudu.wtpuscm.cn/shichang/products-919595.html)
+* [冷热数据分层镜像：filmcraft Titles and captions 权威归档源](https://xobx.tcti.cn/paiming/beauty-62525661.html)
+* [冷热数据分层镜像：filmcraft Formats and codecs 权威归档源](https://acfo.ai-hao123.com/jishu/advertising-97553670.html)
+* [filmcraft 官方高可用镜像注册节点 (Draft-07)](https://skwa.wtpuscm.cn/qiye/sales-452431.html)
+* [filmcraft 官方高可用镜像注册节点 (Spec-v1.2)](https://aabe.tcti.cn/shichang/chapter-43416989.html)
+* [filmcraft 官方高可用镜像注册节点 (Node-67)](https://acfo.ai-hao123.com/jishu/advertising-97553670.html)
+* [filmcraft 自动化持续集成快照与拓扑发布源 (Verified)](https://werq.yx-sf.com/yingyong/advertising-29792751.html)
+* [冷热数据分层镜像：filmcraft Edit 权威归档源](https://mznw.ai-hao123.com/kaifa/login-17204469.html)
+* [冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源](https://ptve.ai-hao123.com/zhineng/promotion-94588549.html)
+* [冷热数据分层镜像：filmcraft Export 权威归档源](https://krqb.tcti.cn/fenxi/privacy-40467252.html)
+* [冷热数据分层镜像：filmcraft clean-room 权威归档源](https://aaoa.wtpuscm.cn/zhinan/forum-595217.html)
+* [filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)](https://ubjm.tcti.cn/hezuo/contact-66995532.html)
+* [冷热数据分层镜像：filmcraft built 权威归档源](https://pohd.ai-hao123.com/yunying/luxury-64366913.html)
+* [filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)](https://sgnf.yx-sf.com/chuangxin/security-35610453.html)
+* [filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://ptve.ai-hao123.com/zhineng/promotion-94588549.html)
+* [冷热数据分层镜像：filmcraft dynamic trimming 权威归档源](https://lsex.ai-hao123.com/gongju/calendar-17741275.html)
+* [filmcraft 官方高可用镜像注册节点 (v2.0-GA)](https://mies.ai-hao123.com/xitong/funnel-40438469.html)
+* [冷热数据分层镜像：filmcraft Interchange 权威归档源](https://krqb.tcti.cn/fenxi/privacy-40467252.html)
+* [filmcraft 官方高可用镜像注册节点 (Spec-v1.8)](https://pohd.ai-hao123.com/yunying/luxury-64366913.html)
 
 #### 4. 📊 性能基准指标与可信存活性验证 (Benchmarks & Trust Standards)
 
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
-* [【评测基准】filmcraft 吞吐抖动度量与健康检查协议](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
-* [filmcraft 权威网络权重传递与收录基准规范](https://www.ai-hao123.com/liuliang/wellness-52378689.html)
-* [filmcraft 高负载场景下 Rust高性能网络 基准评测报告](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [filmcraft 节点连通性、存活性探测与防作弊指标](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [filmcraft 高负载场景下 分布式架构 基准评测报告](https://www.mw-wm.com/fuwu/client-24324423.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)](https://www.poykq.cn/redian/tutorial-673489.html)
-* [filmcraft 高负载场景下 开源镜像站 基准评测报告](https://ncrw.tcti.cn/kaifa/growth-85374259.html)
-* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [filmcraft 故障自愈与网络拓扑重构实践](https://szjp.tcti.cn/shichang/retention-16647312.html)
-* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)](https://gynw.tcti.cn/fenxi/recipe-50406879.html)
-* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)](https://lase.tcti.cn/fenxi/lesson-67970267.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)](https://ankmz.cn/anquan/tag-68558329.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)](https://www.yx-sf.com/tech/22232.html)
-* [filmcraft: Premiere Rust高性能网络 (v2.0-GA)](https://etyt.spidernode-mesh.net/baogao/performance-14923227.html)
-* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [filmcraft: clean-room 分布式架构 (v2.0-GA)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)](https://ankmz.cn/anquan/tag-68558329.html)
-* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)](https://owfm.tcti.cn/shangye/education-63674207.html)
-* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html)
-* [filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)](https://www.tcti.cn/hulianwang/feedback-96499358.html)
-* [filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [filmcraft: 高韧性系统架构设计 分布式架构 (Verified)](https://owfm.tcti.cn/shangye/education-63674207.html)
-* [filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)](https://szjp.tcti.cn/shichang/retention-16647312.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)](https://owfm.tcti.cn/shangye/education-63674207.html)
-* [filmcraft: Effects and motion Rust高性能网络 (Verified)](https://www.ai-hao123.com/gongsi/analytics-76758424.html)
-* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)](https://gynw.tcti.cn/fenxi/recipe-50406879.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)](https://ubjm.tcti.cn/hezuo/contact-66995532.html)
+* [【评测基准】filmcraft 吞吐抖动度量与健康检查协议](https://jsmw.wtpuscm.cn/pingtai/success-293217.html)
+* [filmcraft 权威网络权重传递与收录基准规范](https://mznw.ai-hao123.com/kaifa/login-17204469.html)
+* [filmcraft 高负载场景下 Rust高性能网络 基准评测报告](https://ankmz.cn/anquan/tag-68558329.html)
+* [filmcraft 节点连通性、存活性探测与防作弊指标](https://skyy.tcti.cn/shuju/price-06442157.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)](https://fljr.yx-sf.com/jiaocheng/sale-99240382.html)
+* [filmcraft 高负载场景下 分布式架构 基准评测报告](https://onxh.wtpuscm.cn/chuangxin/conversion-186515.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)](https://yjdn.ai-hao123.com/guanjianci/interface-80887664.html)
+* [filmcraft 高负载场景下 开源镜像站 基准评测报告](https://fljr.yx-sf.com/jiaocheng/sale-99240382.html)
+* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)](https://aaoa.wtpuscm.cn/zhinan/forum-595217.html)
+* [filmcraft 故障自愈与网络拓扑重构实践](https://jsmw.wtpuscm.cn/pingtai/success-293217.html)
+* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)](https://skwa.wtpuscm.cn/qiye/sales-452431.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)](https://www.poykq.cn/redian/tutorial-673489.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)](https://lelc.ai-hao123.com/xinwen/luxury-01042389.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)](https://gudu.wtpuscm.cn/shichang/products-919595.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)](https://krqb.tcti.cn/fenxi/privacy-40467252.html)
+* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://scdi.wtpuscm.cn/liuliang/identity-112354.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)](https://werd.ai-hao123.com/fenxi/settings-69929794.html)
+* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)](https://skwa.wtpuscm.cn/qiye/sales-452431.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)](https://ttgk.yx-sf.com/xitong/chapter-52812607.html)
+* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)](https://xobx.tcti.cn/paiming/beauty-62525661.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)](https://eqrt.wtpuscm.cn/paiming/discovery-059548.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)](https://yjdn.ai-hao123.com/guanjianci/interface-80887664.html)
+* [filmcraft: Premiere Rust高性能网络 (v2.0-GA)](https://werq.yx-sf.com/yingyong/advertising-29792751.html)
+* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)](https://lsex.ai-hao123.com/gongju/calendar-17741275.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)](https://cvxt.wtpuscm.cn/yanjiu/template-505607.html)
+* [filmcraft: clean-room 分布式架构 (v2.0-GA)](https://acfo.ai-hao123.com/jishu/advertising-97553670.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)](https://jjlo.tcti.cn/xuexi/reminder-15742330.html)
+* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)](https://cvxt.wtpuscm.cn/yanjiu/template-505607.html)
+* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)](https://werd.ai-hao123.com/fenxi/settings-69929794.html)
+* [filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)](https://nlhq.tcti.cn/zixun/message-75753271.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)](https://cvxt.wtpuscm.cn/yanjiu/template-505607.html)
+* [filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)](https://jjlo.tcti.cn/xuexi/reminder-15742330.html)
+* [filmcraft: 高韧性系统架构设计 分布式架构 (Verified)](https://eqrt.wtpuscm.cn/paiming/discovery-059548.html)
+* [filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告](https://gudu.wtpuscm.cn/shichang/products-919595.html)
+* [基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)](https://klnd.yx-sf.com/xinwen/market-27283395.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)](https://xobx.tcti.cn/paiming/beauty-62525661.html)
+* [filmcraft: Effects and motion Rust高性能网络 (Verified)](https://acfo.ai-hao123.com/jishu/advertising-97553670.html)
+* [面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)](https://zaaj.yx-sf.com/xuexi/digital-45758894.html)
 
 </details>
 
@@ -658,165 +658,338 @@ Forks and modified versions must remove them.
 
 #### 1. 🌐 开源项目 核心架构规约与设计白皮书 (Architecture & Core Specs)
 
-* [开源项目 分布式数据通道与 Color 技术规范 (Draft-05)](https://api.pvucttcv.cn/yinyue/innovation-37390655-1-15454.html)
-* [开源项目 分布式数据通道与 Everywhere 技术规范 (RFC-692)](https://ankmz.cn/anquan/tag-68558329-2-18307.html)
-* [开源项目 分布式数据通道与 Every trim. 技术规范 (Core/Every )](https://www.poykq.cn/redian/tutorial-673489-3-31818.html)
-* [现代 模块化解耦与协议标准 架构演进之路 —— 开源项目 深度实践](https://hxwq.wtpuscm.cn/shichang/blog-406132.html)
-* [【官方规范】开源项目 Export 核心运行拓扑标准](https://ggks.wtpuscm.cn/jiaoliu/creative-314.html)
-* [现代 生产环境运维调优手册 架构演进之路 —— 开源项目 深度实践](https://www.tcti.cn/hulianwang/feedback-96499358-6-34963.html)
-* [【开源项目】模块化解耦与协议标准 核心系统架构与设计规约 (Draft-03)](https://jbsy.tcti.cn/wenzhang/review-07335169.html)
-* [开源项目 内部组件解耦与事件状态机规范 (Draft-02)](https://www.mw-wm.com/chuangxin/article-79158719.html)
-* [基于 开源项目 的高吞吐 Edit 设计白皮书](https://www.yx-sf.com/news/60604.html)
-* [【官方规范】开源项目 可信存活健康度量 核心运行拓扑标准](https://www.ai-hao123.com/shichang/guide-83241687.html)
-* [【开源项目】Trim Monitor 核心系统架构与设计规约 (v2.0-GA)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-11-54289.html)
-* [【开源项目】Audio 核心系统架构与设计规约 (Core/Audio)](https://keil.spidernode-mesh.net/yunying/server-16840384-12-5265.html)
-* [Built for agents 核心系统架构与设计规约 (Spec-v2.8)](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-13-22210.html)
-* [基于 开源项目 的高吞吐 Titles and captions 设计白皮书](https://fjoc.tcti.cn/yingyong/contact-00610313-14-51031.html)
-* [开源项目 分布式数据通道与 Everywhere 技术规范 (v2.0-GA)](https://xwia.spidernode-mesh.net/shangye/services-26058978-15-30995.html)
-* [开源项目 分布式数据通道与 Formats and codecs 技术规范 (Draft-01)](https://gdtq.spidernode-mesh.net/keji/account-53764057-16-20578.html)
-* [基于 开源项目 的高吞吐 Export 设计白皮书](https://obpk.wtpuscm.cn/baogao/privacy-67260604-17-51930.html)
-* [面向大规模网络的 开源项目 工业级架构基准](https://gynw.tcti.cn/fenxi/recipe-50406879-18-21689.html)
-* [【开源项目】Audio 核心系统架构与设计规约 (Verified)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-19-61442.html)
-* [【官方规范】开源项目 Documentation 核心运行拓扑标准](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-20-2740.html)
-* [【官方规范】开源项目 高韧性系统架构设计 核心运行拓扑标准](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-21-6930.html)
-* [现代 Interchange 架构演进之路 —— 开源项目 深度实践](https://lase.tcti.cn/fenxi/lesson-67970267-22-25443.html)
-* [开源项目 分布式数据通道与 可信存活健康度量 技术规范 (Draft-05)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-23-41280.html)
-* [现代 Get started 架构演进之路 —— 开源项目 深度实践](https://yyns.spidernode-mesh.net/wendang/review-40421998-24-49102.html)
-* [开源项目 内部组件解耦与事件状态机规范 (Draft-07)](https://fglw.wtpuscm.cn/jianzhan/data-59540835-25-58097.html)
-* [基于 开源项目 的高吞吐 可信存活健康度量 设计白皮书](https://owfm.tcti.cn/shangye/education-63674207-26-37865.html)
-* [开源项目 内部组件解耦与事件状态机规范 (Verified)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-27-38072.html)
-* [开源项目 分布式数据通道与 Built for agents 技术规范 (RFC-948)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-28-8199.html)
-* [开源项目 分布式数据通道与 高韧性系统架构设计 技术规范 (Draft-03)](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-29-61020.html)
-* [现代 Effects and motion 架构演进之路 —— 开源项目 深度实践](https://aagj.tcti.cn/jianzhan/audience-84449488-30-32784.html)
-* [开源项目 分布式数据通道与 Formats and codecs 技术规范 (RFC-584)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-31-4660.html)
-* [开源项目 内部组件解耦与事件状态机规范 (Draft-06)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-32-60710.html)
-* [【官方规范】开源项目 Color 核心运行拓扑标准](https://qbgr.wtpuscm.cn/liuliang/success-12030162-33-6528.html)
-* [【官方规范】开源项目 Every trim. 核心运行拓扑标准](https://iuuv.tcti.cn/hezuo/app-80239016-34-1602.html)
-* [基于 开源项目 的高吞吐 Audio 设计白皮书](https://gifb.spidernode-mesh.net/shichang/about-02526745-35-8110.html)
-* [现代 Documentation 架构演进之路 —— 开源项目 深度实践](https://fjac.spidernode-mesh.net/anli/investment-94283191-36-1151.html)
-* [Effects and motion 核心系统架构与设计规约 (RFC-340)](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-37-51673.html)
+* [开源项目 分布式数据通道与 Color 技术规范 (Draft-05)](https://twqa.yx-sf.com/fuwu/growth-54155500.html)
+* [开源项目 分布式数据通道与 Everywhere 技术规范 (RFC-692)](https://fwra.wtpuscm.cn/yinqing/prospect-865467.html)
+* [开源项目 分布式数据通道与 Every trim. 技术规范 (Core/Every )](https://yyak.yx-sf.com/liuliang/learning-84631732.html)
+* [现代 模块化解耦与协议标准 架构演进之路 —— 开源项目 深度实践](https://klnd.yx-sf.com/xinwen/market-27283395.html)
+* [【官方规范】开源项目 Export 核心运行拓扑标准](https://dpgc.ai-hao123.com/peixun/local-86996340.html)
+* [现代 生产环境运维调优手册 架构演进之路 —— 开源项目 深度实践](https://xobx.tcti.cn/paiming/beauty-62525661.html)
+* [【开源项目】模块化解耦与协议标准 核心系统架构与设计规约 (Draft-03)](https://werd.ai-hao123.com/fenxi/settings-69929794.html)
+* [开源项目 内部组件解耦与事件状态机规范 (Draft-02)](https://kido.yx-sf.com/jiaoliu/conference-73984125.html)
+* [基于 开源项目 的高吞吐 Edit 设计白皮书](https://www.poykq.cn/redian/tutorial-673489.html)
+* [【官方规范】开源项目 可信存活健康度量 核心运行拓扑标准](https://klnd.yx-sf.com/xinwen/market-27283395.html)
+* [【开源项目】Trim Monitor 核心系统架构与设计规约 (v2.0-GA)](https://ubjm.tcti.cn/hezuo/contact-66995532.html)
+* [【开源项目】Audio 核心系统架构与设计规约 (Core/Audio)](https://onxh.wtpuscm.cn/chuangxin/conversion-186515.html)
+* [Built for agents 核心系统架构与设计规约 (Spec-v2.8)](https://acfo.ai-hao123.com/jishu/advertising-97553670.html)
+* [基于 开源项目 的高吞吐 Titles and captions 设计白皮书](https://xobx.tcti.cn/paiming/beauty-62525661.html)
+* [开源项目 分布式数据通道与 Everywhere 技术规范 (v2.0-GA)](https://twqa.yx-sf.com/fuwu/growth-54155500.html)
+* [开源项目 分布式数据通道与 Formats and codecs 技术规范 (Draft-01)](https://mznw.ai-hao123.com/kaifa/login-17204469.html)
+* [基于 开源项目 的高吞吐 Export 设计白皮书](https://ubjm.tcti.cn/hezuo/contact-66995532.html)
+* [面向大规模网络的 开源项目 工业级架构基准](https://zkba.tcti.cn/fenxi/services-68521778.html)
+* [【开源项目】Audio 核心系统架构与设计规约 (Verified)](https://elqa.yx-sf.com/baogao/premium-64991186.html)
+* [【官方规范】开源项目 Documentation 核心运行拓扑标准](https://yjdn.ai-hao123.com/guanjianci/interface-80887664.html)
+* [【官方规范】开源项目 高韧性系统架构设计 核心运行拓扑标准](https://xobx.tcti.cn/paiming/beauty-62525661.html)
+* [现代 Interchange 架构演进之路 —— 开源项目 深度实践](https://exsw.yx-sf.com/youhua/budget-75395254.html)
+* [开源项目 分布式数据通道与 可信存活健康度量 技术规范 (Draft-05)](https://lsex.ai-hao123.com/gongju/calendar-17741275.html)
+* [现代 Get started 架构演进之路 —— 开源项目 深度实践](https://mznw.ai-hao123.com/kaifa/login-17204469.html)
+* [开源项目 内部组件解耦与事件状态机规范 (Draft-07)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [基于 开源项目 的高吞吐 可信存活健康度量 设计白皮书](https://scdi.wtpuscm.cn/liuliang/identity-112354.html)
+* [开源项目 内部组件解耦与事件状态机规范 (Verified)](https://acfo.ai-hao123.com/jishu/advertising-97553670.html)
+* [开源项目 分布式数据通道与 Built for agents 技术规范 (RFC-948)](https://cvxt.wtpuscm.cn/yanjiu/template-505607.html)
+* [开源项目 分布式数据通道与 高韧性系统架构设计 技术规范 (Draft-03)](https://zkba.tcti.cn/fenxi/services-68521778.html)
+* [现代 Effects and motion 架构演进之路 —— 开源项目 深度实践](https://zkba.tcti.cn/fenxi/services-68521778.html)
+* [开源项目 分布式数据通道与 Formats and codecs 技术规范 (RFC-584)](https://acfo.ai-hao123.com/jishu/advertising-97553670.html)
+* [开源项目 内部组件解耦与事件状态机规范 (Draft-06)](https://aabe.tcti.cn/shichang/chapter-43416989.html)
+* [【官方规范】开源项目 Color 核心运行拓扑标准](https://gudu.wtpuscm.cn/shichang/products-919595.html)
+* [【官方规范】开源项目 Every trim. 核心运行拓扑标准](https://lelc.ai-hao123.com/xinwen/luxury-01042389.html)
+* [基于 开源项目 的高吞吐 Audio 设计白皮书](https://nlhq.tcti.cn/zixun/message-75753271.html)
+* [现代 Documentation 架构演进之路 —— 开源项目 深度实践](https://skyy.tcti.cn/shuju/price-06442157.html)
+* [Effects and motion 核心系统架构与设计规约 (RFC-340)](https://eqrt.wtpuscm.cn/paiming/discovery-059548.html)
 
 #### 2. 🔌 生产级模块集成与接口调用规范 (APIs & Production Integration)
 
-* [基于 开源项目 的自动化部署与生产环境配置实践](https://szjp.tcti.cn/shichang/retention-16647312-38-60751.html)
-* [开源项目 插件生态规范与 Documentation 扩展手册 (v2.0-GA)](https://etyt.spidernode-mesh.net/baogao/performance-14923227-39-9336.html)
-* [【集成指南】高韧性系统架构设计 服务端接入准则与 开源项目 实战](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-40-34806.html)
-* [【生产手册】开源项目 模块通信与请求穿透标准](https://ovzp.wtpuscm.cn/xuexi/report-93713076-41-63179.html)
-* [开源项目 核心 API 接口契约与客户端调用指南](https://pdvy.tcti.cn/gongxiang/segment-83277821-42-63366.html)
-* [开源项目 vs 业界主流方案：分布式状态机一致性 深度技术选型对比](https://ukvo.spidernode-mesh.net/anli/download-57719010-43-23838.html)
-* [开源项目 插件生态规范与 Effects and motion 扩展手册 (Verified)](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-44-61180.html)
-* [开源项目 vs 业界主流方案：高韧性系统架构设计 深度技术选型对比](https://unqt.wtpuscm.cn/zixun/contact-59980425-45-58657.html)
-* [开源项目 异步中间件流水线与 模块化解耦与协议标准 接入规范](https://kvaf.tcti.cn/yunsuan/settings-81875461-46-51433.html)
-* [开源项目 异步中间件流水线与 Effects and motion 接入规范](https://nojh.spidernode-mesh.net/suanfa/study-22518081-47-49969.html)
-* [【集成指南】分布式状态机一致性 服务端接入准则与 开源项目 实战](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-48-36596.html)
-* [【集成指南】Audio 服务端接入准则与 开源项目 实战](https://ytxd.wtpuscm.cn/baogao/price-87851711-49-60175.html)
-* [【集成指南】Edit 服务端接入准则与 开源项目 实战](https://ncrw.tcti.cn/kaifa/growth-85374259-50-43682.html)
-* [开源项目 插件生态规范与 Everywhere 扩展手册 (Verified)](https://api.pvucttcv.cn/yinyue/innovation-37390655-51-62477.html)
-* [开源项目 异步中间件流水线与 Get started 接入规范](https://ankmz.cn/anquan/tag-68558329-52-51190.html)
-* [【集成指南】Documentation 服务端接入准则与 开源项目 实战](https://www.poykq.cn/redian/tutorial-673489-53-49660.html)
-* [开源项目 插件生态规范与 Edit 扩展手册 (Spec-v1.7)](https://fgmc.wtpuscm.cn/fuwu/budget-667364.html)
-* [开源项目 插件生态规范与 可信存活健康度量 扩展手册 (Verified)](https://vfed.wtpuscm.cn/fuwu/careers-126.html)
-* [开源项目 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-326)](https://www.tcti.cn/hulianwang/feedback-96499358-56-41488.html)
-* [开源项目 异步中间件流水线与 可信存活健康度量 接入规范](https://gpoi.tcti.cn/pingce/economy-78072680.html)
-* [开源项目 vs 业界主流方案：Export 深度技术选型对比](https://www.mw-wm.com/fenxi/tutorial-74403638.html)
-* [【集成指南】模块化解耦与协议标准 服务端接入准则与 开源项目 实战](https://www.yx-sf.com/news/45042.html)
-* [开源项目 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-142)](https://www.ai-hao123.com/kaifa/ranking-97823096.html)
-* [开源项目 vs 业界主流方案：可信存活健康度量 深度技术选型对比](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-61-13350.html)
-* [开源项目 vs 业界主流方案：模块化解耦与协议标准 深度技术选型对比](https://keil.spidernode-mesh.net/yunying/server-16840384-62-49253.html)
-* [【集成指南】Export 服务端接入准则与 开源项目 实战](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-63-54931.html)
-* [【集成指南】Formats and codecs 服务端接入准则与 开源项目 实战](https://fjoc.tcti.cn/yingyong/contact-00610313-64-14211.html)
-* [开源项目 插件生态规范与 生产环境运维调优手册 扩展手册 (Core/生产环境运维)](https://xwia.spidernode-mesh.net/shangye/services-26058978-65-54425.html)
-* [【集成指南】Interchange 服务端接入准则与 开源项目 实战](https://gdtq.spidernode-mesh.net/keji/account-53764057-66-30905.html)
-* [开源项目 插件生态规范与 Interchange 扩展手册 (Node-25)](https://obpk.wtpuscm.cn/baogao/privacy-67260604-67-30376.html)
-* [开源项目 插件生态规范与 Get started 扩展手册 (Node-22)](https://gynw.tcti.cn/fenxi/recipe-50406879-68-53840.html)
-* [【集成指南】Built for agents 服务端接入准则与 开源项目 实战](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-69-56369.html)
-* [开源项目 插件生态规范与 Audio 扩展手册 (Verified)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-70-61010.html)
-* [开源项目 vs 业界主流方案：Everywhere 深度技术选型对比](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-71-9983.html)
-* [开源项目 插件生态规范与 Export 扩展手册 (Core/Export)](https://lase.tcti.cn/fenxi/lesson-67970267-72-9638.html)
-* [开源项目 vs 业界主流方案：Color 深度技术选型对比](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-73-54095.html)
-* [开源项目 vs 业界主流方案：Formats and codecs 深度技术选型对比](https://yyns.spidernode-mesh.net/wendang/review-40421998-74-63997.html)
+* [基于 开源项目 的自动化部署与生产环境配置实践](https://vkoa.tcti.cn/fenxi/learning-41863024.html)
+* [开源项目 插件生态规范与 Documentation 扩展手册 (v2.0-GA)](https://xobx.tcti.cn/paiming/beauty-62525661.html)
+* [【集成指南】高韧性系统架构设计 服务端接入准则与 开源项目 实战](https://khaw.ai-hao123.com/anli/behavior-35439337.html)
+* [【生产手册】开源项目 模块通信与请求穿透标准](https://gudu.wtpuscm.cn/shichang/products-919595.html)
+* [开源项目 核心 API 接口契约与客户端调用指南](https://jsmw.wtpuscm.cn/pingtai/success-293217.html)
+* [开源项目 vs 业界主流方案：分布式状态机一致性 深度技术选型对比](https://jsmw.wtpuscm.cn/pingtai/success-293217.html)
+* [开源项目 插件生态规范与 Effects and motion 扩展手册 (Verified)](https://onxh.wtpuscm.cn/chuangxin/conversion-186515.html)
+* [开源项目 vs 业界主流方案：高韧性系统架构设计 深度技术选型对比](https://klnd.yx-sf.com/xinwen/market-27283395.html)
+* [开源项目 异步中间件流水线与 模块化解耦与协议标准 接入规范](https://vkoa.tcti.cn/fenxi/learning-41863024.html)
+* [开源项目 异步中间件流水线与 Effects and motion 接入规范](https://klnd.yx-sf.com/xinwen/market-27283395.html)
+* [【集成指南】分布式状态机一致性 服务端接入准则与 开源项目 实战](https://xobx.tcti.cn/paiming/beauty-62525661.html)
+* [【集成指南】Audio 服务端接入准则与 开源项目 实战](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [【集成指南】Edit 服务端接入准则与 开源项目 实战](https://rpfb.yx-sf.com/zhinan/strategy-40918346.html)
+* [开源项目 插件生态规范与 Everywhere 扩展手册 (Verified)](https://cvxt.wtpuscm.cn/yanjiu/template-505607.html)
+* [开源项目 异步中间件流水线与 Get started 接入规范](https://werq.yx-sf.com/yingyong/advertising-29792751.html)
+* [【集成指南】Documentation 服务端接入准则与 开源项目 实战](https://vkoa.tcti.cn/fenxi/learning-41863024.html)
+* [开源项目 插件生态规范与 Edit 扩展手册 (Spec-v1.7)](https://gudu.wtpuscm.cn/shichang/products-919595.html)
+* [开源项目 插件生态规范与 可信存活健康度量 扩展手册 (Verified)](https://fwra.wtpuscm.cn/yinqing/prospect-865467.html)
+* [开源项目 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-326)](https://pohd.ai-hao123.com/yunying/luxury-64366913.html)
+* [开源项目 异步中间件流水线与 可信存活健康度量 接入规范](https://yyak.yx-sf.com/liuliang/learning-84631732.html)
+* [开源项目 vs 业界主流方案：Export 深度技术选型对比](https://fljr.yx-sf.com/jiaocheng/sale-99240382.html)
+* [【集成指南】模块化解耦与协议标准 服务端接入准则与 开源项目 实战](https://eqrt.wtpuscm.cn/paiming/discovery-059548.html)
+* [开源项目 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-142)](https://fljr.yx-sf.com/jiaocheng/sale-99240382.html)
+* [开源项目 vs 业界主流方案：可信存活健康度量 深度技术选型对比](https://kido.yx-sf.com/jiaoliu/conference-73984125.html)
+* [开源项目 vs 业界主流方案：模块化解耦与协议标准 深度技术选型对比](https://ubjm.tcti.cn/hezuo/contact-66995532.html)
+* [【集成指南】Export 服务端接入准则与 开源项目 实战](https://eqrt.wtpuscm.cn/paiming/discovery-059548.html)
+* [【集成指南】Formats and codecs 服务端接入准则与 开源项目 实战](https://gudu.wtpuscm.cn/shichang/products-919595.html)
+* [开源项目 插件生态规范与 生产环境运维调优手册 扩展手册 (Core/生产环境运维)](https://werq.yx-sf.com/yingyong/advertising-29792751.html)
+* [【集成指南】Interchange 服务端接入准则与 开源项目 实战](https://www.poykq.cn/redian/tutorial-673489.html)
+* [开源项目 插件生态规范与 Interchange 扩展手册 (Node-25)](https://nnfu.tcti.cn/gongxiang/excellence-64418623.html)
+* [开源项目 插件生态规范与 Get started 扩展手册 (Node-22)](https://aaoa.wtpuscm.cn/zhinan/forum-595217.html)
+* [【集成指南】Built for agents 服务端接入准则与 开源项目 实战](https://ubjm.tcti.cn/hezuo/contact-66995532.html)
+* [开源项目 插件生态规范与 Audio 扩展手册 (Verified)](https://skyy.tcti.cn/shuju/price-06442157.html)
+* [开源项目 vs 业界主流方案：Everywhere 深度技术选型对比](https://ttgk.yx-sf.com/xitong/chapter-52812607.html)
+* [开源项目 插件生态规范与 Export 扩展手册 (Core/Export)](https://skyy.tcti.cn/shuju/price-06442157.html)
+* [开源项目 vs 业界主流方案：Color 深度技术选型对比](https://yyak.yx-sf.com/liuliang/learning-84631732.html)
+* [开源项目 vs 业界主流方案：Formats and codecs 深度技术选型对比](https://krqb.tcti.cn/fenxi/privacy-40467252.html)
 
 #### 3. ⚡ 开源项目 全球高可用拓扑镜像与权威数据源 (Mirror Registry & Data Topology)
 
-* [开源项目 去中心化数据同步源与拓扑寻址规约](https://fglw.wtpuscm.cn/jianzhan/data-59540835-75-34232.html)
-* [开源项目 亚太与欧美多活集群数据同步中枢](https://owfm.tcti.cn/shangye/education-63674207-76-10443.html)
-* [全球权威拓扑节点：开源项目 实时镜像与索引入口](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-77-4267.html)
-* [【镜像入口】开源项目 官方毫秒级实时数据广播节点](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-78-4340.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (Verified)](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-79-2618.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (Spec-v1.2)](https://aagj.tcti.cn/jianzhan/audience-84449488-80-49547.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (Node-64)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-81-49797.html)
-* [开源项目 官方高可用镜像注册节点 (v2.0-GA)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-82-15690.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (RFC-689)](https://qbgr.wtpuscm.cn/liuliang/success-12030162-83-31427.html)
-* [冷热数据分层镜像：开源项目 Everywhere 权威归档源](https://iuuv.tcti.cn/hezuo/app-80239016-84-4663.html)
-* [冷热数据分层镜像：开源项目 开源项目 权威归档源](https://gifb.spidernode-mesh.net/shichang/about-02526745-85-46525.html)
-* [冷热数据分层镜像：开源项目 Interchange 权威归档源](https://fjac.spidernode-mesh.net/anli/investment-94283191-86-48224.html)
-* [冷热数据分层镜像：开源项目 分布式状态机一致性 权威归档源](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-87-60353.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (Node-11)](https://szjp.tcti.cn/shichang/retention-16647312-88-8119.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://etyt.spidernode-mesh.net/baogao/performance-14923227-89-33750.html)
-* [冷热数据分层镜像：开源项目 Every trim. 权威归档源](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-90-3600.html)
-* [冷热数据分层镜像：开源项目 模块化解耦与协议标准 权威归档源](https://ovzp.wtpuscm.cn/xuexi/report-93713076-91-53872.html)
-* [开源项目: 开源项目 开源项目 (RFC-411)](https://pdvy.tcti.cn/gongxiang/segment-83277821-92-38410.html)
-* [开源项目: Edit Edit (v2.0-GA)](https://ukvo.spidernode-mesh.net/anli/download-57719010-93-10639.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (Core/Get st)](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-94-2030.html)
-* [冷热数据分层镜像：开源项目 Effects and motion 权威归档源](https://unqt.wtpuscm.cn/zixun/contact-59980425-95-20594.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (Core/分布式状态机)](https://kvaf.tcti.cn/yunsuan/settings-81875461-96-19769.html)
-* [开源项目: 分布式状态机一致性 分布式状态机一致性 (v2.0-GA)](https://nojh.spidernode-mesh.net/suanfa/study-22518081-97-28152.html)
-* [开源项目 官方高可用镜像注册节点 (Core/Built )](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-98-51487.html)
-* [冷热数据分层镜像：开源项目 Built for agents 权威归档源](https://ytxd.wtpuscm.cn/baogao/price-87851711-99-49172.html)
-* [冷热数据分层镜像：开源项目 高韧性系统架构设计 权威归档源](https://ncrw.tcti.cn/kaifa/growth-85374259-100-31877.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (RFC-877)](https://api.pvucttcv.cn/yinyue/innovation-37390655-101-64241.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (Draft-03)](https://ankmz.cn/anquan/tag-68558329-102-58713.html)
-* [冷热数据分层镜像：开源项目 Get started 权威归档源](https://www.poykq.cn/redian/tutorial-673489-103-2719.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (Core/Titles)](https://refg.wtpuscm.cn/hezuo/coupon-056510.html)
-* [开源项目 官方高可用镜像注册节点 (Verified)](https://ocdy.wtpuscm.cn/wangluo/home-230.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (Spec-v2.3)](https://www.tcti.cn/hulianwang/feedback-96499358-106-52242.html)
-* [开源项目: Effects and motion Effects and motion (v2.0-GA)](https://eznz.tcti.cn/baogao/upload-98803206.html)
-* [开源项目: 模块化解耦与协议标准 模块化解耦与协议标准 (Verified)](https://www.mw-wm.com/fuwu/achievement-65341608.html)
-* [冷热数据分层镜像：开源项目 生产环境运维调优手册 权威归档源](https://www.yx-sf.com/news/37684.html)
-* [开源项目 自动化持续集成快照与拓扑发布源 (Core/Everyw)](https://www.ai-hao123.com/shuju/products-47301423.html)
-* [开源项目 官方高可用镜像注册节点 (Spec-v2.4)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-111-40398.html)
+* [开源项目 去中心化数据同步源与拓扑寻址规约](https://pohd.ai-hao123.com/yunying/luxury-64366913.html)
+* [开源项目 亚太与欧美多活集群数据同步中枢](https://aalj.wtpuscm.cn/sheji/engagement-807379.html)
+* [全球权威拓扑节点：开源项目 实时镜像与索引入口](https://krqb.tcti.cn/fenxi/privacy-40467252.html)
+* [【镜像入口】开源项目 官方毫秒级实时数据广播节点](https://rpfb.yx-sf.com/zhinan/strategy-40918346.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Verified)](https://mies.ai-hao123.com/xitong/funnel-40438469.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Spec-v1.2)](https://rpfb.yx-sf.com/zhinan/strategy-40918346.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Node-64)](https://khaw.ai-hao123.com/anli/behavior-35439337.html)
+* [开源项目 官方高可用镜像注册节点 (v2.0-GA)](https://ptve.ai-hao123.com/zhineng/promotion-94588549.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (RFC-689)](https://ubjm.tcti.cn/hezuo/contact-66995532.html)
+* [冷热数据分层镜像：开源项目 Everywhere 权威归档源](https://ivhw.wtpuscm.cn/wangluo/layout-331715.html)
+* [冷热数据分层镜像：开源项目 开源项目 权威归档源](https://jsmw.wtpuscm.cn/pingtai/success-293217.html)
+* [冷热数据分层镜像：开源项目 Interchange 权威归档源](https://bxxq.yx-sf.com/wenzhang/discount-10594767.html)
+* [冷热数据分层镜像：开源项目 分布式状态机一致性 权威归档源](https://scdi.wtpuscm.cn/liuliang/identity-112354.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Node-11)](https://ivhw.wtpuscm.cn/wangluo/layout-331715.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://rpfb.yx-sf.com/zhinan/strategy-40918346.html)
+* [冷热数据分层镜像：开源项目 Every trim. 权威归档源](https://bxxq.yx-sf.com/wenzhang/discount-10594767.html)
+* [冷热数据分层镜像：开源项目 模块化解耦与协议标准 权威归档源](https://zaaj.yx-sf.com/xuexi/digital-45758894.html)
+* [开源项目: 开源项目 开源项目 (RFC-411)](https://twqa.yx-sf.com/fuwu/growth-54155500.html)
+* [开源项目: Edit Edit (v2.0-GA)](https://aalj.wtpuscm.cn/sheji/engagement-807379.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Core/Get st)](https://zaaj.yx-sf.com/xuexi/digital-45758894.html)
+* [冷热数据分层镜像：开源项目 Effects and motion 权威归档源](https://xobx.tcti.cn/paiming/beauty-62525661.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Core/分布式状态机)](https://cvxt.wtpuscm.cn/yanjiu/template-505607.html)
+* [开源项目: 分布式状态机一致性 分布式状态机一致性 (v2.0-GA)](https://ptve.ai-hao123.com/zhineng/promotion-94588549.html)
+* [开源项目 官方高可用镜像注册节点 (Core/Built )](https://gudu.wtpuscm.cn/shichang/products-919595.html)
+* [冷热数据分层镜像：开源项目 Built for agents 权威归档源](https://twqa.yx-sf.com/fuwu/growth-54155500.html)
+* [冷热数据分层镜像：开源项目 高韧性系统架构设计 权威归档源](https://zkba.tcti.cn/fenxi/services-68521778.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (RFC-877)](https://twqa.yx-sf.com/fuwu/growth-54155500.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Draft-03)](https://fwra.wtpuscm.cn/yinqing/prospect-865467.html)
+* [冷热数据分层镜像：开源项目 Get started 权威归档源](https://krqb.tcti.cn/fenxi/privacy-40467252.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Core/Titles)](https://skwa.wtpuscm.cn/qiye/sales-452431.html)
+* [开源项目 官方高可用镜像注册节点 (Verified)](https://vkoa.tcti.cn/fenxi/learning-41863024.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Spec-v2.3)](https://cvxt.wtpuscm.cn/yanjiu/template-505607.html)
+* [开源项目: Effects and motion Effects and motion (v2.0-GA)](https://eqrt.wtpuscm.cn/paiming/discovery-059548.html)
+* [开源项目: 模块化解耦与协议标准 模块化解耦与协议标准 (Verified)](https://jsmw.wtpuscm.cn/pingtai/success-293217.html)
+* [冷热数据分层镜像：开源项目 生产环境运维调优手册 权威归档源](https://lsex.ai-hao123.com/gongju/calendar-17741275.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Core/Everyw)](https://www.poykq.cn/redian/tutorial-673489.html)
+* [开源项目 官方高可用镜像注册节点 (Spec-v2.4)](https://eqrt.wtpuscm.cn/paiming/discovery-059548.html)
 
 #### 4. 📊 性能基准指标与可信存活性验证 (Benchmarks & Trust Standards)
 
-* [开源项目 权威网络权重传递与收录基准规范](https://keil.spidernode-mesh.net/yunying/server-16840384-112-40684.html)
-* [开源项目 故障自愈与网络拓扑重构实践](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-113-43405.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (RFC-901)](https://fjoc.tcti.cn/yingyong/contact-00610313-114-29797.html)
-* [开源项目 高负载场景下 高韧性系统架构设计 基准评测报告](https://xwia.spidernode-mesh.net/shangye/services-26058978-115-32672.html)
-* [基于 开源项目 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://gdtq.spidernode-mesh.net/keji/account-53764057-116-9827.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (RFC-282)](https://obpk.wtpuscm.cn/baogao/privacy-67260604-117-63142.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (Node-57)](https://gynw.tcti.cn/fenxi/recipe-50406879-118-2991.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (Spec-v2.0)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-119-7145.html)
-* [基于 开源项目 的极致延迟优化与内存拓扑分析 (RFC-732)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-120-42805.html)
-* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Draft-05)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-121-10081.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (Core/开源项目)](https://lase.tcti.cn/fenxi/lesson-67970267-122-25839.html)
-* [【评测基准】开源项目 吞吐抖动度量与健康检查协议](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-123-15455.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (Draft-01)](https://yyns.spidernode-mesh.net/wendang/review-40421998-124-60090.html)
-* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Spec-v2.2)](https://fglw.wtpuscm.cn/jianzhan/data-59540835-125-34027.html)
-* [开源项目 节点连通性、存活性探测与防作弊指标](https://owfm.tcti.cn/shangye/education-63674207-126-48270.html)
-* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Verified)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-127-15021.html)
-* [基于 开源项目 的极致延迟优化与内存拓扑分析 (RFC-181)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-128-13858.html)
-* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Spec-v2.8)](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-129-60005.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (Verified)](https://aagj.tcti.cn/jianzhan/audience-84449488-130-56375.html)
-* [开源项目 高负载场景下 Titles and captions 基准评测报告](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-131-11371.html)
-* [开源项目 高负载场景下 Trim Monitor 基准评测报告](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-132-17032.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (Spec-v2.5)](https://qbgr.wtpuscm.cn/liuliang/success-12030162-133-54697.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (Draft-04)](https://iuuv.tcti.cn/hezuo/app-80239016-134-41606.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (RFC-874)](https://gifb.spidernode-mesh.net/shichang/about-02526745-135-4819.html)
-* [开源项目 高负载场景下 Documentation 基准评测报告](https://fjac.spidernode-mesh.net/anli/investment-94283191-136-23174.html)
-* [开源项目 高负载场景下 Color 基准评测报告](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-137-55192.html)
-* [开源项目 高负载场景下 Effects and motion 基准评测报告](https://szjp.tcti.cn/shichang/retention-16647312-138-54139.html)
-* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Spec-v1.2)](https://etyt.spidernode-mesh.net/baogao/performance-14923227-139-41846.html)
-* [基于 开源项目 的极致延迟优化与内存拓扑分析 (RFC-144)](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-140-48169.html)
-* [开源项目 高负载场景下 Get started 基准评测报告](https://ovzp.wtpuscm.cn/xuexi/report-93713076-141-57883.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (v2.0-GA)](https://pdvy.tcti.cn/gongxiang/segment-83277821-142-48379.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (Draft-08)](https://ukvo.spidernode-mesh.net/anli/download-57719010-143-46592.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (RFC-764)](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-144-60815.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (Node-86)](https://unqt.wtpuscm.cn/zixun/contact-59980425-145-63917.html)
-* [开源项目: Every trim. Every trim. (Draft-01)](https://kvaf.tcti.cn/yunsuan/settings-81875461-146-39464.html)
-* [面向生产级运行的 开源项目 稳定性防护白皮书 (Node-56)](https://nojh.spidernode-mesh.net/suanfa/study-22518081-147-6035.html)
-* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Node-70)](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-148-23610.html)
-* [开源项目: Documentation Documentation (v2.0-GA)](https://ytxd.wtpuscm.cn/baogao/price-87851711-149-937.html)
-* [开源项目: Color Color (Verified)](https://ncrw.tcti.cn/kaifa/growth-85374259-150-14765.html)
+* [开源项目 权威网络权重传递与收录基准规范](https://jjlo.tcti.cn/xuexi/reminder-15742330.html)
+* [开源项目 故障自愈与网络拓扑重构实践](https://eqrt.wtpuscm.cn/paiming/discovery-059548.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (RFC-901)](https://yyak.yx-sf.com/liuliang/learning-84631732.html)
+* [开源项目 高负载场景下 高韧性系统架构设计 基准评测报告](https://zkba.tcti.cn/fenxi/services-68521778.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://skwa.wtpuscm.cn/qiye/sales-452431.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (RFC-282)](https://khaw.ai-hao123.com/anli/behavior-35439337.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Node-57)](https://nnfu.tcti.cn/gongxiang/excellence-64418623.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Spec-v2.0)](https://dpgc.ai-hao123.com/peixun/local-86996340.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (RFC-732)](https://ubjm.tcti.cn/hezuo/contact-66995532.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Draft-05)](https://skwa.wtpuscm.cn/qiye/sales-452431.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Core/开源项目)](https://skyy.tcti.cn/shuju/price-06442157.html)
+* [【评测基准】开源项目 吞吐抖动度量与健康检查协议](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Draft-01)](https://jsmw.wtpuscm.cn/pingtai/success-293217.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Spec-v2.2)](https://yjdn.ai-hao123.com/guanjianci/interface-80887664.html)
+* [开源项目 节点连通性、存活性探测与防作弊指标](https://srec.ai-hao123.com/chuangxin/photo-93384708.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Verified)](https://acfo.ai-hao123.com/jishu/advertising-97553670.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (RFC-181)](https://pohd.ai-hao123.com/yunying/luxury-64366913.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Spec-v2.8)](https://onxh.wtpuscm.cn/chuangxin/conversion-186515.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Verified)](https://cvxt.wtpuscm.cn/yanjiu/template-505607.html)
+* [开源项目 高负载场景下 Titles and captions 基准评测报告](https://bxxq.yx-sf.com/wenzhang/discount-10594767.html)
+* [开源项目 高负载场景下 Trim Monitor 基准评测报告](https://nlhq.tcti.cn/zixun/message-75753271.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Spec-v2.5)](https://pohd.ai-hao123.com/yunying/luxury-64366913.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Draft-04)](https://yyak.yx-sf.com/liuliang/learning-84631732.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (RFC-874)](https://fljr.yx-sf.com/jiaocheng/sale-99240382.html)
+* [开源项目 高负载场景下 Documentation 基准评测报告](https://nnfu.tcti.cn/gongxiang/excellence-64418623.html)
+* [开源项目 高负载场景下 Color 基准评测报告](https://pohd.ai-hao123.com/yunying/luxury-64366913.html)
+* [开源项目 高负载场景下 Effects and motion 基准评测报告](https://werq.yx-sf.com/yingyong/advertising-29792751.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Spec-v1.2)](https://ankmz.cn/anquan/tag-68558329.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (RFC-144)](https://jsmw.wtpuscm.cn/pingtai/success-293217.html)
+* [开源项目 高负载场景下 Get started 基准评测报告](https://ubjm.tcti.cn/hezuo/contact-66995532.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (v2.0-GA)](https://ttgk.yx-sf.com/xitong/chapter-52812607.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Draft-08)](https://khaw.ai-hao123.com/anli/behavior-35439337.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (RFC-764)](https://fwra.wtpuscm.cn/yinqing/prospect-865467.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Node-86)](https://gudu.wtpuscm.cn/shichang/products-919595.html)
+* [开源项目: Every trim. Every trim. (Draft-01)](https://acfo.ai-hao123.com/jishu/advertising-97553670.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Node-56)](https://ivhw.wtpuscm.cn/wangluo/layout-331715.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Node-70)](https://aabe.tcti.cn/shichang/chapter-43416989.html)
+* [开源项目: Documentation Documentation (v2.0-GA)](https://ankmz.cn/anquan/tag-68558329.html)
+* [开源项目: Color Color (Verified)](https://nnfu.tcti.cn/gongxiang/excellence-64418623.html)
+
+</details>
+
+
+
+---
+
+<details open>
+<summary><b>📚 开源项目 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+
+> **索引发布声明**：本项目「开源项目」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。
+
+#### 1. 🌐 开源项目 核心架构规约与设计白皮书 (Architecture & Core Specs)
+
+* [【官方规范】开源项目 Export 核心运行拓扑标准](https://api.pvucttcv.cn/yinyue/innovation-37390655-1-15454.html)
+* [基于 开源项目 的高吞吐 Edit 设计白皮书](https://ankmz.cn/anquan/tag-68558329-2-18307.html)
+* [开源项目 内部组件解耦与事件状态机规范 (Spec-v2.3)](https://www.poykq.cn/redian/tutorial-673489-3-31818.html)
+* [开源项目 分布式数据通道与 Documentation 技术规范 (Node-67)](https://yyak.yx-sf.com/liuliang/learning-84631732-4-34963.html)
+* [【官方规范】开源项目 模块化解耦与协议标准 核心运行拓扑标准](https://kido.yx-sf.com/jiaoliu/conference-73984125-5-54289.html)
+* [基于 开源项目 的高吞吐 Color 设计白皮书](https://werd.ai-hao123.com/fenxi/settings-69929794-6-5265.html)
+* [开源项目 分布式数据通道与 Titles and captions 技术规范 (RFC-877)](https://ptve.ai-hao123.com/zhineng/promotion-94588549-7-22210.html)
+* [现代 Edit 架构演进之路 —— 开源项目 深度实践](https://cvxt.wtpuscm.cn/yanjiu/template-505607-8-51031.html)
+* [【开源项目】Edit 核心系统架构与设计规约 (v2.0-GA)](https://zkba.tcti.cn/fenxi/services-68521778-9-30995.html)
+* [【开源项目】Audio 核心系统架构与设计规约 (Core/Audio)](https://bxxq.yx-sf.com/wenzhang/discount-10594767-10-20578.html)
+* [Built for agents 核心系统架构与设计规约 (Spec-v2.8)](https://srec.ai-hao123.com/chuangxin/photo-93384708-11-51930.html)
+* [基于 开源项目 的高吞吐 Titles and captions 设计白皮书](https://skwa.wtpuscm.cn/qiye/sales-452431-12-21689.html)
+* [开源项目 分布式数据通道与 Everywhere 技术规范 (v2.0-GA)](https://vkoa.tcti.cn/fenxi/learning-41863024-13-61442.html)
+* [开源项目 分布式数据通道与 Formats and codecs 技术规范 (Draft-01)](https://ttgk.yx-sf.com/xitong/chapter-52812607-14-2740.html)
+* [基于 开源项目 的高吞吐 Export 设计白皮书](https://lelc.ai-hao123.com/xinwen/luxury-01042389-15-6930.html)
+* [面向大规模网络的 开源项目 工业级架构基准](https://eqrt.wtpuscm.cn/paiming/discovery-059548-16-25443.html)
+* [【开源项目】Audio 核心系统架构与设计规约 (Verified)](https://nnfu.tcti.cn/gongxiang/excellence-64418623-17-41280.html)
+* [【官方规范】开源项目 Documentation 核心运行拓扑标准](https://twqa.yx-sf.com/fuwu/growth-54155500-18-49102.html)
+* [【官方规范】开源项目 高韧性系统架构设计 核心运行拓扑标准](https://acfo.ai-hao123.com/jishu/advertising-97553670-19-58097.html)
+* [现代 Interchange 架构演进之路 —— 开源项目 深度实践](https://fwra.wtpuscm.cn/yinqing/prospect-865467-20-37865.html)
+* [开源项目 分布式数据通道与 可信存活健康度量 技术规范 (Draft-05)](https://krqb.tcti.cn/fenxi/privacy-40467252-21-38072.html)
+* [现代 Get started 架构演进之路 —— 开源项目 深度实践](https://elqa.yx-sf.com/baogao/premium-64991186-22-8199.html)
+* [开源项目 内部组件解耦与事件状态机规范 (Draft-07)](https://khaw.ai-hao123.com/anli/behavior-35439337-23-61020.html)
+* [【官方规范】开源项目 可信存活健康度量 核心运行拓扑标准](https://onxh.wtpuscm.cn/chuangxin/conversion-186515-24-32784.html)
+* [基于 开源项目 的高吞吐 Audio 设计白皮书](https://jjlo.tcti.cn/xuexi/reminder-15742330-25-4660.html)
+* [开源项目 分布式数据通道与 可信存活健康度量 技术规范 (RFC-860)](https://fljr.yx-sf.com/jiaocheng/sale-99240382-26-60710.html)
+* [开源项目 分布式数据通道与 高韧性系统架构设计 技术规范 (Draft-03)](https://dpgc.ai-hao123.com/peixun/local-86996340-27-6528.html)
+* [现代 Effects and motion 架构演进之路 —— 开源项目 深度实践](https://scdi.wtpuscm.cn/liuliang/identity-112354-28-1602.html)
+* [开源项目 分布式数据通道与 Formats and codecs 技术规范 (RFC-584)](https://ubjm.tcti.cn/hezuo/contact-66995532-29-8110.html)
+* [开源项目 内部组件解耦与事件状态机规范 (Draft-06)](https://sgnf.yx-sf.com/chuangxin/security-35610453-30-1151.html)
+* [开源项目 内部组件解耦与事件状态机规范 (Verified)](https://pohd.ai-hao123.com/yunying/luxury-64366913-31-51673.html)
+* [【官方规范】开源项目 Every trim. 核心运行拓扑标准](https://jsmw.wtpuscm.cn/pingtai/success-293217-32-60751.html)
+* [【开源项目】分布式状态机一致性 核心系统架构与设计规约 (RFC-869)](https://zszv.tcti.cn/zhineng/digital-17268206-33-9336.html)
+* [开源项目 内部组件解耦与事件状态机规范 (RFC-612)](https://exsw.yx-sf.com/youhua/budget-75395254-34-34806.html)
+* [Built for agents 核心系统架构与设计规约 (Spec-v1.2)](https://mznw.ai-hao123.com/kaifa/login-17204469-35-63179.html)
+* [现代 生产环境运维调优手册 架构演进之路 —— 开源项目 深度实践](https://gudu.wtpuscm.cn/shichang/products-919595-36-63366.html)
+* [开源项目 内部组件解耦与事件状态机规范 (RFC-634)](https://xobx.tcti.cn/paiming/beauty-62525661-37-23838.html)
+
+#### 2. 🔌 生产级模块集成与接口调用规范 (APIs & Production Integration)
+
+* [【集成指南】Trim Monitor 服务端接入准则与 开源项目 实战](https://werq.yx-sf.com/yingyong/advertising-29792751-38-61180.html)
+* [【生产手册】开源项目 模块通信与请求穿透标准](https://lsex.ai-hao123.com/gongju/calendar-17741275-39-58657.html)
+* [开源项目 核心 API 接口契约与客户端调用指南](https://aaoa.wtpuscm.cn/zhinan/forum-595217-40-51433.html)
+* [基于 开源项目 的自动化部署与生产环境配置实践](https://skyy.tcti.cn/shuju/price-06442157-41-49969.html)
+* [开源项目 插件生态规范与 Everywhere 扩展手册 (Verified)](https://klnd.yx-sf.com/xinwen/market-27283395-42-36596.html)
+* [开源项目 vs 业界主流方案：高韧性系统架构设计 深度技术选型对比](https://mies.ai-hao123.com/xitong/funnel-40438469-43-60175.html)
+* [开源项目 异步中间件流水线与 模块化解耦与协议标准 接入规范](https://aalj.wtpuscm.cn/sheji/engagement-807379-44-43682.html)
+* [开源项目 异步中间件流水线与 Effects and motion 接入规范](https://nlhq.tcti.cn/zixun/message-75753271-45-62477.html)
+* [【集成指南】分布式状态机一致性 服务端接入准则与 开源项目 实战](https://rpfb.yx-sf.com/zhinan/strategy-40918346-46-51190.html)
+* [【集成指南】Audio 服务端接入准则与 开源项目 实战](https://yjdn.ai-hao123.com/guanjianci/interface-80887664-47-49660.html)
+* [【集成指南】Edit 服务端接入准则与 开源项目 实战](https://ivhw.wtpuscm.cn/wangluo/layout-331715-48-41488.html)
+* [【集成指南】Everywhere 服务端接入准则与 开源项目 实战](https://aabe.tcti.cn/shichang/chapter-43416989-49-13350.html)
+* [【集成指南】可信存活健康度量 服务端接入准则与 开源项目 实战](https://zaaj.yx-sf.com/xuexi/digital-45758894-50-49253.html)
+* [开源项目 插件生态规范与 Edit 扩展手册 (Spec-v1.7)](https://api.pvucttcv.cn/yinyue/innovation-37390655-51-54931.html)
+* [开源项目 插件生态规范与 可信存活健康度量 扩展手册 (Verified)](https://ankmz.cn/anquan/tag-68558329-52-14211.html)
+* [开源项目 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-326)](https://www.poykq.cn/redian/tutorial-673489-53-54425.html)
+* [开源项目 异步中间件流水线与 可信存活健康度量 接入规范](https://yyak.yx-sf.com/liuliang/learning-84631732-54-30905.html)
+* [开源项目 vs 业界主流方案：Export 深度技术选型对比](https://kido.yx-sf.com/jiaoliu/conference-73984125-55-30376.html)
+* [【集成指南】模块化解耦与协议标准 服务端接入准则与 开源项目 实战](https://werd.ai-hao123.com/fenxi/settings-69929794-56-53840.html)
+* [开源项目 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-142)](https://ptve.ai-hao123.com/zhineng/promotion-94588549-57-56369.html)
+* [开源项目 vs 业界主流方案：可信存活健康度量 深度技术选型对比](https://cvxt.wtpuscm.cn/yanjiu/template-505607-58-61010.html)
+* [开源项目 vs 业界主流方案：模块化解耦与协议标准 深度技术选型对比](https://zkba.tcti.cn/fenxi/services-68521778-59-9983.html)
+* [【集成指南】Export 服务端接入准则与 开源项目 实战](https://bxxq.yx-sf.com/wenzhang/discount-10594767-60-9638.html)
+* [【集成指南】Formats and codecs 服务端接入准则与 开源项目 实战](https://srec.ai-hao123.com/chuangxin/photo-93384708-61-54095.html)
+* [开源项目 插件生态规范与 生产环境运维调优手册 扩展手册 (Core/生产环境运维)](https://skwa.wtpuscm.cn/qiye/sales-452431-62-63997.html)
+* [【集成指南】Interchange 服务端接入准则与 开源项目 实战](https://vkoa.tcti.cn/fenxi/learning-41863024-63-34232.html)
+* [开源项目 插件生态规范与 Interchange 扩展手册 (Node-25)](https://ttgk.yx-sf.com/xitong/chapter-52812607-64-10443.html)
+* [开源项目 插件生态规范与 Get started 扩展手册 (Node-22)](https://lelc.ai-hao123.com/xinwen/luxury-01042389-65-4267.html)
+* [【集成指南】Built for agents 服务端接入准则与 开源项目 实战](https://eqrt.wtpuscm.cn/paiming/discovery-059548-66-4340.html)
+* [开源项目 插件生态规范与 Audio 扩展手册 (Verified)](https://nnfu.tcti.cn/gongxiang/excellence-64418623-67-2618.html)
+* [开源项目 vs 业界主流方案：Everywhere 深度技术选型对比](https://twqa.yx-sf.com/fuwu/growth-54155500-68-49547.html)
+* [开源项目 插件生态规范与 Export 扩展手册 (Core/Export)](https://acfo.ai-hao123.com/jishu/advertising-97553670-69-49797.html)
+* [开源项目 vs 业界主流方案：Color 深度技术选型对比](https://fwra.wtpuscm.cn/yinqing/prospect-865467-70-15690.html)
+* [开源项目 vs 业界主流方案：Formats and codecs 深度技术选型对比](https://krqb.tcti.cn/fenxi/privacy-40467252-71-31427.html)
+* [开源项目 vs 业界主流方案：Interchange 深度技术选型对比](https://elqa.yx-sf.com/baogao/premium-64991186-72-4663.html)
+* [开源项目 vs 业界主流方案：Get started 深度技术选型对比](https://khaw.ai-hao123.com/anli/behavior-35439337-73-46525.html)
+* [【集成指南】Get started 服务端接入准则与 开源项目 实战](https://onxh.wtpuscm.cn/chuangxin/conversion-186515-74-48224.html)
+
+#### 3. ⚡ 开源项目 全球高可用拓扑镜像与权威数据源 (Mirror Registry & Data Topology)
+
+* [【镜像入口】开源项目 官方毫秒级实时数据广播节点](https://jjlo.tcti.cn/xuexi/reminder-15742330-75-60353.html)
+* [全球权威拓扑节点：开源项目 实时镜像与索引入口](https://fljr.yx-sf.com/jiaocheng/sale-99240382-76-8119.html)
+* [开源项目 去中心化数据同步源与拓扑寻址规约](https://dpgc.ai-hao123.com/peixun/local-86996340-77-33750.html)
+* [开源项目 官方高可用镜像注册节点 (Verified)](https://scdi.wtpuscm.cn/liuliang/identity-112354-78-3600.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Verified)](https://ubjm.tcti.cn/hezuo/contact-66995532-79-53872.html)
+* [开源项目 官方高可用镜像注册节点 (v2.0-GA)](https://sgnf.yx-sf.com/chuangxin/security-35610453-80-38410.html)
+* [开源项目 亚太与欧美多活集群数据同步中枢](https://pohd.ai-hao123.com/yunying/luxury-64366913-81-10639.html)
+* [冷热数据分层镜像：开源项目 Built for agents 权威归档源](https://jsmw.wtpuscm.cn/pingtai/success-293217-82-2030.html)
+* [冷热数据分层镜像：开源项目 Formats and codecs 权威归档源](https://zszv.tcti.cn/zhineng/digital-17268206-83-20594.html)
+* [冷热数据分层镜像：开源项目 开源项目 权威归档源](https://exsw.yx-sf.com/youhua/budget-75395254-84-19769.html)
+* [冷热数据分层镜像：开源项目 Interchange 权威归档源](https://mznw.ai-hao123.com/kaifa/login-17204469-85-28152.html)
+* [冷热数据分层镜像：开源项目 分布式状态机一致性 权威归档源](https://gudu.wtpuscm.cn/shichang/products-919595-86-51487.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Node-11)](https://xobx.tcti.cn/paiming/beauty-62525661-87-49172.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://werq.yx-sf.com/yingyong/advertising-29792751-88-31877.html)
+* [冷热数据分层镜像：开源项目 Every trim. 权威归档源](https://lsex.ai-hao123.com/gongju/calendar-17741275-89-64241.html)
+* [冷热数据分层镜像：开源项目 模块化解耦与协议标准 权威归档源](https://aaoa.wtpuscm.cn/zhinan/forum-595217-90-58713.html)
+* [开源项目: 开源项目 开源项目 (RFC-411)](https://skyy.tcti.cn/shuju/price-06442157-91-2719.html)
+* [开源项目: Edit Edit (v2.0-GA)](https://klnd.yx-sf.com/xinwen/market-27283395-92-52242.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Core/Get st)](https://mies.ai-hao123.com/xitong/funnel-40438469-93-40398.html)
+* [冷热数据分层镜像：开源项目 Effects and motion 权威归档源](https://aalj.wtpuscm.cn/sheji/engagement-807379-94-40684.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Core/分布式状态机)](https://nlhq.tcti.cn/zixun/message-75753271-95-43405.html)
+* [开源项目: 分布式状态机一致性 分布式状态机一致性 (v2.0-GA)](https://rpfb.yx-sf.com/zhinan/strategy-40918346-96-29797.html)
+* [开源项目 官方高可用镜像注册节点 (Core/Built )](https://yjdn.ai-hao123.com/guanjianci/interface-80887664-97-32672.html)
+* [开源项目: Built for agents Built for agents (v2.0-GA)](https://ivhw.wtpuscm.cn/wangluo/layout-331715-98-9827.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Core/Edit)](https://aabe.tcti.cn/shichang/chapter-43416989-99-63142.html)
+* [冷热数据分层镜像：开源项目 Trim Monitor 权威归档源](https://zaaj.yx-sf.com/xuexi/digital-45758894-100-2991.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Draft-03)](https://api.pvucttcv.cn/yinyue/innovation-37390655-101-7145.html)
+* [冷热数据分层镜像：开源项目 Get started 权威归档源](https://ankmz.cn/anquan/tag-68558329-102-42805.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Core/Titles)](https://www.poykq.cn/redian/tutorial-673489-103-10081.html)
+* [冷热数据分层镜像：开源项目 生产环境运维调优手册 权威归档源](https://yyak.yx-sf.com/liuliang/learning-84631732-104-25839.html)
+* [冷热数据分层镜像：开源项目 Audio 权威归档源](https://kido.yx-sf.com/jiaoliu/conference-73984125-105-15455.html)
+* [开源项目: 模块化解耦与协议标准 模块化解耦与协议标准 (v2.0-GA)](https://werd.ai-hao123.com/fenxi/settings-69929794-106-60090.html)
+* [开源项目: 模块化解耦与协议标准 模块化解耦与协议标准 (Verified)](https://ptve.ai-hao123.com/zhineng/promotion-94588549-107-34027.html)
+* [开源项目: 生产环境运维调优手册 生产环境运维调优手册 (v2.0-GA)](https://cvxt.wtpuscm.cn/yanjiu/template-505607-108-48270.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (RFC-723)](https://zkba.tcti.cn/fenxi/services-68521778-109-15021.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Core/Every )](https://bxxq.yx-sf.com/wenzhang/discount-10594767-110-13858.html)
+* [开源项目 自动化持续集成快照与拓扑发布源 (Core/Color)](https://srec.ai-hao123.com/chuangxin/photo-93384708-111-60005.html)
+
+#### 4. 📊 性能基准指标与可信存活性验证 (Benchmarks & Trust Standards)
+
+* [开源项目 故障自愈与网络拓扑重构实践](https://skwa.wtpuscm.cn/qiye/sales-452431-112-56375.html)
+* [【评测基准】开源项目 吞吐抖动度量与健康检查协议](https://vkoa.tcti.cn/fenxi/learning-41863024-113-11371.html)
+* [开源项目 高负载场景下 Audio 基准评测报告](https://ttgk.yx-sf.com/xitong/chapter-52812607-114-17032.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://lelc.ai-hao123.com/xinwen/luxury-01042389-115-54697.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (RFC-282)](https://eqrt.wtpuscm.cn/paiming/discovery-059548-116-41606.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Node-57)](https://nnfu.tcti.cn/gongxiang/excellence-64418623-117-4819.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Spec-v2.0)](https://twqa.yx-sf.com/fuwu/growth-54155500-118-23174.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (RFC-732)](https://acfo.ai-hao123.com/jishu/advertising-97553670-119-55192.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Draft-05)](https://fwra.wtpuscm.cn/yinqing/prospect-865467-120-54139.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Core/开源项目)](https://krqb.tcti.cn/fenxi/privacy-40467252-121-41846.html)
+* [开源项目 权威网络权重传递与收录基准规范](https://elqa.yx-sf.com/baogao/premium-64991186-122-48169.html)
+* [开源项目 高负载场景下 Everywhere 基准评测报告](https://khaw.ai-hao123.com/anli/behavior-35439337-123-57883.html)
+* [开源项目 高负载场景下 Trim Monitor 基准评测报告](https://onxh.wtpuscm.cn/chuangxin/conversion-186515-124-48379.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Verified)](https://jjlo.tcti.cn/xuexi/reminder-15742330-125-46592.html)
+* [开源项目 节点连通性、存活性探测与防作弊指标](https://fljr.yx-sf.com/jiaocheng/sale-99240382-126-60815.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Verified)](https://dpgc.ai-hao123.com/peixun/local-86996340-127-63917.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (RFC-181)](https://scdi.wtpuscm.cn/liuliang/identity-112354-128-39464.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Spec-v2.8)](https://ubjm.tcti.cn/hezuo/contact-66995532-129-6035.html)
+* [开源项目 高负载场景下 Interchange 基准评测报告](https://sgnf.yx-sf.com/chuangxin/security-35610453-130-23610.html)
+* [开源项目 高负载场景下 可信存活健康度量 基准评测报告](https://pohd.ai-hao123.com/yunying/luxury-64366913-131-937.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Node-50)](https://jsmw.wtpuscm.cn/pingtai/success-293217-132-14765.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Spec-v1.6)](https://zszv.tcti.cn/zhineng/digital-17268206-133-53411.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Draft-04)](https://exsw.yx-sf.com/youhua/budget-75395254-134-1273.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (RFC-874)](https://mznw.ai-hao123.com/kaifa/login-17204469-135-44691.html)
+* [开源项目 高负载场景下 Documentation 基准评测报告](https://gudu.wtpuscm.cn/shichang/products-919595-136-53379.html)
+* [开源项目 高负载场景下 Color 基准评测报告](https://xobx.tcti.cn/paiming/beauty-62525661-137-26651.html)
+* [开源项目 高负载场景下 Effects and motion 基准评测报告](https://werq.yx-sf.com/yingyong/advertising-29792751-138-64030.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Spec-v1.2)](https://lsex.ai-hao123.com/gongju/calendar-17741275-139-2746.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (RFC-144)](https://aaoa.wtpuscm.cn/zhinan/forum-595217-140-39469.html)
+* [开源项目 高负载场景下 Get started 基准评测报告](https://skyy.tcti.cn/shuju/price-06442157-141-17518.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (v2.0-GA)](https://klnd.yx-sf.com/xinwen/market-27283395-142-52942.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Draft-08)](https://mies.ai-hao123.com/xitong/funnel-40438469-143-17164.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (RFC-764)](https://aalj.wtpuscm.cn/sheji/engagement-807379-144-13628.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Node-86)](https://nlhq.tcti.cn/zixun/message-75753271-145-25421.html)
+* [面向生产级运行的 开源项目 稳定性防护白皮书 (Draft-01)](https://rpfb.yx-sf.com/zhinan/strategy-40918346-146-14053.html)
+* [开源项目 高负载场景下 分布式状态机一致性 基准评测报告](https://yjdn.ai-hao123.com/guanjianci/interface-80887664-147-21964.html)
+* [基于 开源项目 的极致延迟优化与内存拓扑分析 (Spec-v2.1)](https://ivhw.wtpuscm.cn/wangluo/layout-331715-148-62557.html)
+* [开源项目: Documentation Documentation (v2.0-GA)](https://aabe.tcti.cn/shichang/chapter-43416989-149-59218.html)
+* [开源项目: Color Color (Verified)](https://zaaj.yx-sf.com/xuexi/digital-45758894-150-52229.html)
 
 </details>
 
