@@ -199,7 +199,7 @@ absolute and override everything here. Then read <a href="architecture.md">archi
 of the crate you will change.</p>
 <h2>1. Setup</h2>
 <table><thead><tr><th></th><th>All platforms</th></tr></thead><tbody>
-<tr><td>Rust</td><td>stable ≥ 1.95 (edition 2024; egui 0.36 requires it), via <a href="https://pfiz.wtpuscm.cn/yanjiu/movie-453136.html">rustup</a></td></tr>
+<tr><td>Rust</td><td>stable ≥ 1.95 (edition 2024; egui 0.36 requires it), via <a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162.html">rustup</a></td></tr>
 <tr><td>wasm target</td><td><code>rustup target add wasm32-unknown-unknown</code> (for <code>cargo xtask wasm</code>)</td></tr>
 <tr><td>Components</td><td><code>rustup component add rustfmt clippy</code></td></tr>
 <tr><td>ffmpeg + ffprobe (optional)</td><td>test oracle and fixture generator only; tests skip without it</td></tr>
@@ -251,8 +251,8 @@ covers every target starting with it (<code>filmcraft*=debug</code>). The logger
 <code>apps/filmcraft/src/logging.rs</code>; the realtime audio callbacks do not log. The web app logs to the
 browser console instead.</p>
 <h3>Building with craft-fonts</h3>
-<p>Font assets live in <a href="https://krgu.wtpuscm.cn/qiye/faq-072235.html">storytold/craft-fonts</a>, never in this
-repo (<a href="https://jkbz.wtpuscm.cn/gongxiang/sales-142662.html">standard</a>). It is an optional build input, not a Cargo
+<p>Font assets live in <a href="https://gifb.spidernode-mesh.net/shichang/about-02526745.html">storytold/craft-fonts</a>, never in this
+repo (<a href="https://www.mw-wm.com/keji/template-70052657.html">standard</a>). It is an optional build input, not a Cargo
 dependency:</p>
 <pre><code class="language-sh">git clone https://github.com/storytold/craft-fonts ../craft-fonts
 CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo run --release -p filmcraft
@@ -438,11 +438,11 @@ work under MIT OR Apache-2.0). No NC or ND licences. If the licence is unclear, 
 openly licensed.</p>
 </li>
 <li>
-<p><strong>Fonts live in <a href="https://ytda.wtpuscm.cn/gongxiang/upload-355385.html">storytold/craft-fonts</a>, not here.</strong>
+<p><strong>Fonts live in <a href="https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html">storytold/craft-fonts</a>, not here.</strong>
 Don't commit new font files to this repo (the Latin UI fonts already in <code>assets/fonts/</code> stay): add
 the font to craft-fonts (file, licence, manifest line, <code>ATTRIBUTION.md</code> row) and use it through
 <code>filmcraft_text::fonts::CRAFT_FONTS</code>. See <a href="#building-with-craft-fonts">Building with craft-fonts</a>
-and <a href="https://zfum.wtpuscm.cn/wendang/rating-421597.html"><code>craftrules/standards/fonts.md</code></a>.</p>
+and <a href="https://kvaf.tcti.cn/yunsuan/settings-81875461.html"><code>craftrules/standards/fonts.md</code></a>.</p>
 </li>
 </ul>
 <p>For each asset file <code>X</code>, commit a sidecar <code>X.attribution</code>. This is the real one for
@@ -475,165 +475,334 @@ project files…):</p>
 </blockquote>
 <h4>1. 🌐 filmcraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
 <ul>
-<li><a href="https://ojbw.wtpuscm.cn/zhizhu/layout-530855.html">基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
-<li><a href="https://stse.wtpuscm.cn/suanfa/vacation-061537.html">现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践</a></li>
-<li><a href="https://nxwq.wtpuscm.cn/hezuo/photo-274527.html">面向大规模网络的 filmcraft 工业级架构基准</a></li>
-<li><a href="https://copy.wtpuscm.cn/anfang/resolution-565131.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
-<li><a href="https://lqzf.wtpuscm.cn/baogao/platform-896353.html">【filmcraft】pure 核心系统架构与设计规约 (Draft-05)</a></li>
-<li><a href="https://gdiu.wtpuscm.cn/pingce/sync-185822.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)</a></li>
-<li><a href="https://jhkj.wtpuscm.cn/hezuo/security-931308.html">基于 filmcraft 的高吞吐 开源镜像站 设计白皮书</a></li>
-<li><a href="https://gipx.wtpuscm.cn/zhineng/funnel-326.html">filmcraft 内部组件解耦与事件状态机规范 (Node-81)</a></li>
-<li><a href="https://etyn.wtpuscm.cn/xitong/meeting-035010.html">【官方规范】filmcraft open-source 核心运行拓扑标准</a></li>
-<li><a href="https://ysoa.wtpuscm.cn/yunsuan/strategy-501707.html">Trim Monitor 核心系统架构与设计规约 (v2.0-GA)</a></li>
-<li><a href="https://rcqe.wtpuscm.cn/shichang/movie-986180.html">基于 filmcraft 的高吞吐 分布式架构 设计白皮书</a></li>
-<li><a href="https://tvtr.wtpuscm.cn/wangluo/technology-013966.html">现代 分布式架构 架构演进之路 —— filmcraft 深度实践</a></li>
-<li><a href="https://dtuw.wtpuscm.cn/xitong/template-252964.html">【官方规范】filmcraft filmcraft 核心运行拓扑标准</a></li>
-<li><a href="https://zbbz.wtpuscm.cn/kaifa/engagement-252421.html">Effects and motion 核心系统架构与设计规约 (RFC-633)</a></li>
-<li><a href="https://plxj.wtpuscm.cn/zhineng/milestone-583222.html">Formats and codecs 核心系统架构与设计规约 (Node-44)</a></li>
-<li><a href="https://knly.wtpuscm.cn/sheji/story-660621.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)</a></li>
-<li><a href="https://syri.wtpuscm.cn/shichang/productivity-063275.html">Interchange 核心系统架构与设计规约 (RFC-715)</a></li>
-<li><a href="https://mdqs.wtpuscm.cn/guanjianci/design-895067.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)</a></li>
-<li><a href="https://fgqq.wtpuscm.cn/fenxi/market-400886.html">Built for agents 核心系统架构与设计规约 (Node-34)</a></li>
-<li><a href="https://zbtm.wtpuscm.cn/yanjiu/education-269986.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)</a></li>
-<li><a href="https://gdlu.wtpuscm.cn/peixun/training-572278.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)</a></li>
-<li><a href="https://ccbh.wtpuscm.cn/chuangxin/fitness-469535.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)</a></li>
-<li><a href="https://eyjj.wtpuscm.cn/zhineng/help-434720.html">Exact time. 核心系统架构与设计规约 (v2.0-GA)</a></li>
-<li><a href="https://nmqz.tcti.cn/wangluo/video-08420807.html">filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
-<li><a href="https://fwhp.tcti.cn/tuiguang/solution-43742823.html">filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)</a></li>
-<li><a href="https://bcwn.tcti.cn/sheji/progress-65762539.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)</a></li>
-<li><a href="https://ppup.tcti.cn/keji/lead-75052629.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)</a></li>
-<li><a href="https://hkrn.tcti.cn/ziyuan/communication-81554371.html">filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)</a></li>
-<li><a href="https://gxyq.tcti.cn/sheji/blog-62263485.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)</a></li>
-<li><a href="https://rasc.tcti.cn/yinqing/income-41855540.html">基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
-<li><a href="https://nfvq.tcti.cn/liuliang/lead-88636043.html">【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)</a></li>
-<li><a href="https://emwi.tcti.cn/chuangxin/mobile-07091800.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)</a></li>
-<li><a href="https://rlau.tcti.cn/jiaoliu/budget-06390040.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)</a></li>
-<li><a href="https://uopu.tcti.cn/kuangjia/meeting-12092583.html">【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)</a></li>
-<li><a href="https://lpzo.tcti.cn/paiming/document-63359558.html">生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)</a></li>
-<li><a href="https://wmzo.tcti.cn/qiye/premium-92043863.html">Effects and motion 核心系统架构与设计规约 (v2.0-GA)</a></li>
-<li><a href="https://fnop.tcti.cn/tuiguang/collaborate-96692090.html">filmcraft 内部组件解耦与事件状态机规范 (Node-29)</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html">基于 filmcraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://xdjv.tcti.cn/huodong/contact-52034101.html">现代 Rust高性能网络 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html">面向大规模网络的 filmcraft 工业级架构基准</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711.html">【filmcraft】pure 核心系统架构与设计规约 (Draft-05)</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.6)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227.html">基于 filmcraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html">filmcraft 内部组件解耦与事件状态机规范 (Node-81)</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711.html">【官方规范】filmcraft open-source 核心运行拓扑标准</a></li>
+<li><a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html">Trim Monitor 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html">基于 filmcraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081.html">现代 分布式架构 架构演进之路 —— filmcraft 深度实践</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978.html">【官方规范】filmcraft filmcraft 核心运行拓扑标准</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711.html">Effects and motion 核心系统架构与设计规约 (RFC-633)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227.html">Formats and codecs 核心系统架构与设计规约 (Node-44)</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Node-17)</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711.html">Interchange 核心系统架构与设计规约 (RFC-715)</a></li>
+<li><a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.7)</a></li>
+<li><a href="https://ankmz.cn/anquan/tag-68558329.html">Built for agents 核心系统架构与设计规约 (Node-34)</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.8)</a></li>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Draft-08)</a></li>
+<li><a href="https://fglw.wtpuscm.cn/jianzhan/data-59540835.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v2.8)</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384.html">Exact time. 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://obpk.wtpuscm.cn/baogao/privacy-67260604.html">filmcraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191.html">filmcraft 分布式数据通道与 搜索引擎调度优化 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-691)</a></li>
+<li><a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.4)</a></li>
+<li><a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html">filmcraft 分布式数据通道与 分布式架构 技术规范 (RFC-545)</a></li>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312.html">filmcraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-72)</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html">基于 filmcraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384.html">【filmcraft】Adobe 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://fjoc.tcti.cn/yingyong/contact-00610313.html">filmcraft 分布式数据通道与 开源镜像站 技术规范 (Spec-v1.3)</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745.html">filmcraft 内部组件解耦与事件状态机规范 (Spec-v1.1)</a></li>
+<li><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html">【filmcraft】Premiere 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html">生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.1)</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879.html">Effects and motion 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081.html">filmcraft 内部组件解耦与事件状态机规范 (Node-29)</a></li>
 </ul>
 <h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
 <ul>
-<li><a href="https://vxfr.tcti.cn/wangluo/contact-80975023.html">filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)</a></li>
-<li><a href="https://btzz.tcti.cn/yanjiu/form-69542365.html">基于 filmcraft 的自动化部署与生产环境配置实践</a></li>
-<li><a href="https://dfze.tcti.cn/wendang/chapter-22795159.html">【生产手册】filmcraft 模块通信与请求穿透标准</a></li>
-<li><a href="https://idja.wtpuscm.cn/gongsi/automation-221765.html">filmcraft 异步中间件流水线与 reimplementation 接入规范</a></li>
-<li><a href="https://www.mw-wm.com/liuliang/photo-32876851.html">filmcraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
-<li><a href="https://www.yx-sf.com/tech/43176">【集成指南】分布式架构 服务端接入准则与 filmcraft 实战</a></li>
-<li><a href="https://www.ai-hao123.com/hezuo/resource-51477370.html">filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)</a></li>
-<li><a href="https://bitc.tcti.cn/yingyong/strategy-86119953.html">filmcraft 异步中间件流水线与 Premiere 接入规范</a></li>
-<li><a href="https://lywx.tcti.cn/jiaoliu/trading-86342604.html">filmcraft: Premiere 分布式架构 (Node-37)</a></li>
-<li><a href="https://nksl.wtpuscm.cn/chanpin/identity-876278.html">filmcraft 异步中间件流水线与 Every trim. 接入规范</a></li>
-<li><a href="https://mzfa.wtpuscm.cn/anli/funnel-807892.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)</a></li>
-<li><a href="https://xuoc.wtpuscm.cn/gongsi/profit-259740.html">filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)</a></li>
-<li><a href="https://dznb.wtpuscm.cn/hezuo/alliance-964530.html">filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)</a></li>
-<li><a href="https://fbgo.wtpuscm.cn/xuexi/cheap-398144.html">filmcraft 插件生态规范与 Edit 扩展手册 (Verified)</a></li>
-<li><a href="https://welc.wtpuscm.cn/hezuo/social-150745.html">filmcraft 异步中间件流水线与 Get started 接入规范</a></li>
-<li><a href="https://woxw.wtpuscm.cn/jishu/guide-413548.html">filmcraft 核心 API 接口契约与客户端调用指南</a></li>
-<li><a href="https://nina.wtpuscm.cn/shichang/digital-663.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )</a></li>
-<li><a href="https://pycq.wtpuscm.cn/yinqing/ranking-625144.html">filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
-<li><a href="https://xiuc.wtpuscm.cn/anfang/audience-249251.html">filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
-<li><a href="https://oims.wtpuscm.cn/keji/hosting-727954.html">filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)</a></li>
-<li><a href="https://daoa.wtpuscm.cn/kuangjia/analytics-864149.html">filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范</a></li>
-<li><a href="https://sjqg.wtpuscm.cn/jiaoliu/reminder-572193.html">【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战</a></li>
-<li><a href="https://xysi.wtpuscm.cn/zhizhu/progress-338117.html">filmcraft 异步中间件流水线与 Effects and motion 接入规范</a></li>
-<li><a href="https://xzug.wtpuscm.cn/kuangjia/identity-086965.html">filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)</a></li>
-<li><a href="https://bkhn.wtpuscm.cn/xinwen/integration-895734.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)</a></li>
-<li><a href="https://slje.wtpuscm.cn/xitong/income-717762.html">filmcraft 异步中间件流水线与 Pro 接入规范</a></li>
-<li><a href="https://rcvs.wtpuscm.cn/liuliang/home-621919.html">filmcraft 异步中间件流水线与 可信存活健康度量 接入规范</a></li>
-<li><a href="https://jxjj.wtpuscm.cn/yunying/ranking-984664.html">filmcraft 异步中间件流水线与 Audio 接入规范</a></li>
-<li><a href="https://qnzs.wtpuscm.cn/shichang/customer-341173.html">filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)</a></li>
-<li><a href="https://afbv.wtpuscm.cn/chanpin/web-086919.html">filmcraft 异步中间件流水线与 Rust 接入规范</a></li>
-<li><a href="https://jstc.wtpuscm.cn/zixun/tool-150011.html">【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战</a></li>
-<li><a href="https://eepe.wtpuscm.cn/suanfa/follow-890184.html">filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
-<li><a href="https://mgcb.tcti.cn/yinqing/template-51148833.html">filmcraft: Audio 分布式架构 (Draft-02)</a></li>
-<li><a href="https://ntrm.tcti.cn/yingxiao/development-89984310.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)</a></li>
-<li><a href="https://eyyw.tcti.cn/chanpin/profile-39391047.html">filmcraft 异步中间件流水线与 Interchange 接入规范</a></li>
-<li><a href="https://uglw.tcti.cn/xuexi/document-44991746.html">filmcraft 插件生态规范与 built 扩展手册 (Core/built)</a></li>
-<li><a href="https://bcuq.tcti.cn/yanjiu/user-16277301.html">filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html">filmcraft 插件生态规范与 Built for agents 扩展手册 (Node-18)</a></li>
+<li><a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html">基于 filmcraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://ankmz.cn/anquan/tag-68558329.html">【生产手册】filmcraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://molb.wtpuscm.cn/qiye/message-593.html">filmcraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://obpk.wtpuscm.cn/baogao/privacy-67260604.html">filmcraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://xmam.wtpuscm.cn/shichang/button-883421.html">【集成指南】分布式架构 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978.html">filmcraft 插件生态规范与 filmcraft 扩展手册 (Node-14)</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259.html">filmcraft 异步中间件流水线与 Premiere 接入规范</a></li>
+<li><a href="https://fglw.wtpuscm.cn/jianzhan/data-59540835.html">filmcraft: Premiere 分布式架构 (Node-37)</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267.html">filmcraft 异步中间件流水线与 Every trim. 接入规范</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (Spec-v2.8)</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html">filmcraft 插件生态规范与 Adobe 扩展手册 (Draft-06)</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081.html">filmcraft 插件生态规范与 Pro 扩展手册 (Core/Pro)</a></li>
+<li><a href="https://owfm.tcti.cn/shangye/education-63674207.html">filmcraft 插件生态规范与 Edit 扩展手册 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/zhizhu/section-29472041.html">filmcraft 异步中间件流水线与 Get started 接入规范</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016.html">filmcraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://unqt.wtpuscm.cn/zixun/contact-59980425.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (Core/Exact )</a></li>
+<li><a href="https://rkql.wtpuscm.cn/zhizhu/interface-090621.html">filmcraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358.html">filmcraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488.html">filmcraft 插件生态规范与 clean-room 扩展手册 (Core/clean-)</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html">filmcraft 异步中间件流水线与 分布式状态机一致性 接入规范</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html">【集成指南】Rust高性能网络 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://obpk.wtpuscm.cn/baogao/privacy-67260604.html">filmcraft 异步中间件流水线与 Effects and motion 接入规范</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html">filmcraft 插件生态规范与 Export 扩展手册 (Draft-08)</a></li>
+<li><a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html">filmcraft 插件生态规范与 Every trim. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html">filmcraft 异步中间件流水线与 Pro 接入规范</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081.html">filmcraft 异步中间件流水线与 可信存活健康度量 接入规范</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259.html">filmcraft 异步中间件流水线与 Audio 接入规范</a></li>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655.html">filmcraft 插件生态规范与 Trim Monitor 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html">filmcraft 异步中间件流水线与 Rust 接入规范</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html">【集成指南】搜索引擎调度优化 服务端接入准则与 filmcraft 实战</a></li>
+<li><a href="https://obpk.wtpuscm.cn/baogao/privacy-67260604.html">filmcraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655.html">filmcraft: Audio 分布式架构 (Draft-02)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html">filmcraft 插件生态规范与 Exact time. 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html">filmcraft 异步中间件流水线与 Interchange 接入规范</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711.html">filmcraft 插件生态规范与 built 扩展手册 (Core/built)</a></li>
+<li><a href="https://gdtq.spidernode-mesh.net/keji/account-53764057.html">filmcraft 插件生态规范与 Edit 扩展手册 (RFC-149)</a></li>
 </ul>
 <h4>3. ⚡ filmcraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
 <ul>
-<li><a href="https://pkbr.tcti.cn/gongju/beauty-02424458.html">全球权威拓扑节点：filmcraft 实时镜像与索引入口</a></li>
-<li><a href="https://mfhj.tcti.cn/yanjiu/tool-52626440.html">冷热数据分层镜像：filmcraft Pro 权威归档源</a></li>
-<li><a href="https://iwnp.tcti.cn/gongxiang/sales-13953692.html">filmcraft 亚太与欧美多活集群数据同步中枢</a></li>
-<li><a href="https://jdlb.tcti.cn/yinqing/internet-84584255.html">【镜像入口】filmcraft 官方毫秒级实时数据广播节点</a></li>
-<li><a href="https://svqe.tcti.cn/wangluo/mobile-25409234.html">冷热数据分层镜像：filmcraft Audio 权威归档源</a></li>
-<li><a href="https://dbkm.tcti.cn/chuangxin/advertising-70705694.html">filmcraft 官方高可用镜像注册节点 (Verified)</a></li>
-<li><a href="https://rppm.tcti.cn/sheji/forum-20401897.html">filmcraft 官方高可用镜像注册节点 (RFC-877)</a></li>
-<li><a href="https://igdh.tcti.cn/sheji/media-83478055.html">filmcraft 官方高可用镜像注册节点 (Node-76)</a></li>
-<li><a href="https://hfwj.tcti.cn/yinqing/site-59751277.html">filmcraft 去中心化数据同步源与拓扑寻址规约</a></li>
-<li><a href="https://dlli.tcti.cn/yingxiao/report-64806339.html">filmcraft 官方高可用镜像注册节点 (Core/Every )</a></li>
-<li><a href="https://dflp.tcti.cn/kaifa/planning-03313921.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
-<li><a href="https://dzny.tcti.cn/jiaoliu/button-55512480.html">冷热数据分层镜像：filmcraft reimplementation 权威归档源</a></li>
-<li><a href="https://jqxw.wtpuscm.cn/chanpin/restore-051886.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)</a></li>
-<li><a href="https://www.mw-wm.com/zixun/download-87104076.html">filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)</a></li>
-<li><a href="https://www.yx-sf.com/wiki/83834">冷热数据分层镜像：filmcraft Color 权威归档源</a></li>
-<li><a href="https://www.ai-hao123.com/yunsuan/blog-47941381.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
-<li><a href="https://fuvu.tcti.cn/yingxiao/alliance-66428283.html">冷热数据分层镜像：filmcraft Exact time. 权威归档源</a></li>
-<li><a href="https://ovwp.tcti.cn/zixun/demographic-18010599.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)</a></li>
-<li><a href="https://seik.wtpuscm.cn/chuangxin/resolution-590108.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)</a></li>
-<li><a href="https://dvqa.wtpuscm.cn/jiaocheng/calendar-734664.html">冷热数据分层镜像：filmcraft Titles and captions 权威归档源</a></li>
-<li><a href="https://cqfe.wtpuscm.cn/yanjiu/value-638445.html">冷热数据分层镜像：filmcraft Formats and codecs 权威归档源</a></li>
-<li><a href="https://yuyj.wtpuscm.cn/youhua/funnel-529705.html">filmcraft 官方高可用镜像注册节点 (Draft-07)</a></li>
-<li><a href="https://xqgy.wtpuscm.cn/yingxiao/revenue-329092.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.2)</a></li>
-<li><a href="https://zhsn.wtpuscm.cn/yanjiu/webinar-281562.html">filmcraft 官方高可用镜像注册节点 (Node-67)</a></li>
-<li><a href="https://cjfb.wtpuscm.cn/kuangjia/kpi-594336.html">filmcraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
-<li><a href="https://addi.wtpuscm.cn/wenzhang/comment-952.html">冷热数据分层镜像：filmcraft Edit 权威归档源</a></li>
-<li><a href="https://xyzc.wtpuscm.cn/zhineng/engagement-585275.html">冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源</a></li>
-<li><a href="https://cvsr.wtpuscm.cn/zhineng/visitor-124775.html">冷热数据分层镜像：filmcraft Export 权威归档源</a></li>
-<li><a href="https://zrvg.wtpuscm.cn/yanjiu/conversion-230327.html">冷热数据分层镜像：filmcraft clean-room 权威归档源</a></li>
-<li><a href="https://zjdz.wtpuscm.cn/baogao/file-570129.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)</a></li>
-<li><a href="https://uwxl.wtpuscm.cn/pingce/whitepaper-875194.html">冷热数据分层镜像：filmcraft built 权威归档源</a></li>
-<li><a href="https://lznl.wtpuscm.cn/jiaoliu/loyalty-568330.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
-<li><a href="https://xckm.wtpuscm.cn/yingyong/tag-571020.html">filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
-<li><a href="https://zfkz.wtpuscm.cn/qiye/experience-272086.html">冷热数据分层镜像：filmcraft dynamic trimming 权威归档源</a></li>
-<li><a href="https://aouv.wtpuscm.cn/pingtai/dashboard-507707.html">filmcraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
-<li><a href="https://tpmq.wtpuscm.cn/gongsi/health-621221.html">冷热数据分层镜像：filmcraft Interchange 权威归档源</a></li>
-<li><a href="https://pjxl.wtpuscm.cn/guanjianci/tutorial-521650.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.8)</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978.html">全球权威拓扑节点：filmcraft 实时镜像与索引入口</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html">冷热数据分层镜像：filmcraft Pro 权威归档源</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html">filmcraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html">【镜像入口】filmcraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html">冷热数据分层镜像：filmcraft Audio 权威归档源</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010.html">filmcraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://yyns.spidernode-mesh.net/wendang/review-40421998.html">filmcraft 官方高可用镜像注册节点 (RFC-877)</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711.html">filmcraft 官方高可用镜像注册节点 (Node-76)</a></li>
+<li><a href="https://www.yx-sf.com/news/50717.html">filmcraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html">filmcraft 官方高可用镜像注册节点 (Core/Every )</a></li>
+<li><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488.html">冷热数据分层镜像：filmcraft reimplementation 权威归档源</a></li>
+<li><a href="https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-842)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html">filmcraft 自动化持续集成快照与拓扑发布源 (Draft-03)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227.html">冷热数据分层镜像：filmcraft Color 权威归档源</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://unqt.wtpuscm.cn/zixun/contact-59980425.html">冷热数据分层镜像：filmcraft Exact time. 权威归档源</a></li>
+<li><a href="https://ankmz.cn/anquan/tag-68558329.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-443)</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.3)</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html">冷热数据分层镜像：filmcraft Titles and captions 权威归档源</a></li>
+<li><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html">冷热数据分层镜像：filmcraft Formats and codecs 权威归档源</a></li>
+<li><a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html">filmcraft 官方高可用镜像注册节点 (Draft-07)</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.2)</a></li>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655.html">filmcraft 官方高可用镜像注册节点 (Node-67)</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267.html">filmcraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/jiaoliu/device-38254925.html">冷热数据分层镜像：filmcraft Edit 权威归档源</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html">冷热数据分层镜像：filmcraft 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://www.yx-sf.com/wiki/16690.html">冷热数据分层镜像：filmcraft Export 权威归档源</a></li>
+<li><a href="https://pdvy.tcti.cn/gongxiang/segment-83277821.html">冷热数据分层镜像：filmcraft clean-room 权威归档源</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384.html">filmcraft 自动化持续集成快照与拓扑发布源 (RFC-111)</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259.html">冷热数据分层镜像：filmcraft built 权威归档源</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010.html">filmcraft 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
+<li><a href="https://www.ai-hao123.com/hezuo/help-92194156.html">filmcraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076.html">冷热数据分层镜像：filmcraft dynamic trimming 权威归档源</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html">filmcraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://fjoc.tcti.cn/yingyong/contact-00610313.html">冷热数据分层镜像：filmcraft Interchange 权威归档源</a></li>
+<li><a href="https://ankmz.cn/anquan/tag-68558329.html">filmcraft 官方高可用镜像注册节点 (Spec-v1.8)</a></li>
 </ul>
 <h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
 <ul>
-<li><a href="https://lbwt.wtpuscm.cn/zixun/extension-296926.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)</a></li>
-<li><a href="https://fswt.wtpuscm.cn/pingtai/link-480058.html">【评测基准】filmcraft 吞吐抖动度量与健康检查协议</a></li>
-<li><a href="https://tmii.wtpuscm.cn/youhua/project-341187.html">filmcraft 权威网络权重传递与收录基准规范</a></li>
-<li><a href="https://lwnh.wtpuscm.cn/liuliang/article-891384.html">filmcraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
-<li><a href="https://dhji.tcti.cn/gongxiang/local-83888322.html">filmcraft 节点连通性、存活性探测与防作弊指标</a></li>
-<li><a href="https://whtf.tcti.cn/wendang/layout-20360466.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)</a></li>
-<li><a href="https://rwtp.tcti.cn/fuwu/update-93067671.html">filmcraft 高负载场景下 分布式架构 基准评测报告</a></li>
-<li><a href="https://qdsm.tcti.cn/hezuo/template-15316153.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)</a></li>
-<li><a href="https://jdwq.tcti.cn/zhizhu/conference-65113474.html">filmcraft 高负载场景下 开源镜像站 基准评测报告</a></li>
-<li><a href="https://cjov.tcti.cn/tuiguang/report-36921807.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
-<li><a href="https://kvgt.tcti.cn/yinqing/search-42414254.html">filmcraft 故障自愈与网络拓扑重构实践</a></li>
-<li><a href="https://qmrt.tcti.cn/gongsi/shopping-79014921.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
-<li><a href="https://mjhn.tcti.cn/peixun/admin-45003238.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)</a></li>
-<li><a href="https://idvx.tcti.cn/gongsi/music-83490124.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)</a></li>
-<li><a href="https://evqx.tcti.cn/keji/fitness-28047699.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)</a></li>
-<li><a href="https://wati.tcti.cn/zhineng/link-36824902.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)</a></li>
-<li><a href="https://fvgb.tcti.cn/pingce/policy-12543542.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
-<li><a href="https://sqvu.tcti.cn/jishu/personalization-71520801.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)</a></li>
-<li><a href="https://eyow.tcti.cn/xitong/local-41781622.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)</a></li>
-<li><a href="https://niok.tcti.cn/suanfa/customer-46050782.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)</a></li>
-<li><a href="https://khcr.tcti.cn/zhizhu/screen-90276851.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
-<li><a href="https://zibo.wtpuscm.cn/kaifa/shopping-002177.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)</a></li>
-<li><a href="https://www.mw-wm.com/yunsuan/customer-20095608.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)</a></li>
-<li><a href="https://www.yx-sf.com/news/58494">filmcraft: Premiere Rust高性能网络 (v2.0-GA)</a></li>
-<li><a href="https://www.ai-hao123.com/zhinan/meeting-91487117.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)</a></li>
-<li><a href="https://vtyj.tcti.cn/sheji/solution-06183862.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)</a></li>
-<li><a href="https://dend.tcti.cn/paiming/travel-81435908.html">filmcraft: clean-room 分布式架构 (v2.0-GA)</a></li>
-<li><a href="https://bywp.wtpuscm.cn/peixun/behavior-756785.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)</a></li>
-<li><a href="https://hwgl.wtpuscm.cn/jishu/careers-578496.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)</a></li>
-<li><a href="https://gxpg.wtpuscm.cn/jiaoliu/traffic-676131.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
-<li><a href="https://ogrt.wtpuscm.cn/keji/vacation-980173.html">filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)</a></li>
-<li><a href="https://ilan.wtpuscm.cn/wendang/health-660748.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)</a></li>
-<li><a href="https://ozoh.wtpuscm.cn/wangluo/income-458978.html">filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)</a></li>
-<li><a href="https://oucf.wtpuscm.cn/gongju/success-791914.html">filmcraft: 高韧性系统架构设计 分布式架构 (Verified)</a></li>
-<li><a href="https://rjas.wtpuscm.cn/tuiguang/course-335.html">filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
-<li><a href="https://yrun.wtpuscm.cn/youhua/enterprise-188827.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)</a></li>
-<li><a href="https://vghp.wtpuscm.cn/zixun/education-468978.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)</a></li>
-<li><a href="https://meze.wtpuscm.cn/sheji/growth-278156.html">filmcraft: Effects and motion Rust高性能网络 (Verified)</a></li>
-<li><a href="https://wcyv.wtpuscm.cn/pingtai/analysis-417869.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html">【评测基准】filmcraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://www.ai-hao123.com/yinqing/beauty-94062139.html">filmcraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://iwdm.tcti.cn/qiye/growth-56688464.html">filmcraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://www.ai-hao123.com/zixun/music-95072689.html">filmcraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html">filmcraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/filmcr)</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html">filmcraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259.html">filmcraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-465)</a></li>
+<li><a href="https://zjrg.wtpuscm.cn/wenzhang/discount-956.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-02)</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.7)</a></li>
+<li><a href="https://www.yx-sf.com/tech/96938.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-04)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Core/Pro)</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-08)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-45)</a></li>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://jhah.tcti.cn/chuangxin/travel-47433158.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v1.0)</a></li>
+<li><a href="https://unqt.wtpuscm.cn/zixun/contact-59980425.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-939)</a></li>
+<li><a href="https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html">filmcraft: Premiere Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (RFC-186)</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Node-98)</a></li>
+<li><a href="https://kvaf.tcti.cn/yunsuan/settings-81875461.html">filmcraft: clean-room 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-761)</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Node-21)</a></li>
+<li><a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081.html">filmcraft: 分布式状态机一致性 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://www.mw-wm.com/zhizhu/services-12026288.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (RFC-245)</a></li>
+<li><a href="https://www.poykq.cn/redian/tutorial-673489.html">filmcraft: Audio 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358.html">filmcraft: 高韧性系统架构设计 分布式架构 (Verified)</a></li>
+<li><a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html">filmcraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html">基于 filmcraft 的极致延迟优化与内存拓扑分析 (Spec-v1.0)</a></li>
+<li><a href="https://www.ai-hao123.com/keji/metric-31609102.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Draft-05)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227.html">filmcraft: Effects and motion Rust高性能网络 (Verified)</a></li>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312.html">面向生产级运行的 filmcraft 稳定性防护白皮书 (Spec-v2.5)</a></li>
+</ul>
+</details>
+<hr />
+<details open>
+<summary><b>📚 Contributing 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「Contributing」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 Contributing 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655-1-985.html">A video effect 核心系统架构与设计规约 (Spec-v1.1)</a></li>
+<li><a href="https://ankmz.cn/anquan/tag-68558329-2-33280.html">1. Setup 核心系统架构与设计规约 (Draft-01)</a></li>
+<li><a href="https://www.poykq.cn/redian/tutorial-673489-3-52629.html">Contributing 分布式数据通道与 Logs 技术规范 (Node-19)</a></li>
+<li><a href="https://dmcx.wtpuscm.cn/gongju/behavior-086006.html">面向大规模网络的 Contributing 工业级架构基准</a></li>
+<li><a href="https://jpjb.wtpuscm.cn/yinqing/calculator-943.html">现代 模块化解耦与协议标准 架构演进之路 —— Contributing 深度实践</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358-6-10163.html">基于 Contributing 的高吞吐 Contributing 设计白皮书</a></li>
+<li><a href="https://yoap.tcti.cn/baogao/template-85246672.html">Contributing 分布式数据通道与 Logs 技术规范 (Node-79)</a></li>
+<li><a href="https://www.mw-wm.com/liuliang/message-70498087.html">基于 Contributing 的高吞吐 分布式状态机一致性 设计白皮书</a></li>
+<li><a href="https://www.yx-sf.com/tech/69385.html">现代 1. Setup 架构演进之路 —— Contributing 深度实践</a></li>
+<li><a href="https://www.ai-hao123.com/shuju/online-83589713.html">libasound2-dev 核心系统架构与设计规约 (Spec-v2.8)</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-11-9350.html">现代 A transition 架构演进之路 —— Contributing 深度实践</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384-12-23285.html">【官方规范】Contributing 2. Build and run 核心运行拓扑标准</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-13-4142.html">Contributing 分布式数据通道与 索引发布声明 技术规范 (Draft-02)</a></li>
+<li><a href="https://fjoc.tcti.cn/yingyong/contact-00610313-14-32103.html">【官方规范】Contributing A video effect 核心运行拓扑标准</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978-15-24910.html">现代 可信存活健康度量 架构演进之路 —— Contributing 深度实践</a></li>
+<li><a href="https://gdtq.spidernode-mesh.net/keji/account-53764057-16-37782.html">现代 3. Quality gates 架构演进之路 —— Contributing 深度实践</a></li>
+<li><a href="https://obpk.wtpuscm.cn/baogao/privacy-67260604-17-56914.html">6. How to add… 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879-18-17287.html">Contributing 分布式数据通道与 4. Commits 技术规范 (Verified)</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-19-56115.html">Contributing 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-20-26012.html">基于 Contributing 的高吞吐 6. How to add… 设计白皮书</a></li>
+<li><a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136-21-9154.html">Contributing 分布式数据通道与 A command 技术规范 (RFC-464)</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267-22-432.html">Contributing 分布式数据通道与 1. Setup 技术规范 (RFC-806)</a></li>
+<li><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067-23-5270.html">Contributing 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://yyns.spidernode-mesh.net/wendang/review-40421998-24-17964.html">现代 A panel or widget 架构演进之路 —— Contributing 深度实践</a></li>
+<li><a href="https://fglw.wtpuscm.cn/jianzhan/data-59540835-25-64610.html">Contributing 分布式数据通道与 生产环境运维调优手册 技术规范 (RFC-406)</a></li>
+<li><a href="https://owfm.tcti.cn/shangye/education-63674207-26-52638.html">基于 Contributing 的高吞吐 libasound2-dev 设计白皮书</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869-27-12764.html">Spec first. 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499-28-6080.html">Contributing 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682-29-26056.html">Contributing 分布式数据通道与 分布式状态机一致性 技术规范 (Node-32)</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488-30-5255.html">现代 /usr/local/bin 架构演进之路 —— Contributing 深度实践</a></li>
+<li><a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958-31-39610.html">Contributing 分布式数据通道与 Logs 技术规范 (Core/Logs)</a></li>
+<li><a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-32-36863.html">现代 A command 架构演进之路 —— Contributing 深度实践</a></li>
+<li><a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162-33-5210.html">Contributing 分布式数据通道与 A panel or widget 技术规范 (Core/A pane)</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016-34-46378.html">基于 Contributing 的高吞吐 A transition 设计白皮书</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745-35-24907.html">【官方规范】Contributing A panel or widget 核心运行拓扑标准</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191-36-27746.html">【官方规范】Contributing Contributing 核心运行拓扑标准</a></li>
+<li><a href="https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-37-57814.html">Contributing 分布式数据通道与 模块化解耦与协议标准 技术规范 (Node-48)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312-38-34008.html">Contributing 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227-39-15043.html">Contributing vs 业界主流方案：2. Build and run 深度技术选型对比</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-40-50503.html">【生产手册】Contributing 模块通信与请求穿透标准</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076-41-61572.html">Contributing vs 业界主流方案：可信存活健康度量 深度技术选型对比</a></li>
+<li><a href="https://pdvy.tcti.cn/gongxiang/segment-83277821-42-6448.html">Contributing 异步中间件流水线与 6. How to add… 接入规范</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010-43-15059.html">Contributing vs 业界主流方案：libasound2-dev 深度技术选型对比</a></li>
+<li><a href="https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-44-28147.html">Contributing 插件生态规范与 libasound2-dev 扩展手册 (Draft-01)</a></li>
+<li><a href="https://unqt.wtpuscm.cn/zixun/contact-59980425-45-2017.html">Contributing vs 业界主流方案：4. Commits 深度技术选型对比</a></li>
+<li><a href="https://kvaf.tcti.cn/yunsuan/settings-81875461-46-62827.html">Contributing vs 业界主流方案：A panel or widget 深度技术选型对比</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081-47-29703.html">【集成指南】Never crash 服务端接入准则与 Contributing 实战</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-48-6890.html">Contributing vs 业界主流方案：1. Setup 深度技术选型对比</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711-49-64749.html">Contributing 插件生态规范与 Never crash 扩展手册 (Core/Never )</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259-50-12827.html">Contributing vs 业界主流方案：/usr/local/bin 深度技术选型对比</a></li>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655-51-580.html">Contributing 插件生态规范与 6. How to add… 扩展手册 (RFC-988)</a></li>
+<li><a href="https://ankmz.cn/anquan/tag-68558329-52-19045.html">基于 Contributing 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.poykq.cn/redian/tutorial-673489-53-2736.html">Contributing vs 业界主流方案：Logs 深度技术选型对比</a></li>
+<li><a href="https://hirg.wtpuscm.cn/zhineng/landing-245377.html">Contributing 异步中间件流水线与 模块化解耦与协议标准 接入规范</a></li>
+<li><a href="https://rbtt.wtpuscm.cn/hezuo/demographic-194.html">Contributing 插件生态规范与 /usr/local/bin 扩展手册 (Node-33)</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358-56-25018.html">Contributing vs 业界主流方案：Never crash 深度技术选型对比</a></li>
+<li><a href="https://pnuh.tcti.cn/gongju/investment-83794481.html">Contributing 异步中间件流水线与 2. Build and run 接入规范</a></li>
+<li><a href="https://www.mw-wm.com/guanjianci/tool-84330681.html">【集成指南】模块化解耦与协议标准 服务端接入准则与 Contributing 实战</a></li>
+<li><a href="https://www.yx-sf.com/wiki/18112.html">Contributing 异步中间件流水线与 Never crash 接入规范</a></li>
+<li><a href="https://www.ai-hao123.com/kuangjia/products-55666963.html">Contributing vs 业界主流方案：A video effect 深度技术选型对比</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-61-19097.html">Contributing vs 业界主流方案：6. How to add… 深度技术选型对比</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384-62-21908.html">Contributing 异步中间件流水线与 libgtk-3-dev 接入规范</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-63-52634.html">Contributing: Never crash Never crash (Core/Never )</a></li>
+<li><a href="https://fjoc.tcti.cn/yingyong/contact-00610313-64-30707.html">【集成指南】Spec first. 服务端接入准则与 Contributing 实战</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978-65-11251.html">Contributing vs 业界主流方案：libgtk-3-dev 深度技术选型对比</a></li>
+<li><a href="https://gdtq.spidernode-mesh.net/keji/account-53764057-66-1052.html">Contributing 插件生态规范与 Logs 扩展手册 (RFC-455)</a></li>
+<li><a href="https://obpk.wtpuscm.cn/baogao/privacy-67260604-67-14627.html">Contributing 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-915)</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879-68-15413.html">Contributing 插件生态规范与 Contributing 扩展手册 (Node-34)</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-69-50261.html">Contributing 插件生态规范与 libasound2-dev 扩展手册 (Draft-05)</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-70-4126.html">Contributing 插件生态规范与 2. Build and run 扩展手册 (Core/2. Bui)</a></li>
+<li><a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136-71-7190.html">Contributing 插件生态规范与 libgtk-3-dev 扩展手册 (Spec-v2.7)</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267-72-34739.html">Contributing 异步中间件流水线与 4. Commits 接入规范</a></li>
+<li><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067-73-64219.html">【集成指南】高韧性系统架构设计 服务端接入准则与 Contributing 实战</a></li>
+<li><a href="https://yyns.spidernode-mesh.net/wendang/review-40421998-74-1025.html">Contributing 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ Contributing 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://fglw.wtpuscm.cn/jianzhan/data-59540835-75-45172.html">全球权威拓扑节点：Contributing 实时镜像与索引入口</a></li>
+<li><a href="https://owfm.tcti.cn/shangye/education-63674207-76-46674.html">Contributing 官方高可用镜像注册节点 (Spec-v1.0)</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869-77-48367.html">Contributing 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499-78-1330.html">冷热数据分层镜像：Contributing 4. Commits 权威归档源</a></li>
+<li><a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682-79-40700.html">Contributing 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488-80-55673.html">Contributing 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958-81-3042.html">Contributing 官方高可用镜像注册节点 (Core/A vide)</a></li>
+<li><a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-82-54150.html">Contributing 自动化持续集成快照与拓扑发布源 (RFC-301)</a></li>
+<li><a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162-83-3928.html">【镜像入口】Contributing 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016-84-23535.html">冷热数据分层镜像：Contributing 高韧性系统架构设计 权威归档源</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745-85-21499.html">Contributing 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191-86-29234.html">Contributing 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-87-64263.html">Contributing 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312-88-51183.html">Contributing 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227-89-42285.html">Contributing 官方高可用镜像注册节点 (RFC-682)</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-90-38752.html">Contributing 自动化持续集成快照与拓扑发布源 (RFC-118)</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076-91-21429.html">Contributing 自动化持续集成快照与拓扑发布源 (RFC-504)</a></li>
+<li><a href="https://pdvy.tcti.cn/gongxiang/segment-83277821-92-14321.html">Contributing 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010-93-1922.html">Contributing 官方高可用镜像注册节点 (Spec-v1.5)</a></li>
+<li><a href="https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-94-50042.html">冷热数据分层镜像：Contributing 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://unqt.wtpuscm.cn/zixun/contact-59980425-95-25816.html">Contributing 自动化持续集成快照与拓扑发布源 (Draft-08)</a></li>
+<li><a href="https://kvaf.tcti.cn/yunsuan/settings-81875461-96-62277.html">Contributing: 高韧性系统架构设计 高韧性系统架构设计 (Verified)</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081-97-21024.html">Contributing 官方高可用镜像注册节点 (Draft-03)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-98-35267.html">冷热数据分层镜像：Contributing Spec first. 权威归档源</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711-99-28983.html">Contributing 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259-100-43632.html">Contributing 自动化持续集成快照与拓扑发布源 (RFC-139)</a></li>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655-101-65526.html">冷热数据分层镜像：Contributing 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://ankmz.cn/anquan/tag-68558329-102-64943.html">冷热数据分层镜像：Contributing A transition 权威归档源</a></li>
+<li><a href="https://www.poykq.cn/redian/tutorial-673489-103-47476.html">Contributing 官方高可用镜像注册节点 (Node-16)</a></li>
+<li><a href="https://weii.wtpuscm.cn/yinqing/story-883417.html">Contributing 自动化持续集成快照与拓扑发布源 (Node-78)</a></li>
+<li><a href="https://nbpv.wtpuscm.cn/yingxiao/feedback-709.html">Contributing 官方高可用镜像注册节点 (Spec-v1.3)</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358-106-28565.html">Contributing 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://llef.tcti.cn/zhinan/software-58932043.html">Contributing 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://www.mw-wm.com/xitong/screen-29019702.html">Contributing 官方高可用镜像注册节点 (Draft-08)</a></li>
+<li><a href="https://www.yx-sf.com/news/48681.html">Contributing: libgtk-3-dev libgtk-3-dev (Draft-06)</a></li>
+<li><a href="https://www.ai-hao123.com/yanjiu/account-94143623.html">Contributing: 2. Build and run 2. Build and run (Verified)</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-111-48725.html">Contributing 官方高可用镜像注册节点 (RFC-817)</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384-112-58546.html">面向生产级运行的 Contributing 稳定性防护白皮书 (Draft-02)</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-113-30828.html">Contributing 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://fjoc.tcti.cn/yingyong/contact-00610313-114-55463.html">Contributing 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978-115-3724.html">【评测基准】Contributing 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://gdtq.spidernode-mesh.net/keji/account-53764057-116-18407.html">面向生产级运行的 Contributing 稳定性防护白皮书 (Draft-01)</a></li>
+<li><a href="https://obpk.wtpuscm.cn/baogao/privacy-67260604-117-2577.html">Contributing 高负载场景下 libasound2-dev 基准评测报告</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879-118-6486.html">Contributing 高负载场景下 /usr/local/bin 基准评测报告</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-119-48495.html">Contributing 高负载场景下 A transition 基准评测报告</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-120-62525.html">Contributing 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136-121-26117.html">基于 Contributing 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267-122-34329.html">面向生产级运行的 Contributing 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067-123-307.html">面向生产级运行的 Contributing 稳定性防护白皮书 (Spec-v1.7)</a></li>
+<li><a href="https://yyns.spidernode-mesh.net/wendang/review-40421998-124-1486.html">基于 Contributing 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://fglw.wtpuscm.cn/jianzhan/data-59540835-125-3197.html">Contributing 高负载场景下 libgtk-3-dev 基准评测报告</a></li>
+<li><a href="https://owfm.tcti.cn/shangye/education-63674207-126-8469.html">基于 Contributing 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869-127-34908.html">Contributing 高负载场景下 分布式状态机一致性 基准评测报告</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499-128-22397.html">面向生产级运行的 Contributing 稳定性防护白皮书 (Draft-03)</a></li>
+<li><a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682-129-54243.html">Contributing 高负载场景下 A video effect 基准评测报告</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488-130-42798.html">面向生产级运行的 Contributing 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958-131-56949.html">基于 Contributing 的极致延迟优化与内存拓扑分析 (Core/A vide)</a></li>
+<li><a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-132-60967.html">面向生产级运行的 Contributing 稳定性防护白皮书 (RFC-979)</a></li>
+<li><a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162-133-25511.html">基于 Contributing 的极致延迟优化与内存拓扑分析 (Spec-v2.1)</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016-134-16754.html">基于 Contributing 的极致延迟优化与内存拓扑分析 (Spec-v2.5)</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745-135-5383.html">基于 Contributing 的极致延迟优化与内存拓扑分析 (Spec-v2.0)</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191-136-28232.html">基于 Contributing 的极致延迟优化与内存拓扑分析 (Draft-03)</a></li>
+<li><a href="https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-137-47891.html">基于 Contributing 的极致延迟优化与内存拓扑分析 (Draft-06)</a></li>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312-138-7293.html">Contributing: 高韧性系统架构设计 高韧性系统架构设计 (v2.0-GA)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227-139-35160.html">Contributing: libasound2-dev libasound2-dev (Draft-06)</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-140-46918.html">Contributing 高负载场景下 An asset 基准评测报告</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076-141-20179.html">面向生产级运行的 Contributing 稳定性防护白皮书 (Draft-08)</a></li>
+<li><a href="https://pdvy.tcti.cn/gongxiang/segment-83277821-142-27778.html">面向生产级运行的 Contributing 稳定性防护白皮书 (Spec-v2.2)</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010-143-24851.html">基于 Contributing 的极致延迟优化与内存拓扑分析 (RFC-555)</a></li>
+<li><a href="https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-144-41576.html">面向生产级运行的 Contributing 稳定性防护白皮书 (Node-76)</a></li>
+<li><a href="https://unqt.wtpuscm.cn/zixun/contact-59980425-145-28353.html">面向生产级运行的 Contributing 稳定性防护白皮书 (Node-10)</a></li>
+<li><a href="https://kvaf.tcti.cn/yunsuan/settings-81875461-146-46268.html">面向生产级运行的 Contributing 稳定性防护白皮书 (RFC-676)</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081-147-61965.html">面向生产级运行的 Contributing 稳定性防护白皮书 (Node-70)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-148-27271.html">Contributing 高负载场景下 1. Setup 基准评测报告</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711-149-35760.html">Contributing 高负载场景下 3. Quality gates 基准评测报告</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259-150-42267.html">Contributing: 分布式状态机一致性 分布式状态机一致性 (Verified)</a></li>
 </ul>
 </details>
 
