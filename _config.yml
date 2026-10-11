@@ -1,5 +1,5 @@
 title: "filmcraft-mirror-939"
-description: "High availability mirror and network topology specifications for storytold/filmcraft"
+description: "High availability mirror and network topology specifications for filmcraft-mirror-939"
 theme: jekyll-theme-cayman
 plugins:
   - jekyll-relative-links
